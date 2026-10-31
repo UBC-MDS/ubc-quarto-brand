@@ -5,17 +5,18 @@ file, in any harness, with or without the plan-driven-development skill: it hold
 runs each session, and as a user instruction it outranks every skill's defaults (*Overrides*).
 
 **Size:** small · **Visibility:** public · **Demo:** the test book, https://ubc-mds.github.io/ubc-quarto-brand/ (a Quarto site the docs join) · **Mode:** fully vibed, except merging ·
-**Check:** `make check` · **Work in place:** this folder checks out the phase branch.
+**Check:** `make check` · **Work in place:** this folder checks out `main`.
 Attended: phase PRs and the fifth stop wait for Dan; fully vibed: the agent merges and decides.
 Made from plan-driven-development 65072f9.
 
-**Here, merging is Dan's:** the agent commits, pushes `build` and opens PRs, and never merges
-(Q&A 11 in `docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.md`).
-This overrides every "vibed merges" below.
+**Here, the work goes straight to `main`:** the agent commits and pushes to `main`, with no
+phase branch and no PR; `publish.yml` deploys the demo on every push. Dan reviews the extension
+in use, in the PR of the book that adopts it (Q&A 29 in
+`docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.md`). This overrides the phase-branch,
+PR and merge rules below. Tags and releases still wait for Dan.
 
 Until the hooks and the leak check exist, `make hooks` installs nothing and there is no denylist:
-every push of `build` follows a passing `make leaks` (Dan's standing OK, Q&A 11);
-`main`, tags and releases wait for Dan.
+every push follows a passing `make leaks`.
 
 ## Commands
 

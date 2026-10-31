@@ -1,6 +1,6 @@
 # ubc-quarto-brand: design spec
 
-**Status:** spec drafted 2026-10-30 · small project, building on `build`
+**Status:** spec approved 2026-10-30 · small project, building on `main` (Q&A 29)
 
 Kickoff's questions and Dan's answers are in
 [`2026-10-30-ubc-quarto-brand-qa.md`](2026-10-30-ubc-quarto-brand-qa.md);
@@ -24,7 +24,7 @@ DSCI 521 follows later, tracked in
 
 | Phase | Goal | Done means |
 |---|---|---|
-| (small project, one plan) | the extension, the test book, CI with PR previews, and the docs, ready for Dan to tag `v0.1.0` | every scenario below `built` and checked in a PR preview; `make check` and CI green; the PR open for Dan to merge |
+| (small project, one plan) | the extension, the test book, CI with PR previews, and the docs, ready for Dan to tag `v0.1.0` | every scenario below `built`; `make check` and CI green on `main`; the demo live; `v0.1.0` ready for Dan to tag |
 
 ## Design
 
@@ -122,7 +122,7 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
   Python 3.14, every third-party action pinned by commit SHA (Q&A 24).
 - **Releases:** a PR bumps `version:` in `_extension.yml` and adds a `CHANGELOG.md` entry;
   Dan tags `vX.Y.Z` after merging it (Q&A 17).
-- **Merging is Dan's:** the agent commits, pushes `build` and opens PRs, and never merges (Q&A 11).
+- **Straight to `main`:** the agent commits and pushes to `main`; Dan reviews the extension in the adopting book's PR, with its preview (Q&A 29). `pr.yml` serves anyone who opens a PR here later.
 
 ## Scenarios
 
@@ -140,8 +140,8 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 | S10 | a book recolours a callout or adds a type | its keys merge over the extension's | Task 5 | the website check adds one; `tests/check-render.sh` | planned |
 | S11 | an author executes R and Python cells | output renders under the brand | Task 3 | the Conventions page renders in `make check` | planned |
 | S12 | someone asks where a file came from | the provenance page links its 521 original at `991bae89cba9` and says what changed | Task 6 | the Where it comes from page | planned |
-| S13 | a PR is opened, updated, merged mid-build or closed | a preview link is commented; it updates; the merge leaves no stray preview; closing removes it | Task 1; Phase end, step 5 | the build PR's own preview | planned |
-| S14 | a push lands on `main` | the demo deploys to `gh-pages`, keeping `pr-preview/` and `.nojekyll` | Task 1; Phase end, step 6 | the first publish run after Dan's merge | planned |
+| S13 | a PR is opened, updated, merged mid-build or closed | a preview link is commented; it updates; the merge leaves no stray preview; closing removes it | Task 1 | `pr.yml` is the book's proven workflow plus per-PR cancel; proven when a PR is first opened here (Q&A 29) | planned |
+| S14 | a push lands on `main` | the demo deploys to `gh-pages`, keeping `pr-preview/` and `.nojekyll` | Task 1 | every publish run on `main` | planned |
 | S15 | a website project (521's shape) uses the extension | it renders with the same brand and components | Task 5 | `tests/website/` in `make check` | planned |
 
 ### Later
@@ -173,5 +173,6 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 - 2026-10-30: merging waits for Dan; PRs get previews (`1027692`, `fd5ebe4`).
 - 2026-10-30: test site, quizzes, executed cells, fonts, logo, versioning, packaging, callouts
   (`47e684a`, `d126ab8`, `a5fc3e2`, `09f595d`, `c90002b`, `750f91d`, `fd5ebe4`, `50f7bf3`).
+- 2026-10-30: approved for a one-shot build (Q&A 28); work goes straight to `main`, review happens in the adopting book (Q&A 29).
 - 2026-10-30: the conventions page as-is, provenance docs, design sections 1 to 3
   (`00a0f5b`, `0489284`, `fd8ff72`, `70fa211`, `6447ee8`).

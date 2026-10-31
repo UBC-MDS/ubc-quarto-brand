@@ -19,7 +19,7 @@
 - CI: `ubuntu-latest`, Quarto `1.11.6`, R `4.6.2`, Python `3.14` (`.python-version`).
 - Callouts (literal hex): activity `fa-person-chalkboard` `#0055B7`; exercise `fa-dumbbell` `#1C5F2E`; definition `fa-book-open` `#8A6D2B`; relevance-project, titled "Relevance to course project", `fa-diagram-project` `#0077C8`.
 - Third-party actions pinned by SHA: `astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2` (v10.3.3), `rossjrw/pr-preview-action@873417d2df72380da1f3978378fb58560bcde976` (v1.8.2), `JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445` (v4.9.0), `lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8` (v2.9.0). GitHub's, Quarto's and r-lib's own actions stay on major tags.
-- The agent never merges, never pushes `main`, never tags (Q&A 11, 17). Every push of `build` follows a passing `make leaks`.
+- The agent commits and pushes straight to `main` (Q&A 29) after a passing `make leaks`; it never tags (Q&A 17).
 - Commits: message in a file, `git commit -F`, stage by path, the `Plan:` trailer checked with `git log -1 --format='%(trailers)'`, and `uv run --quiet --script scripts/commitmsg.py <file>` before committing.
 
 ## Review Focus
@@ -385,7 +385,7 @@ Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 1
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 ```
 
-  `git add .python-version pyproject.toml uv.lock DESCRIPTION renv.lock .Rprofile renv/activate.R renv/settings.json renv/.gitignore .gitignore _quarto.yml index.qmd tests/check-render.sh .github/workflows/pr.yml .github/workflows/publish.yml Makefile`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push`.
+  `git add .python-version pyproject.toml uv.lock DESCRIPTION renv.lock .Rprofile renv/activate.R renv/settings.json renv/.gitignore .gitignore _quarto.yml index.qmd tests/check-render.sh .github/workflows/pr.yml .github/workflows/publish.yml Makefile`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
 - [x] **Step 11: Review, look forward, close.** Tier 3: a self-review under *Standards* and *Spec*, plus the mechanical checks. Close with the plan's boxes ticked, **Now** set to `Task 2: The ubc extension, open.`, the spec's S13 and S14 rows noting the workflows exist (status stays `planned` until the PR and the publish run prove them), and this message:
 
@@ -567,7 +567,7 @@ Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 2
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 ```
 
-  `git add scripts/fetch-521.sh _extensions/ubc _quarto.yml tests/check-render.sh Makefile`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push`.
+  `git add scripts/fetch-521.sh _extensions/ubc _quarto.yml tests/check-render.sh Makefile`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
 - [ ] **Step 8: Review, look forward, close.** Tier 2: Matt Pocock's `code-review` from `.git/TASK_BASE`, two axes in two subagents; fix Critical and Important. Close with the boxes ticked, **Now** `Task 3: The conventions page, open.`, the spec's S01 and S02 rows `built`, and:
 
@@ -673,7 +673,7 @@ Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 3
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 ```
 
-  `git add scripts/fetch-521.sh chapters/book-conventions.qmd chapters/img/cheers.png _quarto.yml tests/check-render.sh`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push`.
+  `git add scripts/fetch-521.sh chapters/book-conventions.qmd chapters/img/cheers.png _quarto.yml tests/check-render.sh`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
 - [ ] **Step 8: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`. Close with the boxes ticked, **Now** `Task 4: The callouts gallery, open.`, the spec's S05, S06 and S11 rows `built`, and the close message as in Task 2 with `Task 3: The conventions page`, `Tier: 3` and `Rounds: self-review (Standards, Spec) and make check`.
 
@@ -845,7 +845,7 @@ Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 4
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 ```
 
-  `git add chapters/callouts.qmd chapters/using.qmd _quarto.yml tests/check-render.sh`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push`.
+  `git add chapters/callouts.qmd chapters/using.qmd _quarto.yml tests/check-render.sh`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
 - [ ] **Step 7: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`; check both modes by eye in `uv run quarto preview`. Close with the boxes ticked, **Now** `Task 5: The website check and the how-to, open.`, the spec's S03, S04 and S07 rows `built`, and the close message as in Task 3 with `Task 4: The callouts gallery`.
 
@@ -1097,7 +1097,7 @@ Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 5
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 ```
 
-  `git add tests/website/_quarto.yml tests/website/index.qmd tests/website/extra.scss chapters/using.qmd Makefile tests/check-render.sh`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push`.
+  `git add tests/website/_quarto.yml tests/website/index.qmd tests/website/extra.scss chapters/using.qmd Makefile tests/check-render.sh`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
 - [ ] **Step 8: Review, look forward, close.** Tier 2: Matt Pocock's `code-review` from `.git/TASK_BASE`, two axes in two subagents. Close with the boxes ticked, **Now** `Task 6: Where it comes from, open.`, the spec's S08, S09, S10 and S15 rows `built`, and the close message as in Task 2 with `Task 5: The website check and the how-to`.
 
@@ -1199,7 +1199,7 @@ Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 6
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 ```
 
-  `git add chapters/provenance.qmd _quarto.yml tests/check-render.sh README.md`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push`.
+  `git add chapters/provenance.qmd _quarto.yml tests/check-render.sh README.md`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
 - [ ] **Step 7: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`. Close with the boxes ticked, **Now** `Phase end, step 1: The final whole-branch review.`, the spec's S12 row `built`, and the close message as in Task 3 with `Task 6: Where it comes from`.
 
@@ -1216,5 +1216,5 @@ sets **Now** to the next step.
 - [ ] **2. The rest of the ledger copied into the plan:** whatever `.superpowers/sdd/2026-10-30-ubc-quarto-brand/progress.md` holds that no closing commit carries, under its task.
 - [ ] **3. The docs check:** every doc the branch touched is true (the README, the spec's design and scenario rows, the how-to, the provenance page, `AGENTS.md`).
 - [ ] **4. A dated `CHANGELOG.md` entry** for `v0.1.0` (the extension, the test book, CI and previews, from DSCI 521 at `991bae89cba9`), and the spec's status line set to `PR open (#N)`, its number filled in once step 5 opens the PR.
-- [ ] **5. The PR,** `build` into `main`: its text in a file, scanned with `gitleaks stdin`, sent with `gh pr create --body-file`. Its preview is S13's proof: the bot comment appears, the preview shows every page, and the brand is checked by eye in both modes. The PR waits for Dan's merge (Q&A 11).
-- [ ] **6. After the merge:** [Dan] Pages from the `gh-pages` branch, read and write workflow permissions, and a ruleset on `main`; then the live URL, <https://ubc-mds.github.io/ubc-quarto-brand/>, serves the book with `.nojekyll` and `pr-preview/` intact (S14); then [Dan] tags `v0.1.0`.
+- [ ] **5. The push and the publish run** (Q&A 29: no PR here): `main` pushed, `publish.yml` green, S14 checked on the live site.
+- [ ] **6. The live site and the release:** <https://ubc-mds.github.io/ubc-quarto-brand/> serves the book with `.nojekyll` intact (S14); then [Dan] tags `v0.1.0`, and the reproducible book adopts it in its own previewed PR (S16).

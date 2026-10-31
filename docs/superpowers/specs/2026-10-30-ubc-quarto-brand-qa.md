@@ -193,3 +193,12 @@ each claim was checked against the code before Dan saw it.
     and Quarto). The agent creates an empty `gh-pages` branch now so that Dan can switch Pages
     on before the PR opens, and the PR's own preview proves S13. Merging still waits for Dan
     (item 11).
+
+29. **Work on `main`; review happens in the book.** Dan: "for the UBC-MDS/ubc-quarto-brand repo,
+    you can just do everythign on main. there is no PR review there. the pr review is just testing
+    and using the extension in this current repo for the book".
+    So the agent commits and pushes to `main` here, with no PRs, and `publish.yml` deploys the demo
+    on every push. Item 11's "no merging, PR previews" now applies to the
+    reproducible-and-trustworthy-workflows book's adoption PR, where Dan reviews the extension in
+    use. `pr.yml` stays, for anyone who opens a PR here later. The `build` branch stays as it is
+    (deleting branches is a stop).
