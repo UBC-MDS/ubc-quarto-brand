@@ -97,3 +97,10 @@ we can create and use that as a test book/site in the extension too to quickly f
     an MDS book turns it on with one line in its `_quarto.yml`.
     The UBC logo is not bundled.
     Dan chose "C. MDS logo, opt-in" over the recommended "A. Brand only, books add theirs".
+
+17. **Versioning.** `_extension.yml` carries a semantic version, and Dan tags releases
+    (`v0.1.0`, and on). A book installs a tag,
+    `quarto add UBC-MDS/ubc-quarto-brand@v0.1.0`, and updates in its own PR with `quarto update`,
+    where the PR preview shows the change. `CHANGELOG.md` lists each release.
+    Tags are a stop that never relaxes, so each release is a step for Dan.
+    Dan chose "A. Tagged releases (Recommended)".
