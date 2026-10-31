@@ -131,3 +131,12 @@ we can create and use that as a test book/site in the extension too to quickly f
     we should document how it comes from 521". The docs explain, file by file,
     which DSCI 521 file each piece of the extension comes from and what changed on the way,
     linking to 521's originals.
+
+## Design sections
+
+22. **Section 1, layout and contents.** The test book lives at the repository root next to
+    `_extensions/ubc/` (Quarto finds extensions only in a project's own `_extensions/`).
+    The extension holds DSCI 521's files as of commit `991bae89cba9`, unchanged apart from
+    `brand.yml` losing 521's name and links and the format gaining the definition and
+    relevance-project callouts. The website check renders a git-ignored copy of the extension.
+    Dan chose "A. Approve section 1 (Recommended)".
