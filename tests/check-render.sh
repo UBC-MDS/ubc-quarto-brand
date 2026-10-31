@@ -126,6 +126,8 @@ expect_flat "website: the brand's exercise" 'div\.callout-exercise\.callout \{ *
 expect_flat "website: its own callout type" 'div\.callout-lab\.callout \{ *border-left-color: ?#A6192E'   "$SITE/index.html"
 expect "website: its own layer, light" '\.website-check-marker\{color:#8a6d2b\}'                     "$SLIGHT"
 expect "website: its own layer, dark"  '\.website-check-marker\{color:#8a6d2b\}'                     "$SDARK"
+expect "website: its default, light"   'div\.callout-note\.callout\{border-left-color:#0077c8'         "$SLIGHT"
+expect "website: its default, dark"    'div\.callout-note\.callout\{border-left-color:#0077c8'         "$SDARK"
 # S10: a recolour, and the rules custom-callout leaves to a book's layer (icons, dark mode)
 expect_flat "website: a recoloured callout" 'div\.callout-activity\.callout \{ *border-left-color: ?#0077C8' "$SITE/index.html"
 expect_last "website: recoloured icon"      '\}div\.callout-activity \.callout-icon::before\{color:#[0-9a-f]{6}'                   '#0077c8' "$SLIGHT"

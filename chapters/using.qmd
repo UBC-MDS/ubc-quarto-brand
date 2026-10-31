@@ -63,7 +63,11 @@ format:
 Your layer comes after the extension's, so a rule of yours wins over one of the extension's
 with an equally specific selector.
 The extension's dark-mode rules start with `body.quarto-dark`; start yours the same way to override them.
-The brand's colours are available in your layer as `$brand-<name>`, for example `$brand-ubc-blue`.
+In your layer's `/*-- scss:rules --*/` section the brand's colours are available as `$brand-<name>`,
+for example `$brand-ubc-blue`.
+Its `/*-- scss:defaults --*/` section can set Bootstrap's and Quarto's Sass variables,
+such as `$callout-color-note`, and they win over the extension's in both modes;
+use literal hex there, because the `$brand-*` names do not exist yet when defaults are read.
 A single list, `theme: [extra.scss]`, makes Quarto stop with an error.
 
 ## Add or recolour a callout type

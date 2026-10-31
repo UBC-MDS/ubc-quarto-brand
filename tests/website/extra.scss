@@ -1,3 +1,9 @@
+/*-- scss:defaults --*/
+
+// A book's own Sass default: it wins over the extension's in both modes.
+// Literal hex: `$brand-*` names exist only in `scss:rules`.
+$callout-color-note: #0077C8;
+
 /*-- scss:rules --*/
 
 // A book's own layer: it comes after the extension's, and `$brand-*` names work in it.

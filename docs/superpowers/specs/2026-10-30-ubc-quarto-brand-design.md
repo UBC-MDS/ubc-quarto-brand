@@ -77,7 +77,8 @@ From the prototype (Q&A 18):
 
 - **Add styles** with an extra theme layer, light and dark as separate lists:
   `format: ubc-html: theme: light: [extra.scss] dark: [extra.scss]`.
-  The layer comes after the extension's, and `$brand-*` names work in it.
+  The layer comes after the extension's, and `$brand-*` names work in its rules; its Sass
+  defaults, in literal hex, win over the extension's in both modes (the final review).
   A plain list (`theme: [extra.scss]`) crashes Quarto.
 - **Add or recolour callout types** with its own `custom-callout:` keys,
   which deep-merge over the extension's (Q&A 19). custom-callout uses the hex for the
