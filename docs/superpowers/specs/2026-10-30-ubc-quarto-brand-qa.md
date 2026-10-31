@@ -155,3 +155,10 @@ we can create and use that as a test book/site in the extension too to quickly f
     pinned by SHA. Releases: a PR bumps the version and CHANGELOG, Dan tags after merging.
     The reproducible-and-trustworthy-workflows book adopts `v0.1.0` in its own PR afterwards.
     Dan chose "A. Approve section 3 (Recommended)".
+
+## After the plan
+
+25. **Other Quarto outputs, a stretch goal.** Dan: "if possible we should see if this will work
+    for the quarto book/revealjs/site/document outputs. but that would be a stretch goal
+    after this is all built". Books and websites are already in the plan (S01, S15);
+    a single document and revealjs slides go to the spec's Later table as optional (S19, S20).

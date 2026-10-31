@@ -151,6 +151,8 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 | S16 | the reproducible-and-trustworthy-workflows book adopts `v0.1.0` | its pages use the brand; its titles follow Q&A 6 and 7 | end | it needs Dan's `v0.1.0` tag, and happens in that repo's own PR |
 | S17 | DSCI 521 adopts the extension | it deletes its local copies | end | tracked in DSCI_521#35 |
 | S18 | Dependabot bumps the pinned action SHAs | a monthly PR | optional | plan-driven-development's `dependabot.yml` template isn't built yet |
+| S19 | a single Quarto document, with no project, uses the extension | the brand, labels, callouts and quizzes as in a book | optional | a stretch goal after the build (Q&A 25); the prototype saw the brand reach a standalone `.qmd`, the format is untested |
+| S20 | a revealjs deck in a branded project | slides in the brand's colours and fonts | optional | a stretch goal after the build (Q&A 25); likely needs a `ubc-revealjs` format, since `ubc-html`'s styles target Bootstrap pages |
 
 ## Open items and risks
 
