@@ -10,7 +10,7 @@
 
 **Spec:** `docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md`
 
-**Now:** Phase end, step 5: The push and the publish run.
+**Now:** Phase end, step 6: the live site is checked; [Dan] tags `v0.1.0`, then the reproducible book adopts it.
 
 ## Global Constraints
 
@@ -1409,7 +1409,7 @@ the final fix pass, 226 ok. No leaks at any of them.
 
   **Ruling:** with no PR here (Q&A 29), the spec's status line reads "built on `main` 2026-10-31; `v0.1.0` waits for Dan's tag" instead of `PR open (#N)`. If wrong: one status line.
 
-- [ ] **5. The push and the publish run** (Q&A 29: no PR here): `main` pushed, `publish.yml` green, S14 checked on the live site.
+- [x] **5. The push and the publish run** (Q&A 29: no PR here): `main` pushed, `publish.yml` green, S14 checked on the live site.
 - [ ] **6. The live site and the release:** <https://ubc-mds.github.io/ubc-quarto-brand/> serves the book with `.nojekyll` intact (S14); then [Dan] tags `v0.1.0`, and the reproducible book adopts it in its own previewed PR (S16).
 
 ## Phase-end list
