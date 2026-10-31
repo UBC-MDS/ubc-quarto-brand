@@ -44,3 +44,12 @@ we can create and use that as a test book/site in the extension too to quickly f
 9. **Listing labels.** DSCI 521's `code-labels.lua` comes along:
    every `bash` listing is labelled "Terminal" and every `out` listing "Output".
    Dan chose "Port it (Recommended)".
+
+## Grilling
+
+10. **Test site shape.** The deployed demo is a Quarto book:
+    DSCI 521's conventions page, a gallery of every callout and listing,
+    and the project docs as chapters.
+    A one-page website project also renders in CI only,
+    to catch website-specific breakage before DSCI 521 adopts the extension.
+    Dan chose "A. Book demo + website check (Recommended)".
