@@ -80,10 +80,13 @@ From the prototype (Q&A 18):
   The layer comes after the extension's, and `$brand-*` names work in it.
   A plain list (`theme: [extra.scss]`) crashes Quarto.
 - **Add or recolour callout types** with its own `custom-callout:` keys,
-  which deep-merge over the extension's (Q&A 19).
+  which deep-merge over the extension's (Q&A 19). custom-callout uses the hex for the
+  light-mode border and fill only, so the icon's colour and the dark-mode colours come from
+  rules in the book's own layer, as the how-to shows (Task 5's review).
 - **Turn on the MDS logo** by pointing its sidebar or navbar logo at the bundled file (Q&A 16).
 - **Not** replace the brand piecemeal: a book's own `_brand.yml` is silently ignored, and a
-  top-level `brand:` replaces the whole brand, so it must define every colour the styles use.
+  top-level `brand:` replaces the whole brand: inline, it fails with an undefined `$brand-*`
+  variable, and only a `brand:` file holding a complete copy renders (Task 5's review).
 
 ### The test book
 
@@ -139,14 +142,14 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 | S05 | an author writes a `bash`, an `out` and a `filename=` listing | labels "Terminal", "Output" and the filename | Tasks 2, 3 | `tests/check-render.sh` | built |
 | S06 | an author adds a quizdown quiz | the quiz renders in the brand's colours in both modes | Tasks 2, 3 | `tests/check-render.sh` (assets and theme); the preview, by eye | built |
 | S07 | an author writes a `.term` console window | a dark terminal window with coloured spans | Tasks 3, 4 | the Callouts or Conventions page in the preview | built |
-| S08 | an MDS book turns on the logo with one line | the MDS logo in its sidebar | Task 5 | the website check uses it; `tests/check-render.sh` | planned |
-| S09 | a book adds its own SCSS layer | its rules apply after the extension's, in both modes | Task 5 | the website check uses one; `tests/check-render.sh` | planned |
-| S10 | a book recolours a callout or adds a type | its keys merge over the extension's | Task 5 | the website check adds one; `tests/check-render.sh` | planned |
+| S08 | an MDS book turns on the logo with one line | the MDS logo in its sidebar | Task 5 | the website check uses it; `tests/check-render.sh` | built |
+| S09 | a book adds its own SCSS layer | its rules apply after the extension's, in both modes | Task 5 | the website check uses one; `tests/check-render.sh` | built |
+| S10 | a book recolours a callout or adds a type | its keys merge over the extension's | Task 5 | the website check adds one; `tests/check-render.sh` | built |
 | S11 | an author executes R and Python cells | output renders under the brand | Task 3 | the Conventions page renders in `make check` | built |
 | S12 | someone asks where a file came from | the provenance page links its 521 original at `991bae89cba9` and says what changed | Task 6 | the Where it comes from page | planned |
 | S13 | a PR is opened, updated, merged mid-build or closed | a preview link is commented; it updates; the merge leaves no stray preview; closing removes it | Task 1 | `pr.yml` is the book's proven workflow plus per-PR cancel; proven when a PR is first opened here (Q&A 29) | built |
 | S14 | a push lands on `main` | the demo deploys to `gh-pages`, keeping `pr-preview/` and `.nojekyll` | Task 1 | every publish run on `main` | verified |
-| S15 | a website project (521's shape) uses the extension | it renders with the same brand and components | Task 5 | `tests/website/` in `make check` | planned |
+| S15 | a website project (521's shape) uses the extension | it renders with the same brand and components | Task 5 | `tests/website/` in `make check` | built |
 
 ### Later
 

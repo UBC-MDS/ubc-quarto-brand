@@ -10,7 +10,7 @@
 
 **Spec:** `docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md`
 
-**Now:** Task 5: The website check and the how-to, open.
+**Now:** Task 6: Where it comes from, open.
 
 ## Global Constraints
 
@@ -957,6 +957,8 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 **Tier:** 2 · **Scenarios:** S08, S09, S10, S15
 
+> **Built differently** (closed 2026-10-30; commits fa54165, 0f3bc33, 1f6a3c9): the `test` target's help says it renders the website check too; Quarto's own `tests/website/.gitignore` is committed. The review found the how-to's callout section wrong: custom-callout colours only the light-mode border and fill, so the how-to now gives the theme rules for icons and dark mode, with each palette colour's dark pair, and the website recolours `activity` and carries those rules, checked by a new `expect_last` helper. The same fix corrected three more how-to claims and added the navbar logo.
+
 **Files:**
 - Create: `tests/website/_quarto.yml`, `tests/website/index.qmd`, `tests/website/extra.scss`
 - Modify: `chapters/using.qmd` (the placeholder becomes the how-to), `Makefile` (`test`), `tests/check-render.sh`, `docs/_overview.qmd` (the `site` node turns solid)
@@ -965,9 +967,9 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 - Consumes: Task 2's extension; Task 1's `make test`; Task 4's `expect_flat` (custom-callout writes each rule across two lines).
 - Produces: `tests/website/_site/index.html`, rendered from a copy of the extension at `tests/website/_extensions/UBC-MDS/ubc/`, the folder a GitHub install creates.
 
-- [ ] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
+- [x] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
 
-- [ ] **Step 1: Write the failing test.** Insert before `exit $fail` in `tests/check-render.sh`:
+- [x] **Step 1: Write the failing test.** Insert before `exit $fail` in `tests/check-render.sh`:
 
 ```bash
 # --- Task 5: a website project using a GitHub-style install (S08, S09, S10, S15)
@@ -986,9 +988,9 @@ expect "website: its own layer, light" '\.website-check-marker\{color:#8a6d2b\}'
 expect "website: its own layer, dark"  '\.website-check-marker\{color:#8a6d2b\}'                     "$SDARK"
 ```
 
-- [ ] **Step 2: Run it; watch it fail.** `make test`. Expected: `FAIL website page (tests/website/_site/index.html missing)`.
+- [x] **Step 2: Run it; watch it fail.** `make test`. Expected: `FAIL website page (tests/website/_site/index.html missing)`.
 
-- [ ] **Step 3: Write the website.** `tests/website/_quarto.yml`:
+- [x] **Step 3: Write the website.** `tests/website/_quarto.yml`:
 
 ```yaml
 # A one-page website (DSCI 521's project type) using the extension the way a
@@ -1057,7 +1059,7 @@ quarto render
 ```
 ````
 
-- [ ] **Step 4: Render it in `make test`.** In the `Makefile`'s `test` recipe, insert before `tests/check-render.sh`:
+- [x] **Step 4: Render it in `make test`.** In the `Makefile`'s `test` recipe, insert before `tests/check-render.sh`:
 
 ```make
 	rm -rf tests/website/_extensions tests/website/_site
@@ -1067,7 +1069,7 @@ quarto render
 	@if grep -E 'WARN|ERROR' .render-website.log; then echo "Quarto warned or failed: see .render-website.log"; exit 1; fi
 ```
 
-- [ ] **Step 5: Write the how-to,** replacing the placeholder `chapters/using.qmd`:
+- [x] **Step 5: Write the how-to,** replacing the placeholder `chapters/using.qmd`:
 
 ````markdown
 ---
@@ -1180,9 +1182,9 @@ Quizzes are written in a `quizdown` code block;
 the [conventions page](book-conventions.qmd) shows each kind.
 ````
 
-- [ ] **Step 6: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN` in either log.
+- [x] **Step 6: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN` in either log.
 
-- [ ] **Step 7: Commit.** Write the message to a file:
+- [x] **Step 7: Commit.** Write the message to a file:
 
 ```text
 test(website): 🤖 check a website install and write the how-to
@@ -1201,7 +1203,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
   `git add tests/website/_quarto.yml tests/website/index.qmd tests/website/extra.scss chapters/using.qmd Makefile tests/check-render.sh docs/_overview.qmd`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
-- [ ] **Step 8: Review, look forward, close.** Tier 2: Matt Pocock's `code-review` from `.git/TASK_BASE`, two axes in two subagents. Close with the boxes ticked, **Now** `Task 6: Where it comes from, open.`, the spec's S08, S09, S10 and S15 rows `built`, and the close message as in Task 2 with `Task 5: The website check and the how-to`.
+- [x] **Step 8: Review, look forward, close.** Tier 2: Matt Pocock's `code-review` from `.git/TASK_BASE`, two axes in two subagents. Close with the boxes ticked, **Now** `Task 6: Where it comes from, open.`, the spec's S08, S09, S10 and S15 rows `built`, and the close message as in Task 2 with `Task 5: The website check and the how-to`.
 
 ***
 
@@ -1406,3 +1408,9 @@ Deferred findings, a row each.
 | Task 2 | Minor | several | the pin `991bae89cba9` is repeated in the script, the spec, commit bodies and the provenance page | open |
 | Task 2 | Minor | `index.qmd` | the sidebar numbers Home "1" while the page itself is unnumbered | open |
 | Task 2 | Minor | `tests/check-render.sh` | "home titled in the sidebar" also matches the breadcrumb; the two diagram checks show only that some Mermaid block exists | open |
+| Task 5 | Minor | `Makefile` | `uv run quarto render … \| tee` drops Quarto's exit status; the `WARN\|ERROR` grep is case-sensitive, so a lowercase `error:` gets through | open |
+| Task 5 | Minor | `Makefile` | `cp -R _extensions/ubc` copies untracked files into the website check locally, unlike a GitHub install (CI is accurate) | open |
+| Task 5 | Minor | `Makefile` | the book's and the website's render-and-grep steps are duplicated, and the website cannot be re-rendered alone; a `test-website` target would fix both (AGENTS.md *Commands*) | open |
+| Task 5 | Minor | `tests/check-render.sh` | `SLIGHT` and `SDARK` read as "slight"; no `exists` guards for them; `SITE` and `BOOK` are relative, so the script runs only from the repo root | open |
+| Task 5 | Minor | `chapters/using.qmd` | the palette table is a third hand-kept copy of `brand.yml`'s hex, after `_extension.yml`; nothing checks it | open |
+| Task 5 | Minor | `README.md`, `chapters/using.qmd` | `quarto add …@v0.1.0` fails until Dan tags `v0.1.0` | open |
