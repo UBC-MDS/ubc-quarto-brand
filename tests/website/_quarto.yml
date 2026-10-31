@@ -24,3 +24,5 @@ custom-callout:
     icon: true
     icon-symbol: "fa-flask"
     color: "#A6192E"
+  activity:
+    color: "#0077C8"

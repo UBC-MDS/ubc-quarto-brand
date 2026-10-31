@@ -10,6 +10,13 @@ expect() { # expect <description> <pattern> <file>: case-insensitive extended re
 expect_flat() { # expect, across line breaks: the file's newlines read as spaces
   if tr '\n' ' ' < "$3" 2>/dev/null | grep -q -i -E -- "$2"; then echo "ok   $1"; else echo "FAIL $1 ($3)"; fail=1; fi
 }
+expect_last() { # expect_last <description> <pattern> <value> <file>: the last match ends in <value>, so it wins the cascade
+  last=$(grep -o -i -E -- "$2" "$4" 2>/dev/null | tail -1 || true)
+  case "$(printf '%s' "$last" | tr 'A-F' 'a-f')" in
+    *"$3") echo "ok   $1" ;;
+    *) echo "FAIL $1 ($4: ${last:-no match})"; fail=1 ;;
+  esac
+}
 exists() { # exists <description> <path>
   if [ -e "$2" ]; then echo "ok   $1"; else echo "FAIL $1 ($2 missing)"; fail=1; fi
 }
@@ -119,5 +126,11 @@ expect_flat "website: the brand's exercise" 'div\.callout-exercise\.callout \{ *
 expect_flat "website: its own callout type" 'div\.callout-lab\.callout \{ *border-left-color: ?#A6192E'   "$SITE/index.html"
 expect "website: its own layer, light" '\.website-check-marker\{color:#8a6d2b\}'                     "$SLIGHT"
 expect "website: its own layer, dark"  '\.website-check-marker\{color:#8a6d2b\}'                     "$SDARK"
+# S10: a recolour, and the rules custom-callout leaves to a book's layer (icons, dark mode)
+expect_flat "website: a recoloured callout" 'div\.callout-activity\.callout \{ *border-left-color: ?#0077C8' "$SITE/index.html"
+expect_last "website: recoloured icon"      '\}div\.callout-activity \.callout-icon::before\{color:#[0-9a-f]{6}'                   '#0077c8' "$SLIGHT"
+expect_last "website: recoloured, dark"     'body\.quarto-dark div\.callout-activity\.callout\{border-left-color:#[0-9a-f]{6}'    '#00a7e1' "$SDARK"
+expect_last "website: own type's icon"      '\}div\.callout-lab \.callout-icon::before\{[^}]*color:#[0-9a-f]{6}'                   '#a6192e' "$SLIGHT"
+expect_last "website: own type, dark"       'body\.quarto-dark div\.callout-lab\.callout\{border-left-color:#[0-9a-f]{6}'         '#f08080' "$SDARK"
 
 exit $fail

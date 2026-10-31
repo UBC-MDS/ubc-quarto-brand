@@ -22,8 +22,8 @@ format: ubc-html
 ```
 
 That one line brings the theme, the listing labels, the callouts and the quizzes.
-The brand's colours, fonts and dark mode apply to every page as soon as the extension
-is installed, whatever format a page uses.
+The brand's colours, fonts and dark mode reach every HTML page as soon as the extension
+is installed, even one with a plain `format: html`.
 
 ## Update it
 
@@ -46,7 +46,7 @@ book:
     logo-alt: "MDS logo"
 ```
 
-In a website, the same two keys go under `website: sidebar:`.
+In a website, the same two keys go under `website: sidebar:`, or under `website: navbar:` for a logo in the navbar.
 
 ## Add your own styles
 
@@ -60,14 +60,17 @@ format:
       dark: [extra.scss]
 ```
 
-Your layer comes after the extension's, so its rules win,
-and the brand's colours are available in it as `$brand-<name>`, for example `$brand-ubc-blue`.
+Your layer comes after the extension's, so a rule of yours wins over one of the extension's
+with an equally specific selector.
+The extension's dark-mode rules start with `body.quarto-dark`; start yours the same way to override them.
+The brand's colours are available in your layer as `$brand-<name>`, for example `$brand-ubc-blue`.
 A single list, `theme: [extra.scss]`, makes Quarto stop with an error.
 
 ## Add or recolour a callout type
 
 Add `custom-callout:` keys to your `_quarto.yml`. They merge with the extension's:
-a new type is added, and a type the extension already has takes your values.
+a new type is added, and a type the extension already has takes the keys you give it.
+This adds a `lab` type and recolours `activity`:
 
 ```yaml
 custom-callout:
@@ -76,20 +79,58 @@ custom-callout:
     icon: true
     icon-symbol: "fa-flask"
     color: "#A6192E"
+  activity:
+    color: "#0077C8"
 ```
 
 The colour must be a literal hex, because this YAML cannot read the brand's Sass.
-Take it from the palette:
+custom-callout uses it for the callout's border and fill in light mode, and nothing else.
+The icon's colour and the dark-mode colours come from theme rules:
+the extension has them for its own four types,
+so a type you add gets an uncoloured icon and the same border on the dark page,
+and a type you recolour keeps the extension's icon colour and dark-mode border.
+Add the rules to your own layer (see above),
+taking each dark colour from the light one's pair in the table below:
 
-| Name | Hex |
-|---|---|
-| `ubc-blue` | `#002145` |
-| `ubc-blue-deep` | `#0055B7` |
-| `ubc-blue-mid` | `#0077C8` |
-| `ubc-blue-bright` | `#00A7E1` |
-| `ubc-gold-dark` | `#8A6D2B` |
-| `mds-green` | `#1C5F2E` |
-| `alert-red` | `#A6192E` |
+```scss
+/*-- scss:rules --*/
+
+div.callout-lab .callout-icon::before {
+  margin-right: 0.4em; /* only for a new type: the extension spaces its own */
+  color: $brand-alert-red;
+}
+
+div.callout-activity .callout-icon::before {
+  color: $brand-ubc-blue-mid;
+}
+
+body.quarto-dark {
+  div.callout-lab.callout {
+    border-left-color: $brand-alert-red-light;
+  }
+
+  div.callout-lab .callout-icon::before {
+    color: $brand-alert-red-light;
+  }
+
+  div.callout-activity.callout {
+    border-left-color: $brand-ubc-blue-bright;
+  }
+
+  div.callout-activity .callout-icon::before {
+    color: $brand-ubc-blue-bright;
+  }
+}
+```
+
+| Light mode | Hex | Its dark-mode pair | Hex |
+|---|---|---|---|
+| `ubc-blue` | `#002145` | `ubc-blue-pale` | `#97D4E9` |
+| `ubc-blue-deep` | `#0055B7` | `ubc-blue-light` | `#40B4E5` |
+| `ubc-blue-mid` | `#0077C8` | `ubc-blue-bright` | `#00A7E1` |
+| `ubc-gold-dark` | `#8A6D2B` | `ubc-gold` | `#A89565` |
+| `mds-green` | `#1C5F2E` | `mds-green-light` | `#88D4AB` |
+| `alert-red` | `#A6192E` | `alert-red-light` | `#F08080` |
 
 The [Callouts](callouts.qmd) page shows every type the extension defines.
 
@@ -97,8 +138,9 @@ The [Callouts](callouts.qmd) page shows every type the extension defines.
 
 You cannot replace part of the brand.
 A `_brand.yml` of your own is ignored, because the extension's brand takes its place.
-A top-level `brand:` key replaces the whole brand,
-so it would have to define every colour the extension's styles use, or the render fails.
+A top-level `brand:` key replaces the whole brand:
+written inline, it stops the render with an undefined `$brand-*` variable,
+and only `brand:` pointing at a complete copy of the extension's `brand.yml` renders.
 To change how things look, add a theme layer instead.
 
 ## Executed code and quizzes

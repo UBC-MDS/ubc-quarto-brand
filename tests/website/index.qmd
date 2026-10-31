@@ -10,6 +10,10 @@ The brand's exercise callout.
 This website's own callout type.
 :::
 
+:::{.activity}
+The brand's activity callout, recoloured by this website.
+:::
+
 ```bash
 quarto render
 ```

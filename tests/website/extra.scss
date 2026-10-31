@@ -4,3 +4,34 @@
 .website-check-marker {
   color: $brand-ubc-gold-dark;
 }
+
+// custom-callout colours only a callout's light-mode border and fill. The
+// icon and the dark-mode colours of this website's own type, `lab`, and of the
+// activity it recolours come from here, as the how-to says. Each dark colour
+// is its light one's dark pair in brand.yml.
+div.callout-lab .callout-icon::before {
+  margin-right: 0.4em;
+  color: $brand-alert-red;
+}
+
+div.callout-activity .callout-icon::before {
+  color: $brand-ubc-blue-mid;
+}
+
+body.quarto-dark {
+  div.callout-lab.callout {
+    border-left-color: $brand-alert-red-light;
+  }
+
+  div.callout-lab .callout-icon::before {
+    color: $brand-alert-red-light;
+  }
+
+  div.callout-activity.callout {
+    border-left-color: $brand-ubc-blue-bright;
+  }
+
+  div.callout-activity .callout-icon::before {
+    color: $brand-ubc-blue-bright;
+  }
+}
