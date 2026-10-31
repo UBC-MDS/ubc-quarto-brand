@@ -10,7 +10,7 @@
 
 **Spec:** `docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md`
 
-**Now:** Task 1: Environment, test book skeleton and CI, open.
+**Now:** Task 2: The ubc extension, open.
 
 ## Global Constraints
 
@@ -36,6 +36,10 @@
 
 **Tier:** 3 · **Scenarios:** S13, S14
 
+**Ruling:** test-utc re-runs the output checks, not the render: nothing rendered depends on the time zone; costs a render-time date bug going unseen.
+
+**Ruling:** the plan's index.qmd listing escapes its shortcode (`{{{< … >}}}`), because Quarto expanded it when rendering this plan as a page; costs a reader copying three braces.
+
 **Files:**
 - Create: `.python-version`, `pyproject.toml`, `uv.lock`, `DESCRIPTION`, `renv.lock`, `.Rprofile`, `renv/activate.R`, `renv/settings.json`, `renv/.gitignore`, `.gitignore`, `_quarto.yml`, `index.qmd`, `tests/check-render.sh`, `.github/workflows/pr.yml`, `.github/workflows/publish.yml`
 - Modify: `Makefile`
@@ -44,9 +48,9 @@
 - Consumes: nothing.
 - Produces: `make setup`, `make test` (renders the book into `_book/`, fails on any Quarto `WARN` or `ERROR`, then runs `tests/check-render.sh`), `make test-utc`, `make lint`, `make docs`, `make leaks`, `make check`; `tests/check-render.sh` with `expect <description> <pattern> <file>` (case-insensitive extended regex) and `exists <description> <path>`, and `BOOK=_book`. Later tasks append sections to it.
 
-- [ ] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
+- [x] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
 
-- [ ] **Step 1: Write the failing test,** `tests/check-render.sh`, and `chmod 755` it:
+- [x] **Step 1: Write the failing test,** `tests/check-render.sh`, and `chmod 755` it:
 
 ```bash
 #!/usr/bin/env bash
@@ -75,9 +79,9 @@ exists "how we work page"  "$BOOK/AGENTS.html"
 exit $fail
 ```
 
-- [ ] **Step 2: Run it; watch it fail.** `tests/check-render.sh`. Expected: `FAIL home page (_book/index.html missing)` and exit 1.
+- [x] **Step 2: Run it; watch it fail.** `tests/check-render.sh`. Expected: `FAIL home page (_book/index.html missing)` and exit 1.
 
-- [ ] **Step 3: Create the Python and R environments** for the executed cells (Task 3):
+- [x] **Step 3: Create the Python and R environments** for the executed cells (Task 3):
 
 ```bash
 printf '3.14\n' > .python-version
@@ -98,7 +102,7 @@ Rscript -e 'renv::settings$snapshot.type("explicit"); options(repos = c(CRAN = "
 
 Expected: `uv.lock`, `.Rprofile`, `renv/`, and a `renv.lock` recording R 4.6.2 and the four packages.
 
-- [ ] **Step 4: Write `.gitignore`:**
+- [x] **Step 4: Write `.gitignore`:**
 
 ```text
 /_book/
@@ -115,7 +119,7 @@ Expected: `uv.lock`, `.Rprofile`, `renv/`, and a `renv.lock` recording R 4.6.2 a
 .superpowers/
 ```
 
-- [ ] **Step 5: Write the book,** `_quarto.yml`:
+- [x] **Step 5: Write the book,** `_quarto.yml`:
 
 ```yaml
 project:
@@ -157,7 +161,7 @@ and `index.qmd`, whose title is the README's first heading:
 
   (The plan writes the shortcode with Quarto's triple-brace escape, so this page renders on the site; the file itself holds the two-brace form.)
 
-- [ ] **Step 6: Replace the `Makefile`** (GNU make 3.81):
+- [x] **Step 6: Replace the `Makefile`** (GNU make 3.81):
 
 ```make
 # ubc-quarto-brand: a command anyone runs more than once is a target here (`make help`).
@@ -199,7 +203,7 @@ clean: ## Remove rendered output
 
 `test-utc` re-runs the checks rather than the render: nothing the render produces depends on the time zone (Ruling).
 
-- [ ] **Step 7: Write `.github/workflows/pr.yml`:**
+- [x] **Step 7: Write `.github/workflows/pr.yml`:**
 
 ```yaml
 on:
@@ -287,7 +291,7 @@ jobs:
           source-dir: _book
 ```
 
-- [ ] **Step 8: Write `.github/workflows/publish.yml`:**
+- [x] **Step 8: Write `.github/workflows/publish.yml`:**
 
 ```yaml
 on:
@@ -361,9 +365,9 @@ jobs:
           force: false
 ```
 
-- [ ] **Step 9: Run the checks; they pass.** `make setup && make check`. Expected: every `ok` line, `no leaks found`, actionlint silent, and no `FAIL`.
+- [x] **Step 9: Run the checks; they pass.** `make setup && make check`. Expected: every `ok` line, `no leaks found`, actionlint silent, and no `FAIL`.
 
-- [ ] **Step 10: Commit.** Write the message to a file:
+- [x] **Step 10: Commit.** Write the message to a file:
 
 ```text
 build(repo): 🤖 add the test book skeleton, the environment and CI
@@ -383,7 +387,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
   `git add .python-version pyproject.toml uv.lock DESCRIPTION renv.lock .Rprofile renv/activate.R renv/settings.json renv/.gitignore .gitignore _quarto.yml index.qmd tests/check-render.sh .github/workflows/pr.yml .github/workflows/publish.yml Makefile`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push`.
 
-- [ ] **Step 11: Review, look forward, close.** Tier 3: a self-review under *Standards* and *Spec*, plus the mechanical checks. Close with the plan's boxes ticked, **Now** set to `Task 2: The ubc extension, open.`, the spec's S13 and S14 rows noting the workflows exist (status stays `planned` until the PR and the publish run prove them), and this message:
+- [x] **Step 11: Review, look forward, close.** Tier 3: a self-review under *Standards* and *Spec*, plus the mechanical checks. Close with the plan's boxes ticked, **Now** set to `Task 2: The ubc extension, open.`, the spec's S13 and S14 rows noting the workflows exist (status stays `planned` until the PR and the publish run prove them), and this message:
 
 ```text
 docs(plan): 🤖 close Task 1: Environment, test book skeleton and CI
