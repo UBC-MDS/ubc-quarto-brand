@@ -10,7 +10,7 @@
 
 **Spec:** `docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md`
 
-**Now:** Phase end, step 2: The rest of the ledger copied into the plan.
+**Now:** Phase end, step 3: The docs check.
 
 ## Global Constraints
 
@@ -700,6 +700,8 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 **Tier:** 3 · **Scenarios:** S02, S03, S04, S07
 
+**Ruling** (pre-flight, from the ledger): Q&A 26's callout styling changes `_extension.yml`'s theme lists, which Task 2 wrote; Task 4 makes that edit, the spec after Q&A 26 being the authority. Task 2's Mermaid fix later made the layer and its theme-list entries, so Task 4 only filled them. If wrong: a theme-list edit moves between tasks.
+
 > **Built differently** (closed 2026-10-30; commit e31b501): two planned checks were wrong. The exercise count ran `grep` on the missing page under `pipefail`, which ended the script there and hid every later check; it ends in `|| true`. custom-callout writes each rule across two lines, so the four page colour checks use a new `expect_flat` helper that reads newlines as spaces.
 
 **Files:**
@@ -1211,6 +1213,8 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 **Tier:** 3 · **Scenarios:** S12
 
+**Ruling** (pre-flight, from the ledger): Q&A 27's licence files land in Task 6, with the provenance page. If wrong: nothing.
+
 > **Built differently** (closed 2026-10-30; commit 6e91f91): the page and the README name quizdown's `LICENSE` among the files not from DSCI 521, and the re-fetch sentence says "every DSCI 521 file"; the check for the note on 521's comments allows the curly apostrophe's three bytes, so it does not depend on the locale.
 
 **Ruling** (Task 2's forward review): `LICENSE.md` uses CC BY-NC-SA 4.0 for the docs, as Q&A 27 records, although the reproducible book it names is split: its README says CC BY-NC-SA 4.0, its `LICENSE.md` CC BY 4.0. Dan is asked before he tags `v0.1.0`. If wrong: one licence paragraph.
@@ -1392,8 +1396,14 @@ sets **Now** to the next step.
 
 **Ruling:** Font Awesome's `LICENSE.txt` ships beside its font. Q&A 27 assumed its terms were in its CSS, which holds none, and the SIL Open Font License needs its notice to travel with the font. If wrong: one extra file.
 
+**From the ledger** (step 2): each task's completion, with its last `make check`:
+Task 1 `c57b394..47f017a`, exit 0; Task 2 `a63a61c..540499e`, 68 ok;
+Task 3 `540499e..dc9070f`, 100 ok; Task 4 `dc9070f..82fdb9c`, 154 ok;
+Task 5 `82fdb9c..fe66512`, 184 ok; Task 6 `fe66512..a3d43e1`, 218 ok;
+the final fix pass, 226 ok. No leaks at any of them.
+
 - [x] **1. The final whole-branch review:** Matt Pocock's `code-review`, two axes, from `git merge-base main HEAD`; one fix round and one scoped re-review; a ruling on whatever is left. Each fix is its own commit.
-- [ ] **2. The rest of the ledger copied into the plan:** whatever `.superpowers/sdd/2026-10-30-ubc-quarto-brand/progress.md` holds that no closing commit carries, under its task.
+- [x] **2. The rest of the ledger copied into the plan:** whatever `.superpowers/sdd/2026-10-30-ubc-quarto-brand/progress.md` holds that no closing commit carries, under its task.
 - [ ] **3. The docs check:** every doc the branch touched is true (the README, the spec's design and scenario rows, the Architecture page with every built part solid, the how-to, the provenance page, `LICENSE.md`, `AGENTS.md`).
 - [ ] **4. A dated `CHANGELOG.md` entry** for `v0.1.0` (the extension, the test book, CI and previews, from DSCI 521 at `991bae89cba9`), and the spec's status line set to `PR open (#N)`, its number filled in once step 5 opens the PR.
 - [ ] **5. The push and the publish run** (Q&A 29: no PR here): `main` pushed, `publish.yml` green, S14 checked on the live site.
