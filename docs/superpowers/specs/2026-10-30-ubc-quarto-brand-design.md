@@ -146,7 +146,7 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 | S09 | a book adds its own SCSS layer | its rules apply after the extension's, in both modes | Task 5 | the website check uses one; `tests/check-render.sh` | built |
 | S10 | a book recolours a callout or adds a type | its keys merge over the extension's | Task 5 | the website check adds one; `tests/check-render.sh` | built |
 | S11 | an author executes R and Python cells | output renders under the brand | Task 3 | the Conventions page renders in `make check` | built |
-| S12 | someone asks where a file came from | the provenance page links its 521 original at `991bae89cba9` and says what changed | Task 6 | the Where it comes from page | planned |
+| S12 | someone asks where a file came from | the provenance page links its 521 original at `991bae89cba9` and says what changed | Task 6 | the Where it comes from page | built |
 | S13 | a PR is opened, updated, merged mid-build or closed | a preview link is commented; it updates; the merge leaves no stray preview; closing removes it | Task 1 | `pr.yml` is the book's proven workflow plus per-PR cancel; proven when a PR is first opened here (Q&A 29) | built |
 | S14 | a push lands on `main` | the demo deploys to `gh-pages`, keeping `pr-preview/` and `.nojekyll` | Task 1 | every publish run on `main` | verified |
 | S15 | a website project (521's shape) uses the extension | it renders with the same brand and components | Task 5 | `tests/website/` in `make check` | built |
@@ -172,7 +172,11 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 - **[Dan] settings:** Pages from the `gh-pages` branch (after the first publish creates it),
   read and write workflow permissions, a ruleset on `main`.
 - **plan-driven-development's hooks and leak check aren't built yet:**
-  every push of `build` follows `make leaks`.
+  every push to `main` follows `make leaks` (Q&A 29).
+- **Licence:** MIT for code, CC BY-NC-SA 4.0 for docs, the MDS logo excluded (Q&A 27).
+  custom-callout publishes no licence: [Dan] asks its author for one.
+  The reproducible book Q&A 27 follows is itself split, CC BY-NC-SA 4.0 in its README and
+  CC BY 4.0 in its `LICENSE.md`: [Dan] confirms the docs licence here before tagging `v0.1.0`.
 
 ## Revisions
 
@@ -180,6 +184,8 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 - 2026-10-30: merging waits for Dan; PRs get previews (`1027692`, `fd5ebe4`).
 - 2026-10-30: test site, quizzes, executed cells, fonts, logo, versioning, packaging, callouts
   (`47e684a`, `d126ab8`, `a5fc3e2`, `09f595d`, `c90002b`, `750f91d`, `fd5ebe4`, `50f7bf3`).
+- 2026-10-30: the extension completes the callout styling in its own layer (Q&A 26, `779c67f`);
+  a split licence, as in the reproducible book (Q&A 27, `4e23584`).
 - 2026-10-30: approved for a one-shot build (Q&A 28); work goes straight to `main`, review happens in the adopting book (Q&A 29).
 - 2026-10-30: the conventions page as-is, provenance docs, design sections 1 to 3
   (`00a0f5b`, `0489284`, `fd8ff72`, `70fa211`, `6447ee8`).

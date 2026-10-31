@@ -10,7 +10,7 @@
 
 **Spec:** `docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md`
 
-**Now:** Task 6: Where it comes from, open.
+**Now:** Phase end, step 1: The final whole-branch review.
 
 ## Global Constraints
 
@@ -1211,6 +1211,8 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 **Tier:** 3 · **Scenarios:** S12
 
+> **Built differently** (closed 2026-10-30; commit 6e91f91): the page and the README name quizdown's `LICENSE` among the files not from DSCI 521, and the re-fetch sentence says "every DSCI 521 file"; the check for the note on 521's comments allows the curly apostrophe's three bytes, so it does not depend on the locale.
+
 **Ruling** (Task 2's forward review): `LICENSE.md` uses CC BY-NC-SA 4.0 for the docs, as Q&A 27 records, although the reproducible book it names is split: its README says CC BY-NC-SA 4.0, its `LICENSE.md` CC BY 4.0. Dan is asked before he tags `v0.1.0`. If wrong: one licence paragraph.
 
 **Ruling** (Task 2's forward review): the MIT copyright holder is "UBC Master of Data Science", the extension's author in `_extension.yml`; DSCI 521 publishes no licence or holder. If wrong: one line, before the tag.
@@ -1223,9 +1225,9 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 - Consumes: Task 2's `scripts/fetch-521.sh`, `make fetch-521` and its layer `ubc.scss`, `ubc-dark.scss` and `ubc-quizdown.html`; Task 3's conventions page.
 - Produces: `_book/chapters/provenance.html`.
 
-- [ ] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
+- [x] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
 
-- [ ] **Step 1: Write the failing test.** Insert before `exit $fail` in `tests/check-render.sh`:
+- [x] **Step 1: Write the failing test.** Insert before `exit $fail` in `tests/check-render.sh`:
 
 ```bash
 # --- Task 6: where it comes from (S12)
@@ -1243,9 +1245,9 @@ exists "the licence"                    LICENSE.md
 exists "quizdown's licence beside it"   _extensions/ubc/_extensions/quizdown/LICENSE
 ```
 
-- [ ] **Step 2: Run it; watch it fail.** `make test`. Expected: `FAIL provenance page (_book/chapters/provenance.html missing)`.
+- [x] **Step 2: Run it; watch it fail.** `make test`. Expected: `FAIL provenance page (_book/chapters/provenance.html missing)`.
 
-- [ ] **Step 3: Write `chapters/provenance.qmd`:**
+- [x] **Step 3: Write `chapters/provenance.qmd`:**
 
 ````markdown
 ---
@@ -1294,7 +1296,7 @@ Once DSCI 521 uses this extension itself
 changes flow the other way: they are made here, and DSCI 521 updates to the new release.
 ````
 
-- [ ] **Step 4: Write the licence (Q&A 27).** `LICENSE.md`:
+- [x] **Step 4: Write the licence (Q&A 27).** `LICENSE.md`:
 
 ````markdown
 # Licence
@@ -1342,7 +1344,7 @@ Attribution-NonCommercial-ShareAlike 4.0 International licence
 
   quizdown's licence, from its own repository at the commit its `LICENSE` was read: `curl -sSfL https://raw.githubusercontent.com/parmsam/quarto-quizdown/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE -o _extensions/ubc/_extensions/quizdown/LICENSE`. Expected: its first lines are `MIT License` and `Copyright (c) 2025 Sam Parmar`.
 
-- [ ] **Step 5: Add the chapter and point the README at it.** In `_quarto.yml`, add `chapters/provenance.qmd` to `project: render:` and, under the part "The brand", after `chapters/using.qmd`, `- chapters/provenance.qmd`. In `README.md`, after its first paragraph, add:
+- [x] **Step 5: Add the chapter and point the README at it.** In `_quarto.yml`, add `chapters/provenance.qmd` to `project: render:` and, under the part "The brand", after `chapters/using.qmd`, `- chapters/provenance.qmd`. In `README.md`, after its first paragraph, add:
 
 ```markdown
 Every file but the extension's own layer comes from the DSCI 521 book at one pinned commit;
@@ -1354,9 +1356,9 @@ Code is under MIT and the docs under CC BY-NC-SA 4.0; the MDS logo is excluded
 
   In `docs/_overview.qmd`, add `prov["Where it comes from"] --> book` and remove the planned `pages` node and its edge.
 
-- [ ] **Step 6: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN`.
+- [x] **Step 6: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN`.
 
-- [ ] **Step 7: Commit.** Write the message to a file:
+- [x] **Step 7: Commit.** Write the message to a file:
 
 ```text
 docs(book): 🤖 add where each file comes from in DSCI 521
@@ -1375,7 +1377,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
   `git add chapters/provenance.qmd LICENSE.md _extensions/ubc/_extensions/quizdown/LICENSE _quarto.yml tests/check-render.sh README.md docs/_overview.qmd`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
-- [ ] **Step 8: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`. Close with the boxes ticked, **Now** `Phase end, step 1: The final whole-branch review.`, the spec's S12 row `built`, and the close message as in Task 3 with `Task 6: Where it comes from`.
+- [x] **Step 8: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`. Close with the boxes ticked, **Now** `Phase end, step 1: The final whole-branch review.`, the spec's S12 row `built`, and the close message as in Task 3 with `Task 6: Where it comes from`.
 
 ***
 
