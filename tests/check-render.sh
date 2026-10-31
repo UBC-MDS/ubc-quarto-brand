@@ -45,6 +45,8 @@ expect "exercise number in the title"  'counter\(exercise\)'                    
 expect "console window"                '\.term\{background:#1d2129'                                  "$LIGHT"
 expect "quiz colours, light"           '--mds-quiz-fg: ?#002145'                                     "$LIGHT"
 expect "quiz hover, dark"              '--mds-quiz-press: ?brightness\(1\.45\)'                       "$DARK"
+expect "diagram subgraph fill, light"  '--mermaid-fg-color--lightest: ?#F2F7FB'                     "$LIGHT"
+expect "diagram subgraph fill, dark"   '--mermaid-fg-color--lightest: ?#0B2540'                     "$DARK"
 expect "dark-mode toggle on Home"      'quarto-color-scheme-toggle'                                  "$BOOK/index.html"
 expect "dark stylesheet linked"        'bootstrap-dark-[0-9a-f]+\.min\.css'                          "$BOOK/index.html"
 expect "quizdown scripts on Home"      'quarto-contrib/quizdown-[0-9.]+/quizdown\.js'                "$BOOK/index.html"

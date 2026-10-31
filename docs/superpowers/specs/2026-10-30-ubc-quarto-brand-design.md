@@ -38,7 +38,8 @@ One extension, `ubc`, in `_extensions/ubc/` (Q&A 18). It contributes two things:
   Quarto merges it into any project with the extension installed, whatever its format,
   so colours, fonts and dark mode apply even to a plain `format: html` page.
 - **A `ubc-html` format** with the theme layers
-  (`light: [brand, styles.scss]`, `dark: [brand, styles.scss, styles-dark.scss]`),
+  (`light: [brand, styles.scss, ubc.scss]`,
+  `dark: [brand, styles.scss, styles-dark.scss, ubc.scss, ubc-dark.scss]`),
   the filters (`code-labels.lua`, `custom-callout`, `quizdown`),
   `include-after-body: quizdown-theme.html`, and the four custom callout types.
 
@@ -50,6 +51,7 @@ A prototype rendered exactly this setup on Quarto 1.11.6, for a book and for a w
 |---|---|---|
 | `brand.yml` | `_brand.yml` | its `meta` (DSCI 521's name and links) removed (Q&A 16) |
 | `styles.scss`, `styles-dark.scss` | the same names | nothing |
+| `ubc.scss`, `ubc-dark.scss` | none: the extension's own layer, after 521's files | readable Mermaid subgraphs; the callout styling 521 leaves out, in Task 4 (Q&A 26) |
 | `code-labels.lua` | the same name | nothing (Q&A 9) |
 | `quizdown-theme.html` | the same name | nothing (Q&A 12) |
 | `MDSlogo.png` | the same name | applied only when a book opts in (Q&A 16) |

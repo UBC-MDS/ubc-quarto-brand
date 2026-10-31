@@ -1,0 +1,9 @@
+/*-- scss:defaults --*/
+
+// Dark-mode values for `ubc.scss`, literal hex for the reason given there.
+
+// The subgraph fill: on the dark body colour, Quarto's lightening gives white,
+// under light label text. `ubc-blue-panel`, the lifted navy for panels:
+$mermaid-fg-color--lightest: #0B2540;
+
+/*-- scss:rules --*/

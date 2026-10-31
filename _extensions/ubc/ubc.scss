@@ -1,0 +1,13 @@
+/*-- scss:defaults --*/
+
+// The extension's own layer, after DSCI 521's files, which stay as fetched
+// (Q&A 22, 26). Its defaults are `!default`, so `ubc-dark.scss` wins in the
+// dark build whichever order Quarto emits the two in. They are literal hex:
+// defaults are emitted before the brand layer defines any `$brand-*`.
+
+// Quarto fills a Mermaid subgraph with `lighten($body-color, 20%)`: a grey on
+// a near-black body colour, but a saturated blue on the brand's navy, which
+// hides the labels inside. `ubc-blue-tint`:
+$mermaid-fg-color--lightest: #F2F7FB !default;
+
+/*-- scss:rules --*/

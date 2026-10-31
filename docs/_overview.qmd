@@ -7,7 +7,7 @@ flowchart LR
     brand["brand.yml<br/>(the project's brand)"]
     fmt["ubc-html format<br/>styles.scss, styles-dark.scss,<br/>code-labels.lua, quizdown-theme.html"]
     emb["embedded extensions<br/>custom-callout, quizdown"]
-    layer["callouts.scss, callouts-dark.scss<br/>(Task 4)"]:::planned
+    layer["ubc.scss, ubc-dark.scss<br/>the extension's own layer"]
   end
   ext --> book["the test book at the root<br/>Home and the project docs"]
   pages["Conventions (Task 3), Callouts (Task 4),<br/>Where it comes from (Task 6)"]:::planned -.-> book

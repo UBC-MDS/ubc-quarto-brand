@@ -13,8 +13,8 @@ contributes:
     html:
       # Precedence is left to right, so styles.scss wins over the brand.
       theme:
-        light: [brand, styles.scss]
-        dark: [brand, styles.scss, styles-dark.scss]
+        light: [brand, styles.scss, ubc.scss]
+        dark: [brand, styles.scss, styles-dark.scss, ubc.scss, ubc-dark.scss]
       filters:
         - code-labels.lua
         - custom-callout
