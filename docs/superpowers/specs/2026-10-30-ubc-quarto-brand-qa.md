@@ -202,3 +202,11 @@ each claim was checked against the code before Dan saw it.
     reproducible-and-trustworthy-workflows book's adoption PR, where Dan reviews the extension in
     use. `pr.yml` stays, for anyone who opens a PR here later. The `build` branch stays as it is
     (deleting branches is a stop).
+
+## Before the tag
+
+30. **The docs licence.** Item 27 chose a split licence "like the book", with CC BY-NC-SA 4.0
+    for the docs. At the phase end the agent found the reproducible book split with itself: its
+    README says CC BY-NC-SA 4.0 and its `LICENSE.md` CC BY 4.0. Asked which covers this
+    project's docs and the test book's text, Dan chose "B. CC BY 4.0", matching the book's
+    `LICENSE.md`: anyone may reuse them, commercially too, with attribution. Code stays MIT.
