@@ -17,6 +17,7 @@ BOOK=_book
 exists "home page"         "$BOOK/index.html"
 expect "home titled in the sidebar" 'chapter-title">ubc-quarto-brand<' "$BOOK/index.html"
 expect "overview diagram on Home" 'class="mermaid' "$BOOK/index.html"
+expect "README sections stay h2 on Home" '<h2[^>]*>Use it in a book' "$BOOK/index.html"
 exists "spec page"         "$BOOK/docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.html"
 exists "kickoff Q&A page"  "$BOOK/docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.html"
 exists "plan page"         "$BOOK/docs/superpowers/plans/2026-10-30-ubc-quarto-brand.html"
