@@ -116,3 +116,11 @@ we can create and use that as a test book/site in the extension too to quickly f
     (`format: ubc-html: theme: light: [extra.scss] dark: [extra.scss]`).
     A prototype rendered this exact setup on Quarto 1.11.6 for a book and a website.
     Dan chose "A. One `ubc` extension (Recommended)".
+
+19. **Callouts.** Dan: "we should have all callout examples, built-ins and new ones".
+    Read as: the extension defines all four custom callout types
+    (activity, exercise, definition, relevance-project), and the test book's gallery shows
+    every callout, Quarto's five built-ins (note, tip, important, warning, caution)
+    and the four custom ones, so each is checked under the brand.
+    A book can still recolour a type or add its own in its `_quarto.yml`:
+    the prototype showed a book's `custom-callout:` settings deep-merge over the extension's.
