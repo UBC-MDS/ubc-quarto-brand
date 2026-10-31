@@ -51,7 +51,7 @@ A prototype rendered this setup, before the extension had a layer of its own, on
 |---|---|---|
 | `brand.yml` | `_brand.yml` | its `meta` (DSCI 521's name and links) removed (Q&A 16) |
 | `styles.scss`, `styles-dark.scss` | the same names | nothing |
-| `ubc.scss`, `ubc-dark.scss`, `ubc-quizdown.html` | none: the extension's own layer, after 521's files | readable Mermaid subgraphs and quiz answer chips; the callout styling 521 leaves out, in Task 4 (Q&A 26) |
+| `ubc.scss`, `ubc-dark.scss`, `ubc-quizdown.html` | none: the extension's own layer, after 521's files | readable Mermaid subgraphs and quiz answer chips; the callout styling 521 leaves out: spaced, coloured icons with dark variants for definition and relevance-project, and the built-ins in brand colours per mode, caution in a derived orange (Q&A 26) |
 | `code-labels.lua` | the same name | nothing (Q&A 9) |
 | `quizdown-theme.html` | the same name | nothing (Q&A 12) |
 | `MDSlogo.png` | the same name | applied only when a book opts in (Q&A 16) |

@@ -11,7 +11,8 @@ flowchart LR
   end
   ext --> book["the test book at the root<br/>Home and the project docs"]
   conv["Conventions"] --> book
-  pages["Callouts (Task 4),<br/>Where it comes from (Task 6)"]:::planned -.-> book
+  gallery["Callouts, Using it in a book"] --> book
+  pages["Where it comes from (Task 6)"]:::planned -.-> book
   ext -.->|"Task 5"| site["tests/website/<br/>installed at _extensions/UBC-MDS/ubc/"]:::planned
   book -->|"make check"| out["_book/"]
   out -->|"publish.yml"| demo["gh-pages: the demo"]

@@ -7,6 +7,9 @@ fail=0
 expect() { # expect <description> <pattern> <file>: case-insensitive extended regex
   if grep -q -i -E -- "$2" "$3" 2>/dev/null; then echo "ok   $1"; else echo "FAIL $1 ($3)"; fail=1; fi
 }
+expect_flat() { # expect, across line breaks: the file's newlines read as spaces
+  if tr '\n' ' ' < "$3" 2>/dev/null | grep -q -i -E -- "$2"; then echo "ok   $1"; else echo "FAIL $1 ($3)"; fail=1; fi
+}
 exists() { # exists <description> <path>
   if [ -e "$2" ]; then echo "ok   $1"; else echo "FAIL $1 ($2 missing)"; fail=1; fi
 }
@@ -71,5 +74,35 @@ expect "activity callouts"             'callout-activity'                       
 expect "exercise callouts"             'callout-exercise'                                            "$CONV"
 expect "a tabset"                      'panel-tabset'                                                "$CONV"
 exists "the figure is copied"          "$BOOK/chapters/img/cheers.png"
+
+# --- Task 4: the callouts gallery (S03, S04, S07)
+CALL="$BOOK/chapters/callouts.html"
+exists "callouts page"                 "$CALL"
+for t in note tip important warning caution; do
+  expect "built-in callout: $t"        "class=\"callout callout-style-default callout-$t"            "$CALL"
+done
+expect "custom callout: activity"      'callout-activity'                                            "$CALL"
+expect "custom callout: definition"    'callout-definition'                                          "$CALL"
+expect "custom callout: relevance"     'Relevance to course project'                                 "$CALL"
+expect_flat "activity colour"               'div\.callout-activity\.callout \{ *border-left-color: ?#0055B7'          "$CALL"
+expect_flat "exercise colour"               'div\.callout-exercise\.callout \{ *border-left-color: ?#1C5F2E'          "$CALL"
+expect_flat "definition colour"             'div\.callout-definition\.callout \{ *border-left-color: ?#8A6D2B'        "$CALL"
+expect_flat "relevance colour"              'div\.callout-relevance-project\.callout \{ *border-left-color: ?#0077C8' "$CALL"
+expect "Font Awesome stylesheet"       'fontawesome\.css'                                            "$CALL"
+expect "a console window"              '<div class="term">'                                          "$CALL"
+n=$(grep -o 'class="callout callout-style-default callout-exercise' "$CALL" 2>/dev/null | wc -l | tr -d ' ' || true)
+if [ "${n:-0}" -ge 2 ]; then echo "ok   two exercises for the numbering"; else echo "FAIL two exercises for the numbering ($n)"; fail=1; fi
+# Q&A 26: the extension's layer colours every icon, and the built-ins, in each mode
+expect "definition icon"               'div\.callout-definition \.callout-icon::before\{color:#8A6D2B'                          "$LIGHT"
+expect "relevance icon"                'div\.callout-relevance-project \.callout-icon::before\{color:#0077C8'                   "$LIGHT"
+expect "definition border, dark"       'body\.quarto-dark div\.callout-definition\.callout\{border-left-color:#A89565'        "$LIGHT"
+expect "relevance border, dark"        'body\.quarto-dark div\.callout-relevance-project\.callout\{border-left-color:#00A7E1' "$LIGHT"
+expect "warning in dark gold"          'div\.callout-warning\.callout\{border-left-color:#8A6D2B'                              "$LIGHT"
+expect "caution in derived orange"     'div\.callout-caution\.callout\{border-left-color:#B85B0A'                              "$LIGHT"
+expect "note, dark"                    'div\.callout-note\.callout\{border-left-color:#40B4E5'                                 "$DARK"
+expect "tip, dark"                     'div\.callout-tip\.callout\{border-left-color:#88D4AB'                                  "$DARK"
+expect "important, dark"               'div\.callout-important\.callout\{border-left-color:#F08080'                            "$DARK"
+expect "warning, dark"                 'div\.callout-warning\.callout\{border-left-color:#A89565'                              "$DARK"
+expect "caution, dark"                 'div\.callout-caution\.callout\{border-left-color:#F48525'                              "$DARK"
 
 exit $fail

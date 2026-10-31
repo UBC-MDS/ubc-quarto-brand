@@ -1,0 +1,92 @@
+---
+title: Callouts
+---
+
+Every callout a book can use, so a change to the brand can be checked against all
+of them at once, in light and dark mode.
+
+## Quarto's built-in callouts
+
+::: {.callout-note}
+A note, with no title.
+:::
+
+::: {.callout-note title="A titled note"}
+A note with a title of its own.
+:::
+
+::: {.callout-tip}
+A tip, with no title.
+:::
+
+::: {.callout-tip title="A titled tip"}
+A tip with a title of its own.
+:::
+
+::: {.callout-important}
+Something important, with no title.
+:::
+
+::: {.callout-important title="A titled important"}
+Something important, with a title of its own.
+:::
+
+::: {.callout-warning}
+A warning, with no title.
+:::
+
+::: {.callout-warning title="A titled warning"}
+A warning with a title of its own.
+:::
+
+::: {.callout-caution}
+A caution, with no title.
+:::
+
+::: {.callout-caution title="A titled caution"}
+A caution with a title of its own.
+:::
+
+## The brand's callouts
+
+Activities and exercises number themselves on each page, in order,
+so a book writes them with no title and no number.
+These two exercises read "Exercise 1" and "Exercise 2":
+
+:::{.exercise}
+The first exercise on this page.
+:::
+
+:::{.exercise}
+The second exercise on this page.
+:::
+
+:::{.activity}
+An activity: something the class does together.
+:::
+
+:::{.definition}
+A definition of a term.
+:::
+
+:::{.relevance-project}
+How this connects to the course project.
+:::
+
+A book can recolour these types or add its own:
+see [Using it in a book](using.qmd).
+
+## A console window
+
+A captured terminal session, shown as a window so a reader recognizes it as a screen
+rather than a listing to copy:
+
+::: {.term}
+```{=html}
+<pre><span class="tp">$ git switch -c add-callouts</span>
+Switched to a new branch 'add-callouts'
+<span class="tp">$ git status --short</span>
+<span class="tr"> M README.md</span>
+<span class="tg">A  chapters/callouts.qmd</span></pre>
+```
+:::
