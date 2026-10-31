@@ -84,3 +84,9 @@ we can create and use that as a test book/site in the extension too to quickly f
     Dan chose "B. Google Fonts" over the recommended "A. Bundled files",
     which would have shipped the OFL-licensed woff2 files in the extension
     so that no third party is contacted.
+    Dan: "good fonts are not privacy concern".
+
+15. **The conventions page.** The test book's conventions page mimics DSCI 521's
+    `lectures/0-conventions.qmd` almost as-is, Quizzes section and executed cells included.
+    Dan: "we should try to mimic that convensions file almost as-is
+    it shows almost eveything that we use in a book."
