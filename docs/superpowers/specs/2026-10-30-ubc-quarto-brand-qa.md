@@ -78,3 +78,9 @@ we can create and use that as a test book/site in the extension too to quickly f
     CI installs a minimal environment: R with knitr, rmarkdown and reticulate through renv,
     and Python through uv.
     Dan chose "A. Run R + Python (Recommended)".
+
+14. **Fonts.** Atkinson Hyperlegible Next and Mono load from Google Fonts (`source: google`),
+    as in DSCI 521, so every reader's browser requests them from Google.
+    Dan chose "B. Google Fonts" over the recommended "A. Bundled files",
+    which would have shipped the OFL-licensed woff2 files in the extension
+    so that no third party is contacted.
