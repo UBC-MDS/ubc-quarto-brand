@@ -123,18 +123,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <style>
-div.callout-exercise.callout {
-  border-left-color: #1C5F2E;
+div.callout-relevance-project.callout {
+  border-left-color: #0077C8;
 }
-div.callout-exercise.callout-style-default .callout-header {
-  background-color: rgba(28, 95, 46, 0.13);
+div.callout-relevance-project.callout-style-default .callout-header {
+  background-color: rgba(0, 119, 200, 0.13);
 }
-div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\f44b' !important;
+  content: '\f542' !important;
   background-image: none;
 }
 div.callout-definition.callout {
@@ -165,18 +165,18 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
   content: '\e53d' !important;
   background-image: none;
 }
-div.callout-relevance-project.callout {
-  border-left-color: #0077C8;
+div.callout-exercise.callout {
+  border-left-color: #1C5F2E;
 }
-div.callout-relevance-project.callout-style-default .callout-header {
-  background-color: rgba(0, 119, 200, 0.13);
+div.callout-exercise.callout-style-default .callout-header {
+  background-color: rgba(28, 95, 46, 0.13);
 }
-div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
+div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\f542' !important;
+  content: '\f44b' !important;
   background-image: none;
 }
 </style>
@@ -508,7 +508,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <h1>ubc-quarto-brand</h1>
 <p>A <a href="https://quarto.org">Quarto</a> extension that gives a UBC course book the brand the <a href="https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/">DSCI 521 book</a> was built with: the UBC colour palette, Atkinson Hyperlegible fonts, light and dark modes, callouts with icons, labelled code listings, a console window, and themed quizzes.</p>
 <p>Most of the extension’s files are copied from the DSCI 521 book at one pinned commit; the demo book’s “Where it comes from” page lists each original and what changed.</p>
-<p>Code is under MIT and the docs under CC BY-NC-SA 4.0; the MDS logo is excluded (<a href="https://github.com/UBC-MDS/ubc-quarto-brand/blob/main/LICENSE.md">LICENSE.md</a>).</p>
+<p>Code is under MIT and the docs under CC BY 4.0; the MDS logo is excluded (<a href="https://github.com/UBC-MDS/ubc-quarto-brand/blob/main/LICENSE.md">LICENSE.md</a>).</p>
 <p><strong>See it:</strong> the demo book at <a href="https://ubc-mds.github.io/ubc-quarto-brand/" class="uri">https://ubc-mds.github.io/ubc-quarto-brand/</a> renders every part of the brand.</p>
 <section id="use-it-in-a-book" class="level2">
 <h2 class="anchored" data-anchor-id="use-it-in-a-book">Use it in a book</h2>
