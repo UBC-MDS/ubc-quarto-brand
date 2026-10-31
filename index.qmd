@@ -8,3 +8,9 @@ number-sections: false
 ---
 
 {{< include README.md >}}
+
+## Overview
+
+The parts and how they connect; the [Architecture](docs/architecture.qmd) page says more.
+
+{{< include docs/_overview.qmd >}}

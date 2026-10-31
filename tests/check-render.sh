@@ -16,6 +16,7 @@ BOOK=_book
 # --- Task 1: the book and the project docs render (S13, S14)
 exists "home page"         "$BOOK/index.html"
 expect "home titled in the sidebar" 'chapter-title">ubc-quarto-brand<' "$BOOK/index.html"
+expect "overview diagram on Home" 'class="mermaid' "$BOOK/index.html"
 exists "spec page"         "$BOOK/docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.html"
 exists "kickoff Q&A page"  "$BOOK/docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.html"
 exists "plan page"         "$BOOK/docs/superpowers/plans/2026-10-30-ubc-quarto-brand.html"
