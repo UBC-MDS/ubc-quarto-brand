@@ -10,7 +10,7 @@
 
 **Spec:** `docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md`
 
-**Now:** Task 4: The callouts gallery, open.
+**Now:** Task 5: The website check and the how-to, open.
 
 ## Global Constraints
 
@@ -700,6 +700,8 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 **Tier:** 3 · **Scenarios:** S02, S03, S04, S07
 
+> **Built differently** (closed 2026-10-30; commit e31b501): two planned checks were wrong. The exercise count ran `grep` on the missing page under `pipefail`, which ended the script there and hid every later check; it ends in `|| true`. custom-callout writes each rule across two lines, so the four page colour checks use a new `expect_flat` helper that reads newlines as spaces.
+
 **Files:**
 - Create: `chapters/callouts.qmd`
 - Modify: `_quarto.yml`, `tests/check-render.sh`, `_extensions/ubc/ubc.scss`, `_extensions/ubc/ubc-dark.scss`, `docs/_overview.qmd`
@@ -708,9 +710,9 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 - Consumes: Task 2's callout types and `.term` rules; its layer `ubc.scss` and `ubc-dark.scss`; `LIGHT` and `DARK` in `tests/check-render.sh`.
 - Produces: `_book/chapters/callouts.html`.
 
-- [ ] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
+- [x] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
 
-- [ ] **Step 1: Write the failing test.** Insert before `exit $fail` in `tests/check-render.sh`:
+- [x] **Step 1: Write the failing test.** Insert before `exit $fail` in `tests/check-render.sh`:
 
 ```bash
 # --- Task 4: the callouts gallery (S03, S04, S07)
@@ -744,9 +746,9 @@ expect "warning, dark"                 'div\.callout-warning\.callout\{border-le
 expect "caution, dark"                 'div\.callout-caution\.callout\{border-left-color:#F48525'                              "$DARK"
 ```
 
-- [ ] **Step 2: Run it; watch it fail.** `make test`. Expected: `FAIL callouts page (_book/chapters/callouts.html missing)`.
+- [x] **Step 2: Run it; watch it fail.** `make test`. Expected: `FAIL callouts page (_book/chapters/callouts.html missing)`.
 
-- [ ] **Step 3: Write `chapters/callouts.qmd`:**
+- [x] **Step 3: Write `chapters/callouts.qmd`:**
 
 ````markdown
 ---
@@ -851,7 +853,7 @@ title: Using it in a book
 ---
 ```
 
-- [ ] **Step 4: Add the chapters.** In `_quarto.yml`, add `chapters/callouts.qmd` and `chapters/using.qmd` to `project: render:`, and under the part "The brand", after `chapters/book-conventions.qmd`:
+- [x] **Step 4: Add the chapters.** In `_quarto.yml`, add `chapters/callouts.qmd` and `chapters/using.qmd` to `project: render:`, and under the part "The brand", after `chapters/book-conventions.qmd`:
 
 ```yaml
         - chapters/callouts.qmd
@@ -860,7 +862,7 @@ title: Using it in a book
 
   In `docs/_overview.qmd`, add `gallery["Callouts, Using it in a book"] --> book` and drop "Callouts (Task 4),<br/>" from the planned `pages` node.
 
-- [ ] **Step 5: Complete the callout styling in the extension's layer (Q&A 26).** custom-callout colours a border and fill but never the icon, and DSCI 521's `styles.scss` styles only activity and exercise. Quarto colours the built-ins from `$callout-color-*`, which default to `$blue`, `$green`, `$red`, `$yellow` and `$orange`; the brand maps the first four and has no orange. Dark values follow `brand.yml`'s own light/dark pairs. Every colour clears 4.5:1 on its page (white, or `ubc-blue-video` `#001328`).
+- [x] **Step 5: Complete the callout styling in the extension's layer (Q&A 26).** custom-callout colours a border and fill but never the icon, and DSCI 521's `styles.scss` styles only activity and exercise. Quarto colours the built-ins from `$callout-color-*`, which default to `$blue`, `$green`, `$red`, `$yellow` and `$orange`; the brand maps the first four and has no orange. Dark values follow `brand.yml`'s own light/dark pairs. Every colour clears 4.5:1 on its page (white, or `ubc-blue-video` `#001328`).
 
   In `_extensions/ubc/ubc.scss`, after the Mermaid default:
 
@@ -926,9 +928,9 @@ $callout-color-caution: #F48525;
 
   In the spec's extension table, the `ubc.scss` row's "in Task 4" goes: the styling is built.
 
-- [ ] **Step 6: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN`.
+- [x] **Step 6: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN`.
 
-- [ ] **Step 7: Commit.** Write the message to a file:
+- [x] **Step 7: Commit.** Write the message to a file:
 
 ```text
 feat(book): 🤖 add the callouts gallery and a console window
@@ -947,7 +949,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
   `git add chapters/callouts.qmd chapters/using.qmd _quarto.yml tests/check-render.sh _extensions/ubc/ubc.scss _extensions/ubc/ubc-dark.scss docs/_overview.qmd docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
-- [ ] **Step 8: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`; check both modes by eye in `uv run quarto preview`. Close with the boxes ticked, **Now** `Task 5: The website check and the how-to, open.`, the spec's S02, S03, S04 and S07 rows `built`, and the close message as in Task 3 with `Task 4: The callouts gallery`.
+- [x] **Step 8: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`; check both modes by eye in `uv run quarto preview`. Close with the boxes ticked, **Now** `Task 5: The website check and the how-to, open.`, the spec's S02, S03, S04 and S07 rows `built`, and the close message as in Task 3 with `Task 4: The callouts gallery`.
 
 ***
 
@@ -960,7 +962,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 - Modify: `chapters/using.qmd` (the placeholder becomes the how-to), `Makefile` (`test`), `tests/check-render.sh`, `docs/_overview.qmd` (the `site` node turns solid)
 
 **Interfaces:**
-- Consumes: Task 2's extension; Task 1's `make test`.
+- Consumes: Task 2's extension; Task 1's `make test`; Task 4's `expect_flat` (custom-callout writes each rule across two lines).
 - Produces: `tests/website/_site/index.html`, rendered from a copy of the extension at `tests/website/_extensions/UBC-MDS/ubc/`, the folder a GitHub install creates.
 
 - [ ] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
@@ -978,8 +980,8 @@ expect "website: dark-mode toggle"     'quarto-color-scheme-toggle'             
 expect "website: MDS logo opted in"    'MDSlogo\.png'                                                "$SITE/index.html"
 expect "website: Terminal label"       '<strong>Terminal</strong>'                                   "$SITE/index.html"
 expect "website: a quiz"               '<div class="quizdown">'                                      "$SITE/index.html"
-expect "website: the brand's exercise" 'div\.callout-exercise\.callout \{ ?border-left-color: ?#1C5F2E' "$SITE/index.html"
-expect "website: its own callout type" 'div\.callout-lab\.callout \{ ?border-left-color: ?#A6192E'   "$SITE/index.html"
+expect_flat "website: the brand's exercise" 'div\.callout-exercise\.callout \{ *border-left-color: ?#1C5F2E' "$SITE/index.html"
+expect_flat "website: its own callout type" 'div\.callout-lab\.callout \{ *border-left-color: ?#A6192E'   "$SITE/index.html"
 expect "website: its own layer, light" '\.website-check-marker\{color:#8a6d2b\}'                     "$SLIGHT"
 expect "website: its own layer, dark"  '\.website-check-marker\{color:#8a6d2b\}'                     "$SDARK"
 ```
