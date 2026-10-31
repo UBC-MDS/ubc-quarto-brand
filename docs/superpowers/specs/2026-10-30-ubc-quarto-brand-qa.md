@@ -183,3 +183,13 @@ each claim was checked against the code before Dan saw it.
     custom-callout has no licence upstream (coatless-quarto/custom-callout), a redistribution gap
     DSCI 521 already has: [Dan] asks its author, James Balamuta, to add one.
     Dan chose "A. Split, like the book (Recommended)".
+28. **Pages, approval and execution.** Asked when to switch Pages on, Dan answered:
+    "no you do everything essentially make this a working and complete one-shot.
+    create the github action for publication too.
+    if you need me to check off boxes i will do that now".
+    Read as: the spec and plan are approved, and the agent builds the whole project in one go,
+    publish workflow included, choosing the execution method itself (inline,
+    superpowers:executing-plans: the tasks are sequential and need this machine's R, Python
+    and Quarto). The agent creates an empty `gh-pages` branch now so that Dan can switch Pages
+    on before the PR opens, and the PR's own preview proves S13. Merging still waits for Dan
+    (item 11).
