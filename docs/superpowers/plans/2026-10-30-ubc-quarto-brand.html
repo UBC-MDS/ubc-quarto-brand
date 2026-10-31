@@ -80,10 +80,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-35fc0813589bbfbfa0b8ec974497eeb2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2ea1a707718cc9f3905c58b26d130924.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-afc06898b8261c65da9068aaeb0c694d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2ea1a707718cc9f3905c58b26d130924.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-f41936b43e790b6423ef45a22986a953.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-15bd814897cabc27157070d8c5ee0d05.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-6def9f610e0fffe0aa6336e5be0480b5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-15bd814897cabc27157070d8c5ee0d05.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdown.js"></script>
+<script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdownKatex.js"></script>
+<script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdownHighlight.js"></script>
+<script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdown-init.js"></script>
+<link href="../../../site_libs/quarto-contrib/fontawesome-7-free-7.2.0/fontawesome.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -111,11 +120,239 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<style>
+div.callout-exercise.callout {
+  border-left-color: #1C5F2E;
+}
+div.callout-exercise.callout-style-default .callout-header {
+  background-color: rgba(28, 95, 46, 0.13);
+}
+div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f44b' !important;
+  background-image: none;
+}
+div.callout-definition.callout {
+  border-left-color: #8A6D2B;
+}
+div.callout-definition.callout-style-default .callout-header {
+  background-color: rgba(138, 109, 43, 0.13);
+}
+div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f518' !important;
+  background-image: none;
+}
+div.callout-relevance-project.callout {
+  border-left-color: #0077C8;
+}
+div.callout-relevance-project.callout-style-default .callout-header {
+  background-color: rgba(0, 119, 200, 0.13);
+}
+div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f542' !important;
+  background-image: none;
+}
+div.callout-activity.callout {
+  border-left-color: #0055B7;
+}
+div.callout-activity.callout-style-default .callout-header {
+  background-color: rgba(0, 85, 183, 0.13);
+}
+div.callout-activity .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-activity.callout-style-default .callout-icon::before, div.callout-activity.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\e53d' !important;
+  background-image: none;
+}
+</style>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
+        setTimeout(() => {
+          window.scrollTo(0, scrollY);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -142,6 +379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <a href="../../../">UBC Quarto brand</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/UBC-MDS/ubc-quarto-brand" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
     </div>
       </div>
@@ -223,6 +461,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content" tabindex="-1">
 
+
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.html">The project</a></li><li class="breadcrumb-item"><a href="../../../docs/superpowers/plans/2026-10-30-ubc-quarto-brand.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ubc-quarto-brand Implementation Plan</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ubc-quarto-brand Implementation Plan</span></h1>
@@ -283,6 +522,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><label><input type="checkbox" checked=""><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
 <li><p><label><input type="checkbox" checked=""><strong>Step 1: Write the failing test,</strong> <code>tests/check-render.sh</code>, and <code>chmod 755</code> it:</label></p></li>
 </ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Checks the rendered test book, and from Task 5 the website check, for every</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># part of the brand. Run by `make test` after the renders.</span></span>
@@ -307,10 +548,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"how we work page"</span>  <span class="st">"</span><span class="va">$BOOK</span><span class="st">/AGENTS.html"</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="bu">exit</span> <span class="va">$fail</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <ul class="task-list">
 <li><p><label><input type="checkbox" checked=""><strong>Step 2: Run it; watch it fail.</strong> <code>tests/check-render.sh</code>. Expected: <code>FAIL home page (_book/index.html missing)</code> and exit 1.</label></p></li>
 <li><p><label><input type="checkbox" checked=""><strong>Step 3: Create the Python and R environments</strong> for the executed cells (Task 3):</label></p></li>
 </ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">printf</span> <span class="st">'3.14\n'</span> <span class="op">&gt;</span> .python-version</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init <span class="at">--bare</span> <span class="at">--no-workspace</span> <span class="at">--python</span> 3.14 <span class="at">--name</span> ubc-quarto-brand</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add matplotlib</span>
@@ -325,6 +569,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> <span class="at">-e</span> <span class="st">'renv::init(bare = TRUE, restart = FALSE)'</span></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> <span class="at">-e</span> <span class="st">'renv::settings$snapshot.type("explicit"); options(repos = c(CRAN = "https://packagemanager.posit.co/cran/latest")); renv::install(c("knitr", "rmarkdown", "reticulate", "here"), prompt = FALSE); renv::snapshot(prompt = FALSE)'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Expected: <code>uv.lock</code>, <code>.Rprofile</code>, <code>renv/</code>, and a <code>renv.lock</code> recording R 4.6.2 and the four packages.</p>
 <ul class="task-list">
 <li><label><input type="checkbox" checked=""><strong>Step 4: Write <code>.gitignore</code>:</strong></label></li>
@@ -617,6 +862,8 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <li><p><label><input type="checkbox"><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
 </ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Task 2: the brand on every page, the Home page included (S01, S02, S03, S06)</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="va">LIGHT</span><span class="op">=</span><span class="va">$(</span><span class="fu">ls</span> <span class="st">"</span><span class="va">$BOOK</span><span class="st">"</span>/site_libs/bootstrap/bootstrap-<span class="pp">*</span>.min.css <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-v</span> <span class="at">--</span> <span class="st">'-dark-'</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span> <span class="kw">||</span> <span class="fu">true</span><span class="va">)</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="va">DARK</span><span class="op">=</span><span class="va">$(</span><span class="fu">ls</span> <span class="st">"</span><span class="va">$BOOK</span><span class="st">"</span>/site_libs/bootstrap/bootstrap-dark-<span class="pp">*</span>.min.css <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span> <span class="kw">||</span> <span class="fu">true</span><span class="va">)</span></span>
@@ -641,10 +888,13 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"dark stylesheet linked"</span>        <span class="st">'bootstrap-dark-[0-9a-f]+\.min\.css'</span>                          <span class="st">"</span><span class="va">$BOOK</span><span class="st">/index.html"</span></span>
 <span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"quizdown scripts on Home"</span>      <span class="st">'quarto-contrib/quizdown-[0-9.]+/quizdown\.js'</span>                <span class="st">"</span><span class="va">$BOOK</span><span class="st">/index.html"</span></span>
 <span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"quiz theme include on Home"</span>    <span class="st">'data-mds-quiz-theme'</span>                                         <span class="st">"</span><span class="va">$BOOK</span><span class="st">/index.html"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL dark stylesheet</code> (plain <code>html</code> has no dark bundle) and <code>FAIL UBC blue in the palette</code> (no brand yet), and exit 1.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 3: Write <code>scripts/fetch-521.sh</code></strong> and <code>chmod 755</code> it:</label></p></li>
 </ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Copies the brand from the DSCI 521 book into this extension, from one pinned</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># commit, so every file here can be traced to its original (the book's "Where it</span></span>
@@ -678,6 +928,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'/^meta:/ {skip = 1; next} skip &amp;&amp; /^[^ #]/ {skip = 0} !skip'</span> <span class="st">"</span><span class="va">$EXT</span><span class="st">/brand.yml"</span> <span class="op">&gt;</span> <span class="st">"</span><span class="va">$EXT</span><span class="st">/brand.yml.tmp"</span></span>
 <span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> <span class="st">"</span><span class="va">$EXT</span><span class="st">/brand.yml.tmp"</span> <span class="st">"</span><span class="va">$EXT</span><span class="st">/brand.yml"</span></span>
 <span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"removed meta: from </span><span class="va">$EXT</span><span class="st">/brand.yml"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Run it: <code>scripts/fetch-521.sh</code>. Expected: one <code>fetched</code> line per file and <code>removed meta:</code>; <code>grep -c '^meta:' _extensions/ubc/brand.yml</code> prints <code>0</code>.</p>
 <ul class="task-list">
 <li><label><input type="checkbox"><strong>Step 4: Write <code>_extensions/ubc/_extension.yml</code>:</strong></label></li>
@@ -775,6 +1026,8 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <li><p><label><input type="checkbox"><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
 </ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Task 3: the conventions page (S05, S06, S11)</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="va">CONV</span><span class="op">=</span><span class="st">"</span><span class="va">$BOOK</span><span class="st">/chapters/book-conventions.html"</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"conventions page"</span>              <span class="st">"</span><span class="va">$CONV</span><span class="st">"</span></span>
@@ -790,12 +1043,16 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"exercise callouts"</span>             <span class="st">'callout-exercise'</span>                                            <span class="st">"</span><span class="va">$CONV</span><span class="st">"</span></span>
 <span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"a tabset"</span>                      <span class="st">'panel-tabset'</span>                                                <span class="st">"</span><span class="va">$CONV</span><span class="st">"</span></span>
 <span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"the figure is copied"</span>          <span class="st">"</span><span class="va">$BOOK</span><span class="st">/chapters/img/cheers.png"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL conventions page (_book/chapters/book-conventions.html missing)</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 3: Fetch the page and its figure.</strong> In <code>scripts/fetch-521.sh</code>, after the quizdown loop, add:</label></p></li>
 </ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fetch</span> lectures/0-conventions.qmd chapters/book-conventions.qmd</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fetch</span> img/cheers.png             chapters/img/cheers.png</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Run <code>scripts/fetch-521.sh</code>; <code>git status</code> shows only the two new files (the others are byte-identical).</p>
 <ul class="task-list">
 <li><label><input type="checkbox"><strong>Step 4: Change the one link into DSCI 521.</strong> In <code>chapters/book-conventions.qmd</code>, replace</label></li>
@@ -840,6 +1097,8 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <li><p><label><input type="checkbox"><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
 </ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Task 4: the callouts gallery (S03, S04, S07)</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="va">CALL</span><span class="op">=</span><span class="st">"</span><span class="va">$BOOK</span><span class="st">/chapters/callouts.html"</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"callouts page"</span>                 <span class="st">"</span><span class="va">$CALL</span><span class="st">"</span></span>
@@ -857,6 +1116,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"a console window"</span>              <span class="st">'&lt;div class="term"&gt;'</span>                                          <span class="st">"</span><span class="va">$CALL</span><span class="st">"</span></span>
 <span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="va">n</span><span class="op">=</span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-o</span> <span class="st">'class="callout callout-style-default callout-exercise'</span> <span class="st">"</span><span class="va">$CALL</span><span class="st">"</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="at">-d</span> <span class="st">' '</span><span class="va">)</span></span>
 <span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="st">"</span><span class="va">${n</span><span class="op">:-</span>0<span class="va">}</span><span class="st">"</span> <span class="ot">-ge</span> 2 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="bu">echo</span> <span class="st">"ok   two exercises for the numbering"</span><span class="kw">;</span> <span class="cf">else</span> <span class="bu">echo</span> <span class="st">"FAIL two exercises for the numbering (</span><span class="va">$n</span><span class="st">)"</span><span class="kw">;</span> <span class="va">fail</span><span class="op">=</span>1<span class="kw">;</span> <span class="cf">fi</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL callouts page (_book/chapters/callouts.html missing)</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 3: Write <code>chapters/callouts.qmd</code>:</strong></label></p></li>
@@ -990,6 +1250,8 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <li><p><label><input type="checkbox"><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
 </ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Task 5: a website project using a GitHub-style install (S08, S09, S10, S15)</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="va">SITE</span><span class="op">=</span>tests/website/_site</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="va">SLIGHT</span><span class="op">=</span><span class="va">$(</span><span class="fu">ls</span> <span class="st">"</span><span class="va">$SITE</span><span class="st">"</span>/site_libs/bootstrap/bootstrap-<span class="pp">*</span>.min.css <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-v</span> <span class="at">--</span> <span class="st">'-dark-'</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span> <span class="kw">||</span> <span class="fu">true</span><span class="va">)</span></span>
@@ -1004,6 +1266,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: its own callout type"</span> <span class="st">'div\.callout-lab\.callout \{ ?border-left-color: ?#A6192E'</span>   <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
 <span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: its own layer, light"</span> <span class="st">'\.website-check-marker\{color:#8a6d2b\}'</span>                     <span class="st">"</span><span class="va">$SLIGHT</span><span class="st">"</span></span>
 <span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: its own layer, dark"</span>  <span class="st">'\.website-check-marker\{color:#8a6d2b\}'</span>                     <span class="st">"</span><span class="va">$SDARK</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL website page (tests/website/_site/index.html missing)</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 3: Write the website.</strong> <code>tests/website/_quarto.yml</code>:</label></p></li>
@@ -1214,6 +1477,8 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <li><p><label><input type="checkbox"><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
 </ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Task 6: where it comes from (S12)</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="va">PROV</span><span class="op">=</span><span class="st">"</span><span class="va">$BOOK</span><span class="st">/chapters/provenance.html"</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"provenance page"</span>               <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
@@ -1222,6 +1487,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>         _extensions/coatless-quarto/custom-callout _extensions/quizdown lectures/0-conventions.qmd img/cheers.png<span class="kw">;</span> <span class="cf">do</span></span>
 <span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">expect</span> <span class="st">"links 521's </span><span class="va">$f</span><span class="st">"</span>              <span class="st">"DSCI_521_platforms-dsci_book/(blob|tree)/991bae89cba904ae2dd0753338c306333eb5ea2e/</span><span class="va">$f</span><span class="st">"</span> <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
 <span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL provenance page (_book/chapters/provenance.html missing)</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 3: Write <code>chapters/provenance.qmd</code>:</strong></label></p></li>
@@ -1306,8 +1572,266 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 </section>
 
 </main> <!-- /main -->
+<!--
+  Theme the quizdown quizzes.
+
+  `_extensions/quizdown` renders every quiz into a shadow root
+  (`attachShadow({mode: "open"})`), so nothing in `styles.scss` reaches inside
+  one -- a quiz arrives on the page wearing quizdown's own defaults, which are
+  `steelblue` on `#f2f2f2` with black text. In dark mode that is not merely
+  off-brand, it is unreadable: the parts that take a *background* from
+  quizdown's palette but *inherit* their text colour -- the left column of a
+  matching question, an evaluated slot, the per-pair feedback -- end up
+  painting the page's near-white body text onto a near-white fill, 1.03:1.
+
+  Two facts make that fixable from outside the shadow root:
+
+    * custom properties inherit *through* the shadow boundary, so the
+      `--mds-quiz-*` values set on `:root` in `styles.scss` are readable from
+      inside a quiz;
+    * quizdown writes its three colours as inline styles on
+      `.quizdown-content`, and `!important` in a stylesheet beats an inline
+      declaration.
+
+  So this file injects one stylesheet into each quiz's shadow root, written
+  entirely against `--mds-quiz-*`. The light and dark values of those live in
+  `styles.scss` and `styles-dark.scss`, and Quarto swaps those two bundles on
+  the colour-mode toggle -- so a quiz follows the toggle with no JavaScript of
+  its own.
+
+  Wired in from `format.html.include-after-body` in `_quarto.yml`, which is
+  what keeps the vendored extension under `_extensions/quizdown/` untouched: a
+  re-add or an update of that extension cannot clobber any of this.
+
+  Two things are deliberately left alone:
+
+    * `.hljs`, the highlight.js "github" theme quizdown bundles for a *fenced*
+      code block inside a question. Its plate is light in both colour modes,
+      but so are the token colours painted on it, so it stays self-consistent
+      and readable; re-tinting the plate alone would break it, and re-tinting
+      the tokens means shipping a second syntax theme. No question in the book
+      uses a fenced block -- inline code is themed below, and inline code is
+      what the questions actually use.
+    * `.print-review`, the plain questions-and-answers block quizdown reveals
+      under `@media print`. Paper is white in both colour modes, so the light
+      colours there are already the right ones.
+-->
+<script>
+  (() => {
+    // Note for editing: this is a template literal, so nothing inside it may
+    // be quoted in backticks the way the prose around it is -- a stray one
+    // ends the string, and the page fails with a JavaScript syntax error
+    // rather than with anything you would notice in the CSS.
+    //
+    // Every declaration below is `!important`, for two reasons that are not
+    // about winning an argument with the extension. Svelte scopes its own
+    // rules with a build hash (`.prompt.svelte-1ge161l`), which out-specifies
+    // anything we can write without hard-coding a hash that changes on every
+    // quizdown release; and the order our <style> ends up in relative to
+    // Svelte's, inside a shadow root neither of us owns, is not ours to pick.
+    const CSS = `
+      /* ---- the three knobs quizdown itself exposes ------------------------
+         Set as inline styles on .quizdown-content from the quiz config, so
+         !important is the only thing that can move them. Remapping these three
+         alone fixes most of dark mode: everything that reads its background
+         from --quizdown-color-secondary and inherits its text colour then
+         lands on a surface that belongs to the current mode. */
+      .quizdown-content {
+        --quizdown-color-primary: var(--mds-quiz-accent) !important;
+        --quizdown-color-secondary: var(--mds-quiz-surface) !important;
+        --quizdown-color-text: var(--mds-quiz-fg) !important;
+      }
+
+      /* ---- inline code in a question -------------------------------------
+         quizdown paints this #333 on #f8f8f8 in both modes. The book has its
+         own inline-code pair, one per mode, under typography.monospace-inline
+         in _brand.yml. */
+      code {
+        color: var(--mds-quiz-code-fg) !important;
+        background-color: var(--mds-quiz-code-bg) !important;
+      }
+
+      /* ---- buttons -------------------------------------------------------
+         Hard-coded to a white fill, which is a glaring plate on the dark page.
+         The hover is brightness(0.9): darkening is only a change you can see
+         when the surface starts light, so its direction is per-mode too. */
+      button {
+        background-color: var(--mds-quiz-surface) !important;
+        color: var(--mds-quiz-fg) !important;
+      }
+      button:disabled {
+        background-color: var(--mds-quiz-surface) !important;
+        color: var(--mds-quiz-muted) !important;
+      }
+      button:hover:not(:checked):not(:active):not(:disabled) {
+        filter: var(--mds-quiz-press) !important;
+      }
+
+      /* ---- multiple choice and single choice ------------------------------
+         The option rows are already painted from the two variables remapped
+         above; only the hover is hard-coded. */
+      [type='checkbox']:hover + span,
+      [type='checkbox']:focus + span,
+      [type='radio']:hover + span,
+      [type='radio']:focus + span {
+        filter: var(--mds-quiz-press) !important;
+      }
+
+      /* ---- sequence (drag to order) --------------------------------------
+         The rows come from the variables; the reorder buttons take a black
+         focus ring, which is invisible on the dark page. */
+      .buttons button:focus {
+        border-color: var(--mds-quiz-accent) !important;
+      }
+
+      /* ---- matching (drag a chip into a slot) -----------------------------
+         The type with the most hard-coded colour in it, and the one where the
+         dark-mode failure was actually visible: .prompt takes its fill from
+         quizdown's palette and its text colour from the page, so it painted
+         near-white body text onto near-white #f2f2f2. */
+      .arrow,
+      .placeholder {
+        color: var(--mds-quiz-muted) !important;
+      }
+      .slot,
+      .pool {
+        border-color: var(--mds-quiz-border) !important;
+      }
+      .slot-selected,
+      .slot-dragover,
+      .pool-dragover {
+        background-color: var(--mds-quiz-surface) !important;
+      }
+      .chip:hover {
+        filter: var(--mds-quiz-press) !important;
+      }
+      .chip-used {
+        background-color: var(--mds-quiz-surface) !important;
+        border-color: var(--mds-quiz-muted) !important;
+      }
+
+      /* ---- the evaluated state -------------------------------------------
+         Green and red, which the book already has: the success and danger
+         roles in _brand.yml each carry a value per mode. */
+      .slot.correct {
+        border-color: var(--mds-quiz-correct) !important;
+        background-color: var(--mds-quiz-correct-bg) !important;
+      }
+      .slot.wrong,
+      .slot.empty-eval {
+        border-color: var(--mds-quiz-wrong) !important;
+        background-color: var(--mds-quiz-wrong-bg) !important;
+      }
+      .badge-correct,
+      .correct-hint {
+        color: var(--mds-quiz-correct) !important;
+      }
+      .badge-wrong {
+        color: var(--mds-quiz-wrong) !important;
+      }
+      .pair-feedback {
+        border-left-color: var(--mds-quiz-correct) !important;
+        background-color: var(--mds-quiz-correct-bg) !important;
+      }
+      .pair-feedback-wrong {
+        border-left-color: var(--mds-quiz-wrong) !important;
+        background-color: var(--mds-quiz-wrong-bg) !important;
+      }
+
+      /* ---- the credit line under every quiz ------------------------------- */
+      .credits,
+      .credits a {
+        color: var(--mds-quiz-muted) !important;
+      }
+    `;
+
+    // Returns the number of quizzes that do not have a shadow root yet.
+    const paint = () => {
+      let waiting = 0;
+      for (const host of document.querySelectorAll(".quizdown")) {
+        const root = host.shadowRoot;
+        if (!root) {
+          waiting += 1;
+          continue;
+        }
+        if (root.querySelector("style[data-mds-quiz-theme]")) continue;
+        const style = document.createElement("style");
+        style.setAttribute("data-mds-quiz-theme", "");
+        style.textContent = CSS;
+        root.appendChild(style);
+      }
+      return waiting;
+    };
+
+    // quizdown creates the shadow roots from a `load` listener that it only
+    // registers once `DOMContentLoaded` has fired -- later than this script,
+    // which is inline at the end of <body>. A `load` listener added here would
+    // therefore run *before* the one that creates the thing we want to style,
+    // so the first attempt is deferred by a task, and then retried for a few
+    // frames in case a future version of the extension moves that work again.
+    // Bounded, so a quiz that never renders cannot leave a frame loop running.
+    const GIVE_UP_AFTER_MS = 5000;
+    addEventListener("load", () => {
+      const started = performance.now();
+      const tick = () => {
+        if (paint() > 0 && performance.now() - started < GIVE_UP_AFTER_MS) {
+          requestAnimationFrame(tick);
+        }
+      };
+      setTimeout(tick, 0);
+    });
+  })();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
