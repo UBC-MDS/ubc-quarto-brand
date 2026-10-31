@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ubc-mds.github.io/ubc-quarto-brand/index.html</loc>
-    <lastmod>2026-10-31T05:40:05.055Z</lastmod>
+    <lastmod>2026-10-31T05:58:39.791Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ubc-mds.github.io/ubc-quarto-brand/docs/architecture.html</loc>
+    <lastmod>2026-10-31T05:58:39.791Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-mds.github.io/ubc-quarto-brand/docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.html</loc>
-    <lastmod>2026-10-31T05:40:05.054Z</lastmod>
+    <lastmod>2026-10-31T05:58:39.791Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-mds.github.io/ubc-quarto-brand/docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.html</loc>
-    <lastmod>2026-10-31T05:40:05.055Z</lastmod>
+    <lastmod>2026-10-31T05:58:39.791Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-mds.github.io/ubc-quarto-brand/docs/superpowers/plans/2026-10-30-ubc-quarto-brand.html</loc>
-    <lastmod>2026-10-31T05:40:05.054Z</lastmod>
+    <lastmod>2026-10-31T05:58:39.791Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-mds.github.io/ubc-quarto-brand/CHANGELOG.html</loc>
-    <lastmod>2026-10-31T05:40:05.049Z</lastmod>
+    <lastmod>2026-10-31T05:58:39.785Z</lastmod>
   </url>
   <url>
     <loc>https://ubc-mds.github.io/ubc-quarto-brand/AGENTS.html</loc>
-    <lastmod>2026-10-31T05:40:05.049Z</lastmod>
+    <lastmod>2026-10-31T05:58:39.785Z</lastmod>
   </url>
 </urlset>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>UBC Quarto brand</title>
+<title>ubc-quarto-brand</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.html" rel="next">
+<link href="./docs/architecture.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2ea1a707718cc9f3905c58b26d130924.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-15bd814897cabc27157070d8c5ee0d05.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6def9f610e0fffe0aa6336e5be0480b5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-15bd814897cabc27157070d8c5ee0d05.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2c1e4affe1b679dc6a28c4016b06751d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-36d7776b9e772b9894d17a497550ccff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-2c1e4affe1b679dc6a28c4016b06751d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/quizdown-1.3.2/quizdown.js"></script>
 <script src="site_libs/quarto-contrib/quizdown-1.3.2/quizdownKatex.js"></script>
 <script src="site_libs/quarto-contrib/quizdown-1.3.2/quizdownHighlight.js"></script>
@@ -119,6 +119,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <style>
 div.callout-definition.callout {
   border-left-color: #8A6D2B;
@@ -360,7 +363,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">ubc-quarto-brand</span></a></li></ol></nav>
         <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -392,7 +395,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">ubc-quarto-brand</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -403,32 +406,38 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
       <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./docs/architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Architecture</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: design spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: design spec</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: kickoff Q&amp;A</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: kickoff Q&amp;A</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./docs/superpowers/plans/2026-10-30-ubc-quarto-brand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ubc-quarto-brand Implementation Plan</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">ubc-quarto-brand Implementation Plan</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./CHANGELOG.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./AGENTS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: how we work</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: how we work</span></span></a>
   </div>
 </li>
       </ul>
@@ -443,11 +452,9 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ubc-quarto-brand" id="toc-ubc-quarto-brand" class="nav-link active" data-scroll-target="#ubc-quarto-brand"><span class="header-section-number">1</span> ubc-quarto-brand</a>
-  <ul class="collapse">
-  <li><a href="#use-it-in-a-book" id="toc-use-it-in-a-book" class="nav-link" data-scroll-target="#use-it-in-a-book"><span class="header-section-number">1.1</span> Use it in a book</a></li>
-  <li><a href="#work-on-it" id="toc-work-on-it" class="nav-link" data-scroll-target="#work-on-it"><span class="header-section-number">1.2</span> Work on it</a></li>
-  </ul></li>
+  <li><a href="#use-it-in-a-book" id="toc-use-it-in-a-book" class="nav-link active" data-scroll-target="#use-it-in-a-book">Use it in a book</a></li>
+  <li><a href="#work-on-it" id="toc-work-on-it" class="nav-link" data-scroll-target="#work-on-it">Work on it</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UBC-MDS/ubc-quarto-brand/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-MDS/ubc-quarto-brand/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -457,7 +464,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">UBC Quarto brand</h1>
+<h1 class="title">ubc-quarto-brand</h1>
 <p class="subtitle lead">The DSCI 521 book’s brand, as a Quarto extension</p>
 </div>
 
@@ -475,12 +482,10 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 </header>
 
 
-<section id="ubc-quarto-brand" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> ubc-quarto-brand</h1>
 <p>A <a href="https://quarto.org">Quarto</a> extension that gives a UBC course book the brand the <a href="https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/">DSCI 521 book</a> was built with: the UBC colour palette, Atkinson Hyperlegible fonts, light and dark modes, callouts with icons, labelled code listings, a console window, and themed quizzes.</p>
 <p><strong>See it:</strong> the demo book at <a href="https://ubc-mds.github.io/ubc-quarto-brand/" class="uri">https://ubc-mds.github.io/ubc-quarto-brand/</a> renders every part of the brand.</p>
-<section id="use-it-in-a-book" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="use-it-in-a-book"><span class="header-section-number">1.1</span> Use it in a book</h2>
+<section id="use-it-in-a-book" class="level1">
+<h1>Use it in a book</h1>
 <p>In your Quarto book or website project:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
@@ -490,12 +495,44 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> ubc-html</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The demo book’s “Using it in a book” page covers the MDS logo, adding your own styles, and adding callout types.</p>
 </section>
-<section id="work-on-it" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="work-on-it"><span class="header-section-number">1.2</span> Work on it</h2>
+<section id="work-on-it" class="level1">
+<h1>Work on it</h1>
 <p>The repository is itself the demo book, next to the extension in <code>_extensions/ubc/</code>. <code>make help</code> lists the commands. How the project is run is in <code>AGENTS.md</code>, and its design in <code>docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md</code>.</p>
-
-
 </section>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>The parts and how they connect; the <a href="./docs/architecture.html">Architecture</a> page says more.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  src["DSCI 521 book&lt;br/&gt;at 991bae89cba9"] --&gt;|"scripts/fetch-521.sh"| brand
+  src --&gt;|"scripts/fetch-521.sh"| fmt
+  src --&gt;|"scripts/fetch-521.sh"| emb
+  subgraph ext["_extensions/ubc/"]
+    brand["brand.yml&lt;br/&gt;(the project's brand)"]
+    fmt["ubc-html format&lt;br/&gt;styles.scss, styles-dark.scss,&lt;br/&gt;code-labels.lua, quizdown-theme.html"]
+    emb["embedded extensions&lt;br/&gt;custom-callout, quizdown"]
+    layer["ubc.scss, ubc-dark.scss&lt;br/&gt;the extension's own layer"]
+  end
+  ext --&gt; book["the test book at the root&lt;br/&gt;Home and the project docs"]
+  pages["Conventions (Task 3), Callouts (Task 4),&lt;br/&gt;Where it comes from (Task 6)"]:::planned -.-&gt; book
+  ext -.-&gt;|"Task 5"| site["tests/website/&lt;br/&gt;installed at _extensions/UBC-MDS/ubc/"]:::planned
+  book --&gt;|"make check"| out["_book/"]
+  out --&gt;|"publish.yml"| demo["gh-pages: the demo"]
+  out --&gt;|"pr.yml"| prev["gh-pages: pr-preview/pr-N"]
+  ext -.-&gt;|"after v0.1.0"| rtw["the reproducible-and-trustworthy&lt;br/&gt;workflows book"]:::planned
+  classDef planned stroke-dasharray: 5 5
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1164,8 +1201,8 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.html" class="pagination-link" aria-label="ubc-quarto-brand: design spec">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: design spec</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./docs/architecture.html" class="pagination-link" aria-label="Architecture">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Architecture</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
