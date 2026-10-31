@@ -121,6 +121,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>
+div.callout-exercise.callout {
+  border-left-color: #1C5F2E;
+}
+div.callout-exercise.callout-style-default .callout-header {
+  background-color: rgba(28, 95, 46, 0.13);
+}
+div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f44b' !important;
+  background-image: none;
+}
 div.callout-activity.callout {
   border-left-color: #0055B7;
 }
@@ -147,20 +161,6 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
   font-weight: 900;
   font-style: normal;
   content: '\f518' !important;
-  background-image: none;
-}
-div.callout-exercise.callout {
-  border-left-color: #1C5F2E;
-}
-div.callout-exercise.callout-style-default .callout-header {
-  background-color: rgba(28, 95, 46, 0.13);
-}
-div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f44b' !important;
   background-image: none;
 }
 div.callout-relevance-project.callout {
@@ -527,7 +527,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <p><strong>Architecture:</strong> <code>_extensions/ubc/</code> contributes the brand through <code>metadata: project: brand:</code> and a <code>ubc-html</code> format (theme layers, the code-labels filter, embedded custom-callout and quizdown). Its files are fetched from DSCI 521 at one pinned commit by <code>scripts/fetch-521.sh</code>. The repository root is a Quarto book using that format; <code>tests/website/</code> is a one-page website using it from a GitHub-style install folder. <code>tests/check-render.sh</code> asserts on the rendered HTML and CSS.</p>
 <p><strong>Tech Stack:</strong> Quarto 1.11.6, brand.yml, SCSS, Lua filters, custom-callout 0.0.1-dev.3, quizdown 1.3.2; R 4.6.2 with renv (knitr, rmarkdown, reticulate, here); Python 3.14 with uv (matplotlib); GitHub Actions with pr-preview-action, github-pages-deploy-action and lychee-action; gitleaks 8.30.1; actionlint.</p>
 <p><strong>Spec:</strong> <code>docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md</code></p>
-<p><strong>Now:</strong> Phase end, step 5: The push and the publish run.</p>
+<p><strong>Now:</strong> Phase end, step 6: the live site is checked; [Dan] tags <code>v0.1.0</code>, then the reproducible book adopts it.</p>
 <section id="global-constraints" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="global-constraints"><span class="header-section-number">9.1</span> Global Constraints</h2>
 <ul>
@@ -1764,7 +1764,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <li><p><label><input type="checkbox" checked=""><strong>3. The docs check:</strong> every doc the branch touched is true (the README, the spec’s design and scenario rows, the Architecture page with every built part solid, the how-to, the provenance page, <code>LICENSE.md</code>, <code>AGENTS.md</code>).</label></p></li>
 <li><p><label><input type="checkbox" checked=""><strong>4. A dated <code>CHANGELOG.md</code> entry</strong> for <code>v0.1.0</code> (the extension, the test book, CI and previews, from DSCI 521 at <code>991bae89cba9</code>), and the spec’s status line set to <code>PR open (#N)</code>, its number filled in once step 5 opens the PR.</label></p>
 <p><strong>Ruling:</strong> with no PR here (Q&amp;A 29), the spec’s status line reads “built on <code>main</code> 2026-10-31; <code>v0.1.0</code> waits for Dan’s tag” instead of <code>PR open (#N)</code>. If wrong: one status line.</p></li>
-<li><p><label><input type="checkbox"><strong>5. The push and the publish run</strong> (Q&amp;A 29: no PR here): <code>main</code> pushed, <code>publish.yml</code> green, S14 checked on the live site.</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>5. The push and the publish run</strong> (Q&amp;A 29: no PR here): <code>main</code> pushed, <code>publish.yml</code> green, S14 checked on the live site.</label></p></li>
 <li><p><label><input type="checkbox"><strong>6. The live site and the release:</strong> <a href="https://ubc-mds.github.io/ubc-quarto-brand/" class="uri">https://ubc-mds.github.io/ubc-quarto-brand/</a> serves the book with <code>.nojekyll</code> intact (S14); then [Dan] tags <code>v0.1.0</code>, and the reproducible book adopts it in its own previewed PR (S16).</label></p></li>
 </ul>
 </section>
