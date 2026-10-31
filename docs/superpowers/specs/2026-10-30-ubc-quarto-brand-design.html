@@ -100,18 +100,18 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
   content: '\f44b' !important;
   background-image: none;
 }
-div.callout-activity.callout {
-  border-left-color: #0055B7;
+div.callout-definition.callout {
+  border-left-color: #8A6D2B;
 }
-div.callout-activity.callout-style-default .callout-header {
-  background-color: rgba(0, 85, 183, 0.13);
+div.callout-definition.callout-style-default .callout-header {
+  background-color: rgba(138, 109, 43, 0.13);
 }
-div.callout-activity .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-activity.callout-style-default .callout-icon::before, div.callout-activity.callout-titled .callout-icon::before {
+div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\e53d' !important;
+  content: '\f518' !important;
   background-image: none;
 }
 div.callout-relevance-project.callout {
@@ -128,18 +128,18 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
   content: '\f542' !important;
   background-image: none;
 }
-div.callout-definition.callout {
-  border-left-color: #8A6D2B;
+div.callout-activity.callout {
+  border-left-color: #0055B7;
 }
-div.callout-definition.callout-style-default .callout-header {
-  background-color: rgba(138, 109, 43, 0.13);
+div.callout-activity.callout-style-default .callout-header {
+  background-color: rgba(0, 85, 183, 0.13);
 }
-div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
+div.callout-activity .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-activity.callout-style-default .callout-icon::before, div.callout-activity.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\f518' !important;
+  content: '\e53d' !important;
   background-image: none;
 }
 </style>
@@ -782,7 +782,7 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <td>the provenance page links its 521 original at <code>991bae89cba9</code> and says what changed</td>
 <td>Task 6</td>
 <td>the Where it comes from page</td>
-<td>planned</td>
+<td>built</td>
 </tr>
 <tr class="odd">
 <td>S13</td>
@@ -877,7 +877,8 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <li><strong>A partial brand override isn’t possible</strong> (see <em>What a book can change</em>); the how-to page says so.</li>
 <li><strong>Fork PRs get no preview:</strong> their token can’t write to the repository.</li>
 <li><strong>[Dan] settings:</strong> Pages from the <code>gh-pages</code> branch (after the first publish creates it), read and write workflow permissions, a ruleset on <code>main</code>.</li>
-<li><strong>plan-driven-development’s hooks and leak check aren’t built yet:</strong> every push of <code>build</code> follows <code>make leaks</code>.</li>
+<li><strong>plan-driven-development’s hooks and leak check aren’t built yet:</strong> every push to <code>main</code> follows <code>make leaks</code> (Q&amp;A 29).</li>
+<li><strong>Licence:</strong> MIT for code, CC BY-NC-SA 4.0 for docs, the MDS logo excluded (Q&amp;A 27). custom-callout publishes no licence: [Dan] asks its author for one. The reproducible book Q&amp;A 27 follows is itself split, CC BY-NC-SA 4.0 in its README and CC BY 4.0 in its <code>LICENSE.md</code>: [Dan] confirms the docs licence here before tagging <code>v0.1.0</code>.</li>
 </ul>
 </section>
 <section id="revisions" class="level2" data-number="7.6">
@@ -886,6 +887,7 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <li>2026-10-30: small, public, live test book with the docs, GitHub, fully vibed (<code>ac75784</code>).</li>
 <li>2026-10-30: merging waits for Dan; PRs get previews (<code>1027692</code>, <code>fd5ebe4</code>).</li>
 <li>2026-10-30: test site, quizzes, executed cells, fonts, logo, versioning, packaging, callouts (<code>47e684a</code>, <code>d126ab8</code>, <code>a5fc3e2</code>, <code>09f595d</code>, <code>c90002b</code>, <code>750f91d</code>, <code>fd5ebe4</code>, <code>50f7bf3</code>).</li>
+<li>2026-10-30: the extension completes the callout styling in its own layer (Q&amp;A 26, <code>779c67f</code>); a split licence, as in the reproducible book (Q&amp;A 27, <code>4e23584</code>).</li>
 <li>2026-10-30: approved for a one-shot build (Q&amp;A 28); work goes straight to <code>main</code>, review happens in the adopting book (Q&amp;A 29).</li>
 <li>2026-10-30: the conventions page as-is, provenance docs, design sections 1 to 3 (<code>00a0f5b</code>, <code>0489284</code>, <code>fd8ff72</code>, <code>70fa211</code>, <code>6447ee8</code>).</li>
 </ul>

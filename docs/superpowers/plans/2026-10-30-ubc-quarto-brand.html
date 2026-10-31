@@ -121,18 +121,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>
-div.callout-activity.callout {
-  border-left-color: #0055B7;
+div.callout-definition.callout {
+  border-left-color: #8A6D2B;
 }
-div.callout-activity.callout-style-default .callout-header {
-  background-color: rgba(0, 85, 183, 0.13);
+div.callout-definition.callout-style-default .callout-header {
+  background-color: rgba(138, 109, 43, 0.13);
 }
-div.callout-activity .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-activity.callout-style-default .callout-icon::before, div.callout-activity.callout-titled .callout-icon::before {
+div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\e53d' !important;
+  content: '\f518' !important;
   background-image: none;
 }
 div.callout-exercise.callout {
@@ -149,18 +149,18 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
   content: '\f44b' !important;
   background-image: none;
 }
-div.callout-definition.callout {
-  border-left-color: #8A6D2B;
+div.callout-activity.callout {
+  border-left-color: #0055B7;
 }
-div.callout-definition.callout-style-default .callout-header {
-  background-color: rgba(138, 109, 43, 0.13);
+div.callout-activity.callout-style-default .callout-header {
+  background-color: rgba(0, 85, 183, 0.13);
 }
-div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
+div.callout-activity .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-activity.callout-style-default .callout-icon::before, div.callout-activity.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\f518' !important;
+  content: '\e53d' !important;
   background-image: none;
 }
 div.callout-relevance-project.callout {
@@ -527,7 +527,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <p><strong>Architecture:</strong> <code>_extensions/ubc/</code> contributes the brand through <code>metadata: project: brand:</code> and a <code>ubc-html</code> format (theme layers, the code-labels filter, embedded custom-callout and quizdown). Its files are fetched from DSCI 521 at one pinned commit by <code>scripts/fetch-521.sh</code>. The repository root is a Quarto book using that format; <code>tests/website/</code> is a one-page website using it from a GitHub-style install folder. <code>tests/check-render.sh</code> asserts on the rendered HTML and CSS.</p>
 <p><strong>Tech Stack:</strong> Quarto 1.11.6, brand.yml, SCSS, Lua filters, custom-callout 0.0.1-dev.3, quizdown 1.3.2; R 4.6.2 with renv (knitr, rmarkdown, reticulate, here); Python 3.14 with uv (matplotlib); GitHub Actions with pr-preview-action, github-pages-deploy-action and lychee-action; gitleaks 8.30.1; actionlint.</p>
 <p><strong>Spec:</strong> <code>docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md</code></p>
-<p><strong>Now:</strong> Task 6: Where it comes from, open.</p>
+<p><strong>Now:</strong> Phase end, step 1: The final whole-branch review.</p>
 <section id="global-constraints" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="global-constraints"><span class="header-section-number">9.1</span> Global Constraints</h2>
 <ul>
@@ -1599,13 +1599,16 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <section id="task-6-where-it-comes-from" class="level3" data-number="9.2.6">
 <h3 data-number="9.2.6" class="anchored" data-anchor-id="task-6-where-it-comes-from"><span class="header-section-number">9.2.6</span> Task 6: Where it comes from</h3>
 <p><strong>Tier:</strong> 3 · <strong>Scenarios:</strong> S12</p>
+<blockquote class="blockquote">
+<p><strong>Built differently</strong> (closed 2026-10-30; commit 6e91f91): the page and the README name quizdown’s <code>LICENSE</code> among the files not from DSCI 521, and the re-fetch sentence says “every DSCI 521 file”; the check for the note on 521’s comments allows the curly apostrophe’s three bytes, so it does not depend on the locale.</p>
+</blockquote>
 <p><strong>Ruling</strong> (Task 2’s forward review): <code>LICENSE.md</code> uses CC BY-NC-SA 4.0 for the docs, as Q&amp;A 27 records, although the reproducible book it names is split: its README says CC BY-NC-SA 4.0, its <code>LICENSE.md</code> CC BY 4.0. Dan is asked before he tags <code>v0.1.0</code>. If wrong: one licence paragraph.</p>
 <p><strong>Ruling</strong> (Task 2’s forward review): the MIT copyright holder is “UBC Master of Data Science”, the extension’s author in <code>_extension.yml</code>; DSCI 521 publishes no licence or holder. If wrong: one line, before the tag.</p>
 <p><strong>Files:</strong> - Create: <code>chapters/provenance.qmd</code>, <code>LICENSE.md</code>, <code>_extensions/ubc/_extensions/quizdown/LICENSE</code> - Modify: <code>_quarto.yml</code>, <code>tests/check-render.sh</code>, <code>README.md</code>, <code>docs/_overview.qmd</code></p>
 <p><strong>Interfaces:</strong> - Consumes: Task 2’s <code>scripts/fetch-521.sh</code>, <code>make fetch-521</code> and its layer <code>ubc.scss</code>, <code>ubc-dark.scss</code> and <code>ubc-quizdown.html</code>; Task 3’s conventions page. - Produces: <code>_book/chapters/provenance.html</code>.</p>
 <ul class="task-list">
-<li><p><label><input type="checkbox"><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
-<li><p><label><input type="checkbox"><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
 </ul>
 <div class="code-with-filename">
 <div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
@@ -1624,8 +1627,8 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"quizdown's licence beside it"</span>   _extensions/ubc/_extensions/quizdown/LICENSE</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul class="task-list">
-<li><p><label><input type="checkbox"><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL provenance page (_book/chapters/provenance.html missing)</code>.</label></p></li>
-<li><p><label><input type="checkbox"><strong>Step 3: Write <code>chapters/provenance.qmd</code>:</strong></label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL provenance page (_book/chapters/provenance.html missing)</code>.</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 3: Write <code>chapters/provenance.qmd</code>:</strong></label></p></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Where it comes from</span></span>
@@ -1672,7 +1675,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb39-43"><a href="#cb39-43" aria-hidden="true" tabindex="-1"></a>(<span class="co">[</span><span class="ot">DSCI 521 issue #35</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/issues/35)</span>),</span>
 <span id="cb39-44"><a href="#cb39-44" aria-hidden="true" tabindex="-1"></a>changes flow the other way: they are made here, and DSCI 521 updates to the new release.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Step 4: Write the licence (Q&amp;A 27).</strong> <code>LICENSE.md</code>:</label></li>
+<li><label><input type="checkbox" checked=""><strong>Step 4: Write the licence (Q&amp;A 27).</strong> <code>LICENSE.md</code>:</label></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Licence</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1717,7 +1720,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb40-41"><a href="#cb40-41" aria-hidden="true" tabindex="-1"></a>  custom-callout, which publishes no licence yet.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>quizdown’s licence, from its own repository at the commit its <code>LICENSE</code> was read: <code>curl -sSfL https://raw.githubusercontent.com/parmsam/quarto-quizdown/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE -o _extensions/ubc/_extensions/quizdown/LICENSE</code>. Expected: its first lines are <code>MIT License</code> and <code>Copyright (c) 2025 Sam Parmar</code>.</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Step 5: Add the chapter and point the README at it.</strong> In <code>_quarto.yml</code>, add <code>chapters/provenance.qmd</code> to <code>project: render:</code> and, under the part “The brand”, after <code>chapters/using.qmd</code>, <code>- chapters/provenance.qmd</code>. In <code>README.md</code>, after its first paragraph, add:</label></li>
+<li><label><input type="checkbox" checked=""><strong>Step 5: Add the chapter and point the README at it.</strong> In <code>_quarto.yml</code>, add <code>chapters/provenance.qmd</code> to <code>project: render:</code> and, under the part “The brand”, after <code>chapters/using.qmd</code>, <code>- chapters/provenance.qmd</code>. In <code>README.md</code>, after its first paragraph, add:</label></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>Every file but the extension's own layer comes from the DSCI 521 book at one pinned commit;</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>the demo book's "Where it comes from" page lists each original and what changed.</span>
@@ -1726,8 +1729,8 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>(<span class="co">[</span><span class="ot">LICENSE.md</span><span class="co">](https://github.com/UBC-MDS/ubc-quarto-brand/blob/main/LICENSE.md)</span>).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In <code>docs/_overview.qmd</code>, add <code>prov["Where it comes from"] --&gt; book</code> and remove the planned <code>pages</code> node and its edge.</p>
 <ul class="task-list">
-<li><p><label><input type="checkbox"><strong>Step 6: Run the checks; they pass.</strong> <code>make check</code>. Expected: every <code>ok</code>, no <code>FAIL</code>, no Quarto <code>WARN</code>.</label></p></li>
-<li><p><label><input type="checkbox"><strong>Step 7: Commit.</strong> Write the message to a file:</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 6: Run the checks; they pass.</strong> <code>make check</code>. Expected: every <code>ok</code>, no <code>FAIL</code>, no Quarto <code>WARN</code>.</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 7: Commit.</strong> Write the message to a file:</label></p></li>
 </ul>
 <pre class="text"><code>docs(book): 🤖 add where each file comes from in DSCI 521
 
@@ -1743,7 +1746,7 @@ Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 6
 Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <p><code>git add chapters/provenance.qmd LICENSE.md _extensions/ubc/_extensions/quizdown/LICENSE _quarto.yml tests/check-render.sh README.md docs/_overview.qmd</code>, <code>git commit -F &lt;file&gt;</code>, <code>git log -1 --format='%(trailers)'</code>. Then <code>make leaks</code> and <code>git push origin main</code>.</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Step 8: Review, look forward, close.</strong> Tier 3: self-review under <em>Standards</em> and <em>Spec</em>, plus <code>make check</code>. Close with the boxes ticked, <strong>Now</strong> <code>Phase end, step 1: The final whole-branch review.</code>, the spec’s S12 row <code>built</code>, and the close message as in Task 3 with <code>Task 6: Where it comes from</code>.</label></li>
+<li><label><input type="checkbox" checked=""><strong>Step 8: Review, look forward, close.</strong> Tier 3: self-review under <em>Standards</em> and <em>Spec</em>, plus <code>make check</code>. Close with the boxes ticked, <strong>Now</strong> <code>Phase end, step 1: The final whole-branch review.</code>, the spec’s S12 row <code>built</code>, and the close message as in Task 3 with <code>Task 6: Where it comes from</code>.</label></li>
 </ul>
 <hr>
 </section>
