@@ -1,0 +1,20 @@
+```{mermaid}
+flowchart LR
+  src["DSCI 521 book<br/>at 991bae89cba9"] -->|"scripts/fetch-521.sh"| brand
+  src -->|"scripts/fetch-521.sh"| fmt
+  src -->|"scripts/fetch-521.sh"| emb
+  subgraph ext["_extensions/ubc/"]
+    brand["brand.yml<br/>(the project's brand)"]
+    fmt["ubc-html format<br/>styles.scss, styles-dark.scss,<br/>code-labels.lua, quizdown-theme.html"]
+    emb["embedded extensions<br/>custom-callout, quizdown"]
+    layer["callouts.scss, callouts-dark.scss<br/>(Task 4)"]:::planned
+  end
+  ext --> book["the test book at the root<br/>Home and the project docs"]
+  pages["Conventions (Task 3), Callouts (Task 4),<br/>Where it comes from (Task 6)"]:::planned -.-> book
+  ext -.->|"Task 5"| site["tests/website/<br/>installed at _extensions/UBC-MDS/ubc/"]:::planned
+  book -->|"make check"| out["_book/"]
+  out -->|"publish.yml"| demo["gh-pages: the demo"]
+  out -->|"pr.yml"| prev["gh-pages: pr-preview/pr-N"]
+  ext -.->|"after v0.1.0"| rtw["the reproducible-and-trustworthy<br/>workflows book"]:::planned
+  classDef planned stroke-dasharray: 5 5
+```

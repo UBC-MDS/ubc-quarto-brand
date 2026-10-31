@@ -20,6 +20,8 @@ exists "kickoff Q&A page"  "$BOOK/docs/superpowers/specs/2026-10-30-ubc-quarto-b
 exists "plan page"         "$BOOK/docs/superpowers/plans/2026-10-30-ubc-quarto-brand.html"
 exists "changelog page"    "$BOOK/CHANGELOG.html"
 exists "how we work page"  "$BOOK/AGENTS.html"
+exists "architecture page" "$BOOK/docs/architecture.html"
+expect "architecture diagram" 'class="mermaid' "$BOOK/docs/architecture.html"
 
 # --- Task 2: the brand on every page, the Home page included (S01, S02, S03, S06)
 LIGHT=$(ls "$BOOK"/site_libs/bootstrap/bootstrap-*.min.css 2>/dev/null | grep -v -- '-dark-' | head -1 || true)

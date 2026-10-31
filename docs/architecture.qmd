@@ -1,0 +1,9 @@
+---
+title: "Architecture"
+---
+
+How the parts of this project connect, from DSCI 521's files to the pages they style.
+Built parts are solid; planned parts are dashed, labelled with the plan task that brings them.
+The [spec](superpowers/specs/2026-10-30-ubc-quarto-brand-design.md) says why each part exists.
+
+{{< include _overview.qmd >}}

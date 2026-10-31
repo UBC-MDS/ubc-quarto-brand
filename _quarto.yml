@@ -4,6 +4,7 @@ project:
   # tests/website/ is its own project.
   render:
     - index.qmd
+    - docs/architecture.qmd
     - docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md
     - docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.md
     - docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md
@@ -20,6 +21,7 @@ book:
     - index.qmd
     - part: "The project"
       chapters:
+        - docs/architecture.qmd
         - docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md
         - docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.md
         - docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md

@@ -28,6 +28,8 @@ DSCI 521 follows later, tracked in
 
 ## Design
 
+The parts and how they connect are drawn on the [Architecture](../../architecture.qmd) page.
+
 ### The extension
 
 One extension, `ubc`, in `_extensions/ubc/` (Q&A 18). It contributes two things:
