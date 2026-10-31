@@ -124,3 +124,10 @@ we can create and use that as a test book/site in the extension too to quickly f
     and the four custom ones, so each is checked under the brand.
     A book can still recolour a type or add its own in its `_quarto.yml`:
     the prototype showed a book's `custom-callout:` settings deep-merge over the extension's.
+
+20. **Shared understanding.** Dan confirmed the grilling summary and moved kickoff on
+    to the design: "Yes, go to the design (Recommended)".
+21. **Provenance in the docs.** Dan: "when we document this new quarto extension
+    we should document how it comes from 521". The docs explain, file by file,
+    which DSCI 521 file each piece of the extension comes from and what changed on the way,
+    linking to 521's originals.
