@@ -152,8 +152,10 @@ format: html
 and `index.qmd`, whose title is the README's first heading:
 
 ```markdown
-{{< include README.md >}}
+{{{< include README.md >}}}
 ```
+
+  (The plan writes the shortcode with Quarto's triple-brace escape, so this page renders on the site; the file itself holds the two-brace form.)
 
 - [ ] **Step 6: Replace the `Makefile`** (GNU make 3.81):
 

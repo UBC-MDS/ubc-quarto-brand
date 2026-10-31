@@ -1,0 +1,29 @@
+project:
+  type: book
+  # Only these become pages: README.md is included by index.qmd, and
+  # tests/website/ is its own project.
+  render:
+    - index.qmd
+    - docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md
+    - docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.md
+    - docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md
+    - CHANGELOG.md
+    - AGENTS.md
+
+book:
+  title: "UBC Quarto brand"
+  subtitle: "The DSCI 521 book's brand, as a Quarto extension"
+  site-url: https://ubc-mds.github.io/ubc-quarto-brand/
+  repo-url: https://github.com/UBC-MDS/ubc-quarto-brand
+  repo-actions: [source, issue]
+  chapters:
+    - index.qmd
+    - part: "The project"
+      chapters:
+        - docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md
+        - docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.md
+        - docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md
+        - CHANGELOG.md
+        - AGENTS.md
+
+format: html

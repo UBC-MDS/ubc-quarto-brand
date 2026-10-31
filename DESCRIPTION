@@ -1,0 +1,7 @@
+Type: Project
+Description: The R packages the test book's executed cells need. Not an R package.
+Imports:
+    knitr,
+    rmarkdown,
+    reticulate,
+    here

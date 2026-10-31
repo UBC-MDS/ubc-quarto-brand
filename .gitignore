@@ -1,0 +1,14 @@
+/_book/
+/.quarto/
+/.render.log
+/.render-website.log
+/.venv/
+.Rproj.user/
+.Rhistory
+/tests/website/_extensions/
+/tests/website/_site/
+/tests/website/.quarto/
+*.quarto_ipynb
+.superpowers/
+
+**/*.quarto_ipynb
