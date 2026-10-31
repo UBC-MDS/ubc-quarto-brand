@@ -52,6 +52,9 @@ expect "dark-mode toggle on Home"      'quarto-color-scheme-toggle'             
 expect "dark stylesheet linked"        'bootstrap-dark-[0-9a-f]+\.min\.css'                          "$BOOK/index.html"
 expect "quizdown scripts on Home"      'quarto-contrib/quizdown-[0-9.]+/quizdown\.js'                "$BOOK/index.html"
 expect "quiz theme include on Home"    'data-mds-quiz-theme'                                         "$BOOK/index.html"
+expect "quiz chips, light"             '--mds-quiz-chip-bg:'                                         "$LIGHT"
+expect "quiz chips, dark"              '--mds-quiz-chip-bg:'                                         "$DARK"
+expect "quiz chip rule on every page"  'data-ubc-quiz-chips'                                         "$BOOK/index.html"
 
 # --- Task 3: the conventions page (S05, S06, S11)
 CONV="$BOOK/chapters/book-conventions.html"

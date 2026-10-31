@@ -41,7 +41,7 @@ One extension, `ubc`, in `_extensions/ubc/` (Q&A 18). It contributes two things:
   (`light: [brand, styles.scss, ubc.scss]`,
   `dark: [brand, styles.scss, styles-dark.scss, ubc.scss, ubc-dark.scss]`),
   the filters (`code-labels.lua`, `custom-callout`, `quizdown`),
-  `include-after-body: quizdown-theme.html`, and the four custom callout types.
+  `include-after-body: [quizdown-theme.html, ubc-quizdown.html]`, and the four custom callout types.
 
 A format cannot carry the brand on its own: its `brand` theme layer means the project's brand,
 and 521's `styles.scss` needs the `$brand-*` variables that only the brand defines.
@@ -51,7 +51,7 @@ A prototype rendered this setup, before the extension had a layer of its own, on
 |---|---|---|
 | `brand.yml` | `_brand.yml` | its `meta` (DSCI 521's name and links) removed (Q&A 16) |
 | `styles.scss`, `styles-dark.scss` | the same names | nothing |
-| `ubc.scss`, `ubc-dark.scss` | none: the extension's own layer, after 521's files | readable Mermaid subgraphs; the callout styling 521 leaves out, in Task 4 (Q&A 26) |
+| `ubc.scss`, `ubc-dark.scss`, `ubc-quizdown.html` | none: the extension's own layer, after 521's files | readable Mermaid subgraphs and quiz answer chips; the callout styling 521 leaves out, in Task 4 (Q&A 26) |
 | `code-labels.lua` | the same name | nothing (Q&A 9) |
 | `quizdown-theme.html` | the same name | nothing (Q&A 12) |
 | `MDSlogo.png` | the same name | applied only when a book opts in (Q&A 16) |

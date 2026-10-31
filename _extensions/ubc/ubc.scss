@@ -11,3 +11,11 @@
 $mermaid-fg-color--lightest: #F2F7FB !default;
 
 /*-- scss:rules --*/
+
+// The fill and border of a quiz's answer chips, which `ubc-quizdown.html`
+// injects into each quiz: a tint of the primary colour, per mode, under
+// `--mds-quiz-fg` text.
+:root {
+  --mds-quiz-chip-bg: #{mix($primary, $body-bg, 12%)};
+  --mds-quiz-chip-border: #{mix($primary, $body-bg, 35%)};
+}

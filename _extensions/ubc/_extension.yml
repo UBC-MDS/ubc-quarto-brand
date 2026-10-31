@@ -20,7 +20,7 @@ contributes:
         - custom-callout
         - quizdown
       # Themes the quizdown quizzes, which render into a shadow root.
-      include-after-body: quizdown-theme.html
+      include-after-body: [quizdown-theme.html, ubc-quizdown.html]
       # Literal hex: this YAML cannot read Sass. Keep in step with brand.yml.
       custom-callout:
         activity:
