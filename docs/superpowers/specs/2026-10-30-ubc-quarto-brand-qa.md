@@ -176,3 +176,10 @@ each claim was checked against the code before Dan saw it.
     for all four custom types, and the five built-ins in brand colours per mode, caution in a
     derived orange that clears AA (UBC publishes no orange). DSCI 521's built-in callouts change
     colour when it adopts the extension. Dan chose "A. Complete it, separate layer (Recommended)".
+27. **Licence.** A split licence, as in the reproducible-and-trustworthy-workflows book:
+    MIT for the code (Lua, SCSS, scripts, workflows) and CC BY-NC-SA 4.0 for the docs and the
+    test book's text. Vendored code keeps its own terms: quizdown's MIT licence text goes beside
+    its copy, and Font Awesome's terms stay in its CSS. The MDS logo is excluded as UBC's mark.
+    custom-callout has no licence upstream (coatless-quarto/custom-callout), a redistribution gap
+    DSCI 521 already has: [Dan] asks its author, James Balamuta, to add one.
+    Dan chose "A. Split, like the book (Recommended)".
