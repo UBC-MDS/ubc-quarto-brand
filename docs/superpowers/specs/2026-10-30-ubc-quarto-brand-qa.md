@@ -140,3 +140,9 @@ we can create and use that as a test book/site in the extension too to quickly f
     `brand.yml` losing 521's name and links and the format gaining the definition and
     relevance-project callouts. The website check renders a git-ignored copy of the extension.
     Dan chose "A. Approve section 1 (Recommended)".
+23. **Section 2, the test book.** Pages: Home (the README), Conventions (DSCI 521's page almost
+    as-is), Callouts (the five built-ins, titled and plain, the four custom types, and two
+    exercises in a row for numbering), Using it in a book (the how-to), Where it comes from
+    (provenance, pinned to 521 at `991bae89cba9`), and the project docs as chapters rendered
+    from where they live. `tests/website/` is one page rendered as a website in CI.
+    Dan chose "A. Approve section 2 (Recommended)".
