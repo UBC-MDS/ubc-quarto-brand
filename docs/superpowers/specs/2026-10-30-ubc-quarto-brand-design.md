@@ -1,6 +1,6 @@
 # ubc-quarto-brand: design spec
 
-**Status:** spec approved 2026-10-30 · small project, building on `main` (Q&A 29)
+**Status:** built on `main` 2026-10-31; `v0.1.0` waits for Dan's tag · small project, no PR here (Q&A 29)
 
 Kickoff's questions and Dan's answers are in
 [`2026-10-30-ubc-quarto-brand-qa.md`](2026-10-30-ubc-quarto-brand-qa.md);
