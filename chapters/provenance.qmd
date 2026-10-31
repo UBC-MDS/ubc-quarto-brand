@@ -48,7 +48,8 @@ compare its `format:`, `filters:` and `custom-callout:` keys with `_extensions/u
 Review the diff, then move the pin everywhere it appears:
 the default in `scripts/fetch-521.sh`, this page, its checks in `tests/check-render.sh`,
 the overview diagram in `docs/_overview.qmd`, and the spec.
-`grep -rn 991bae89` finds each one.
+`grep -rn --exclude-dir=_book 991bae89 .` finds each one, and history that stays as it is:
+the changelog, the plan and the kickoff Q&A.
 Release the change like any other.
 
 Once DSCI 521 uses this extension itself

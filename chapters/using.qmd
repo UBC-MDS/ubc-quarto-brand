@@ -68,7 +68,8 @@ The extension's dark-mode rules start with `body.quarto-dark`; start yours the s
 In your layer's `/*-- scss:rules --*/` section the brand's colours are available as `$brand-<name>`,
 for example `$brand-ubc-blue`.
 Its `/*-- scss:defaults --*/` section can set Bootstrap's and Quarto's Sass variables,
-such as `$callout-color-note`, and they win over the extension's in both modes;
+such as `$callout-color-note`, and they win over the extension's in both modes,
+except `$body-emphasis-color`, which DSCI 521's `styles-dark.scss` sets for dark mode;
 use literal hex there, because the `$brand-*` names do not exist yet when defaults are read.
 A single list, `theme: [extra.scss]`, makes Quarto stop with an error.
 
