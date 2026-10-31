@@ -22,8 +22,10 @@ format: ubc-html
 ```
 
 That one line brings the theme, the listing labels, the callouts and the quizzes.
-The brand's colours, fonts and dark mode reach every HTML page as soon as the extension
+The brand's colours, fonts and dark-mode toggle reach every HTML page as soon as the extension
 is installed, even one with a plain `format: html`.
+The rest needs `ubc-html`, readable tab titles in dark mode included:
+a plain `format: html` page paints the active tab's title in the page's own navy.
 
 ## Update it
 

@@ -36,7 +36,8 @@ One extension, `ubc`, in `_extensions/ubc/` (Q&A 18). It contributes two things:
 
 - **The brand,** through `metadata: project: brand: brand.yml`.
   Quarto merges it into any project with the extension installed, whatever its format,
-  so colours, fonts and dark mode apply even to a plain `format: html` page.
+  so colours, fonts and the dark-mode toggle reach even a plain `format: html` page; dark
+  mode's tab titles need `ubc-html`'s `styles-dark.scss` (the final review).
 - **A `ubc-html` format** with the theme layers
   (`light: [brand, styles.scss, ubc.scss]`,
   `dark: [brand, styles.scss, styles-dark.scss, ubc.scss, ubc-dark.scss]`),
