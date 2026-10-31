@@ -210,3 +210,8 @@ each claim was checked against the code before Dan saw it.
     README says CC BY-NC-SA 4.0 and its `LICENSE.md` CC BY 4.0. Asked which covers this
     project's docs and the test book's text, Dan chose "B. CC BY 4.0", matching the book's
     `LICENSE.md`: anyone may reuse them, commercially too, with attribution. Code stays MIT.
+
+31. **The MIT copyright holder.** `LICENSE.md` names "UBC Master of Data Science", the author
+    in `_extension.yml`; DSCI 521, where most of the code was written, publishes no licence or
+    holder. Asked before the tag, Dan chose "A. UBC Master of Data Science (Recommended)":
+    the licence and the extension's author field agree, and nothing changes.

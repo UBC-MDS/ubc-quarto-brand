@@ -1219,7 +1219,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 **Ruling** (Task 2's forward review): `LICENSE.md` uses CC BY-NC-SA 4.0 for the docs, as Q&A 27 records, although the reproducible book it names is split: its README says CC BY-NC-SA 4.0, its `LICENSE.md` CC BY 4.0. Dan is asked before he tags `v0.1.0`. If wrong: one licence paragraph. (Asked at the phase end, Dan chose CC BY 4.0, Q&A 30.)
 
-**Ruling** (Task 2's forward review): the MIT copyright holder is "UBC Master of Data Science", the extension's author in `_extension.yml`; DSCI 521 publishes no licence or holder. If wrong: one line, before the tag.
+**Ruling** (Task 2's forward review): the MIT copyright holder is "UBC Master of Data Science", the extension's author in `_extension.yml`; DSCI 521 publishes no licence or holder. If wrong: one line, before the tag. (Asked at the phase end, Dan kept it, Q&A 31.)
 
 **Files:**
 - Create: `chapters/provenance.qmd`, `LICENSE.md`, `_extensions/ubc/_extensions/quizdown/LICENSE`
