@@ -53,3 +53,14 @@ we can create and use that as a test book/site in the extension too to quickly f
     A one-page website project also renders in CI only,
     to catch website-specific breakage before DSCI 521 adopts the extension.
     Dan chose "A. Book demo + website check (Recommended)".
+
+11. **Commits, PRs, merging, previews.** Dan, during grilling:
+    "you may create commits and PRs, but don't merge,
+    the GHA for pr-preview should be able to render the site for me to also review".
+    So the agent commits, pushes the work branch and opens PRs, but never merges:
+    every merge waits for Dan, overriding fully vibed's merge.
+    Every PR gets a rendered preview of the test book through
+    [pr-preview-action](https://github.com/rossjrw/pr-preview-action), as in the
+    reproducible-and-trustworthy-workflows book, so the demo deploys from a `gh-pages` branch
+    (pr-preview-action needs "Deploy from branch"),
+    not from `actions/deploy-pages` as plan-driven-development's docs-site default gives.
