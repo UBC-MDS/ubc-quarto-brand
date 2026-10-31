@@ -86,6 +86,20 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-exercise.callout {
+  border-left-color: #1C5F2E;
+}
+div.callout-exercise.callout-style-default .callout-header {
+  background-color: rgba(28, 95, 46, 0.13);
+}
+div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f44b' !important;
+  background-image: none;
+}
 div.callout-definition.callout {
   border-left-color: #8A6D2B;
 }
@@ -112,20 +126,6 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
   font-weight: 900;
   font-style: normal;
   content: '\e53d' !important;
-  background-image: none;
-}
-div.callout-exercise.callout {
-  border-left-color: #1C5F2E;
-}
-div.callout-exercise.callout-style-default .callout-header {
-  background-color: rgba(28, 95, 46, 0.13);
-}
-div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f44b' !important;
   background-image: none;
 }
 div.callout-relevance-project.callout {
@@ -634,7 +634,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <h3 data-number="7.3.2" class="anchored" data-anchor-id="what-a-book-can-change"><span class="header-section-number">7.3.2</span> What a book can change</h3>
 <p>From the prototype (Q&amp;A 18):</p>
 <ul>
-<li><strong>Add styles</strong> with an extra theme layer, light and dark as separate lists: <code>format: ubc-html: theme: light: [extra.scss] dark: [extra.scss]</code>. The layer comes after the extension’s, and <code>$brand-*</code> names work in its rules; its Sass defaults, in literal hex, win over the extension’s in both modes (the final review). A plain list (<code>theme: [extra.scss]</code>) crashes Quarto.</li>
+<li><strong>Add styles</strong> with an extra theme layer, light and dark as separate lists: <code>format: ubc-html: theme: light: [extra.scss] dark: [extra.scss]</code>. The layer comes after the extension’s, and <code>$brand-*</code> names work in its rules; its Sass defaults, in literal hex, win over the extension’s in both modes, except the dark <code>$body-emphasis-color</code> from 521’s <code>styles-dark.scss</code> (the final review). A plain list (<code>theme: [extra.scss]</code>) crashes Quarto.</li>
 <li><strong>Add or recolour callout types</strong> with its own <code>custom-callout:</code> keys, which deep-merge over the extension’s (Q&amp;A 19). custom-callout uses the hex for the light-mode border and fill only, so the icon’s colour and the dark-mode colours come from rules in the book’s own layer, as the how-to shows (Task 5’s review).</li>
 <li><strong>Turn on the MDS logo</strong> by pointing its sidebar or navbar logo at the bundled file (Q&amp;A 16).</li>
 <li><strong>Not</strong> replace the brand piecemeal: a book’s own <code>_brand.yml</code> is silently ignored, and a top-level <code>brand:</code> replaces the whole brand: inline, it fails with an undefined <code>$brand-*</code> variable, and only a <code>brand:</code> file holding a complete copy renders (Task 5’s review).</li>
