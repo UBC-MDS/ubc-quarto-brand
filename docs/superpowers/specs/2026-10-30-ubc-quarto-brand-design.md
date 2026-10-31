@@ -136,13 +136,13 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 | S02 | a reader switches to dark mode | navy page, readable code, lightened callout borders, readable tab titles | Tasks 2, 4 | `tests/check-render.sh`; the PR preview, checked by eye | planned |
 | S03 | an author writes `:::{.exercise}` twice on a page | "Exercise 1" and "Exercise 2", each with the dumbbell in MDS green | Tasks 2, 4 | `tests/check-render.sh`; the Callouts page in the preview | planned |
 | S04 | an author writes any of Quarto's five built-in callouts | each renders in the brand's colours | Task 4 | the Callouts page in the preview | planned |
-| S05 | an author writes a `bash`, an `out` and a `filename=` listing | labels "Terminal", "Output" and the filename | Tasks 2, 3 | `tests/check-render.sh` | planned |
-| S06 | an author adds a quizdown quiz | the quiz renders in the brand's colours in both modes | Tasks 2, 3 | `tests/check-render.sh` (assets and theme); the preview, by eye | planned |
+| S05 | an author writes a `bash`, an `out` and a `filename=` listing | labels "Terminal", "Output" and the filename | Tasks 2, 3 | `tests/check-render.sh` | built |
+| S06 | an author adds a quizdown quiz | the quiz renders in the brand's colours in both modes | Tasks 2, 3 | `tests/check-render.sh` (assets and theme); the preview, by eye | built |
 | S07 | an author writes a `.term` console window | a dark terminal window with coloured spans | Tasks 3, 4 | the Callouts or Conventions page in the preview | planned |
 | S08 | an MDS book turns on the logo with one line | the MDS logo in its sidebar | Task 5 | the website check uses it; `tests/check-render.sh` | planned |
 | S09 | a book adds its own SCSS layer | its rules apply after the extension's, in both modes | Task 5 | the website check uses one; `tests/check-render.sh` | planned |
 | S10 | a book recolours a callout or adds a type | its keys merge over the extension's | Task 5 | the website check adds one; `tests/check-render.sh` | planned |
-| S11 | an author executes R and Python cells | output renders under the brand | Task 3 | the Conventions page renders in `make check` | planned |
+| S11 | an author executes R and Python cells | output renders under the brand | Task 3 | the Conventions page renders in `make check` | built |
 | S12 | someone asks where a file came from | the provenance page links its 521 original at `991bae89cba9` and says what changed | Task 6 | the Where it comes from page | planned |
 | S13 | a PR is opened, updated, merged mid-build or closed | a preview link is commented; it updates; the merge leaves no stray preview; closing removes it | Task 1 | `pr.yml` is the book's proven workflow plus per-PR cancel; proven when a PR is first opened here (Q&A 29) | built |
 | S14 | a push lands on `main` | the demo deploys to `gh-pages`, keeping `pr-preview/` and `.nojekyll` | Task 1 | every publish run on `main` | verified |

@@ -10,7 +10,7 @@
 
 **Spec:** `docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md`
 
-**Now:** Task 3: The conventions page, open.
+**Now:** Task 4: The callouts gallery, open.
 
 ## Global Constraints
 
@@ -603,6 +603,10 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 **Tier:** 3 · **Scenarios:** S05, S06, S11
 
+> **Built differently** (closed 2026-10-30; commits 5d965e4, 4dcfbc0): the figure is `lectures/img/cheers.png` in DSCI 521, beside the page; the listing's `img/cheers.png` returned 404. The eye check found quiz answer chips unreadable in dark mode (quizdown's fixed `#e8f5e9` under the page's text colour, missed by 521's `quizdown-theme.html`), escaped from Task 2: the extension's layer gained `ubc-quizdown.html` and `--mds-quiz-chip-*` in `ubc.scss`.
+
+**Ruling:** the chip fix lives in the extension's own layer, as Q&A 26 does for callouts, so `quizdown-theme.html` stays as fetched; chips take a tint of the primary colour in both modes, so in light mode they turn from quizdown's pale green to a pale blue. If wrong: two Sass lines, if Dan wants green chips back in light mode.
+
 **Files:**
 - Create (fetched): `chapters/book-conventions.qmd`, `chapters/img/cheers.png`
 - Modify: `scripts/fetch-521.sh`, `chapters/book-conventions.qmd` (one link), `_quarto.yml`, `tests/check-render.sh`, `docs/_overview.qmd`
@@ -611,9 +615,9 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 - Consumes: Task 2's `fetch`, `LIGHT`, the `ubc-html` format; Task 1's uv and renv environments.
 - Produces: `_book/chapters/book-conventions.html` (the page sets `output-file: book-conventions.html`), which Task 6 links to.
 
-- [ ] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
+- [x] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
 
-- [ ] **Step 1: Write the failing test.** Insert before `exit $fail` in `tests/check-render.sh`:
+- [x] **Step 1: Write the failing test.** Insert before `exit $fail` in `tests/check-render.sh`:
 
 ```bash
 # --- Task 3: the conventions page (S05, S06, S11)
@@ -633,9 +637,9 @@ expect "a tabset"                      'panel-tabset'                           
 exists "the figure is copied"          "$BOOK/chapters/img/cheers.png"
 ```
 
-- [ ] **Step 2: Run it; watch it fail.** `make test`. Expected: `FAIL conventions page (_book/chapters/book-conventions.html missing)`.
+- [x] **Step 2: Run it; watch it fail.** `make test`. Expected: `FAIL conventions page (_book/chapters/book-conventions.html missing)`.
 
-- [ ] **Step 3: Fetch the page and its figure.** In `scripts/fetch-521.sh`, after the quizdown loop, add:
+- [x] **Step 3: Fetch the page and its figure.** In `scripts/fetch-521.sh`, after the quizdown loop, add:
 
 ```bash
 fetch lectures/0-conventions.qmd chapters/book-conventions.qmd
@@ -644,7 +648,7 @@ fetch img/cheers.png             chapters/img/cheers.png
 
   Run `scripts/fetch-521.sh`; `git status` shows only the two new files (the others are byte-identical).
 
-- [ ] **Step 4: Change the one link into DSCI 521.** In `chapters/book-conventions.qmd`, replace
+- [x] **Step 4: Change the one link into DSCI 521.** In `chapters/book-conventions.qmd`, replace
 
 ```markdown
 a [link to another page](1-MDStools-bash-filesystem.qmd)
@@ -658,7 +662,7 @@ a [link to another page](../index.qmd)
 
   so the example stays an internal link, to this book's Home page. Nothing else in the page changes (Q&A 15).
 
-- [ ] **Step 5: Add the chapter.** In `_quarto.yml`, add `chapters/book-conventions.qmd` to `project: render:` after `index.qmd`, and in `book: chapters:` insert, after `index.qmd`:
+- [x] **Step 5: Add the chapter.** In `_quarto.yml`, add `chapters/book-conventions.qmd` to `project: render:` after `index.qmd`, and in `book: chapters:` insert, after `index.qmd`:
 
 ```yaml
     - part: "The brand"
@@ -668,9 +672,9 @@ a [link to another page](../index.qmd)
 
   In `docs/_overview.qmd`, add `conv["Conventions"] --> book` and drop "Conventions (Task 3), " from the planned `pages` node.
 
-- [ ] **Step 6: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN` (a reticulate or knitr warning counts).
+- [x] **Step 6: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN` (a reticulate or knitr warning counts).
 
-- [ ] **Step 7: Commit.** Write the message to a file:
+- [x] **Step 7: Commit.** Write the message to a file:
 
 ```text
 feat(book): 🤖 add DSCI 521's conventions page to the test book
@@ -688,7 +692,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
   `git add scripts/fetch-521.sh chapters/book-conventions.qmd chapters/img/cheers.png _quarto.yml tests/check-render.sh docs/_overview.qmd`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
-- [ ] **Step 8: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`. Close with the boxes ticked, **Now** `Task 4: The callouts gallery, open.`, the spec's S05, S06 and S11 rows `built`, and the close message as in Task 2 with `Task 3: The conventions page`, `Tier: 3` and `Rounds: self-review (Standards, Spec) and make check`.
+- [x] **Step 8: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`. Close with the boxes ticked, **Now** `Task 4: The callouts gallery, open.`, the spec's S05, S06 and S11 rows `built`, and the close message as in Task 2 with `Task 3: The conventions page`, `Tier: 3` and `Rounds: self-review (Standards, Spec) and make check`.
 
 ***
 
@@ -854,7 +858,7 @@ title: Using it in a book
         - chapters/using.qmd
 ```
 
-  In `docs/_overview.qmd`, add `gallery["Callouts, Using it in a book"] --> book` and drop "Callouts (Task 4), " from the planned `pages` node.
+  In `docs/_overview.qmd`, add `gallery["Callouts, Using it in a book"] --> book` and drop "Callouts (Task 4),<br/>" from the planned `pages` node.
 
 - [ ] **Step 5: Complete the callout styling in the extension's layer (Q&A 26).** custom-callout colours a border and fill but never the icon, and DSCI 521's `styles.scss` styles only activity and exercise. Quarto colours the built-ins from `$callout-color-*`, which default to `$blue`, `$green`, `$red`, `$yellow` and `$orange`; the brand maps the first four and has no orange. Dark values follow `brand.yml`'s own light/dark pairs. Every colour clears 4.5:1 on its page (white, or `ubc-blue-video` `#001328`).
 
@@ -1212,7 +1216,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 - Modify: `_quarto.yml`, `tests/check-render.sh`, `README.md`, `docs/_overview.qmd`
 
 **Interfaces:**
-- Consumes: Task 2's `scripts/fetch-521.sh`, `make fetch-521` and its layer `ubc.scss` and `ubc-dark.scss`; Task 3's conventions page.
+- Consumes: Task 2's `scripts/fetch-521.sh`, `make fetch-521` and its layer `ubc.scss`, `ubc-dark.scss` and `ubc-quizdown.html`; Task 3's conventions page.
 - Produces: `_book/chapters/provenance.html`.
 
 - [ ] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
@@ -1225,7 +1229,7 @@ PROV="$BOOK/chapters/provenance.html"
 exists "provenance page"               "$PROV"
 expect "pinned to 521's commit"        '991bae89cba904ae2dd0753338c306333eb5ea2e'                    "$PROV"
 for f in _brand.yml styles.scss styles-dark.scss code-labels.lua quizdown-theme.html MDSlogo.png \
-         _extensions/coatless-quarto/custom-callout _extensions/quizdown lectures/0-conventions.qmd img/cheers.png; do
+         _extensions/coatless-quarto/custom-callout _extensions/quizdown lectures/0-conventions.qmd lectures/img/cheers.png; do
   expect "links 521's $f"              "DSCI_521_platforms-dsci_book/(blob|tree)/991bae89cba904ae2dd0753338c306333eb5ea2e/$f" "$PROV"
 done
 expect "names the extension's own layer" 'ubc-dark\.scss'                                             "$PROV"
@@ -1244,7 +1248,7 @@ exists "quizdown's licence beside it"   _extensions/ubc/_extensions/quizdown/LIC
 title: Where it comes from
 ---
 
-Every file in this extension but its own layer, `ubc.scss` and `ubc-dark.scss`, comes from the
+Every file in this extension but its own layer, `ubc.scss`, `ubc-dark.scss` and `ubc-quizdown.html`, comes from the
 [DSCI 521 book](https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/),
 copied from one commit, `991bae89cba904ae2dd0753338c306333eb5ea2e`,
 by `scripts/fetch-521.sh`.
@@ -1260,11 +1264,11 @@ The links below point at each original as it was at that commit.
 | `_extensions/ubc/MDSlogo.png` | [`MDSlogo.png`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/MDSlogo.png) | shown only when a book opts in |
 | `_extensions/ubc/_extensions/coatless-quarto/custom-callout/` | [`_extensions/coatless-quarto/custom-callout/`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/tree/991bae89cba904ae2dd0753338c306333eb5ea2e/_extensions/coatless-quarto/custom-callout) | embedded in this extension |
 | `_extensions/ubc/_extensions/quizdown/` | [`_extensions/quizdown/`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/tree/991bae89cba904ae2dd0753338c306333eb5ea2e/_extensions/quizdown) | embedded in this extension |
-| `_extensions/ubc/ubc.scss`, `_extensions/ubc/ubc-dark.scss` | none: the extension's own layer, after DSCI 521's files | readable Mermaid subgraphs; spaced, coloured icons and dark variants for the two callout types DSCI 521 lacks; the built-in callouts in brand colours per mode (Q&A 26) |
+| `_extensions/ubc/ubc.scss`, `_extensions/ubc/ubc-dark.scss`, `_extensions/ubc/ubc-quizdown.html` | none: the extension's own layer, after DSCI 521's files | readable Mermaid subgraphs and quiz answer chips; spaced, coloured icons and dark variants for the two callout types DSCI 521 lacks; the built-in callouts in brand colours per mode (Q&A 26) |
 | `_extensions/ubc/_extensions/quizdown/LICENSE` | quizdown's [`LICENSE`](https://github.com/parmsam/quarto-quizdown/blob/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE), from its own repository | added: DSCI 521's copy has none (Q&A 27) |
 | `_extensions/ubc/_extension.yml` | the `filters:`, `custom-callout:` and `format:` keys of [`_quarto.yml`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/_quarto.yml) | becomes the `ubc-html` format; adds the definition and relevance-project callouts |
 | `chapters/book-conventions.qmd` (this book) | [`lectures/0-conventions.qmd`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/lectures/0-conventions.qmd) | its link to another 521 chapter points at this book's Home page |
-| `chapters/img/cheers.png` (this book) | [`img/cheers.png`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/img/cheers.png) | nothing |
+| `chapters/img/cheers.png` (this book) | [`lectures/img/cheers.png`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/lectures/img/cheers.png) | nothing |
 
 The copied files keep DSCI 521's comments, which point at its `_quarto.yml`.
 Here the theme lists and the `custom-callout:` colours live in `_extensions/ubc/_extension.yml`,
