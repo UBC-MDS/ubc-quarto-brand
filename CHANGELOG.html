@@ -447,7 +447,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#unreleased" id="toc-unreleased" class="nav-link active" data-scroll-target="#unreleased"><span class="header-section-number">10.1</span> Unreleased</a></li>
+  <li><a href="#v0.1.0-2026-10-31" id="toc-v0.1.0-2026-10-31" class="nav-link active" data-scroll-target="#v0.1.0-2026-10-31"><span class="header-section-number">10.1</span> v0.1.0 (2026-10-31)</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UBC-MDS/ubc-quarto-brand/blob/main/CHANGELOG.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-MDS/ubc-quarto-brand/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -474,10 +474,18 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 </header>
 
 
-<section id="unreleased" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="unreleased"><span class="header-section-number">10.1</span> Unreleased</h2>
+<section id="v0.1.0-2026-10-31" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="v0.1.0-2026-10-31"><span class="header-section-number">10.1</span> v0.1.0 (2026-10-31)</h2>
+<p>The first release: the DSCI 521 book’s UBC brand as a Quarto extension, <code>ubc</code>.</p>
 <ul>
-<li>2026-10-30: kickoff. The design spec, the kickoff Q&amp;A, and the project’s rules (<code>AGENTS.md</code>). The extension packages the brand from the DSCI 521 book at <code>991bae89cba9</code>.</li>
+<li><p><strong>The brand,</strong> for any project with the extension installed: the UBC palette, Atkinson Hyperlegible fonts from Google Fonts, and light and dark modes, from DSCI 521’s <code>_brand.yml</code>.</p></li>
+<li><p><strong>The <code>ubc-html</code> format:</strong> DSCI 521’s styles, its “Terminal” and “Output” listing labels, four callout types with Font Awesome icons (activity and exercise, numbered on each page; definition; relevance-project), quizdown quizzes themed for both modes, and a console window.</p></li>
+<li><p><strong>The extension’s own layer</strong> completes what DSCI 521 leaves out: coloured, spaced icons and dark variants for every custom callout, the five built-in callouts in brand colours in each mode, readable Mermaid subgraphs, and readable quiz answer chips in dark mode.</p></li>
+<li><p><strong>Copied from DSCI 521 at <code>991bae89cba9</code></strong> by <code>scripts/fetch-521.sh</code>; the demo book’s “Where it comes from” page lists each original and what changed.</p></li>
+<li><p><strong>The demo book</strong> renders DSCI 521’s conventions page, every callout, a how-to for adopting the extension, and the project’s docs; <code>tests/website/</code> checks a GitHub-style install.</p></li>
+<li><p><strong>CI:</strong> <code>make check</code> on every push and pull request; pull requests get a preview, and <code>main</code> deploys the demo to <a href="https://ubc-mds.github.io/ubc-quarto-brand/" class="uri">https://ubc-mds.github.io/ubc-quarto-brand/</a>.</p></li>
+<li><p><strong>Licence:</strong> MIT for code, CC BY-NC-SA 4.0 for docs, the MDS logo excluded; quizdown’s and Font Awesome’s licences ship beside their files.</p></li>
+<li><p>2026-10-30: kickoff. The design spec, the kickoff Q&amp;A, and the project’s rules (<code>AGENTS.md</code>). The extension packages the brand from the DSCI 521 book at <code>991bae89cba9</code>.</p></li>
 </ul>
 
 
