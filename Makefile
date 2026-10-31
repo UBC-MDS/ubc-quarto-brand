@@ -13,10 +13,15 @@ hooks: ## Install the git hooks (none exist yet)
 
 check: test test-utc lint docs leaks ## Everything CI runs
 
-test: ## Render the test book, fail on any Quarto warning, then check the output
+test: ## Render the test book and the website check, fail on any Quarto warning, then check the output
 	@rm -rf _book
 	uv run quarto render 2>&1 | tee .render.log
 	@if grep -E 'WARN|ERROR' .render.log; then echo "Quarto warned or failed: see .render.log"; exit 1; fi
+	rm -rf tests/website/_extensions tests/website/_site
+	mkdir -p tests/website/_extensions/UBC-MDS
+	cp -R _extensions/ubc tests/website/_extensions/UBC-MDS/ubc
+	cd tests/website && uv run quarto render 2>&1 | tee ../../.render-website.log
+	@if grep -E 'WARN|ERROR' .render-website.log; then echo "Quarto warned or failed: see .render-website.log"; exit 1; fi
 	tests/check-render.sh
 
 test-utc: ## Re-run the output checks under TZ=UTC

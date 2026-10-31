@@ -1,3 +1,108 @@
 ---
 title: Using it in a book
 ---
+
+## Install it
+
+In your Quarto book or website project, install a tagged release:
+
+```bash
+quarto add UBC-MDS/ubc-quarto-brand@v0.1.0
+```
+
+Quarto copies the extension into `_extensions/UBC-MDS/ubc/`.
+Commit that folder: your book keeps exactly this version until you update it.
+
+## Use the format
+
+In your `_quarto.yml`:
+
+```yaml
+format: ubc-html
+```
+
+That one line brings the theme, the listing labels, the callouts and the quizzes.
+The brand's colours, fonts and dark mode apply to every page as soon as the extension
+is installed, whatever format a page uses.
+
+## Update it
+
+```bash
+quarto update UBC-MDS/ubc-quarto-brand@v0.2.0
+```
+
+Do it in a pull request of its own, so the preview shows what changed before you merge.
+The [changelog](../CHANGELOG.md) lists what each release changed.
+
+## Turn on the MDS logo
+
+The MDS logo ships with the extension but is not shown unless you ask for it.
+In a book:
+
+```yaml
+book:
+  sidebar:
+    logo: _extensions/UBC-MDS/ubc/MDSlogo.png
+    logo-alt: "MDS logo"
+```
+
+In a website, the same two keys go under `website: sidebar:`.
+
+## Add your own styles
+
+Add a theme layer of your own. Give it to both modes, as two lists:
+
+```yaml
+format:
+  ubc-html:
+    theme:
+      light: [extra.scss]
+      dark: [extra.scss]
+```
+
+Your layer comes after the extension's, so its rules win,
+and the brand's colours are available in it as `$brand-<name>`, for example `$brand-ubc-blue`.
+A single list, `theme: [extra.scss]`, makes Quarto stop with an error.
+
+## Add or recolour a callout type
+
+Add `custom-callout:` keys to your `_quarto.yml`. They merge with the extension's:
+a new type is added, and a type the extension already has takes your values.
+
+```yaml
+custom-callout:
+  lab:
+    title: "Lab"
+    icon: true
+    icon-symbol: "fa-flask"
+    color: "#A6192E"
+```
+
+The colour must be a literal hex, because this YAML cannot read the brand's Sass.
+Take it from the palette:
+
+| Name | Hex |
+|---|---|
+| `ubc-blue` | `#002145` |
+| `ubc-blue-deep` | `#0055B7` |
+| `ubc-blue-mid` | `#0077C8` |
+| `ubc-blue-bright` | `#00A7E1` |
+| `ubc-gold-dark` | `#8A6D2B` |
+| `mds-green` | `#1C5F2E` |
+| `alert-red` | `#A6192E` |
+
+The [Callouts](callouts.qmd) page shows every type the extension defines.
+
+## What you cannot change
+
+You cannot replace part of the brand.
+A `_brand.yml` of your own is ignored, because the extension's brand takes its place.
+A top-level `brand:` key replaces the whole brand,
+so it would have to define every colour the extension's styles use, or the render fails.
+To change how things look, add a theme layer instead.
+
+## Executed code and quizzes
+
+Executed R and Python cells need nothing from the extension.
+Quizzes are written in a `quizdown` code block;
+the [conventions page](book-conventions.qmd) shows each kind.

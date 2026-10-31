@@ -1,0 +1,22 @@
+---
+title: Website check
+---
+
+:::{.exercise}
+The brand's exercise callout.
+:::
+
+:::{.lab}
+This website's own callout type.
+:::
+
+```bash
+quarto render
+```
+
+```quizdown
+## Which command renders a Quarto project?
+
+- [x] `quarto render`
+- [ ] `quarto build`
+```

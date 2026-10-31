@@ -1,0 +1,26 @@
+# A one-page website (DSCI 521's project type) using the extension the way a
+# GitHub install leaves it, with everything a book may add: the MDS logo, its
+# own theme layer and its own callout type. `make test` copies the extension in.
+project:
+  type: website
+
+website:
+  title: "Website check"
+  sidebar:
+    logo: _extensions/UBC-MDS/ubc/MDSlogo.png
+    logo-alt: "MDS logo"
+    contents:
+      - index.qmd
+
+format:
+  ubc-html:
+    theme:
+      light: [extra.scss]
+      dark: [extra.scss]
+
+custom-callout:
+  lab:
+    title: "Lab"
+    icon: true
+    icon-symbol: "fa-flask"
+    color: "#A6192E"

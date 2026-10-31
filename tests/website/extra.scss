@@ -1,0 +1,6 @@
+/*-- scss:rules --*/
+
+// A book's own layer: it comes after the extension's, and `$brand-*` names work in it.
+.website-check-marker {
+  color: $brand-ubc-gold-dark;
+}

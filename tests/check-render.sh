@@ -105,4 +105,19 @@ expect "important, dark"               'div\.callout-important\.callout\{border-
 expect "warning, dark"                 'div\.callout-warning\.callout\{border-left-color:#A89565'                              "$DARK"
 expect "caution, dark"                 'div\.callout-caution\.callout\{border-left-color:#F48525'                              "$DARK"
 
+# --- Task 5: a website project using a GitHub-style install (S08, S09, S10, S15)
+SITE=tests/website/_site
+SLIGHT=$(ls "$SITE"/site_libs/bootstrap/bootstrap-*.min.css 2>/dev/null | grep -v -- '-dark-' | head -1 || true)
+SDARK=$(ls "$SITE"/site_libs/bootstrap/bootstrap-dark-*.min.css 2>/dev/null | head -1 || true)
+exists "website page"                  "$SITE/index.html"
+expect "website: UBC blue"             '--brand-ubc-blue: ?#002145'                                  "$SLIGHT"
+expect "website: dark-mode toggle"     'quarto-color-scheme-toggle'                                  "$SITE/index.html"
+expect "website: MDS logo opted in"    'MDSlogo\.png'                                                "$SITE/index.html"
+expect "website: Terminal label"       '<strong>Terminal</strong>'                                   "$SITE/index.html"
+expect "website: a quiz"               '<div class="quizdown">'                                      "$SITE/index.html"
+expect_flat "website: the brand's exercise" 'div\.callout-exercise\.callout \{ *border-left-color: ?#1C5F2E' "$SITE/index.html"
+expect_flat "website: its own callout type" 'div\.callout-lab\.callout \{ *border-left-color: ?#A6192E'   "$SITE/index.html"
+expect "website: its own layer, light" '\.website-check-marker\{color:#8a6d2b\}'                     "$SLIGHT"
+expect "website: its own layer, dark"  '\.website-check-marker\{color:#8a6d2b\}'                     "$SDARK"
+
 exit $fail
