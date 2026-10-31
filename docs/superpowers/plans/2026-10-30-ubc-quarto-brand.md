@@ -10,7 +10,7 @@
 
 **Spec:** `docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md`
 
-**Now:** Phase end, step 1: The final whole-branch review.
+**Now:** Phase end, step 2: The rest of the ledger copied into the plan.
 
 ## Global Constraints
 
@@ -1388,7 +1388,11 @@ its commit, `docs(plan): 🤖 phase end step K: <what it did>`, trailer
 `Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Phase end`, which ticks the box and
 sets **Now** to the next step.
 
-- [ ] **1. The final whole-branch review:** Matt Pocock's `code-review`, two axes, from `git merge-base main HEAD`; one fix round and one scoped re-review; a ruling on whatever is left. Each fix is its own commit.
+**Ruling:** the final review's fixed point is `c57b394`, the approval commit before the build: on `main`, `git merge-base main HEAD` is HEAD itself. If wrong: nothing, the range covers every build commit.
+
+**Ruling:** Font Awesome's `LICENSE.txt` ships beside its font. Q&A 27 assumed its terms were in its CSS, which holds none, and the SIL Open Font License needs its notice to travel with the font. If wrong: one extra file.
+
+- [x] **1. The final whole-branch review:** Matt Pocock's `code-review`, two axes, from `git merge-base main HEAD`; one fix round and one scoped re-review; a ruling on whatever is left. Each fix is its own commit.
 - [ ] **2. The rest of the ledger copied into the plan:** whatever `.superpowers/sdd/2026-10-30-ubc-quarto-brand/progress.md` holds that no closing commit carries, under its task.
 - [ ] **3. The docs check:** every doc the branch touched is true (the README, the spec's design and scenario rows, the Architecture page with every built part solid, the how-to, the provenance page, `LICENSE.md`, `AGENTS.md`).
 - [ ] **4. A dated `CHANGELOG.md` entry** for `v0.1.0` (the extension, the test book, CI and previews, from DSCI 521 at `991bae89cba9`), and the spec's status line set to `PR open (#N)`, its number filled in once step 5 opens the PR.
@@ -1407,7 +1411,7 @@ Deferred findings, a row each.
 | Task 2 | Minor | `Makefile` | `SHA` is read from the environment and not checked as a full hex SHA (`SHA=main` defeats the pin); a name like `FETCH_521_SHA` is safer | open |
 | Task 2 | Minor | `tests/check-render.sh` | the bundle lookup takes an arbitrary bundle if several exist; `make test-utc` does not clear `_book`; an empty `LIGHT` gives a bare `FAIL … ()`; the `-missing` placeholder paths are only there for the message | open |
 | Task 2 | Minor | `_extensions/ubc/_extension.yml` | the callout hex values copy `brand.yml`, and nothing checks they still match after a re-fetch | open |
-| Task 2 | Minor | several | the pin `991bae89cba9` is repeated in the script, the spec, commit bodies and the provenance page | open |
+| Task 2 | Minor | several | the pin `991bae89cba9` is repeated in the script, the spec, the provenance page, its checks in `tests/check-render.sh` and the overview diagram; the provenance page now lists each | open |
 | Task 2 | Minor | `index.qmd` | the sidebar numbers Home "1" while the page itself is unnumbered | open |
 | Task 2 | Minor | `tests/check-render.sh` | "home titled in the sidebar" also matches the breadcrumb; the two diagram checks show only that some Mermaid block exists | open |
 | Task 5 | Minor | `Makefile` | `uv run quarto render … \| tee` drops Quarto's exit status; the `WARN\|ERROR` grep is case-sensitive, so a lowercase `error:` gets through | open |
@@ -1416,3 +1420,10 @@ Deferred findings, a row each.
 | Task 5 | Minor | `tests/check-render.sh` | `SLIGHT` and `SDARK` read as "slight"; no `exists` guards for them; `SITE` and `BOOK` are relative, so the script runs only from the repo root | open |
 | Task 5 | Minor | `chapters/using.qmd` | the palette table is a third hand-kept copy of `brand.yml`'s hex, after `_extension.yml`; nothing checks it | open |
 | Task 5 | Minor | `README.md`, `chapters/using.qmd` | `quarto add …@v0.1.0` fails until Dan tags `v0.1.0` | open |
+| Final | Minor | `.github/workflows/publish.yml` | no `concurrency:`: with every commit on `main`, an older run can deploy last and leave a stale demo, or race `pr.yml`'s push to `gh-pages` | open |
+| Final | Minor | `.github/workflows/pr.yml` | write permissions cover the whole job, and `actions/checkout` keeps the token while `make check` runs the PR's code; split the deploy into its own job, or `persist-credentials: false` | open |
+| Final | Minor | `.github/workflows/pr.yml` | no guard for a fork's PR, whose run goes red at the deploy step (the spec's risks say so) | open |
+| Final | Minor | both workflows | the gitleaks checksum comes from the same release as the binary; about 45 setup lines and the gitleaks version are repeated across the two files | open |
+| Final | Minor | `Makefile` | `uvx --from actionlint-py` is unpinned; `check:` relies on its prerequisites' order, so `make -j check` breaks; `setup` runs `uv sync` where CI runs `uv sync --locked` | open |
+| Final | Minor | `tests/check-render.sh` | no check asserts the exercise and activity icons' glyph or colour; S03's "dumbbell in MDS green" is proven by eye | open |
+| Final | Minor | `_quarto.yml`, `.gitignore` | the chapter list is kept twice (`project: render:` and `book: chapters:`); `*.quarto_ipynb` is listed twice | open |
