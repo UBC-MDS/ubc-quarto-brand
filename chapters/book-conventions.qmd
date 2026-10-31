@@ -1,0 +1,392 @@
+---
+title: Conventions in the Book
+output-file: book-conventions.html
+# Quarto would infer this from the single `{r}` cell below, but pinning it
+# keeps the page from silently reverting to the jupyter engine if that cell is
+# ever removed — which would also change where a Python warning is reported.
+# knitr runs the `{python}` cells through reticulate, which finds the uv venv
+# from VIRTUAL_ENV as long as the book is rendered under `uv run`.
+engine: knitr
+---
+
+```{r}
+#| include: false
+# Optional — the page renders without this chunk.
+#
+# knitr pulls reticulate in by itself the first time it meets a `{python}`
+# cell, and reticulate finds the uv venv from VIRTUAL_ENV whenever the book is
+# rendered with `uv run`, which is what the Makefile does. This chunk is here
+# to make that dependency visible in the source rather than implicit, and to
+# still resolve the right interpreter if someone renders outside `uv run`,
+# where VIRTUAL_ENV is not set. `required = FALSE` means a missing .venv is
+# ignored rather than an error, so the chunk can never be what breaks a render.
+library(reticulate)
+use_virtualenv(here::here(".venv"), required = FALSE)
+```
+
+One page holding every construct the book uses, so a theme or CSS change can be
+checked in one place, in both light and dark mode.
+This is a good reference page for how source code renders to the page.
+
+You can learn more about features in the [Quarto Guide](https://quarto.org/docs/guide/).
+
+## Text
+
+Body text, with **bold**, *italic*, `inline code`,
+a [link to another page](../index.qmd)
+and an [external link](https://quarto.org).
+Keyboard keys are written with `<kbd>`.
+Named keys take title case: <kbd>Ctrl</kbd>, <kbd>Shift</kbd>, <kbd>Tab</kbd>,
+<kbd>Enter</kbd>, <kbd>Esc</kbd>, <kbd>Space</kbd>, <kbd>Up</kbd>,
+<kbd>Down</kbd>.
+A letter key stays lowercase unless <kbd>Shift</kbd> is genuinely part of the
+shortcut, so that an uppercase letter never implies a <kbd>Shift</kbd> that
+isn't there: <kbd>Ctrl</kbd> + <kbd>c</kbd> interrupts a command, while
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> opens the browser console.
+The same rule reads correctly for a program that treats case as meaning,
+such as <kbd>n</kbd> and <kbd>N</kbd> in `less`.
+Enough of them to wrap, so their boxes can be checked against each other on
+neighbouring lines:
+press <kbd>Ctrl</kbd> + <kbd>c</kbd> to stop a running command,
+<kbd>Ctrl</kbd> + <kbd>d</kbd> to close the shell,
+<kbd>Tab</kbd> to complete a path,
+<kbd>Up</kbd> and <kbd>Down</kbd> to walk back through your history,
+and <kbd>Ctrl</kbd> + <kbd>r</kbd> to search it.
+
+### A third-level heading
+
+#### A fourth-level heading
+
+- An unordered list
+- with a second item
+    - and a nested item
+
+1. An ordered list
+2. with a second item
+
+> A blockquote.
+
+---
+
+## Code
+
+Every static listing carries a label saying where its contents belong, and the
+copy button says whether you are meant to take it: a listing you run or paste
+has one, a listing showing what the machine said back does not.
+
+| You are looking at | Fence | Label | Copy button |
+|---|---|---|---|
+| a command to run in the terminal | `bash` | automatic | yes |
+| what the terminal printed back | `out` | automatic | no |
+| code in a file, or typed at a console | `python`, `r` | `filename` | yes |
+| the contents of a file | its own language, or `default` | `filename` | yes |
+
+`bash` and `out` are labelled by `code-labels.lua`, because those two labels
+never vary. Everything else says where it belongs with an explicit `filename`,
+because that is where a label earns its keep -- `penguins.py` and
+`pyproject.toml` tell you something "Python" and "TOML" do not.
+
+A command and what it printed, which is the pairing most of the book is made
+of. They are two listings, never one, so the command can be copied without
+dragging the output along with it:
+
+```bash
+ls
+```
+
+```out
+Applications    Pictures
+Desktop         Documents       Movies
+Downloads       Music
+```
+
+A listing that is a file, labelled with the file's name:
+
+```{.python filename="penguins.py"}
+from palmerpenguins import load_penguins
+
+penguins = load_penguins()
+print(penguins.head())
+```
+
+```{.toml filename="pyproject.toml"}
+[project]
+requires-python = ">=3.12"
+```
+
+A file with no language of its own. `default` is the fence for these: no
+highlighting, but still a copy button, because it is a listing you are meant to
+put somewhere:
+
+```{.default filename=".python-version"}
+3.14
+```
+
+A listing typed at a console rather than saved to a file:
+
+```{.r filename="R Console"}
+install.packages(c("xaringan", "revealjs"))
+```
+
+The remaining languages, which reach the page the same way:
+
+```yaml
+# yaml listing, used for _quarto.yml and the GitHub Actions workflow
+project:
+  type: website
+```
+
+```markdown
+# markdown listing
+```
+
+```{.json filename="sample_notebook.ipynb"}
+{"cells": [{"cell_type": "markdown", "source": ["# A heading"]}]}
+```
+
+```
+# a bare fence: no label, no highlighting, no copy button
+```
+
+A listing wider than the page, so the horizontal scrollbar can be checked.
+Real lines in the book reach about 150 characters:
+
+```bash
+uv run --with 'numpy>=2.5.2' --with 'matplotlib>=3.11.1' python -c "import sys; print(sys.executable)" --directory ~/a/deeply/nested/project/path
+```
+
+Output wide enough to scroll, so the same can be checked on the quieter
+surface:
+
+```out
+cpython-3.14.7-macos-aarch64-none    /opt/homebrew/bin/python3.14 -> ../Cellar/python@3.14/3.14.7/bin/python3.14
+```
+
+A one-line command and a one-line output, the shortest the pairing gets:
+
+```bash
+uv --version
+```
+
+```out
+uv 0.12.6
+```
+
+### Executed cells
+
+A cell and its output:
+
+```{python}
+# python code
+a = 3
+a**2
+```
+
+A cell showing its own fence, which is how the book explains chunk options:
+
+```{python}
+#| echo: fenced
+a + 1
+```
+
+An R cell and its output. The page is pinned to the knitr engine in the front
+matter, so the Python cells above run through reticulate, which picks up the
+uv venv from `VIRTUAL_ENV` when the book is rendered with `uv run`:
+
+```{r}
+# r code
+a <- 1:5
+a^2
+```
+
+A cell that writes to stderr, which Quarto puts in an output block of its own.
+This one is R, because under knitr a Python warning arrives on stdout instead:
+
+```{r}
+warning("a warning from a cell")
+```
+
+A cell whose output is a figure:
+
+```{python}
+import matplotlib.pyplot as plt
+plt.plot([1, 2, 3], [1, 4, 9])
+plt.show()
+```
+
+## Callouts
+
+:::{.callout-note}
+A note!
+:::
+
+:::{.callout-tip}
+A tip!
+:::
+
+:::{.callout-warning}
+A warning!
+:::
+
+:::{.callout-important}
+An important!
+:::
+
+:::{.callout-caution}
+A caution!
+:::
+
+:::{.exercise}
+An exercise!
+:::
+
+:::{.activity}
+An activity!
+:::
+
+:::{.exercise}
+Another exercise!
+:::
+
+:::{.activity}
+Another activity!
+:::
+
+Callouts hold listings too, and Quarto styles those differently from a listing
+out in the body:
+
+:::{.callout-note}
+A note with a listing in it:
+
+```bash
+ls -la
+```
+:::
+
+## Quizzes
+
+Quizzes are written in a `quizdown` fence and rendered by
+`_extensions/quizdown`, a fork of `quizdown-js` kept at
+[UBC-MDS/quarto-quizdown-mds-ext](https://github.com/UBC-MDS/quarto-quizdown-mds-ext).
+The fence never says which kind of question it holds -- the type comes out of
+the shape of the list you write:
+
+| You write | You get |
+|---|---|
+| an unordered list whose items hold `::` | matching: drag a chip into a slot |
+| an ordered list with no checkboxes | sequence: drag the lines into order |
+| an unordered list of `- [ ]` and `- [x]` | multiple choice: tick every right answer |
+| an ordered list of `1. [ ]` and `1. [x]` | single choice: tick the one right answer |
+
+Three optional pieces work in all four: a `---` block of options above the
+question, a `>` blockquote under the heading, which becomes a hint behind a
+button, and a `>` blockquote indented under one answer, which becomes the
+feedback shown for that answer once the quiz is marked.
+
+A quiz renders into a shadow root, which is a corner of the page that no
+stylesheet can reach into from outside. So the colours below do not come from
+`styles.scss` like everything else on this page -- they come from
+`quizdown-theme.html`, which injects one stylesheet into each quiz. That is the
+thing all four of these are really here to check.
+
+The book only uses the first two types so far. The other two are on this page
+anyway, because an unused construct is the one that breaks without anyone
+noticing.
+
+### Matching
+
+Options, a hint and per-answer feedback, which the other three take the same
+way. An item with nothing on the left of its `::` is a distractor: it joins the
+pool of chips but matches no prompt.
+
+```quizdown
+---
+shuffle_answers: true
+---
+
+## Match each command to what it does
+
+> Every one of these appears in the first lecture.
+
+- `pwd` :: prints the directory you are in
+
+    > Print Working Directory.
+
+- `ls` :: lists what is beside you
+- `cd` :: moves you somewhere else
+- :: prints your username
+```
+
+### Sequence
+
+```quizdown
+## Put the steps of one trip around the shell's loop in order
+
+You type `ls -F` after the `$` prompt and press <kbd>Enter</kbd>.
+
+1. The shell takes in the line you typed
+2. The shell finds the `ls` program and runs it with the `-F` option
+3. The program's output is written to the terminal
+4. A fresh `$` prompt appears, waiting for the next command
+```
+
+### Multiple choice
+
+```quizdown
+## Which of these are shells?
+
+- [x] `bash`
+- [x] `zsh`
+- [ ] `ls`
+
+    > `ls` is a program you run *from* a shell.
+
+- [ ] JupyterLab
+```
+
+### Single choice
+
+```quizdown
+## Which command prints the directory you are in?
+
+1. [ ] `cd`
+2. [x] `pwd`
+3. [ ] `ls`
+4. [ ] `whoami`
+```
+
+## Tables
+
+| Command | Purpose                 | Example use    |
+|---------|-------------------------|----------------|
+| `pwd`   | Print Working Directory | `pwd`          |
+| `ls`    | LiSt contents           | `ls Documents` |
+| `cd`    | Change Directory        | `cd Desktop`   |
+
+## Math
+
+Inline math, $y = mx + b$, and display math:
+
+$$f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x-a}$$
+
+## Figures
+
+![A figure with a caption. Most figures in the book have no caption.](img/cheers.png)
+
+## Tabsets
+
+::: {.panel-tabset}
+
+### MacOS + *nix
+
+The contents of one tab, which is usually a listing:
+
+```bash
+ssh-keygen -t ed25519 -C "you@example.com"
+```
+
+### Windows
+
+The contents of the other tab.
+
+:::

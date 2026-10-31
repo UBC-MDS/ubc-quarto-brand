@@ -25,6 +25,8 @@ done
 for f in _extension.yml quizdown.lua assets/quizdown-init.js assets/quizdown.js assets/quizdownHighlight.js assets/quizdownKatex.js; do
   fetch "_extensions/quizdown/$f" "$EXT/_extensions/quizdown/$f"
 done
+fetch lectures/0-conventions.qmd chapters/book-conventions.qmd
+fetch lectures/img/cheers.png    chapters/img/cheers.png
 
 # brand.yml: DSCI 521's name and links belong to that book, not to the brand
 # (Q&A 16), so its top-level `meta:` block goes.

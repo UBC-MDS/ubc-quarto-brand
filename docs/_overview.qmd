@@ -10,7 +10,8 @@ flowchart LR
     layer["ubc.scss, ubc-dark.scss<br/>the extension's own layer"]
   end
   ext --> book["the test book at the root<br/>Home and the project docs"]
-  pages["Conventions (Task 3), Callouts (Task 4),<br/>Where it comes from (Task 6)"]:::planned -.-> book
+  conv["Conventions"] --> book
+  pages["Callouts (Task 4),<br/>Where it comes from (Task 6)"]:::planned -.-> book
   ext -.->|"Task 5"| site["tests/website/<br/>installed at _extensions/UBC-MDS/ubc/"]:::planned
   book -->|"make check"| out["_book/"]
   out -->|"publish.yml"| demo["gh-pages: the demo"]

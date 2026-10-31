@@ -53,4 +53,20 @@ expect "dark stylesheet linked"        'bootstrap-dark-[0-9a-f]+\.min\.css'     
 expect "quizdown scripts on Home"      'quarto-contrib/quizdown-[0-9.]+/quizdown\.js'                "$BOOK/index.html"
 expect "quiz theme include on Home"    'data-mds-quiz-theme'                                         "$BOOK/index.html"
 
+# --- Task 3: the conventions page (S05, S06, S11)
+CONV="$BOOK/chapters/book-conventions.html"
+exists "conventions page"              "$CONV"
+expect "Terminal label"                '<div class="code-with-filename-file"><pre><strong>Terminal</strong>' "$CONV"
+expect "Output label"                  '<strong>Output</strong>'                                     "$CONV"
+expect "filename label"                '<strong>penguins\.py</strong>'                               "$CONV"
+expect "a quiz"                        '<div class="quizdown">'                                      "$CONV"
+expect "executed R output"             '\[1\]  1  4  9 16 25'                                        "$CONV"
+expect "R warning in its own block"    'cell-output-stderr'                                          "$CONV"
+expect "a matplotlib figure"           'book-conventions_files/figure-html/[^"]+\.png'               "$CONV"
+expect "a captioned figure"            'img/cheers\.png'                                             "$CONV"
+expect "activity callouts"             'callout-activity'                                            "$CONV"
+expect "exercise callouts"             'callout-exercise'                                            "$CONV"
+expect "a tabset"                      'panel-tabset'                                                "$CONV"
+exists "the figure is copied"          "$BOOK/chapters/img/cheers.png"
+
 exit $fail
