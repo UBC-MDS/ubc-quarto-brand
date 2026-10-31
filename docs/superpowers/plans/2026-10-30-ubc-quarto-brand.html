@@ -135,20 +135,6 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
   content: '\e53d' !important;
   background-image: none;
 }
-div.callout-exercise.callout {
-  border-left-color: #1C5F2E;
-}
-div.callout-exercise.callout-style-default .callout-header {
-  background-color: rgba(28, 95, 46, 0.13);
-}
-div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f44b' !important;
-  background-image: none;
-}
 div.callout-definition.callout {
   border-left-color: #8A6D2B;
 }
@@ -161,6 +147,20 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
   font-weight: 900;
   font-style: normal;
   content: '\f518' !important;
+  background-image: none;
+}
+div.callout-exercise.callout {
+  border-left-color: #1C5F2E;
+}
+div.callout-exercise.callout-style-default .callout-header {
+  background-color: rgba(28, 95, 46, 0.13);
+}
+div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f44b' !important;
   background-image: none;
 }
 div.callout-relevance-project.callout {
@@ -461,6 +461,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
   <li><a href="#task-6-where-it-comes-from" id="toc-task-6-where-it-comes-from" class="nav-link" data-scroll-target="#task-6-where-it-comes-from"><span class="header-section-number">5.2.6</span> Task 6: Where it comes from</a></li>
   <li><a href="#task-7-phase-end" id="toc-task-7-phase-end" class="nav-link" data-scroll-target="#task-7-phase-end"><span class="header-section-number">5.2.7</span> Task 7: Phase end</a></li>
   </ul></li>
+  <li><a href="#phase-end-list" id="toc-phase-end-list" class="nav-link" data-scroll-target="#phase-end-list"><span class="header-section-number">5.3</span> Phase-end list</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UBC-MDS/ubc-quarto-brand/blob/main/docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-MDS/ubc-quarto-brand/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -494,7 +495,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <p><strong>Architecture:</strong> <code>_extensions/ubc/</code> contributes the brand through <code>metadata: project: brand:</code> and a <code>ubc-html</code> format (theme layers, the code-labels filter, embedded custom-callout and quizdown). Its files are fetched from DSCI 521 at one pinned commit by <code>scripts/fetch-521.sh</code>. The repository root is a Quarto book using that format; <code>tests/website/</code> is a one-page website using it from a GitHub-style install folder. <code>tests/check-render.sh</code> asserts on the rendered HTML and CSS.</p>
 <p><strong>Tech Stack:</strong> Quarto 1.11.6, brand.yml, SCSS, Lua filters, custom-callout 0.0.1-dev.3, quizdown 1.3.2; R 4.6.2 with renv (knitr, rmarkdown, reticulate, here); Python 3.14 with uv (matplotlib); GitHub Actions with pr-preview-action, github-pages-deploy-action and lychee-action; gitleaks 8.30.1; actionlint.</p>
 <p><strong>Spec:</strong> <code>docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md</code></p>
-<p><strong>Now:</strong> Task 2: The ubc extension, open.</p>
+<p><strong>Now:</strong> Task 3: The conventions page, open.</p>
 <section id="global-constraints" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="global-constraints"><span class="header-section-number">5.1</span> Global Constraints</h2>
 <ul>
@@ -504,6 +505,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <li>Callouts (literal hex): activity <code>fa-person-chalkboard</code> <code>#0055B7</code>; exercise <code>fa-dumbbell</code> <code>#1C5F2E</code>; definition <code>fa-book-open</code> <code>#8A6D2B</code>; relevance-project, titled “Relevance to course project”, <code>fa-diagram-project</code> <code>#0077C8</code>.</li>
 <li>Third-party actions pinned by SHA: <code>astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2</code> (v10.3.3), <code>rossjrw/pr-preview-action@873417d2df72380da1f3978378fb58560bcde976</code> (v1.8.2), <code>JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445</code> (v4.9.0), <code>lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8</code> (v2.9.0). GitHub’s, Quarto’s and r-lib’s own actions stay on major tags.</li>
 <li>The agent commits and pushes straight to <code>main</code> (Q&amp;A 29) after a passing <code>make leaks</code>; it never tags (Q&amp;A 17).</li>
+<li>Diagrams: a task that builds a part drawn dashed in <code>docs/_overview.qmd</code> turns it solid in the same commit: the node loses <code>:::planned</code>, its edge becomes <code>--&gt;</code> (AGENTS.md, <em>Docs and security</em>).</li>
 <li>Commits: message in a file, <code>git commit -F</code>, stage by path, the <code>Plan:</code> trailer checked with <code>git log -1 --format='%(trailers)'</code>, and <code>uv run --quiet --script scripts/commitmsg.py &lt;file&gt;</code> before committing.</li>
 </ul>
 </section>
@@ -862,11 +864,18 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <section id="task-2-the-ubc-extension" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="task-2-the-ubc-extension"><span class="header-section-number">5.2.2</span> Task 2: The ubc extension</h3>
 <p><strong>Tier:</strong> 2 · <strong>Scenarios:</strong> S01, S02, S03, S06</p>
+<blockquote class="blockquote">
+<p><strong>Built differently</strong> (closed 2026-10-30; commits 86db99c, 3d9327c, 1b397c2, 153c286, 33c99e4, e01b19c): the review’s fixes. The <code>fetch-521</code> help says <code>SHA=&lt;commit&gt;</code> fetches another commit and that the pin is in <code>scripts/fetch-521.sh</code>; the listing’s “to change the pin” was untrue. The Architecture page (<code>docs/architecture.qmd</code>, its diagram in <code>docs/_overview.qmd</code>, also on Home) was added, since diagrams never wait. Home got a title in the sidebar, its title block hidden so the README’s heading shows once (escaped from Task 1). The extension got its own layer, <code>ubc.scss</code> and <code>ubc-dark.scss</code>, after DSCI 521’s files, for readable Mermaid subgraphs; Task 4 adds Q&amp;A 26’s callout styling to it.</p>
+</blockquote>
+<p><strong>Ruling:</strong> the definition and relevance-project callouts’ icon spacing and dark-mode colours, which the Standards review found missing, are Task 4’s, with the rest of Q&amp;A 26; S02 stays <code>planned</code> and names Tasks 2 and 4. If wrong: two callout types keep unlightened dark borders until Task 4.</p>
+<p><strong>Ruling:</strong> the extension’s own layer is one pair, <code>ubc.scss</code> and <code>ubc-dark.scss</code>, made now for the Mermaid fix; Task 4’s callout styling goes into it rather than a separate <code>callouts.scss</code>. If wrong: a rename.</p>
+<p><strong>Ruling:</strong> the Mermaid subgraph fix is in scope although no scenario names diagrams: any book with a subgraph hits it, and this project’s own Architecture page did. If wrong: one Sass default Dan may want elsewhere.</p>
+<p><strong>Ruling:</strong> S13 is <code>built</code> and S14 <code>verified</code> (two green publish runs, 41173425986 and 41173494613, and the live site); Task 1’s close had left both <code>planned</code>. If wrong: two status words.</p>
 <p><strong>Files:</strong> - Create: <code>scripts/fetch-521.sh</code>; <code>_extensions/ubc/_extension.yml</code>; fetched by the script: <code>_extensions/ubc/brand.yml</code>, <code>styles.scss</code>, <code>styles-dark.scss</code>, <code>code-labels.lua</code>, <code>quizdown-theme.html</code>, <code>MDSlogo.png</code>, <code>_extensions/ubc/_extensions/coatless-quarto/custom-callout/{_extension.yml,customcallout.lua,fa.lua,assets/css/fontawesome.css,assets/webfonts/fa-solid-900.woff2}</code>, <code>_extensions/ubc/_extensions/quizdown/{_extension.yml,quizdown.lua,assets/quizdown-init.js,assets/quizdown.js,assets/quizdownHighlight.js,assets/quizdownKatex.js}</code> - Modify: <code>_quarto.yml</code> (<code>format: ubc-html</code>), <code>tests/check-render.sh</code>, <code>Makefile</code></p>
 <p><strong>Interfaces:</strong> - Consumes: Task 1’s <code>make test</code>, <code>expect</code>, <code>exists</code>, <code>BOOK</code>. - Produces: the <code>ubc-html</code> format; <code>scripts/fetch-521.sh [commit]</code> with <code>fetch &lt;path in 521&gt; &lt;path here&gt;</code>; <code>make fetch-521</code>; in <code>tests/check-render.sh</code>, <code>LIGHT</code> and <code>DARK</code> (the book’s light and dark Bootstrap bundles), which Tasks 3 to 5 reuse.</p>
 <ul class="task-list">
-<li><p><label><input type="checkbox"><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
-<li><p><label><input type="checkbox"><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
 </ul>
 <div class="code-with-filename">
 <div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
@@ -896,8 +905,8 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"quiz theme include on Home"</span>    <span class="st">'data-mds-quiz-theme'</span>                                         <span class="st">"</span><span class="va">$BOOK</span><span class="st">/index.html"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul class="task-list">
-<li><p><label><input type="checkbox"><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL dark stylesheet</code> (plain <code>html</code> has no dark bundle) and <code>FAIL UBC blue in the palette</code> (no brand yet), and exit 1.</label></p></li>
-<li><p><label><input type="checkbox"><strong>Step 3: Write <code>scripts/fetch-521.sh</code></strong> and <code>chmod 755</code> it:</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL dark stylesheet</code> (plain <code>html</code> has no dark bundle) and <code>FAIL UBC blue in the palette</code> (no brand yet), and exit 1.</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 3: Write <code>scripts/fetch-521.sh</code></strong> and <code>chmod 755</code> it:</label></p></li>
 </ul>
 <div class="code-with-filename">
 <div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
@@ -937,7 +946,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 </div>
 <p>Run it: <code>scripts/fetch-521.sh</code>. Expected: one <code>fetched</code> line per file and <code>removed meta:</code>; <code>grep -c '^meta:' _extensions/ubc/brand.yml</code> prints <code>0</code>.</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Step 4: Write <code>_extensions/ubc/_extension.yml</code>:</strong></label></li>
+<li><label><input type="checkbox" checked=""><strong>Step 4: Write <code>_extensions/ubc/_extension.yml</code>:</strong></label></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> UBC brand</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> UBC Master of Data Science</span></span>
@@ -985,13 +994,13 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">icon-symbol</span><span class="kw">:</span><span class="at"> </span><span class="st">"fa-diagram-project"</span></span>
 <span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">color</span><span class="kw">:</span><span class="at"> </span><span class="st">"#0077C8"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Step 5: Use the format.</strong> In <code>_quarto.yml</code>, replace <code>format: html</code> with <code>format: ubc-html</code>. In the <code>Makefile</code>, add <code>fetch-521</code> to <code>.PHONY</code> and this target after <code>clean</code>:</label></li>
+<li><label><input type="checkbox" checked=""><strong>Step 5: Use the format.</strong> In <code>_quarto.yml</code>, replace <code>format: html</code> with <code>format: ubc-html</code>. In the <code>Makefile</code>, add <code>fetch-521</code> to <code>.PHONY</code> and this target after <code>clean</code>:</label></li>
 </ul>
 <pre class="make"><code>fetch-521: ## Re-fetch the brand files from DSCI 521 (SHA=&lt;commit&gt; to change the pin)
     scripts/fetch-521.sh $(SHA)</code></pre>
 <ul class="task-list">
-<li><p><label><input type="checkbox"><strong>Step 6: Run the checks; they pass.</strong> <code>make check</code>. Expected: every <code>ok</code>, no <code>FAIL</code>, no Quarto <code>WARN</code>.</label></p></li>
-<li><p><label><input type="checkbox"><strong>Step 7: Commit.</strong> Write the message to a file:</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 6: Run the checks; they pass.</strong> <code>make check</code>. Expected: every <code>ok</code>, no <code>FAIL</code>, no Quarto <code>WARN</code>.</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 7: Commit.</strong> Write the message to a file:</label></p></li>
 </ul>
 <pre class="text"><code>feat(ext): 🤖 add the ubc extension: DSCI 521's brand as a format
 
@@ -1007,7 +1016,7 @@ Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 2
 Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <p><code>git add scripts/fetch-521.sh _extensions/ubc _quarto.yml tests/check-render.sh Makefile</code>, <code>git commit -F &lt;file&gt;</code>, <code>git log -1 --format='%(trailers)'</code>. Then <code>make leaks</code> and <code>git push origin main</code>.</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Step 8: Review, look forward, close.</strong> Tier 2: Matt Pocock’s <code>code-review</code> from <code>.git/TASK_BASE</code>, two axes in two subagents; fix Critical and Important. Close with the boxes ticked, <strong>Now</strong> <code>Task 3: The conventions page, open.</code>, the spec’s S01 and S02 rows <code>built</code>, and:</label></li>
+<li><label><input type="checkbox" checked=""><strong>Step 8: Review, look forward, close.</strong> Tier 2: Matt Pocock’s <code>code-review</code> from <code>.git/TASK_BASE</code>, two axes in two subagents; fix Critical and Important. Close with the boxes ticked, <strong>Now</strong> <code>Task 3: The conventions page, open.</code>, the spec’s S01 and S02 rows <code>built</code>, and:</label></li>
 </ul>
 <pre class="text"><code>docs(plan): 🤖 close Task 2: The ubc extension
 
@@ -1026,7 +1035,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <section id="task-3-the-conventions-page" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="task-3-the-conventions-page"><span class="header-section-number">5.2.3</span> Task 3: The conventions page</h3>
 <p><strong>Tier:</strong> 3 · <strong>Scenarios:</strong> S05, S06, S11</p>
-<p><strong>Files:</strong> - Create (fetched): <code>chapters/book-conventions.qmd</code>, <code>chapters/img/cheers.png</code> - Modify: <code>scripts/fetch-521.sh</code>, <code>chapters/book-conventions.qmd</code> (one link), <code>_quarto.yml</code>, <code>tests/check-render.sh</code></p>
+<p><strong>Files:</strong> - Create (fetched): <code>chapters/book-conventions.qmd</code>, <code>chapters/img/cheers.png</code> - Modify: <code>scripts/fetch-521.sh</code>, <code>chapters/book-conventions.qmd</code> (one link), <code>_quarto.yml</code>, <code>tests/check-render.sh</code>, <code>docs/_overview.qmd</code></p>
 <p><strong>Interfaces:</strong> - Consumes: Task 2’s <code>fetch</code>, <code>LIGHT</code>, the <code>ubc-html</code> format; Task 1’s uv and renv environments. - Produces: <code>_book/chapters/book-conventions.html</code> (the page sets <code>output-file: book-conventions.html</code>), which Task 6 links to.</p>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
@@ -1073,6 +1082,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> </span><span class="st">"The brand"</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">chapters</span><span class="kw">:</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> chapters/book-conventions.qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In <code>docs/_overview.qmd</code>, add <code>conv["Conventions"] --&gt; book</code> and drop “Conventions (Task 3),” from the planned <code>pages</code> node.</p>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 6: Run the checks; they pass.</strong> <code>make check</code>. Expected: every <code>ok</code>, no <code>FAIL</code>, no Quarto <code>WARN</code> (a reticulate or knitr warning counts).</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 7: Commit.</strong> Write the message to a file:</label></p></li>
@@ -1088,7 +1098,7 @@ page (_book/chapters/book-conventions.html missing).
 
 Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 3
 Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
-<p><code>git add scripts/fetch-521.sh chapters/book-conventions.qmd chapters/img/cheers.png _quarto.yml tests/check-render.sh</code>, <code>git commit -F &lt;file&gt;</code>, <code>git log -1 --format='%(trailers)'</code>. Then <code>make leaks</code> and <code>git push origin main</code>.</p>
+<p><code>git add scripts/fetch-521.sh chapters/book-conventions.qmd chapters/img/cheers.png _quarto.yml tests/check-render.sh docs/_overview.qmd</code>, <code>git commit -F &lt;file&gt;</code>, <code>git log -1 --format='%(trailers)'</code>. Then <code>make leaks</code> and <code>git push origin main</code>.</p>
 <ul class="task-list">
 <li><label><input type="checkbox"><strong>Step 8: Review, look forward, close.</strong> Tier 3: self-review under <em>Standards</em> and <em>Spec</em>, plus <code>make check</code>. Close with the boxes ticked, <strong>Now</strong> <code>Task 4: The callouts gallery, open.</code>, the spec’s S05, S06 and S11 rows <code>built</code>, and the close message as in Task 2 with <code>Task 3: The conventions page</code>, <code>Tier: 3</code> and <code>Rounds: self-review (Standards, Spec) and make check</code>.</label></li>
 </ul>
@@ -1096,9 +1106,9 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 </section>
 <section id="task-4-the-callouts-gallery" class="level3" data-number="5.2.4">
 <h3 data-number="5.2.4" class="anchored" data-anchor-id="task-4-the-callouts-gallery"><span class="header-section-number">5.2.4</span> Task 4: The callouts gallery</h3>
-<p><strong>Tier:</strong> 3 · <strong>Scenarios:</strong> S03, S04, S07</p>
-<p><strong>Files:</strong> - Create: <code>chapters/callouts.qmd</code> - Modify: <code>_quarto.yml</code>, <code>tests/check-render.sh</code></p>
-<p><strong>Interfaces:</strong> - Consumes: Task 2’s callout types and <code>.term</code> rules. - Produces: <code>_book/chapters/callouts.html</code>.</p>
+<p><strong>Tier:</strong> 3 · <strong>Scenarios:</strong> S02, S03, S04, S07</p>
+<p><strong>Files:</strong> - Create: <code>chapters/callouts.qmd</code> - Modify: <code>_quarto.yml</code>, <code>tests/check-render.sh</code>, <code>_extensions/ubc/ubc.scss</code>, <code>_extensions/ubc/ubc-dark.scss</code>, <code>docs/_overview.qmd</code></p>
+<p><strong>Interfaces:</strong> - Consumes: Task 2’s callout types and <code>.term</code> rules; its layer <code>ubc.scss</code> and <code>ubc-dark.scss</code>; <code>LIGHT</code> and <code>DARK</code> in <code>tests/check-render.sh</code>. - Produces: <code>_book/chapters/callouts.html</code>.</p>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
@@ -1121,7 +1131,19 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"Font Awesome stylesheet"</span>       <span class="st">'fontawesome\.css'</span>                                            <span class="st">"</span><span class="va">$CALL</span><span class="st">"</span></span>
 <span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"a console window"</span>              <span class="st">'&lt;div class="term"&gt;'</span>                                          <span class="st">"</span><span class="va">$CALL</span><span class="st">"</span></span>
 <span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="va">n</span><span class="op">=</span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-o</span> <span class="st">'class="callout callout-style-default callout-exercise'</span> <span class="st">"</span><span class="va">$CALL</span><span class="st">"</span> <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="at">-d</span> <span class="st">' '</span><span class="va">)</span></span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="st">"</span><span class="va">${n</span><span class="op">:-</span>0<span class="va">}</span><span class="st">"</span> <span class="ot">-ge</span> 2 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="bu">echo</span> <span class="st">"ok   two exercises for the numbering"</span><span class="kw">;</span> <span class="cf">else</span> <span class="bu">echo</span> <span class="st">"FAIL two exercises for the numbering (</span><span class="va">$n</span><span class="st">)"</span><span class="kw">;</span> <span class="va">fail</span><span class="op">=</span>1<span class="kw">;</span> <span class="cf">fi</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="st">"</span><span class="va">${n</span><span class="op">:-</span>0<span class="va">}</span><span class="st">"</span> <span class="ot">-ge</span> 2 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="bu">echo</span> <span class="st">"ok   two exercises for the numbering"</span><span class="kw">;</span> <span class="cf">else</span> <span class="bu">echo</span> <span class="st">"FAIL two exercises for the numbering (</span><span class="va">$n</span><span class="st">)"</span><span class="kw">;</span> <span class="va">fail</span><span class="op">=</span>1<span class="kw">;</span> <span class="cf">fi</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Q&amp;A 26: the extension's layer colours every icon, and the built-ins, in each mode</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"definition icon"</span>               <span class="st">'div\.callout-definition \.callout-icon::before\{color:#8A6D2B'</span>                          <span class="st">"</span><span class="va">$LIGHT</span><span class="st">"</span></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"relevance icon"</span>                <span class="st">'div\.callout-relevance-project \.callout-icon::before\{color:#0077C8'</span>                   <span class="st">"</span><span class="va">$LIGHT</span><span class="st">"</span></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"definition border, dark"</span>       <span class="st">'body\.quarto-dark div\.callout-definition\.callout\{border-left-color:#A89565'</span>        <span class="st">"</span><span class="va">$LIGHT</span><span class="st">"</span></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"relevance border, dark"</span>        <span class="st">'body\.quarto-dark div\.callout-relevance-project\.callout\{border-left-color:#00A7E1'</span> <span class="st">"</span><span class="va">$LIGHT</span><span class="st">"</span></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"warning in dark gold"</span>          <span class="st">'div\.callout-warning\.callout\{border-left-color:#8A6D2B'</span>                              <span class="st">"</span><span class="va">$LIGHT</span><span class="st">"</span></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"caution in derived orange"</span>     <span class="st">'div\.callout-caution\.callout\{border-left-color:#B85B0A'</span>                              <span class="st">"</span><span class="va">$LIGHT</span><span class="st">"</span></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"note, dark"</span>                    <span class="st">'div\.callout-note\.callout\{border-left-color:#40B4E5'</span>                                 <span class="st">"</span><span class="va">$DARK</span><span class="st">"</span></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"tip, dark"</span>                     <span class="st">'div\.callout-tip\.callout\{border-left-color:#88D4AB'</span>                                  <span class="st">"</span><span class="va">$DARK</span><span class="st">"</span></span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"important, dark"</span>               <span class="st">'div\.callout-important\.callout\{border-left-color:#F08080'</span>                            <span class="st">"</span><span class="va">$DARK</span><span class="st">"</span></span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"warning, dark"</span>                 <span class="st">'div\.callout-warning\.callout\{border-left-color:#A89565'</span>                              <span class="st">"</span><span class="va">$DARK</span><span class="st">"</span></span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"caution, dark"</span>                 <span class="st">'div\.callout-caution\.callout\{border-left-color:#F48525'</span>                              <span class="st">"</span><span class="va">$DARK</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL callouts page (_book/chapters/callouts.html missing)</code>.</label></p></li>
@@ -1228,29 +1250,87 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> chapters/callouts.qmd</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> chapters/using.qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In <code>docs/_overview.qmd</code>, add <code>gallery["Callouts, Using it in a book"] --&gt; book</code> and drop “Callouts (Task 4),” from the planned <code>pages</code> node.</p>
 <ul class="task-list">
-<li><p><label><input type="checkbox"><strong>Step 5: Run the checks; they pass.</strong> <code>make check</code>. Expected: every <code>ok</code>, no <code>FAIL</code>, no Quarto <code>WARN</code>.</label></p></li>
-<li><p><label><input type="checkbox"><strong>Step 6: Commit.</strong> Write the message to a file:</label></p></li>
+<li><p><label><input type="checkbox"><strong>Step 5: Complete the callout styling in the extension’s layer (Q&amp;A 26).</strong> custom-callout colours a border and fill but never the icon, and DSCI 521’s <code>styles.scss</code> styles only activity and exercise. Quarto colours the built-ins from <code>$callout-color-*</code>, which default to <code>$blue</code>, <code>$green</code>, <code>$red</code>, <code>$yellow</code> and <code>$orange</code>; the brand maps the first four and has no orange. Dark values follow <code>brand.yml</code>’s own light/dark pairs. Every colour clears 4.5:1 on its page (white, or <code>ubc-blue-video</code> <code>#001328</code>).</label></p>
+<p>In <code>_extensions/ubc/ubc.scss</code>, after the Mermaid default:</p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Built-in callouts (Q&amp;A 26). The brand's yellow, ubc-gold (#A89565), is</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">// 2.94:1 on white, so warning takes ubc-gold-dark (4.88:1). UBC publishes no</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">// orange; caution takes one derived at hue 28 degrees, 4.63:1 on white.</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="va">$callout-color-warning</span>: <span class="cn">#8A6D2B</span> <span class="at">!default</span><span class="op">;</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="va">$callout-color-caution</span>: <span class="cn">#B85B0A</span> <span class="at">!default</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>and under its <code>/*-- scss:rules --*/</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">// The two callout types DSCI 521 does not have (Q&amp;A 8, 26), styled as its</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">// styles.scss styles activity and exercise: a spaced, coloured icon, and a</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co">// lighter border and icon on the dark page. `body.quarto-dark` outranks the</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">// colour custom-callout writes into the page.</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>div<span class="fu">.callout-definition</span> <span class="fu">.callout-icon</span><span class="in">::before</span><span class="op">,</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>div<span class="fu">.callout-relevance-project</span> <span class="fu">.callout-icon</span><span class="in">::before</span> {</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-right</span>: <span class="dv">0.4</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>div<span class="fu">.callout-definition</span> <span class="fu">.callout-icon</span><span class="in">::before</span> {</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="va">$brand-ubc-gold-dark</span><span class="op">;</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>div<span class="fu">.callout-relevance-project</span> <span class="fu">.callout-icon</span><span class="in">::before</span> {</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="va">$brand-ubc-blue-mid</span><span class="op">;</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>body<span class="fu">.quarto-dark</span> {</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>  div<span class="fu">.callout-definition.callout</span> {</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border-left-color</span>: <span class="va">$brand-ubc-gold</span><span class="op">;</span></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>  div<span class="fu">.callout-definition</span> <span class="fu">.callout-icon</span><span class="in">::before</span> {</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="va">$brand-ubc-gold</span><span class="op">;</span></span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>  div<span class="fu">.callout-relevance-project.callout</span> {</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border-left-color</span>: <span class="va">$brand-ubc-blue-bright</span><span class="op">;</span></span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>  div<span class="fu">.callout-relevance-project</span> <span class="fu">.callout-icon</span><span class="in">::before</span> {</span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="va">$brand-ubc-blue-bright</span><span class="op">;</span></span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In <code>_extensions/ubc/ubc-dark.scss</code>, after the Mermaid default:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Built-in callouts on the dark page, from brand.yml's dark pairs:</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">// ubc-blue-light, mds-green-light, alert-red-light and ubc-gold, and the</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co">// derived orange lightened to 7.32:1 on ubc-blue-video.</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="va">$callout-color-note</span>: <span class="cn">#40B4E5</span><span class="op">;</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="va">$callout-color-tip</span>: <span class="cn">#88D4AB</span><span class="op">;</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="va">$callout-color-important</span>: <span class="cn">#F08080</span><span class="op">;</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="va">$callout-color-warning</span>: <span class="cn">#A89565</span><span class="op">;</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="va">$callout-color-caution</span>: <span class="cn">#F48525</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In the spec’s extension table, the <code>ubc.scss</code> row’s “in Task 4” goes: the styling is built.</p>
+<ul class="task-list">
+<li><p><label><input type="checkbox"><strong>Step 6: Run the checks; they pass.</strong> <code>make check</code>. Expected: every <code>ok</code>, no <code>FAIL</code>, no Quarto <code>WARN</code>.</label></p></li>
+<li><p><label><input type="checkbox"><strong>Step 7: Commit.</strong> Write the message to a file:</label></p></li>
 </ul>
 <pre class="text"><code>feat(book): 🤖 add the callouts gallery and a console window
 
 Quarto's five built-in callouts, plain and titled, the brand's four
 types, two exercises in a row for the numbering, and a .term console
-window. The new checks first failed with: FAIL callouts page
-(_book/chapters/callouts.html missing).
+window. The extension's layer completes the styling DSCI 521 leaves
+out (Q&amp;A 26): spaced, coloured icons and dark variants for definition
+and relevance-project, and the built-ins in brand colours per mode,
+caution in a derived orange. The new checks first failed with: FAIL
+callouts page (_book/chapters/callouts.html missing).
 
 Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 4
 Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
-<p><code>git add chapters/callouts.qmd chapters/using.qmd _quarto.yml tests/check-render.sh</code>, <code>git commit -F &lt;file&gt;</code>, <code>git log -1 --format='%(trailers)'</code>. Then <code>make leaks</code> and <code>git push origin main</code>.</p>
+<p><code>git add chapters/callouts.qmd chapters/using.qmd _quarto.yml tests/check-render.sh _extensions/ubc/ubc.scss _extensions/ubc/ubc-dark.scss docs/_overview.qmd docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md</code>, <code>git commit -F &lt;file&gt;</code>, <code>git log -1 --format='%(trailers)'</code>. Then <code>make leaks</code> and <code>git push origin main</code>.</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Step 7: Review, look forward, close.</strong> Tier 3: self-review under <em>Standards</em> and <em>Spec</em>, plus <code>make check</code>; check both modes by eye in <code>uv run quarto preview</code>. Close with the boxes ticked, <strong>Now</strong> <code>Task 5: The website check and the how-to, open.</code>, the spec’s S03, S04 and S07 rows <code>built</code>, and the close message as in Task 3 with <code>Task 4: The callouts gallery</code>.</label></li>
+<li><label><input type="checkbox"><strong>Step 8: Review, look forward, close.</strong> Tier 3: self-review under <em>Standards</em> and <em>Spec</em>, plus <code>make check</code>; check both modes by eye in <code>uv run quarto preview</code>. Close with the boxes ticked, <strong>Now</strong> <code>Task 5: The website check and the how-to, open.</code>, the spec’s S02, S03, S04 and S07 rows <code>built</code>, and the close message as in Task 3 with <code>Task 4: The callouts gallery</code>.</label></li>
 </ul>
 <hr>
 </section>
 <section id="task-5-the-website-check-and-the-how-to" class="level3" data-number="5.2.5">
 <h3 data-number="5.2.5" class="anchored" data-anchor-id="task-5-the-website-check-and-the-how-to"><span class="header-section-number">5.2.5</span> Task 5: The website check and the how-to</h3>
 <p><strong>Tier:</strong> 2 · <strong>Scenarios:</strong> S08, S09, S10, S15</p>
-<p><strong>Files:</strong> - Create: <code>tests/website/_quarto.yml</code>, <code>tests/website/index.qmd</code>, <code>tests/website/extra.scss</code> - Modify: <code>chapters/using.qmd</code> (the placeholder becomes the how-to), <code>Makefile</code> (<code>test</code>), <code>tests/check-render.sh</code></p>
+<p><strong>Files:</strong> - Create: <code>tests/website/_quarto.yml</code>, <code>tests/website/index.qmd</code>, <code>tests/website/extra.scss</code> - Modify: <code>chapters/using.qmd</code> (the placeholder becomes the how-to), <code>Makefile</code> (<code>test</code>), <code>tests/check-render.sh</code>, <code>docs/_overview.qmd</code> (the <code>site</code> node turns solid)</p>
 <p><strong>Interfaces:</strong> - Consumes: Task 2’s extension; Task 1’s <code>make test</code>. - Produces: <code>tests/website/_site/index.html</code>, rendered from a copy of the extension at <code>tests/website/_extensions/UBC-MDS/ubc/</code>, the folder a GitHub install creates.</p>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
@@ -1258,81 +1338,81 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 </ul>
 <div class="code-with-filename">
 <div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Task 5: a website project using a GitHub-style install (S08, S09, S10, S15)</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="va">SITE</span><span class="op">=</span>tests/website/_site</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="va">SLIGHT</span><span class="op">=</span><span class="va">$(</span><span class="fu">ls</span> <span class="st">"</span><span class="va">$SITE</span><span class="st">"</span>/site_libs/bootstrap/bootstrap-<span class="pp">*</span>.min.css <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-v</span> <span class="at">--</span> <span class="st">'-dark-'</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span> <span class="kw">||</span> <span class="fu">true</span><span class="va">)</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="va">SDARK</span><span class="op">=</span><span class="va">$(</span><span class="fu">ls</span> <span class="st">"</span><span class="va">$SITE</span><span class="st">"</span>/site_libs/bootstrap/bootstrap-dark-<span class="pp">*</span>.min.css <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span> <span class="kw">||</span> <span class="fu">true</span><span class="va">)</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"website page"</span>                  <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: UBC blue"</span>             <span class="st">'--brand-ubc-blue: ?#002145'</span>                                  <span class="st">"</span><span class="va">$SLIGHT</span><span class="st">"</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: dark-mode toggle"</span>     <span class="st">'quarto-color-scheme-toggle'</span>                                  <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: MDS logo opted in"</span>    <span class="st">'MDSlogo\.png'</span>                                                <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: Terminal label"</span>       <span class="st">'&lt;strong&gt;Terminal&lt;/strong&gt;'</span>                                   <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: a quiz"</span>               <span class="st">'&lt;div class="quizdown"&gt;'</span>                                      <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: the brand's exercise"</span> <span class="st">'div\.callout-exercise\.callout \{ ?border-left-color: ?#1C5F2E'</span> <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: its own callout type"</span> <span class="st">'div\.callout-lab\.callout \{ ?border-left-color: ?#A6192E'</span>   <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: its own layer, light"</span> <span class="st">'\.website-check-marker\{color:#8a6d2b\}'</span>                     <span class="st">"</span><span class="va">$SLIGHT</span><span class="st">"</span></span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: its own layer, dark"</span>  <span class="st">'\.website-check-marker\{color:#8a6d2b\}'</span>                     <span class="st">"</span><span class="va">$SDARK</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Task 5: a website project using a GitHub-style install (S08, S09, S10, S15)</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="va">SITE</span><span class="op">=</span>tests/website/_site</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="va">SLIGHT</span><span class="op">=</span><span class="va">$(</span><span class="fu">ls</span> <span class="st">"</span><span class="va">$SITE</span><span class="st">"</span>/site_libs/bootstrap/bootstrap-<span class="pp">*</span>.min.css <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-v</span> <span class="at">--</span> <span class="st">'-dark-'</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span> <span class="kw">||</span> <span class="fu">true</span><span class="va">)</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="va">SDARK</span><span class="op">=</span><span class="va">$(</span><span class="fu">ls</span> <span class="st">"</span><span class="va">$SITE</span><span class="st">"</span>/site_libs/bootstrap/bootstrap-dark-<span class="pp">*</span>.min.css <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span> <span class="kw">||</span> <span class="fu">true</span><span class="va">)</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"website page"</span>                  <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: UBC blue"</span>             <span class="st">'--brand-ubc-blue: ?#002145'</span>                                  <span class="st">"</span><span class="va">$SLIGHT</span><span class="st">"</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: dark-mode toggle"</span>     <span class="st">'quarto-color-scheme-toggle'</span>                                  <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: MDS logo opted in"</span>    <span class="st">'MDSlogo\.png'</span>                                                <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: Terminal label"</span>       <span class="st">'&lt;strong&gt;Terminal&lt;/strong&gt;'</span>                                   <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: a quiz"</span>               <span class="st">'&lt;div class="quizdown"&gt;'</span>                                      <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: the brand's exercise"</span> <span class="st">'div\.callout-exercise\.callout \{ ?border-left-color: ?#1C5F2E'</span> <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: its own callout type"</span> <span class="st">'div\.callout-lab\.callout \{ ?border-left-color: ?#A6192E'</span>   <span class="st">"</span><span class="va">$SITE</span><span class="st">/index.html"</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: its own layer, light"</span> <span class="st">'\.website-check-marker\{color:#8a6d2b\}'</span>                     <span class="st">"</span><span class="va">$SLIGHT</span><span class="st">"</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"website: its own layer, dark"</span>  <span class="st">'\.website-check-marker\{color:#8a6d2b\}'</span>                     <span class="st">"</span><span class="va">$SDARK</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL website page (tests/website/_site/index.html missing)</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 3: Write the website.</strong> <code>tests/website/_quarto.yml</code>:</label></p></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A one-page website (DSCI 521's project type) using the extension the way a</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># GitHub install leaves it, with everything a book may add: the MDS logo, its</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># own theme layer and its own callout type. `make test` copies the extension in.</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Website check"</span></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span><span class="at"> _extensions/UBC-MDS/ubc/MDSlogo.png</span></span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo-alt</span><span class="kw">:</span><span class="at"> </span><span class="st">"MDS logo"</span></span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> index.qmd</span></span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ubc-html</span><span class="kw">:</span></span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">extra.scss</span><span class="kw">]</span></span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">extra.scss</span><span class="kw">]</span></span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="fu">custom-callout</span><span class="kw">:</span></span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">lab</span><span class="kw">:</span></span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lab"</span></span>
-<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">icon-symbol</span><span class="kw">:</span><span class="at"> </span><span class="st">"fa-flask"</span></span>
-<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> </span><span class="st">"#A6192E"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A one-page website (DSCI 521's project type) using the extension the way a</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># GitHub install leaves it, with everything a book may add: the MDS logo, its</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># own theme layer and its own callout type. `make test` copies the extension in.</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Website check"</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span><span class="at"> _extensions/UBC-MDS/ubc/MDSlogo.png</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo-alt</span><span class="kw">:</span><span class="at"> </span><span class="st">"MDS logo"</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> index.qmd</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ubc-html</span><span class="kw">:</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">extra.scss</span><span class="kw">]</span></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">extra.scss</span><span class="kw">]</span></span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="fu">custom-callout</span><span class="kw">:</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">lab</span><span class="kw">:</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lab"</span></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">icon-symbol</span><span class="kw">:</span><span class="at"> </span><span class="st">"fa-flask"</span></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> </span><span class="st">"#A6192E"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>tests/website/extra.scss</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:rules --*/</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co">// A book's own layer: it comes after the extension's, and `$brand-*` names work in it.</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">.website-check-marker</span> {</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="va">$brand-ubc-gold-dark</span><span class="op">;</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:rules --*/</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">// A book's own layer: it comes after the extension's, and `$brand-*` names work in it.</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">.website-check-marker</span> {</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="va">$brand-ubc-gold-dark</span><span class="op">;</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>tests/website/index.qmd</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Website check</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>:::{.exercise}</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>The brand's exercise callout.</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>:::{.lab}</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>This website's own callout type.</span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="in">```quizdown</span></span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="in">## Which command renders a Quarto project?</span></span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] `quarto render`</span></span>
-<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a><span class="in">- [ ] `quarto build`</span></span>
-<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Website check</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>:::{.exercise}</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>The brand's exercise callout.</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>:::{.lab}</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>This website's own callout type.</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="in">```quizdown</span></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a><span class="in">## Which command renders a Quarto project?</span></span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] `quarto render`</span></span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a><span class="in">- [ ] `quarto build`</span></span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul class="task-list">
 <li><label><input type="checkbox"><strong>Step 4: Render it in <code>make test</code>.</strong> In the <code>Makefile</code>’s <code>test</code> recipe, insert before <code>tests/check-render.sh</code>:</label></li>
 </ul>
@@ -1344,114 +1424,114 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <ul class="task-list">
 <li><label><input type="checkbox"><strong>Step 5: Write the how-to,</strong> replacing the placeholder <code>chapters/using.qmd</code>:</label></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Using it in a book</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Install it</span></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>In your Quarto book or website project, install a tagged release:</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add UBC-MDS/ubc-quarto-brand@v0.1.0</span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>Quarto copies the extension into <span class="in">`_extensions/UBC-MDS/ubc/`</span>.</span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>Commit that folder: your book keeps exactly this version until you update it.</span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Use the format</span></span>
-<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>In your <span class="in">`_quarto.yml`</span>:</span>
-<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
-<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> ubc-html</span></span>
-<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>That one line brings the theme, the listing labels, the callouts and the quizzes.</span>
-<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>The brand's colours, fonts and dark mode apply to every page as soon as the extension</span>
-<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>is installed, whatever format a page uses.</span>
-<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Update it</span></span>
-<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-30"><a href="#cb33-30" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb33-31"><a href="#cb33-31" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> update UBC-MDS/ubc-quarto-brand@v0.2.0</span>
-<span id="cb33-32"><a href="#cb33-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-33"><a href="#cb33-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-34"><a href="#cb33-34" aria-hidden="true" tabindex="-1"></a>Do it in a pull request of its own, so the preview shows what changed before you merge.</span>
-<span id="cb33-35"><a href="#cb33-35" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">changelog</span><span class="co">](../CHANGELOG.md)</span> lists what each release changed.</span>
-<span id="cb33-36"><a href="#cb33-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-37"><a href="#cb33-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Turn on the MDS logo</span></span>
-<span id="cb33-38"><a href="#cb33-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-39"><a href="#cb33-39" aria-hidden="true" tabindex="-1"></a>The MDS logo ships with the extension but is not shown unless you ask for it.</span>
-<span id="cb33-40"><a href="#cb33-40" aria-hidden="true" tabindex="-1"></a>In a book:</span>
-<span id="cb33-41"><a href="#cb33-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-42"><a href="#cb33-42" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
-<span id="cb33-43"><a href="#cb33-43" aria-hidden="true" tabindex="-1"></a><span class="fu">book</span><span class="kw">:</span></span>
-<span id="cb33-44"><a href="#cb33-44" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
-<span id="cb33-45"><a href="#cb33-45" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span><span class="at"> _extensions/UBC-MDS/ubc/MDSlogo.png</span></span>
-<span id="cb33-46"><a href="#cb33-46" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo-alt</span><span class="kw">:</span><span class="at"> </span><span class="st">"MDS logo"</span></span>
-<span id="cb33-47"><a href="#cb33-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-48"><a href="#cb33-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-49"><a href="#cb33-49" aria-hidden="true" tabindex="-1"></a>In a website, the same two keys go under <span class="in">`website: sidebar:`</span>.</span>
-<span id="cb33-50"><a href="#cb33-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-51"><a href="#cb33-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## Add your own styles</span></span>
-<span id="cb33-52"><a href="#cb33-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-53"><a href="#cb33-53" aria-hidden="true" tabindex="-1"></a>Add a theme layer of your own. Give it to both modes, as two lists:</span>
-<span id="cb33-54"><a href="#cb33-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-55"><a href="#cb33-55" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
-<span id="cb33-56"><a href="#cb33-56" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb33-57"><a href="#cb33-57" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ubc-html</span><span class="kw">:</span></span>
-<span id="cb33-58"><a href="#cb33-58" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
-<span id="cb33-59"><a href="#cb33-59" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">extra.scss</span><span class="kw">]</span></span>
-<span id="cb33-60"><a href="#cb33-60" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">extra.scss</span><span class="kw">]</span></span>
-<span id="cb33-61"><a href="#cb33-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-62"><a href="#cb33-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-63"><a href="#cb33-63" aria-hidden="true" tabindex="-1"></a>Your layer comes after the extension's, so its rules win,</span>
-<span id="cb33-64"><a href="#cb33-64" aria-hidden="true" tabindex="-1"></a>and the brand's colours are available in it as <span class="in">`$brand-&lt;name&gt;`</span>, for example <span class="in">`$brand-ubc-blue`</span>.</span>
-<span id="cb33-65"><a href="#cb33-65" aria-hidden="true" tabindex="-1"></a>A single list, <span class="in">`theme: [extra.scss]`</span>, makes Quarto stop with an error.</span>
-<span id="cb33-66"><a href="#cb33-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-67"><a href="#cb33-67" aria-hidden="true" tabindex="-1"></a><span class="fu">## Add or recolour a callout type</span></span>
-<span id="cb33-68"><a href="#cb33-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-69"><a href="#cb33-69" aria-hidden="true" tabindex="-1"></a>Add <span class="in">`custom-callout:`</span> keys to your <span class="in">`_quarto.yml`</span>. They merge with the extension's:</span>
-<span id="cb33-70"><a href="#cb33-70" aria-hidden="true" tabindex="-1"></a>a new type is added, and a type the extension already has takes your values.</span>
-<span id="cb33-71"><a href="#cb33-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-72"><a href="#cb33-72" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
-<span id="cb33-73"><a href="#cb33-73" aria-hidden="true" tabindex="-1"></a><span class="fu">custom-callout</span><span class="kw">:</span></span>
-<span id="cb33-74"><a href="#cb33-74" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">lab</span><span class="kw">:</span></span>
-<span id="cb33-75"><a href="#cb33-75" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lab"</span></span>
-<span id="cb33-76"><a href="#cb33-76" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb33-77"><a href="#cb33-77" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">icon-symbol</span><span class="kw">:</span><span class="at"> </span><span class="st">"fa-flask"</span></span>
-<span id="cb33-78"><a href="#cb33-78" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> </span><span class="st">"#A6192E"</span></span>
-<span id="cb33-79"><a href="#cb33-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-80"><a href="#cb33-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-81"><a href="#cb33-81" aria-hidden="true" tabindex="-1"></a>The colour must be a literal hex, because this YAML cannot read the brand's Sass.</span>
-<span id="cb33-82"><a href="#cb33-82" aria-hidden="true" tabindex="-1"></a>Take it from the palette:</span>
-<span id="cb33-83"><a href="#cb33-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-84"><a href="#cb33-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Name <span class="pp">|</span> Hex <span class="pp">|</span></span>
-<span id="cb33-85"><a href="#cb33-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb33-86"><a href="#cb33-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`ubc-blue`</span> <span class="pp">|</span> <span class="in">`#002145`</span> <span class="pp">|</span></span>
-<span id="cb33-87"><a href="#cb33-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`ubc-blue-deep`</span> <span class="pp">|</span> <span class="in">`#0055B7`</span> <span class="pp">|</span></span>
-<span id="cb33-88"><a href="#cb33-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`ubc-blue-mid`</span> <span class="pp">|</span> <span class="in">`#0077C8`</span> <span class="pp">|</span></span>
-<span id="cb33-89"><a href="#cb33-89" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`ubc-blue-bright`</span> <span class="pp">|</span> <span class="in">`#00A7E1`</span> <span class="pp">|</span></span>
-<span id="cb33-90"><a href="#cb33-90" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`ubc-gold-dark`</span> <span class="pp">|</span> <span class="in">`#8A6D2B`</span> <span class="pp">|</span></span>
-<span id="cb33-91"><a href="#cb33-91" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`mds-green`</span> <span class="pp">|</span> <span class="in">`#1C5F2E`</span> <span class="pp">|</span></span>
-<span id="cb33-92"><a href="#cb33-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`alert-red`</span> <span class="pp">|</span> <span class="in">`#A6192E`</span> <span class="pp">|</span></span>
-<span id="cb33-93"><a href="#cb33-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-94"><a href="#cb33-94" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">Callouts</span><span class="co">](callouts.qmd)</span> page shows every type the extension defines.</span>
-<span id="cb33-95"><a href="#cb33-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-96"><a href="#cb33-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## What you cannot change</span></span>
-<span id="cb33-97"><a href="#cb33-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-98"><a href="#cb33-98" aria-hidden="true" tabindex="-1"></a>You cannot replace part of the brand.</span>
-<span id="cb33-99"><a href="#cb33-99" aria-hidden="true" tabindex="-1"></a>A <span class="in">`_brand.yml`</span> of your own is ignored, because the extension's brand takes its place.</span>
-<span id="cb33-100"><a href="#cb33-100" aria-hidden="true" tabindex="-1"></a>A top-level <span class="in">`brand:`</span> key replaces the whole brand,</span>
-<span id="cb33-101"><a href="#cb33-101" aria-hidden="true" tabindex="-1"></a>so it would have to define every colour the extension's styles use, or the render fails.</span>
-<span id="cb33-102"><a href="#cb33-102" aria-hidden="true" tabindex="-1"></a>To change how things look, add a theme layer instead.</span>
-<span id="cb33-103"><a href="#cb33-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-104"><a href="#cb33-104" aria-hidden="true" tabindex="-1"></a><span class="fu">## Executed code and quizzes</span></span>
-<span id="cb33-105"><a href="#cb33-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-106"><a href="#cb33-106" aria-hidden="true" tabindex="-1"></a>Executed R and Python cells need nothing from the extension.</span>
-<span id="cb33-107"><a href="#cb33-107" aria-hidden="true" tabindex="-1"></a>Quizzes are written in a <span class="in">`quizdown`</span> code block;</span>
-<span id="cb33-108"><a href="#cb33-108" aria-hidden="true" tabindex="-1"></a>the <span class="co">[</span><span class="ot">conventions page</span><span class="co">](book-conventions.qmd)</span> shows each kind.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Using it in a book</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Install it</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>In your Quarto book or website project, install a tagged release:</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add UBC-MDS/ubc-quarto-brand@v0.1.0</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>Quarto copies the extension into <span class="in">`_extensions/UBC-MDS/ubc/`</span>.</span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>Commit that folder: your book keeps exactly this version until you update it.</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Use the format</span></span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>In your <span class="in">`_quarto.yml`</span>:</span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> ubc-html</span></span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>That one line brings the theme, the listing labels, the callouts and the quizzes.</span>
+<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>The brand's colours, fonts and dark mode apply to every page as soon as the extension</span>
+<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>is installed, whatever format a page uses.</span>
+<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Update it</span></span>
+<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> update UBC-MDS/ubc-quarto-brand@v0.2.0</span>
+<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a>Do it in a pull request of its own, so the preview shows what changed before you merge.</span>
+<span id="cb36-35"><a href="#cb36-35" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">changelog</span><span class="co">](../CHANGELOG.md)</span> lists what each release changed.</span>
+<span id="cb36-36"><a href="#cb36-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-37"><a href="#cb36-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Turn on the MDS logo</span></span>
+<span id="cb36-38"><a href="#cb36-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-39"><a href="#cb36-39" aria-hidden="true" tabindex="-1"></a>The MDS logo ships with the extension but is not shown unless you ask for it.</span>
+<span id="cb36-40"><a href="#cb36-40" aria-hidden="true" tabindex="-1"></a>In a book:</span>
+<span id="cb36-41"><a href="#cb36-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-42"><a href="#cb36-42" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb36-43"><a href="#cb36-43" aria-hidden="true" tabindex="-1"></a><span class="fu">book</span><span class="kw">:</span></span>
+<span id="cb36-44"><a href="#cb36-44" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
+<span id="cb36-45"><a href="#cb36-45" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span><span class="at"> _extensions/UBC-MDS/ubc/MDSlogo.png</span></span>
+<span id="cb36-46"><a href="#cb36-46" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo-alt</span><span class="kw">:</span><span class="at"> </span><span class="st">"MDS logo"</span></span>
+<span id="cb36-47"><a href="#cb36-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-48"><a href="#cb36-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-49"><a href="#cb36-49" aria-hidden="true" tabindex="-1"></a>In a website, the same two keys go under <span class="in">`website: sidebar:`</span>.</span>
+<span id="cb36-50"><a href="#cb36-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-51"><a href="#cb36-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## Add your own styles</span></span>
+<span id="cb36-52"><a href="#cb36-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-53"><a href="#cb36-53" aria-hidden="true" tabindex="-1"></a>Add a theme layer of your own. Give it to both modes, as two lists:</span>
+<span id="cb36-54"><a href="#cb36-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-55"><a href="#cb36-55" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb36-56"><a href="#cb36-56" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb36-57"><a href="#cb36-57" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ubc-html</span><span class="kw">:</span></span>
+<span id="cb36-58"><a href="#cb36-58" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb36-59"><a href="#cb36-59" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">extra.scss</span><span class="kw">]</span></span>
+<span id="cb36-60"><a href="#cb36-60" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">extra.scss</span><span class="kw">]</span></span>
+<span id="cb36-61"><a href="#cb36-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-62"><a href="#cb36-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-63"><a href="#cb36-63" aria-hidden="true" tabindex="-1"></a>Your layer comes after the extension's, so its rules win,</span>
+<span id="cb36-64"><a href="#cb36-64" aria-hidden="true" tabindex="-1"></a>and the brand's colours are available in it as <span class="in">`$brand-&lt;name&gt;`</span>, for example <span class="in">`$brand-ubc-blue`</span>.</span>
+<span id="cb36-65"><a href="#cb36-65" aria-hidden="true" tabindex="-1"></a>A single list, <span class="in">`theme: [extra.scss]`</span>, makes Quarto stop with an error.</span>
+<span id="cb36-66"><a href="#cb36-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-67"><a href="#cb36-67" aria-hidden="true" tabindex="-1"></a><span class="fu">## Add or recolour a callout type</span></span>
+<span id="cb36-68"><a href="#cb36-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-69"><a href="#cb36-69" aria-hidden="true" tabindex="-1"></a>Add <span class="in">`custom-callout:`</span> keys to your <span class="in">`_quarto.yml`</span>. They merge with the extension's:</span>
+<span id="cb36-70"><a href="#cb36-70" aria-hidden="true" tabindex="-1"></a>a new type is added, and a type the extension already has takes your values.</span>
+<span id="cb36-71"><a href="#cb36-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-72"><a href="#cb36-72" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb36-73"><a href="#cb36-73" aria-hidden="true" tabindex="-1"></a><span class="fu">custom-callout</span><span class="kw">:</span></span>
+<span id="cb36-74"><a href="#cb36-74" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">lab</span><span class="kw">:</span></span>
+<span id="cb36-75"><a href="#cb36-75" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lab"</span></span>
+<span id="cb36-76"><a href="#cb36-76" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb36-77"><a href="#cb36-77" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">icon-symbol</span><span class="kw">:</span><span class="at"> </span><span class="st">"fa-flask"</span></span>
+<span id="cb36-78"><a href="#cb36-78" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> </span><span class="st">"#A6192E"</span></span>
+<span id="cb36-79"><a href="#cb36-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-80"><a href="#cb36-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-81"><a href="#cb36-81" aria-hidden="true" tabindex="-1"></a>The colour must be a literal hex, because this YAML cannot read the brand's Sass.</span>
+<span id="cb36-82"><a href="#cb36-82" aria-hidden="true" tabindex="-1"></a>Take it from the palette:</span>
+<span id="cb36-83"><a href="#cb36-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-84"><a href="#cb36-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Name <span class="pp">|</span> Hex <span class="pp">|</span></span>
+<span id="cb36-85"><a href="#cb36-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb36-86"><a href="#cb36-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`ubc-blue`</span> <span class="pp">|</span> <span class="in">`#002145`</span> <span class="pp">|</span></span>
+<span id="cb36-87"><a href="#cb36-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`ubc-blue-deep`</span> <span class="pp">|</span> <span class="in">`#0055B7`</span> <span class="pp">|</span></span>
+<span id="cb36-88"><a href="#cb36-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`ubc-blue-mid`</span> <span class="pp">|</span> <span class="in">`#0077C8`</span> <span class="pp">|</span></span>
+<span id="cb36-89"><a href="#cb36-89" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`ubc-blue-bright`</span> <span class="pp">|</span> <span class="in">`#00A7E1`</span> <span class="pp">|</span></span>
+<span id="cb36-90"><a href="#cb36-90" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`ubc-gold-dark`</span> <span class="pp">|</span> <span class="in">`#8A6D2B`</span> <span class="pp">|</span></span>
+<span id="cb36-91"><a href="#cb36-91" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`mds-green`</span> <span class="pp">|</span> <span class="in">`#1C5F2E`</span> <span class="pp">|</span></span>
+<span id="cb36-92"><a href="#cb36-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`alert-red`</span> <span class="pp">|</span> <span class="in">`#A6192E`</span> <span class="pp">|</span></span>
+<span id="cb36-93"><a href="#cb36-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-94"><a href="#cb36-94" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">Callouts</span><span class="co">](callouts.qmd)</span> page shows every type the extension defines.</span>
+<span id="cb36-95"><a href="#cb36-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-96"><a href="#cb36-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## What you cannot change</span></span>
+<span id="cb36-97"><a href="#cb36-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-98"><a href="#cb36-98" aria-hidden="true" tabindex="-1"></a>You cannot replace part of the brand.</span>
+<span id="cb36-99"><a href="#cb36-99" aria-hidden="true" tabindex="-1"></a>A <span class="in">`_brand.yml`</span> of your own is ignored, because the extension's brand takes its place.</span>
+<span id="cb36-100"><a href="#cb36-100" aria-hidden="true" tabindex="-1"></a>A top-level <span class="in">`brand:`</span> key replaces the whole brand,</span>
+<span id="cb36-101"><a href="#cb36-101" aria-hidden="true" tabindex="-1"></a>so it would have to define every colour the extension's styles use, or the render fails.</span>
+<span id="cb36-102"><a href="#cb36-102" aria-hidden="true" tabindex="-1"></a>To change how things look, add a theme layer instead.</span>
+<span id="cb36-103"><a href="#cb36-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-104"><a href="#cb36-104" aria-hidden="true" tabindex="-1"></a><span class="fu">## Executed code and quizzes</span></span>
+<span id="cb36-105"><a href="#cb36-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-106"><a href="#cb36-106" aria-hidden="true" tabindex="-1"></a>Executed R and Python cells need nothing from the extension.</span>
+<span id="cb36-107"><a href="#cb36-107" aria-hidden="true" tabindex="-1"></a>Quizzes are written in a <span class="in">`quizdown`</span> code block;</span>
+<span id="cb36-108"><a href="#cb36-108" aria-hidden="true" tabindex="-1"></a>the <span class="co">[</span><span class="ot">conventions page</span><span class="co">](book-conventions.qmd)</span> shows each kind.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 6: Run the checks; they pass.</strong> <code>make check</code>. Expected: every <code>ok</code>, no <code>FAIL</code>, no Quarto <code>WARN</code> in either log.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 7: Commit.</strong> Write the message to a file:</label></p></li>
@@ -1468,7 +1548,7 @@ missing).
 
 Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 5
 Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
-<p><code>git add tests/website/_quarto.yml tests/website/index.qmd tests/website/extra.scss chapters/using.qmd Makefile tests/check-render.sh</code>, <code>git commit -F &lt;file&gt;</code>, <code>git log -1 --format='%(trailers)'</code>. Then <code>make leaks</code> and <code>git push origin main</code>.</p>
+<p><code>git add tests/website/_quarto.yml tests/website/index.qmd tests/website/extra.scss chapters/using.qmd Makefile tests/check-render.sh docs/_overview.qmd</code>, <code>git commit -F &lt;file&gt;</code>, <code>git log -1 --format='%(trailers)'</code>. Then <code>make leaks</code> and <code>git push origin main</code>.</p>
 <ul class="task-list">
 <li><label><input type="checkbox"><strong>Step 8: Review, look forward, close.</strong> Tier 2: Matt Pocock’s <code>code-review</code> from <code>.git/TASK_BASE</code>, two axes in two subagents. Close with the boxes ticked, <strong>Now</strong> <code>Task 6: Where it comes from, open.</code>, the spec’s S08, S09, S10 and S15 rows <code>built</code>, and the close message as in Task 2 with <code>Task 5: The website check and the how-to</code>.</label></li>
 </ul>
@@ -1477,87 +1557,151 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <section id="task-6-where-it-comes-from" class="level3" data-number="5.2.6">
 <h3 data-number="5.2.6" class="anchored" data-anchor-id="task-6-where-it-comes-from"><span class="header-section-number">5.2.6</span> Task 6: Where it comes from</h3>
 <p><strong>Tier:</strong> 3 · <strong>Scenarios:</strong> S12</p>
-<p><strong>Files:</strong> - Create: <code>chapters/provenance.qmd</code> - Modify: <code>_quarto.yml</code>, <code>tests/check-render.sh</code>, <code>README.md</code></p>
-<p><strong>Interfaces:</strong> - Consumes: Task 2’s <code>scripts/fetch-521.sh</code> and <code>make fetch-521</code>; Task 3’s conventions page. - Produces: <code>_book/chapters/provenance.html</code>.</p>
+<p><strong>Ruling</strong> (Task 2’s forward review): <code>LICENSE.md</code> uses CC BY-NC-SA 4.0 for the docs, as Q&amp;A 27 records, although the reproducible book it names is split: its README says CC BY-NC-SA 4.0, its <code>LICENSE.md</code> CC BY 4.0. Dan is asked before he tags <code>v0.1.0</code>. If wrong: one licence paragraph.</p>
+<p><strong>Ruling</strong> (Task 2’s forward review): the MIT copyright holder is “UBC Master of Data Science”, the extension’s author in <code>_extension.yml</code>; DSCI 521 publishes no licence or holder. If wrong: one line, before the tag.</p>
+<p><strong>Files:</strong> - Create: <code>chapters/provenance.qmd</code>, <code>LICENSE.md</code>, <code>_extensions/ubc/_extensions/quizdown/LICENSE</code> - Modify: <code>_quarto.yml</code>, <code>tests/check-render.sh</code>, <code>README.md</code>, <code>docs/_overview.qmd</code></p>
+<p><strong>Interfaces:</strong> - Consumes: Task 2’s <code>scripts/fetch-521.sh</code>, <code>make fetch-521</code> and its layer <code>ubc.scss</code> and <code>ubc-dark.scss</code>; Task 3’s conventions page. - Produces: <code>_book/chapters/provenance.html</code>.</p>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
 </ul>
 <div class="code-with-filename">
 <div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Task 6: where it comes from (S12)</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="va">PROV</span><span class="op">=</span><span class="st">"</span><span class="va">$BOOK</span><span class="st">/chapters/provenance.html"</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"provenance page"</span>               <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"pinned to 521's commit"</span>        <span class="st">'991bae89cba904ae2dd0753338c306333eb5ea2e'</span>                    <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> _brand.yml styles.scss styles-dark.scss code-labels.lua quizdown-theme.html MDSlogo.png <span class="dt">\</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>         _extensions/coatless-quarto/custom-callout _extensions/quizdown lectures/0-conventions.qmd img/cheers.png<span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">expect</span> <span class="st">"links 521's </span><span class="va">$f</span><span class="st">"</span>              <span class="st">"DSCI_521_platforms-dsci_book/(blob|tree)/991bae89cba904ae2dd0753338c306333eb5ea2e/</span><span class="va">$f</span><span class="st">"</span> <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Task 6: where it comes from (S12)</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="va">PROV</span><span class="op">=</span><span class="st">"</span><span class="va">$BOOK</span><span class="st">/chapters/provenance.html"</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"provenance page"</span>               <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"pinned to 521's commit"</span>        <span class="st">'991bae89cba904ae2dd0753338c306333eb5ea2e'</span>                    <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> _brand.yml styles.scss styles-dark.scss code-labels.lua quizdown-theme.html MDSlogo.png <span class="dt">\</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>         _extensions/coatless-quarto/custom-callout _extensions/quizdown lectures/0-conventions.qmd img/cheers.png<span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">expect</span> <span class="st">"links 521's </span><span class="va">$f</span><span class="st">"</span>              <span class="st">"DSCI_521_platforms-dsci_book/(blob|tree)/991bae89cba904ae2dd0753338c306333eb5ea2e/</span><span class="va">$f</span><span class="st">"</span> <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"names the extension's own layer"</span> <span class="st">'ubc-dark\.scss'</span>                                             <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"says where 521's settings went"</span>  <span class="st">'keep DSCI 521.s comments'</span>                                   <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"links quizdown's licence"</span>       <span class="st">'parmsam/quarto-quizdown/blob/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE'</span> <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"the licence"</span>                    LICENSE.md</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"quizdown's licence beside it"</span>   _extensions/ubc/_extensions/quizdown/LICENSE</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL provenance page (_book/chapters/provenance.html missing)</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 3: Write <code>chapters/provenance.qmd</code>:</strong></label></p></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Where it comes from</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>Every file in this extension comes from the</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">DSCI 521 book</span><span class="co">](https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/)</span>,</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>copied from one commit, <span class="in">`991bae89cba904ae2dd0753338c306333eb5ea2e`</span>,</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>by <span class="in">`scripts/fetch-521.sh`</span>.</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>The links below point at each original as it was at that commit.</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> In this extension <span class="pp">|</span> From DSCI 521 <span class="pp">|</span> Changed <span class="pp">|</span></span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/brand.yml`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`_brand.yml`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/_brand.yml)</span> <span class="pp">|</span> its <span class="in">`meta:`</span> block, DSCI 521's name and links, is removed <span class="pp">|</span></span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/styles.scss`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`styles.scss`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/styles.scss)</span> <span class="pp">|</span> nothing <span class="pp">|</span></span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/styles-dark.scss`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`styles-dark.scss`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/styles-dark.scss)</span> <span class="pp">|</span> nothing <span class="pp">|</span></span>
-<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/code-labels.lua`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`code-labels.lua`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/code-labels.lua)</span> <span class="pp">|</span> nothing <span class="pp">|</span></span>
-<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/quizdown-theme.html`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`quizdown-theme.html`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/quizdown-theme.html)</span> <span class="pp">|</span> nothing <span class="pp">|</span></span>
-<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/MDSlogo.png`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`MDSlogo.png`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/MDSlogo.png)</span> <span class="pp">|</span> shown only when a book opts in <span class="pp">|</span></span>
-<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/_extensions/coatless-quarto/custom-callout/`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`_extensions/coatless-quarto/custom-callout/`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/tree/991bae89cba904ae2dd0753338c306333eb5ea2e/_extensions/coatless-quarto/custom-callout)</span> <span class="pp">|</span> embedded in this extension <span class="pp">|</span></span>
-<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/_extensions/quizdown/`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`_extensions/quizdown/`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/tree/991bae89cba904ae2dd0753338c306333eb5ea2e/_extensions/quizdown)</span> <span class="pp">|</span> embedded in this extension <span class="pp">|</span></span>
-<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/_extension.yml`</span> <span class="pp">|</span> the <span class="in">`filters:`</span>, <span class="in">`custom-callout:`</span> and <span class="in">`format:`</span> keys of <span class="co">[</span><span class="ot">`_quarto.yml`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/_quarto.yml)</span> <span class="pp">|</span> becomes the <span class="in">`ubc-html`</span> format; adds the definition and relevance-project callouts <span class="pp">|</span></span>
-<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`chapters/book-conventions.qmd`</span> (this book) <span class="pp">|</span> <span class="co">[</span><span class="ot">`lectures/0-conventions.qmd`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/lectures/0-conventions.qmd)</span> <span class="pp">|</span> its link to another 521 chapter points at this book's Home page <span class="pp">|</span></span>
-<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`chapters/img/cheers.png`</span> (this book) <span class="pp">|</span> <span class="co">[</span><span class="ot">`img/cheers.png`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/img/cheers.png)</span> <span class="pp">|</span> nothing <span class="pp">|</span></span>
-<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Taking a later version from DSCI 521</span></span>
-<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> fetch-521 SHA=<span class="op">&lt;</span>a DSCI 521 commit<span class="op">&gt;</span></span>
-<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span>
-<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a>The script re-fetches every file above from that commit.</span>
-<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a>Review the diff, update the commit on this page and in <span class="in">`scripts/fetch-521.sh`</span>,</span>
-<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a>and release the change like any other.</span>
-<span id="cb36-35"><a href="#cb36-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-36"><a href="#cb36-36" aria-hidden="true" tabindex="-1"></a>Once DSCI 521 uses this extension itself</span>
-<span id="cb36-37"><a href="#cb36-37" aria-hidden="true" tabindex="-1"></a>(<span class="co">[</span><span class="ot">DSCI 521 issue #35</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/issues/35)</span>),</span>
-<span id="cb36-38"><a href="#cb36-38" aria-hidden="true" tabindex="-1"></a>changes flow the other way: they are made here, and DSCI 521 updates to the new release.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Where it comes from</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>Every file in this extension but its own layer, <span class="in">`ubc.scss`</span> and <span class="in">`ubc-dark.scss`</span>, comes from the</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">DSCI 521 book</span><span class="co">](https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/)</span>,</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>copied from one commit, <span class="in">`991bae89cba904ae2dd0753338c306333eb5ea2e`</span>,</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>by <span class="in">`scripts/fetch-521.sh`</span>.</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>The links below point at each original as it was at that commit.</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> In this extension <span class="pp">|</span> From DSCI 521 <span class="pp">|</span> Changed <span class="pp">|</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/brand.yml`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`_brand.yml`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/_brand.yml)</span> <span class="pp">|</span> its <span class="in">`meta:`</span> block, DSCI 521's name and links, is removed <span class="pp">|</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/styles.scss`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`styles.scss`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/styles.scss)</span> <span class="pp">|</span> nothing <span class="pp">|</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/styles-dark.scss`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`styles-dark.scss`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/styles-dark.scss)</span> <span class="pp">|</span> nothing <span class="pp">|</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/code-labels.lua`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`code-labels.lua`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/code-labels.lua)</span> <span class="pp">|</span> nothing <span class="pp">|</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/quizdown-theme.html`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`quizdown-theme.html`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/quizdown-theme.html)</span> <span class="pp">|</span> nothing <span class="pp">|</span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/MDSlogo.png`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`MDSlogo.png`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/MDSlogo.png)</span> <span class="pp">|</span> shown only when a book opts in <span class="pp">|</span></span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/_extensions/coatless-quarto/custom-callout/`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`_extensions/coatless-quarto/custom-callout/`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/tree/991bae89cba904ae2dd0753338c306333eb5ea2e/_extensions/coatless-quarto/custom-callout)</span> <span class="pp">|</span> embedded in this extension <span class="pp">|</span></span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/_extensions/quizdown/`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`_extensions/quizdown/`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/tree/991bae89cba904ae2dd0753338c306333eb5ea2e/_extensions/quizdown)</span> <span class="pp">|</span> embedded in this extension <span class="pp">|</span></span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/ubc.scss`</span>, <span class="in">`_extensions/ubc/ubc-dark.scss`</span> <span class="pp">|</span> none: the extension's own layer, after DSCI 521's files <span class="pp">|</span> readable Mermaid subgraphs; spaced, coloured icons and dark variants for the two callout types DSCI 521 lacks; the built-in callouts in brand colours per mode (Q&amp;A 26) <span class="pp">|</span></span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/_extensions/quizdown/LICENSE`</span> <span class="pp">|</span> quizdown's <span class="co">[</span><span class="ot">`LICENSE`</span><span class="co">](https://github.com/parmsam/quarto-quizdown/blob/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE)</span>, from its own repository <span class="pp">|</span> added: DSCI 521's copy has none (Q&amp;A 27) <span class="pp">|</span></span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/_extension.yml`</span> <span class="pp">|</span> the <span class="in">`filters:`</span>, <span class="in">`custom-callout:`</span> and <span class="in">`format:`</span> keys of <span class="co">[</span><span class="ot">`_quarto.yml`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/_quarto.yml)</span> <span class="pp">|</span> becomes the <span class="in">`ubc-html`</span> format; adds the definition and relevance-project callouts <span class="pp">|</span></span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`chapters/book-conventions.qmd`</span> (this book) <span class="pp">|</span> <span class="co">[</span><span class="ot">`lectures/0-conventions.qmd`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/lectures/0-conventions.qmd)</span> <span class="pp">|</span> its link to another 521 chapter points at this book's Home page <span class="pp">|</span></span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`chapters/img/cheers.png`</span> (this book) <span class="pp">|</span> <span class="co">[</span><span class="ot">`img/cheers.png`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/img/cheers.png)</span> <span class="pp">|</span> nothing <span class="pp">|</span></span>
+<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a>The copied files keep DSCI 521's comments, which point at its <span class="in">`_quarto.yml`</span>.</span>
+<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a>Here the theme lists and the <span class="in">`custom-callout:`</span> colours live in <span class="in">`_extensions/ubc/_extension.yml`</span>,</span>
+<span id="cb39-29"><a href="#cb39-29" aria-hidden="true" tabindex="-1"></a>so recolouring a callout means changing it there and in <span class="in">`brand.yml`</span> together.</span>
+<span id="cb39-30"><a href="#cb39-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-31"><a href="#cb39-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Taking a later version from DSCI 521</span></span>
+<span id="cb39-32"><a href="#cb39-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-33"><a href="#cb39-33" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb39-34"><a href="#cb39-34" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> fetch-521 SHA=<span class="op">&lt;</span>a DSCI 521 commit<span class="op">&gt;</span></span>
+<span id="cb39-35"><a href="#cb39-35" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span>
+<span id="cb39-36"><a href="#cb39-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb39-37"><a href="#cb39-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-38"><a href="#cb39-38" aria-hidden="true" tabindex="-1"></a>The script re-fetches every file above from that commit.</span>
+<span id="cb39-39"><a href="#cb39-39" aria-hidden="true" tabindex="-1"></a>Review the diff, update the commit on this page and in <span class="in">`scripts/fetch-521.sh`</span>,</span>
+<span id="cb39-40"><a href="#cb39-40" aria-hidden="true" tabindex="-1"></a>and release the change like any other.</span>
+<span id="cb39-41"><a href="#cb39-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-42"><a href="#cb39-42" aria-hidden="true" tabindex="-1"></a>Once DSCI 521 uses this extension itself</span>
+<span id="cb39-43"><a href="#cb39-43" aria-hidden="true" tabindex="-1"></a>(<span class="co">[</span><span class="ot">DSCI 521 issue #35</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/issues/35)</span>),</span>
+<span id="cb39-44"><a href="#cb39-44" aria-hidden="true" tabindex="-1"></a>changes flow the other way: they are made here, and DSCI 521 updates to the new release.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Step 4: Add the chapter and point the README at it.</strong> In <code>_quarto.yml</code>, add <code>chapters/provenance.qmd</code> to <code>project: render:</code> and, under the part “The brand”, after <code>chapters/using.qmd</code>, <code>- chapters/provenance.qmd</code>. In <code>README.md</code>, after its first paragraph, add:</label></li>
+<li><label><input type="checkbox"><strong>Step 4: Write the licence (Q&amp;A 27).</strong> <code>LICENSE.md</code>:</label></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>Every file comes from the DSCI 521 book at one pinned commit;</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>the demo book's "Where it comes from" page lists each original and what changed.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Licence</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Code</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>The code in this repository (Lua, SCSS, shell scripts, the Makefile and the GitHub Actions</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>workflows) is under the MIT License.</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>MIT License</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>Copyright (c) 2026 UBC Master of Data Science</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>of this software and associated documentation files (the "Software"), to deal</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>in the Software without restriction, including without limitation the rights</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>copies of the Software, and to permit persons to whom the Software is</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>furnished to do so, subject to the following conditions:</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>The above copyright notice and this permission notice shall be included in all</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>copies or substantial portions of the Software.</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>SOFTWARE.</span>
+<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Docs and the test book's text</span></span>
+<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a>The docs and the test book's text are under the Creative Commons</span>
+<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a>Attribution-NonCommercial-ShareAlike 4.0 International licence</span>
+<span id="cb40-34"><a href="#cb40-34" aria-hidden="true" tabindex="-1"></a>(<span class="co">[</span><span class="ot">CC BY-NC-SA 4.0</span><span class="co">](https://creativecommons.org/licenses/by-nc-sa/4.0/)</span>).</span>
+<span id="cb40-35"><a href="#cb40-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-36"><a href="#cb40-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Not covered</span></span>
+<span id="cb40-37"><a href="#cb40-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-38"><a href="#cb40-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The MDS logo, <span class="in">`_extensions/ubc/MDSlogo.png`</span>, is UBC's mark and is not licensed here.</span>
+<span id="cb40-39"><a href="#cb40-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Vendored code keeps its own terms: quizdown under MIT, its <span class="in">`LICENSE`</span> beside its copy in</span>
+<span id="cb40-40"><a href="#cb40-40" aria-hidden="true" tabindex="-1"></a>  <span class="in">`_extensions/ubc/_extensions/quizdown/`</span>; Font Awesome Free under the terms in its CSS;</span>
+<span id="cb40-41"><a href="#cb40-41" aria-hidden="true" tabindex="-1"></a>  custom-callout, which publishes no licence yet.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>quizdown’s licence, from its own repository at the commit its <code>LICENSE</code> was read: <code>curl -sSfL https://raw.githubusercontent.com/parmsam/quarto-quizdown/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE -o _extensions/ubc/_extensions/quizdown/LICENSE</code>. Expected: its first lines are <code>MIT License</code> and <code>Copyright (c) 2025 Sam Parmar</code>.</p>
 <ul class="task-list">
-<li><p><label><input type="checkbox"><strong>Step 5: Run the checks; they pass.</strong> <code>make check</code>. Expected: every <code>ok</code>, no <code>FAIL</code>, no Quarto <code>WARN</code>.</label></p></li>
-<li><p><label><input type="checkbox"><strong>Step 6: Commit.</strong> Write the message to a file:</label></p></li>
+<li><label><input type="checkbox"><strong>Step 5: Add the chapter and point the README at it.</strong> In <code>_quarto.yml</code>, add <code>chapters/provenance.qmd</code> to <code>project: render:</code> and, under the part “The brand”, after <code>chapters/using.qmd</code>, <code>- chapters/provenance.qmd</code>. In <code>README.md</code>, after its first paragraph, add:</label></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>Every file but the extension's own layer comes from the DSCI 521 book at one pinned commit;</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>the demo book's "Where it comes from" page lists each original and what changed.</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>Code is under MIT and the docs under CC BY-NC-SA 4.0; the MDS logo is excluded</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>(<span class="co">[</span><span class="ot">LICENSE.md</span><span class="co">](https://github.com/UBC-MDS/ubc-quarto-brand/blob/main/LICENSE.md)</span>).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In <code>docs/_overview.qmd</code>, add <code>prov["Where it comes from"] --&gt; book</code> and remove the planned <code>pages</code> node and its edge.</p>
+<ul class="task-list">
+<li><p><label><input type="checkbox"><strong>Step 6: Run the checks; they pass.</strong> <code>make check</code>. Expected: every <code>ok</code>, no <code>FAIL</code>, no Quarto <code>WARN</code>.</label></p></li>
+<li><p><label><input type="checkbox"><strong>Step 7: Commit.</strong> Write the message to a file:</label></p></li>
 </ul>
 <pre class="text"><code>docs(book): 🤖 add where each file comes from in DSCI 521
 
 chapters/provenance.qmd links every file's DSCI 521 original at
 991bae89cba9, says what changed, and explains re-fetching with make
-fetch-521; the README points at it (Q&amp;A 21). The new checks first
+fetch-521; the README points at it (Q&amp;A 21). LICENSE.md splits the
+licence, MIT for code and CC BY-NC-SA 4.0 for docs, excludes the MDS
+logo, and quizdown's MIT licence now sits beside its copy (Q&amp;A 27). The new checks first
 failed with: FAIL provenance page (_book/chapters/provenance.html
 missing).
 
 Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 6
 Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
-<p><code>git add chapters/provenance.qmd _quarto.yml tests/check-render.sh README.md</code>, <code>git commit -F &lt;file&gt;</code>, <code>git log -1 --format='%(trailers)'</code>. Then <code>make leaks</code> and <code>git push origin main</code>.</p>
+<p><code>git add chapters/provenance.qmd LICENSE.md _extensions/ubc/_extensions/quizdown/LICENSE _quarto.yml tests/check-render.sh README.md docs/_overview.qmd</code>, <code>git commit -F &lt;file&gt;</code>, <code>git log -1 --format='%(trailers)'</code>. Then <code>make leaks</code> and <code>git push origin main</code>.</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Step 7: Review, look forward, close.</strong> Tier 3: self-review under <em>Standards</em> and <em>Spec</em>, plus <code>make check</code>. Close with the boxes ticked, <strong>Now</strong> <code>Phase end, step 1: The final whole-branch review.</code>, the spec’s S12 row <code>built</code>, and the close message as in Task 3 with <code>Task 6: Where it comes from</code>.</label></li>
+<li><label><input type="checkbox"><strong>Step 8: Review, look forward, close.</strong> Tier 3: self-review under <em>Standards</em> and <em>Spec</em>, plus <code>make check</code>. Close with the boxes ticked, <strong>Now</strong> <code>Phase end, step 1: The final whole-branch review.</code>, the spec’s S12 row <code>built</code>, and the close message as in Task 3 with <code>Task 6: Where it comes from</code>.</label></li>
 </ul>
 <hr>
 </section>
@@ -1567,14 +1711,101 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <ul class="task-list">
 <li><label><input type="checkbox"><strong>1. The final whole-branch review:</strong> Matt Pocock’s <code>code-review</code>, two axes, from <code>git merge-base main HEAD</code>; one fix round and one scoped re-review; a ruling on whatever is left. Each fix is its own commit.</label></li>
 <li><label><input type="checkbox"><strong>2. The rest of the ledger copied into the plan:</strong> whatever <code>.superpowers/sdd/2026-10-30-ubc-quarto-brand/progress.md</code> holds that no closing commit carries, under its task.</label></li>
-<li><label><input type="checkbox"><strong>3. The docs check:</strong> every doc the branch touched is true (the README, the spec’s design and scenario rows, the how-to, the provenance page, <code>AGENTS.md</code>).</label></li>
+<li><label><input type="checkbox"><strong>3. The docs check:</strong> every doc the branch touched is true (the README, the spec’s design and scenario rows, the Architecture page with every built part solid, the how-to, the provenance page, <code>LICENSE.md</code>, <code>AGENTS.md</code>).</label></li>
 <li><label><input type="checkbox"><strong>4. A dated <code>CHANGELOG.md</code> entry</strong> for <code>v0.1.0</code> (the extension, the test book, CI and previews, from DSCI 521 at <code>991bae89cba9</code>), and the spec’s status line set to <code>PR open (#N)</code>, its number filled in once step 5 opens the PR.</label></li>
 <li><label><input type="checkbox"><strong>5. The push and the publish run</strong> (Q&amp;A 29: no PR here): <code>main</code> pushed, <code>publish.yml</code> green, S14 checked on the live site.</label></li>
 <li><label><input type="checkbox"><strong>6. The live site and the release:</strong> <a href="https://ubc-mds.github.io/ubc-quarto-brand/" class="uri">https://ubc-mds.github.io/ubc-quarto-brand/</a> serves the book with <code>.nojekyll</code> intact (S14); then [Dan] tags <code>v0.1.0</code>, and the reproducible book adopts it in its own previewed PR (S16).</label></li>
 </ul>
-
-
 </section>
+</section>
+<section id="phase-end-list" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="phase-end-list"><span class="header-section-number">5.3</span> Phase-end list</h2>
+<p>Deferred findings, a row each.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>From</th>
+<th>Severity</th>
+<th>File</th>
+<th>Finding</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Task 2</td>
+<td>Minor</td>
+<td><code>scripts/fetch-521.sh</code></td>
+<td>writes relative to the current folder: run outside the repo root, it creates <code>_extensions/ubc</code> there; <code>cd "$(dirname "$0")/.."</code> fixes it</td>
+<td>open</td>
+</tr>
+<tr class="even">
+<td>Task 2</td>
+<td>Minor</td>
+<td><code>scripts/fetch-521.sh</code></td>
+<td>a curl failure part-way leaves files from two commits; files dropped upstream are never deleted</td>
+<td>open</td>
+</tr>
+<tr class="odd">
+<td>Task 2</td>
+<td>Minor</td>
+<td><code>scripts/fetch-521.sh</code></td>
+<td>the <code>meta:</code> strip drops a column-0 comment inside the block, says “removed” when there was none, and leaves <code>brand.yml.tmp</code> on failure</td>
+<td>open</td>
+</tr>
+<tr class="even">
+<td>Task 2</td>
+<td>Minor</td>
+<td><code>Makefile</code></td>
+<td><code>SHA</code> is read from the environment and not checked as a full hex SHA (<code>SHA=main</code> defeats the pin); a name like <code>FETCH_521_SHA</code> is safer</td>
+<td>open</td>
+</tr>
+<tr class="odd">
+<td>Task 2</td>
+<td>Minor</td>
+<td><code>tests/check-render.sh</code></td>
+<td>the bundle lookup takes an arbitrary bundle if several exist; <code>make test-utc</code> does not clear <code>_book</code>; an empty <code>LIGHT</code> gives a bare <code>FAIL … ()</code>; the <code>-missing</code> placeholder paths are only there for the message</td>
+<td>open</td>
+</tr>
+<tr class="even">
+<td>Task 2</td>
+<td>Minor</td>
+<td><code>_extensions/ubc/_extension.yml</code></td>
+<td>the callout hex values copy <code>brand.yml</code>, and nothing checks they still match after a re-fetch</td>
+<td>open</td>
+</tr>
+<tr class="odd">
+<td>Task 2</td>
+<td>Minor</td>
+<td>several</td>
+<td>the pin <code>991bae89cba9</code> is repeated in the script, the spec, commit bodies and the provenance page</td>
+<td>open</td>
+</tr>
+<tr class="even">
+<td>Task 2</td>
+<td>Minor</td>
+<td><code>index.qmd</code></td>
+<td>the sidebar numbers Home “1” while the page itself is unnumbered</td>
+<td>open</td>
+</tr>
+<tr class="odd">
+<td>Task 2</td>
+<td>Minor</td>
+<td><code>tests/check-render.sh</code></td>
+<td>“home titled in the sidebar” also matches the breadcrumb; the two diagram checks show only that some Mermaid block exists</td>
+<td>open</td>
+</tr>
+</tbody>
+</table>
+
+
 </section>
 
 </main> <!-- /main -->

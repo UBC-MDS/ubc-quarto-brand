@@ -86,6 +86,20 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-exercise.callout {
+  border-left-color: #1C5F2E;
+}
+div.callout-exercise.callout-style-default .callout-header {
+  background-color: rgba(28, 95, 46, 0.13);
+}
+div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f44b' !important;
+  background-image: none;
+}
 div.callout-definition.callout {
   border-left-color: #8A6D2B;
 }
@@ -98,20 +112,6 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
   font-weight: 900;
   font-style: normal;
   content: '\f518' !important;
-  background-image: none;
-}
-div.callout-relevance-project.callout {
-  border-left-color: #0077C8;
-}
-div.callout-relevance-project.callout-style-default .callout-header {
-  background-color: rgba(0, 119, 200, 0.13);
-}
-div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f542' !important;
   background-image: none;
 }
 div.callout-activity.callout {
@@ -128,18 +128,18 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
   content: '\e53d' !important;
   background-image: none;
 }
-div.callout-exercise.callout {
-  border-left-color: #1C5F2E;
+div.callout-relevance-project.callout {
+  border-left-color: #0077C8;
 }
-div.callout-exercise.callout-style-default .callout-header {
-  background-color: rgba(28, 95, 46, 0.13);
+div.callout-relevance-project.callout-style-default .callout-header {
+  background-color: rgba(0, 119, 200, 0.13);
 }
-div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\f44b' !important;
+  content: '\f542' !important;
   background-image: none;
 }
 </style>
@@ -497,7 +497,7 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 <li><strong>The brand,</strong> through <code>metadata: project: brand: brand.yml</code>. Quarto merges it into any project with the extension installed, whatever its format, so colours, fonts and dark mode apply even to a plain <code>format: html</code> page.</li>
 <li><strong>A <code>ubc-html</code> format</strong> with the theme layers (<code>light: [brand, styles.scss, ubc.scss]</code>, <code>dark: [brand, styles.scss, styles-dark.scss, ubc.scss, ubc-dark.scss]</code>), the filters (<code>code-labels.lua</code>, <code>custom-callout</code>, <code>quizdown</code>), <code>include-after-body: quizdown-theme.html</code>, and the four custom callout types.</li>
 </ul>
-<p>A format cannot carry the brand on its own: its <code>brand</code> theme layer means the project’s brand, and 521’s <code>styles.scss</code> needs the <code>$brand-*</code> variables that only the brand defines. A prototype rendered exactly this setup on Quarto 1.11.6, for a book and for a website (Q&amp;A 18).</p>
+<p>A format cannot carry the brand on its own: its <code>brand</code> theme layer means the project’s brand, and 521’s <code>styles.scss</code> needs the <code>$brand-*</code> variables that only the brand defines. A prototype rendered this setup, before the extension had a layer of its own, on Quarto 1.11.6, for a book and for a website (Q&amp;A 18).</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -662,13 +662,13 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 <td>UBC colours, Atkinson Hyperlegible fonts and a light/dark toggle</td>
 <td>Task 2</td>
 <td><code>tests/check-render.sh</code> on the book and the website check</td>
-<td>planned</td>
+<td>built</td>
 </tr>
 <tr class="even">
 <td>S02</td>
 <td>a reader switches to dark mode</td>
 <td>navy page, readable code, lightened callout borders, readable tab titles</td>
-<td>Task 2</td>
+<td>Tasks 2, 4</td>
 <td><code>tests/check-render.sh</code>; the PR preview, checked by eye</td>
 <td>planned</td>
 </tr>
@@ -758,7 +758,7 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 <td>a preview link is commented; it updates; the merge leaves no stray preview; closing removes it</td>
 <td>Task 1</td>
 <td><code>pr.yml</code> is the book’s proven workflow plus per-PR cancel; proven when a PR is first opened here (Q&amp;A 29)</td>
-<td>planned</td>
+<td>built</td>
 </tr>
 <tr class="even">
 <td>S14</td>
@@ -766,7 +766,7 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 <td>the demo deploys to <code>gh-pages</code>, keeping <code>pr-preview/</code> and <code>.nojekyll</code></td>
 <td>Task 1</td>
 <td>every publish run on <code>main</code></td>
-<td>planned</td>
+<td>verified</td>
 </tr>
 <tr class="odd">
 <td>S15</td>
@@ -810,7 +810,7 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 <td>DSCI 521 adopts the extension</td>
 <td>it deletes its local copies</td>
 <td>end</td>
-<td>tracked in DSCI_521#35</td>
+<td>tracked in DSCI_521#35; it keeps its own <code>toc</code>, <code>toc-depth</code> and <code>toc-expand</code>, which <code>ubc-html</code> leaves out</td>
 </tr>
 <tr class="odd">
 <td>S18</td>
