@@ -5,7 +5,7 @@ the [DSCI 521 book](https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/) was
 the UBC colour palette, Atkinson Hyperlegible fonts, light and dark modes,
 callouts with icons, labelled code listings, a console window, and themed quizzes.
 
-Every file in the extension but its own layer and quizdown's licence comes from the DSCI 521 book at one pinned commit;
+Most of the extension's files are copied from the DSCI 521 book at one pinned commit;
 the demo book's "Where it comes from" page lists each original and what changed.
 
 Code is under MIT and the docs under CC BY-NC-SA 4.0; the MDS logo is excluded

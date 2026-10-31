@@ -2,10 +2,13 @@
 title: Where it comes from
 ---
 
-Every file in this extension but its own layer, `ubc.scss`, `ubc-dark.scss` and `ubc-quizdown.html`, and quizdown's `LICENSE` comes from the
-[DSCI 521 book](https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/),
-copied from one commit, `991bae89cba904ae2dd0753338c306333eb5ea2e`,
-by `scripts/fetch-521.sh`.
+Most files in this extension are copied from the
+[DSCI 521 book](https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/)
+at one commit, `991bae89cba904ae2dd0753338c306333eb5ea2e`, by `scripts/fetch-521.sh`.
+Three kinds are not:
+`_extension.yml`, written here from keys in DSCI 521's `_quarto.yml`;
+the extension's own layer, `ubc.scss`, `ubc-dark.scss` and `ubc-quizdown.html`;
+and quizdown's `LICENSE`, from quizdown's own repository.
 The links below point at each original as it was at that commit.
 
 | In this extension | From DSCI 521 | Changed |
