@@ -26,4 +26,4 @@ book:
         - CHANGELOG.md
         - AGENTS.md
 
-format: html
+format: ubc-html
