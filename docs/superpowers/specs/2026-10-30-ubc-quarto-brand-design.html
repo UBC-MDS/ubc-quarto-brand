@@ -86,20 +86,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-activity.callout {
-  border-left-color: #0055B7;
-}
-div.callout-activity.callout-style-default .callout-header {
-  background-color: rgba(0, 85, 183, 0.13);
-}
-div.callout-activity .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-activity.callout-style-default .callout-icon::before, div.callout-activity.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\e53d' !important;
-  background-image: none;
-}
 div.callout-definition.callout {
   border-left-color: #8A6D2B;
 }
@@ -126,6 +112,20 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
   font-weight: 900;
   font-style: normal;
   content: '\f44b' !important;
+  background-image: none;
+}
+div.callout-activity.callout {
+  border-left-color: #0055B7;
+}
+div.callout-activity.callout-style-default .callout-header {
+  background-color: rgba(0, 85, 183, 0.13);
+}
+div.callout-activity .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-activity.callout-style-default .callout-icon::before, div.callout-activity.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\e53d' !important;
   background-image: none;
 }
 div.callout-relevance-project.callout {
@@ -644,15 +644,15 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <h3 data-number="7.3.3" class="anchored" data-anchor-id="the-test-book"><span class="header-section-number">7.3.3</span> The test book</h3>
 <p>The repository root is a Quarto book that renders with <code>format: ubc-html</code>, next to <code>_extensions/ubc/</code> (Q&amp;A 22, 23):</p>
 <ul>
-<li><strong>Home:</strong> the README.</li>
+<li><strong>Home:</strong> the README, then the overview diagram.</li>
 <li><strong>Conventions:</strong> DSCI 521’s <code>lectures/0-conventions.qmd</code> almost as-is (Q&amp;A 15): text, every listing kind, executed R and Python cells (Q&amp;A 13), callouts, quizzes, tables, math, figures and tabsets. Only its links into other 521 chapters change.</li>
 <li><strong>Callouts:</strong> Quarto’s five built-ins (note, tip, important, warning, caution), plain and titled, the four custom types, and two exercises in a row for the numbering (Q&amp;A 19).</li>
 <li><strong>Using it in a book:</strong> installing, the format line, the logo, extra styles, extra callouts, and the limits above.</li>
 <li><strong>Where it comes from:</strong> every file’s DSCI 521 original, linked at <code>991bae89cba9</code>, and what changed (Q&amp;A 21).</li>
-<li><strong>The project:</strong> the spec, the plan, the Q&amp;A pages, the changelog and <code>AGENTS.md</code>, rendered from where they live.</li>
+<li><strong>The project:</strong> the Architecture page, the spec, the plan, the Q&amp;A page, the changelog and <code>AGENTS.md</code>, rendered from where they live.</li>
 </ul>
-<p><code>tests/website/</code> is a one-page website project: a callout, a <code>bash</code> listing and a quiz. <code>make</code> copies the extension into it, git-ignored, before rendering it in CI (Q&amp;A 10, 22).</p>
-<p>Executed cells run through knitr, with Python through reticulate from the uv venv, as in 521. R needs <code>knitr</code>, <code>rmarkdown</code> and <code>reticulate</code> (renv); Python needs <code>matplotlib</code> (uv).</p>
+<p><code>tests/website/</code> is a one-page website project, installed the way a GitHub install leaves it: the MDS logo, its own theme layer (a Sass default and callout rules), its own <code>lab</code> callout and a recoloured <code>activity</code>, a <code>bash</code> listing and a quiz. <code>make test</code> copies the extension into it, git-ignored, and renders it after the book, locally and in CI (Q&amp;A 10, 22).</p>
+<p>Executed cells run through knitr, with Python through reticulate from the uv venv, as in 521. R needs <code>knitr</code>, <code>rmarkdown</code>, <code>reticulate</code> and <code>here</code> (renv); Python needs <code>matplotlib</code> (uv).</p>
 </section>
 <section id="ci-and-delivery" class="level3" data-number="7.3.4">
 <h3 data-number="7.3.4" class="anchored" data-anchor-id="ci-and-delivery"><span class="header-section-number">7.3.4</span> CI and delivery</h3>
@@ -661,7 +661,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <li><strong><code>publish.yml</code>,</strong> on a push to <code>main</code>: the same build, then github-pages-deploy-action deploys the book to <code>gh-pages</code> with <code>clean-exclude: pr-preview</code> and <code>force: false</code>, so previews and the branch’s <code>.nojekyll</code> survive (Q&amp;A 24).</li>
 <li><strong><code>make check</code>:</strong> renders the test book and the website check, failing on any Quarto warning or unresolved link; runs <code>tests/check-render.sh</code> over the rendered HTML (the brand’s colours, both stylesheets, the labels, the callouts’ icon font and colours, the counters, the quiz assets); runs lychee offline, actionlint and gitleaks.</li>
 <li><strong>Rulings:</strong> Ubuntu runner, Quarto 1.11.6 pinned and <code>quarto-required: "&gt;=1.11.0"</code>, Python 3.14, every third-party action pinned by commit SHA (Q&amp;A 24).</li>
-<li><strong>Releases:</strong> a PR bumps <code>version:</code> in <code>_extension.yml</code> and adds a <code>CHANGELOG.md</code> entry; Dan tags <code>vX.Y.Z</code> after merging it (Q&amp;A 17).</li>
+<li><strong>Releases:</strong> a commit on <code>main</code> bumps <code>version:</code> in <code>_extension.yml</code> and adds a dated <code>CHANGELOG.md</code> entry; Dan tags <code>vX.Y.Z</code> on it (Q&amp;A 17, 29).</li>
 <li><strong>Straight to <code>main</code>:</strong> the agent commits and pushes to <code>main</code>; Dan reviews the extension in the adopting book’s PR, with its preview (Q&amp;A 29). <code>pr.yml</code> serves anyone who opens a PR here later.</li>
 </ul>
 </section>
