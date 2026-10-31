@@ -30,8 +30,8 @@ SOFTWARE.
 ## Docs and the test book's text
 
 The docs and the test book's text are under the Creative Commons
-Attribution-NonCommercial-ShareAlike 4.0 International licence
-([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)).
+Attribution 4.0 International licence
+([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
 
 ## Not covered
 

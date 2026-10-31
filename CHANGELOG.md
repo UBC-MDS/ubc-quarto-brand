@@ -18,7 +18,7 @@ The first release: the DSCI 521 book's UBC brand as a Quarto extension, `ubc`.
   the extension, and the project's docs; `tests/website/` checks a GitHub-style install.
 - **CI:** `make check` on every push and pull request; pull requests get a preview, and `main`
   deploys the demo to <https://ubc-mds.github.io/ubc-quarto-brand/>.
-- **Licence:** MIT for code, CC BY-NC-SA 4.0 for docs, the MDS logo excluded; quizdown's and
+- **Licence:** MIT for code, CC BY 4.0 for docs, the MDS logo excluded; quizdown's and
   Font Awesome's licences ship beside their files.
 
 - 2026-10-30: kickoff. The design spec, the kickoff Q&A, and the project's rules

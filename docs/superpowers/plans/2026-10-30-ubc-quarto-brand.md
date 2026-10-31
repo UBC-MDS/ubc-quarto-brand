@@ -1217,7 +1217,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 > **Built differently** (closed 2026-10-30; commit 6e91f91): the page and the README name quizdown's `LICENSE` among the files not from DSCI 521, and the re-fetch sentence says "every DSCI 521 file"; the check for the note on 521's comments allows the curly apostrophe's three bytes, so it does not depend on the locale.
 
-**Ruling** (Task 2's forward review): `LICENSE.md` uses CC BY-NC-SA 4.0 for the docs, as Q&A 27 records, although the reproducible book it names is split: its README says CC BY-NC-SA 4.0, its `LICENSE.md` CC BY 4.0. Dan is asked before he tags `v0.1.0`. If wrong: one licence paragraph.
+**Ruling** (Task 2's forward review): `LICENSE.md` uses CC BY-NC-SA 4.0 for the docs, as Q&A 27 records, although the reproducible book it names is split: its README says CC BY-NC-SA 4.0, its `LICENSE.md` CC BY 4.0. Dan is asked before he tags `v0.1.0`. If wrong: one licence paragraph. (Asked at the phase end, Dan chose CC BY 4.0, Q&A 30.)
 
 **Ruling** (Task 2's forward review): the MIT copyright holder is "UBC Master of Data Science", the extension's author in `_extension.yml`; DSCI 521 publishes no licence or holder. If wrong: one line, before the tag.
 

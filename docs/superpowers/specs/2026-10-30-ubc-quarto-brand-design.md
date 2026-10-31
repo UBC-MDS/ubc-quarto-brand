@@ -179,10 +179,8 @@ R needs `knitr`, `rmarkdown`, `reticulate` and `here` (renv); Python needs `matp
   read and write workflow permissions, a ruleset on `main`.
 - **plan-driven-development's hooks and leak check aren't built yet:**
   every push to `main` follows `make leaks` (Q&A 29).
-- **Licence:** MIT for code, CC BY-NC-SA 4.0 for docs, the MDS logo excluded (Q&A 27).
+- **Licence:** MIT for code, CC BY 4.0 for docs, the MDS logo excluded (Q&A 27, 30).
   custom-callout publishes no licence: [Dan] asks its author for one.
-  The reproducible book Q&A 27 follows is itself split, CC BY-NC-SA 4.0 in its README and
-  CC BY 4.0 in its `LICENSE.md`: [Dan] confirms the docs licence here before tagging `v0.1.0`.
 
 ## Revisions
 
@@ -192,6 +190,7 @@ R needs `knitr`, `rmarkdown`, `reticulate` and `here` (renv); Python needs `matp
   (`47e684a`, `d126ab8`, `a5fc3e2`, `09f595d`, `c90002b`, `750f91d`, `fd5ebe4`, `50f7bf3`).
 - 2026-10-30: the extension completes the callout styling in its own layer (Q&A 26, `779c67f`);
   a split licence, as in the reproducible book (Q&A 27, `4e23584`).
+- 2026-10-31: the docs under CC BY 4.0, matching the reproducible book's `LICENSE.md` (Q&A 30, `6a43a11`).
 - 2026-10-30: approved for a one-shot build (Q&A 28); work goes straight to `main`, review happens in the adopting book (Q&A 29).
 - 2026-10-30: the conventions page as-is, provenance docs, design sections 1 to 3
   (`00a0f5b`, `0489284`, `fd8ff72`, `70fa211`, `6447ee8`).

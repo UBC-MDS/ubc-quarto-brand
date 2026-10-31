@@ -8,7 +8,7 @@ callouts with icons, labelled code listings, a console window, and themed quizze
 Most of the extension's files are copied from the DSCI 521 book at one pinned commit;
 the demo book's "Where it comes from" page lists each original and what changed.
 
-Code is under MIT and the docs under CC BY-NC-SA 4.0; the MDS logo is excluded
+Code is under MIT and the docs under CC BY 4.0; the MDS logo is excluded
 ([LICENSE.md](https://github.com/UBC-MDS/ubc-quarto-brand/blob/main/LICENSE.md)).
 
 **See it:** the demo book at <https://ubc-mds.github.io/ubc-quarto-brand/>
