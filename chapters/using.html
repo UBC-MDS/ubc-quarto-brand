@@ -121,18 +121,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>
-div.callout-exercise.callout {
-  border-left-color: #1C5F2E;
+div.callout-activity.callout {
+  border-left-color: #0055B7;
 }
-div.callout-exercise.callout-style-default .callout-header {
-  background-color: rgba(28, 95, 46, 0.13);
+div.callout-activity.callout-style-default .callout-header {
+  background-color: rgba(0, 85, 183, 0.13);
 }
-div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+div.callout-activity .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-activity.callout-style-default .callout-icon::before, div.callout-activity.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\f44b' !important;
+  content: '\e53d' !important;
   background-image: none;
 }
 div.callout-definition.callout {
@@ -149,20 +149,6 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
   content: '\f518' !important;
   background-image: none;
 }
-div.callout-activity.callout {
-  border-left-color: #0055B7;
-}
-div.callout-activity.callout-style-default .callout-header {
-  background-color: rgba(0, 85, 183, 0.13);
-}
-div.callout-activity .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-activity.callout-style-default .callout-icon::before, div.callout-activity.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\e53d' !important;
-  background-image: none;
-}
 div.callout-relevance-project.callout {
   border-left-color: #0077C8;
 }
@@ -175,6 +161,20 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
   font-weight: 900;
   font-style: normal;
   content: '\f542' !important;
+  background-image: none;
+}
+div.callout-exercise.callout {
+  border-left-color: #1C5F2E;
+}
+div.callout-exercise.callout-style-default .callout-header {
+  background-color: rgba(28, 95, 46, 0.13);
+}
+div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f44b' !important;
   background-image: none;
 }
 </style>
@@ -523,7 +523,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <h2 data-number="4.2" class="anchored" data-anchor-id="use-the-format"><span class="header-section-number">4.2</span> Use the format</h2>
 <p>In your <code>_quarto.yml</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> ubc-html</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>That one line brings the theme, the listing labels, the callouts and the quizzes. The brand’s colours, fonts and dark mode apply to every page as soon as the extension is installed, whatever format a page uses.</p>
+<p>That one line brings the theme, the listing labels, the callouts and the quizzes. The brand’s colours, fonts and dark mode reach every HTML page as soon as the extension is installed, even one with a plain <code>format: html</code>.</p>
 </section>
 <section id="update-it" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="update-it"><span class="header-section-number">4.3</span> Update it</h2>
@@ -540,7 +540,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span><span class="at"> _extensions/UBC-MDS/ubc/MDSlogo.png</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">logo-alt</span><span class="kw">:</span><span class="at"> </span><span class="st">"MDS logo"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>In a website, the same two keys go under <code>website: sidebar:</code>.</p>
+<p>In a website, the same two keys go under <code>website: sidebar:</code>, or under <code>website: navbar:</code> for a logo in the navbar.</p>
 </section>
 <section id="add-your-own-styles" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="add-your-own-styles"><span class="header-section-number">4.5</span> Add your own styles</h2>
@@ -550,22 +550,54 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">extra.scss</span><span class="kw">]</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">extra.scss</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Your layer comes after the extension’s, so its rules win, and the brand’s colours are available in it as <code>$brand-&lt;name&gt;</code>, for example <code>$brand-ubc-blue</code>. A single list, <code>theme: [extra.scss]</code>, makes Quarto stop with an error.</p>
+<p>Your layer comes after the extension’s, so a rule of yours wins over one of the extension’s with an equally specific selector. The extension’s dark-mode rules start with <code>body.quarto-dark</code>; start yours the same way to override them. The brand’s colours are available in your layer as <code>$brand-&lt;name&gt;</code>, for example <code>$brand-ubc-blue</code>. A single list, <code>theme: [extra.scss]</code>, makes Quarto stop with an error.</p>
 </section>
 <section id="add-or-recolour-a-callout-type" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="add-or-recolour-a-callout-type"><span class="header-section-number">4.6</span> Add or recolour a callout type</h2>
-<p>Add <code>custom-callout:</code> keys to your <code>_quarto.yml</code>. They merge with the extension’s: a new type is added, and a type the extension already has takes your values.</p>
+<p>Add <code>custom-callout:</code> keys to your <code>_quarto.yml</code>. They merge with the extension’s: a new type is added, and a type the extension already has takes the keys you give it. This adds a <code>lab</code> type and recolours <code>activity</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">custom-callout</span><span class="kw">:</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">lab</span><span class="kw">:</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lab"</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">icon-symbol</span><span class="kw">:</span><span class="at"> </span><span class="st">"fa-flask"</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> </span><span class="st">"#A6192E"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The colour must be a literal hex, because this YAML cannot read the brand’s Sass. Take it from the palette:</p>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> </span><span class="st">"#A6192E"</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">activity</span><span class="kw">:</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> </span><span class="st">"#0077C8"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The colour must be a literal hex, because this YAML cannot read the brand’s Sass. custom-callout uses it for the callout’s border and fill in light mode, and nothing else. The icon’s colour and the dark-mode colours come from theme rules: the extension has them for its own four types, so a type you add gets an uncoloured icon and the same border on the dark page, and a type you recolour keeps the extension’s icon colour and dark-mode border. Add the rules to your own layer (see above), taking each dark colour from the light one’s pair in the table below:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:rules --*/</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>div<span class="fu">.callout-lab</span> <span class="fu">.callout-icon</span><span class="in">::before</span> {</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-right</span>: <span class="dv">0.4</span><span class="dt">em</span><span class="op">;</span> <span class="co">/* only for a new type: the extension spaces its own */</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="va">$brand-alert-red</span><span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>div<span class="fu">.callout-activity</span> <span class="fu">.callout-icon</span><span class="in">::before</span> {</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="va">$brand-ubc-blue-mid</span><span class="op">;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>body<span class="fu">.quarto-dark</span> {</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  div<span class="fu">.callout-lab.callout</span> {</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border-left-color</span>: <span class="va">$brand-alert-red-light</span><span class="op">;</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  div<span class="fu">.callout-lab</span> <span class="fu">.callout-icon</span><span class="in">::before</span> {</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="va">$brand-alert-red-light</span><span class="op">;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  div<span class="fu">.callout-activity.callout</span> {</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border-left-color</span>: <span class="va">$brand-ubc-blue-bright</span><span class="op">;</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  div<span class="fu">.callout-activity</span> <span class="fu">.callout-icon</span><span class="in">::before</span> {</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="va">$brand-ubc-blue-bright</span><span class="op">;</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Name</th>
+<th>Light mode</th>
+<th>Hex</th>
+<th>Its dark-mode pair</th>
 <th>Hex</th>
 </tr>
 </thead>
@@ -573,30 +605,38 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <tr class="odd">
 <td><code>ubc-blue</code></td>
 <td><code>#002145</code></td>
+<td><code>ubc-blue-pale</code></td>
+<td><code>#97D4E9</code></td>
 </tr>
 <tr class="even">
 <td><code>ubc-blue-deep</code></td>
 <td><code>#0055B7</code></td>
+<td><code>ubc-blue-light</code></td>
+<td><code>#40B4E5</code></td>
 </tr>
 <tr class="odd">
 <td><code>ubc-blue-mid</code></td>
 <td><code>#0077C8</code></td>
-</tr>
-<tr class="even">
 <td><code>ubc-blue-bright</code></td>
 <td><code>#00A7E1</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>ubc-gold-dark</code></td>
 <td><code>#8A6D2B</code></td>
-</tr>
-<tr class="even">
-<td><code>mds-green</code></td>
-<td><code>#1C5F2E</code></td>
+<td><code>ubc-gold</code></td>
+<td><code>#A89565</code></td>
 </tr>
 <tr class="odd">
+<td><code>mds-green</code></td>
+<td><code>#1C5F2E</code></td>
+<td><code>mds-green-light</code></td>
+<td><code>#88D4AB</code></td>
+</tr>
+<tr class="even">
 <td><code>alert-red</code></td>
 <td><code>#A6192E</code></td>
+<td><code>alert-red-light</code></td>
+<td><code>#F08080</code></td>
 </tr>
 </tbody>
 </table>
@@ -604,7 +644,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 </section>
 <section id="what-you-cannot-change" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="what-you-cannot-change"><span class="header-section-number">4.7</span> What you cannot change</h2>
-<p>You cannot replace part of the brand. A <code>_brand.yml</code> of your own is ignored, because the extension’s brand takes its place. A top-level <code>brand:</code> key replaces the whole brand, so it would have to define every colour the extension’s styles use, or the render fails. To change how things look, add a theme layer instead.</p>
+<p>You cannot replace part of the brand. A <code>_brand.yml</code> of your own is ignored, because the extension’s brand takes its place. A top-level <code>brand:</code> key replaces the whole brand: written inline, it stops the render with an undefined <code>$brand-*</code> variable, and only <code>brand:</code> pointing at a complete copy of the extension’s <code>brand.yml</code> renders. To change how things look, add a theme layer instead.</p>
 </section>
 <section id="executed-code-and-quizzes" class="level2" data-number="4.8">
 <h2 data-number="4.8" class="anchored" data-anchor-id="executed-code-and-quizzes"><span class="header-section-number">4.8</span> Executed code and quizzes</h2>

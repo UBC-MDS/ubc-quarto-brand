@@ -209,7 +209,7 @@
     "href": "chapters/using.html#use-the-format",
     "title": "4  Using it in a book",
     "section": "4.2 Use the format",
-    "text": "4.2 Use the format\nIn your _quarto.yml:\nformat: ubc-html\nThat one line brings the theme, the listing labels, the callouts and the quizzes. The brand’s colours, fonts and dark mode apply to every page as soon as the extension is installed, whatever format a page uses.",
+    "text": "4.2 Use the format\nIn your _quarto.yml:\nformat: ubc-html\nThat one line brings the theme, the listing labels, the callouts and the quizzes. The brand’s colours, fonts and dark mode reach every HTML page as soon as the extension is installed, even one with a plain format: html.",
     "crumbs": [
       "The brand",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
@@ -231,7 +231,7 @@
     "href": "chapters/using.html#turn-on-the-mds-logo",
     "title": "4  Using it in a book",
     "section": "4.4 Turn on the MDS logo",
-    "text": "4.4 Turn on the MDS logo\nThe MDS logo ships with the extension but is not shown unless you ask for it. In a book:\nbook:\n  sidebar:\n    logo: _extensions/UBC-MDS/ubc/MDSlogo.png\n    logo-alt: \"MDS logo\"\nIn a website, the same two keys go under website: sidebar:.",
+    "text": "4.4 Turn on the MDS logo\nThe MDS logo ships with the extension but is not shown unless you ask for it. In a book:\nbook:\n  sidebar:\n    logo: _extensions/UBC-MDS/ubc/MDSlogo.png\n    logo-alt: \"MDS logo\"\nIn a website, the same two keys go under website: sidebar:, or under website: navbar: for a logo in the navbar.",
     "crumbs": [
       "The brand",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
@@ -242,7 +242,7 @@
     "href": "chapters/using.html#add-your-own-styles",
     "title": "4  Using it in a book",
     "section": "4.5 Add your own styles",
-    "text": "4.5 Add your own styles\nAdd a theme layer of your own. Give it to both modes, as two lists:\nformat:\n  ubc-html:\n    theme:\n      light: [extra.scss]\n      dark: [extra.scss]\nYour layer comes after the extension’s, so its rules win, and the brand’s colours are available in it as $brand-&lt;name&gt;, for example $brand-ubc-blue. A single list, theme: [extra.scss], makes Quarto stop with an error.",
+    "text": "4.5 Add your own styles\nAdd a theme layer of your own. Give it to both modes, as two lists:\nformat:\n  ubc-html:\n    theme:\n      light: [extra.scss]\n      dark: [extra.scss]\nYour layer comes after the extension’s, so a rule of yours wins over one of the extension’s with an equally specific selector. The extension’s dark-mode rules start with body.quarto-dark; start yours the same way to override them. The brand’s colours are available in your layer as $brand-&lt;name&gt;, for example $brand-ubc-blue. A single list, theme: [extra.scss], makes Quarto stop with an error.",
     "crumbs": [
       "The brand",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
@@ -253,7 +253,7 @@
     "href": "chapters/using.html#add-or-recolour-a-callout-type",
     "title": "4  Using it in a book",
     "section": "4.6 Add or recolour a callout type",
-    "text": "4.6 Add or recolour a callout type\nAdd custom-callout: keys to your _quarto.yml. They merge with the extension’s: a new type is added, and a type the extension already has takes your values.\ncustom-callout:\n  lab:\n    title: \"Lab\"\n    icon: true\n    icon-symbol: \"fa-flask\"\n    color: \"#A6192E\"\nThe colour must be a literal hex, because this YAML cannot read the brand’s Sass. Take it from the palette:\n\n\n\nName\nHex\n\n\n\n\nubc-blue\n#002145\n\n\nubc-blue-deep\n#0055B7\n\n\nubc-blue-mid\n#0077C8\n\n\nubc-blue-bright\n#00A7E1\n\n\nubc-gold-dark\n#8A6D2B\n\n\nmds-green\n#1C5F2E\n\n\nalert-red\n#A6192E\n\n\n\nThe Callouts page shows every type the extension defines.",
+    "text": "4.6 Add or recolour a callout type\nAdd custom-callout: keys to your _quarto.yml. They merge with the extension’s: a new type is added, and a type the extension already has takes the keys you give it. This adds a lab type and recolours activity:\ncustom-callout:\n  lab:\n    title: \"Lab\"\n    icon: true\n    icon-symbol: \"fa-flask\"\n    color: \"#A6192E\"\n  activity:\n    color: \"#0077C8\"\nThe colour must be a literal hex, because this YAML cannot read the brand’s Sass. custom-callout uses it for the callout’s border and fill in light mode, and nothing else. The icon’s colour and the dark-mode colours come from theme rules: the extension has them for its own four types, so a type you add gets an uncoloured icon and the same border on the dark page, and a type you recolour keeps the extension’s icon colour and dark-mode border. Add the rules to your own layer (see above), taking each dark colour from the light one’s pair in the table below:\n/*-- scss:rules --*/\n\ndiv.callout-lab .callout-icon::before {\n  margin-right: 0.4em; /* only for a new type: the extension spaces its own */\n  color: $brand-alert-red;\n}\n\ndiv.callout-activity .callout-icon::before {\n  color: $brand-ubc-blue-mid;\n}\n\nbody.quarto-dark {\n  div.callout-lab.callout {\n    border-left-color: $brand-alert-red-light;\n  }\n\n  div.callout-lab .callout-icon::before {\n    color: $brand-alert-red-light;\n  }\n\n  div.callout-activity.callout {\n    border-left-color: $brand-ubc-blue-bright;\n  }\n\n  div.callout-activity .callout-icon::before {\n    color: $brand-ubc-blue-bright;\n  }\n}\n\n\n\nLight mode\nHex\nIts dark-mode pair\nHex\n\n\n\n\nubc-blue\n#002145\nubc-blue-pale\n#97D4E9\n\n\nubc-blue-deep\n#0055B7\nubc-blue-light\n#40B4E5\n\n\nubc-blue-mid\n#0077C8\nubc-blue-bright\n#00A7E1\n\n\nubc-gold-dark\n#8A6D2B\nubc-gold\n#A89565\n\n\nmds-green\n#1C5F2E\nmds-green-light\n#88D4AB\n\n\nalert-red\n#A6192E\nalert-red-light\n#F08080\n\n\n\nThe Callouts page shows every type the extension defines.",
     "crumbs": [
       "The brand",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
@@ -264,7 +264,7 @@
     "href": "chapters/using.html#what-you-cannot-change",
     "title": "4  Using it in a book",
     "section": "4.7 What you cannot change",
-    "text": "4.7 What you cannot change\nYou cannot replace part of the brand. A _brand.yml of your own is ignored, because the extension’s brand takes its place. A top-level brand: key replaces the whole brand, so it would have to define every colour the extension’s styles use, or the render fails. To change how things look, add a theme layer instead.",
+    "text": "4.7 What you cannot change\nYou cannot replace part of the brand. A _brand.yml of your own is ignored, because the extension’s brand takes its place. A top-level brand: key replaces the whole brand: written inline, it stops the render with an undefined $brand-* variable, and only brand: pointing at a complete copy of the extension’s brand.yml renders. To change how things look, add a theme layer instead.",
     "crumbs": [
       "The brand",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
