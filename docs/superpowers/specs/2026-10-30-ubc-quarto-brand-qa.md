@@ -64,6 +64,9 @@ we can create and use that as a test book/site in the extension too to quickly f
     reproducible-and-trustworthy-workflows book, so the demo deploys from a `gh-pages` branch
     (pr-preview-action needs "Deploy from branch"),
     not from `actions/deploy-pages` as plan-driven-development's docs-site default gives.
+    Asked whether this was meant only for the book's PR #37, Dan confirmed it applies here:
+    "the dont' merge and we'll wait for PR previews for final check
+    is for this current set of quarot ubc branding".
 
 12. **DSCI 521's extra pieces.** The extension carries both:
     the quizdown quizzes (the quizdown extension embedded, its shadow-root theme include,
@@ -104,3 +107,12 @@ we can create and use that as a test book/site in the extension too to quickly f
     where the PR preview shows the change. `CHANGELOG.md` lists each release.
     Tags are a stop that never relaxes, so each release is a step for Dan.
     Dan chose "A. Tagged releases (Recommended)".
+
+18. **Packaging.** One extension, `ubc`, contributing the brand through
+    `metadata: project: brand: brand.yml` and a `ubc-html` format
+    (the light and dark theme layers, `code-labels.lua`, and the embedded custom-callout
+    and quizdown extensions). A book runs `quarto add UBC-MDS/ubc-quarto-brand@v0.1.0`
+    and sets `format: ubc-html`; it adds its own styles as an extra theme layer
+    (`format: ubc-html: theme: light: [extra.scss] dark: [extra.scss]`).
+    A prototype rendered this exact setup on Quarto 1.11.6 for a book and a website.
+    Dan chose "A. One `ubc` extension (Recommended)".
