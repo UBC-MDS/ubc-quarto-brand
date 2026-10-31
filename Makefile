@@ -34,5 +34,5 @@ leaks: ## Scan the whole git history for secrets
 clean: ## Remove rendered output
 	rm -rf _book .quarto .render.log .render-website.log tests/website/_extensions tests/website/_site tests/website/.quarto
 
-fetch-521: ## Re-fetch the brand files from DSCI 521 (SHA=<commit> to change the pin)
+fetch-521: ## Re-fetch the brand files from DSCI 521 at the pinned commit (SHA=<commit> fetches another; the pin is in scripts/fetch-521.sh)
 	scripts/fetch-521.sh $(SHA)
