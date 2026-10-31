@@ -64,3 +64,11 @@ we can create and use that as a test book/site in the extension too to quickly f
     reproducible-and-trustworthy-workflows book, so the demo deploys from a `gh-pages` branch
     (pr-preview-action needs "Deploy from branch"),
     not from `actions/deploy-pages` as plan-driven-development's docs-site default gives.
+
+12. **DSCI 521's extra pieces.** The extension carries both:
+    the quizdown quizzes (the quizdown extension embedded, its shadow-root theme include,
+    and the quiz colour variables) and the `.term` console window,
+    so DSCI 521 adopts the extension by deleting its local copies.
+    Every consumer carries quizdown's JavaScript, used or not.
+    Dan chose "A. Both in the extension" over the recommended
+    "B. Console in, quizzes stay".
