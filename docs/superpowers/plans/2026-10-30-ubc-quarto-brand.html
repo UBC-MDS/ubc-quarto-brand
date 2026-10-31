@@ -121,20 +121,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>
-div.callout-definition.callout {
-  border-left-color: #8A6D2B;
-}
-div.callout-definition.callout-style-default .callout-header {
-  background-color: rgba(138, 109, 43, 0.13);
-}
-div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f518' !important;
-  background-image: none;
-}
 div.callout-exercise.callout {
   border-left-color: #1C5F2E;
 }
@@ -175,6 +161,20 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
   font-weight: 900;
   font-style: normal;
   content: '\f542' !important;
+  background-image: none;
+}
+div.callout-definition.callout {
+  border-left-color: #8A6D2B;
+}
+div.callout-definition.callout-style-default .callout-header {
+  background-color: rgba(138, 109, 43, 0.13);
+}
+div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f518' !important;
   background-image: none;
 }
 </style>
@@ -509,7 +509,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <p><strong>Architecture:</strong> <code>_extensions/ubc/</code> contributes the brand through <code>metadata: project: brand:</code> and a <code>ubc-html</code> format (theme layers, the code-labels filter, embedded custom-callout and quizdown). Its files are fetched from DSCI 521 at one pinned commit by <code>scripts/fetch-521.sh</code>. The repository root is a Quarto book using that format; <code>tests/website/</code> is a one-page website using it from a GitHub-style install folder. <code>tests/check-render.sh</code> asserts on the rendered HTML and CSS.</p>
 <p><strong>Tech Stack:</strong> Quarto 1.11.6, brand.yml, SCSS, Lua filters, custom-callout 0.0.1-dev.3, quizdown 1.3.2; R 4.6.2 with renv (knitr, rmarkdown, reticulate, here); Python 3.14 with uv (matplotlib); GitHub Actions with pr-preview-action, github-pages-deploy-action and lychee-action; gitleaks 8.30.1; actionlint.</p>
 <p><strong>Spec:</strong> <code>docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md</code></p>
-<p><strong>Now:</strong> Task 3: The conventions page, open.</p>
+<p><strong>Now:</strong> Task 4: The callouts gallery, open.</p>
 <section id="global-constraints" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="global-constraints"><span class="header-section-number">6.1</span> Global Constraints</h2>
 <ul>
@@ -1049,11 +1049,15 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <section id="task-3-the-conventions-page" class="level3" data-number="6.2.3">
 <h3 data-number="6.2.3" class="anchored" data-anchor-id="task-3-the-conventions-page"><span class="header-section-number">6.2.3</span> Task 3: The conventions page</h3>
 <p><strong>Tier:</strong> 3 · <strong>Scenarios:</strong> S05, S06, S11</p>
+<blockquote class="blockquote">
+<p><strong>Built differently</strong> (closed 2026-10-30; commits 5d965e4, 4dcfbc0): the figure is <code>lectures/img/cheers.png</code> in DSCI 521, beside the page; the listing’s <code>img/cheers.png</code> returned 404. The eye check found quiz answer chips unreadable in dark mode (quizdown’s fixed <code>#e8f5e9</code> under the page’s text colour, missed by 521’s <code>quizdown-theme.html</code>), escaped from Task 2: the extension’s layer gained <code>ubc-quizdown.html</code> and <code>--mds-quiz-chip-*</code> in <code>ubc.scss</code>.</p>
+</blockquote>
+<p><strong>Ruling:</strong> the chip fix lives in the extension’s own layer, as Q&amp;A 26 does for callouts, so <code>quizdown-theme.html</code> stays as fetched; chips take a tint of the primary colour in both modes, so in light mode they turn from quizdown’s pale green to a pale blue. If wrong: two Sass lines, if Dan wants green chips back in light mode.</p>
 <p><strong>Files:</strong> - Create (fetched): <code>chapters/book-conventions.qmd</code>, <code>chapters/img/cheers.png</code> - Modify: <code>scripts/fetch-521.sh</code>, <code>chapters/book-conventions.qmd</code> (one link), <code>_quarto.yml</code>, <code>tests/check-render.sh</code>, <code>docs/_overview.qmd</code></p>
 <p><strong>Interfaces:</strong> - Consumes: Task 2’s <code>fetch</code>, <code>LIGHT</code>, the <code>ubc-html</code> format; Task 1’s uv and renv environments. - Produces: <code>_book/chapters/book-conventions.html</code> (the page sets <code>output-file: book-conventions.html</code>), which Task 6 links to.</p>
 <ul class="task-list">
-<li><p><label><input type="checkbox"><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
-<li><p><label><input type="checkbox"><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
 </ul>
 <div class="code-with-filename">
 <div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
@@ -1074,8 +1078,8 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"the figure is copied"</span>          <span class="st">"</span><span class="va">$BOOK</span><span class="st">/chapters/img/cheers.png"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul class="task-list">
-<li><p><label><input type="checkbox"><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL conventions page (_book/chapters/book-conventions.html missing)</code>.</label></p></li>
-<li><p><label><input type="checkbox"><strong>Step 3: Fetch the page and its figure.</strong> In <code>scripts/fetch-521.sh</code>, after the quizdown loop, add:</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 2: Run it; watch it fail.</strong> <code>make test</code>. Expected: <code>FAIL conventions page (_book/chapters/book-conventions.html missing)</code>.</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 3: Fetch the page and its figure.</strong> In <code>scripts/fetch-521.sh</code>, after the quizdown loop, add:</label></p></li>
 </ul>
 <div class="code-with-filename">
 <div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
@@ -1084,22 +1088,22 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 </div>
 <p>Run <code>scripts/fetch-521.sh</code>; <code>git status</code> shows only the two new files (the others are byte-identical).</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Step 4: Change the one link into DSCI 521.</strong> In <code>chapters/book-conventions.qmd</code>, replace</label></li>
+<li><label><input type="checkbox" checked=""><strong>Step 4: Change the one link into DSCI 521.</strong> In <code>chapters/book-conventions.qmd</code>, replace</label></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="co">[</span><span class="ot">link to another page</span><span class="co">](1-MDStools-bash-filesystem.qmd)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>with</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>a <span class="co">[</span><span class="ot">link to another page</span><span class="co">](../index.qmd)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>so the example stays an internal link, to this book’s Home page. Nothing else in the page changes (Q&amp;A 15).</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Step 5: Add the chapter.</strong> In <code>_quarto.yml</code>, add <code>chapters/book-conventions.qmd</code> to <code>project: render:</code> after <code>index.qmd</code>, and in <code>book: chapters:</code> insert, after <code>index.qmd</code>:</label></li>
+<li><label><input type="checkbox" checked=""><strong>Step 5: Add the chapter.</strong> In <code>_quarto.yml</code>, add <code>chapters/book-conventions.qmd</code> to <code>project: render:</code> after <code>index.qmd</code>, and in <code>book: chapters:</code> insert, after <code>index.qmd</code>:</label></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> </span><span class="st">"The brand"</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">chapters</span><span class="kw">:</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> chapters/book-conventions.qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In <code>docs/_overview.qmd</code>, add <code>conv["Conventions"] --&gt; book</code> and drop “Conventions (Task 3),” from the planned <code>pages</code> node.</p>
 <ul class="task-list">
-<li><p><label><input type="checkbox"><strong>Step 6: Run the checks; they pass.</strong> <code>make check</code>. Expected: every <code>ok</code>, no <code>FAIL</code>, no Quarto <code>WARN</code> (a reticulate or knitr warning counts).</label></p></li>
-<li><p><label><input type="checkbox"><strong>Step 7: Commit.</strong> Write the message to a file:</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 6: Run the checks; they pass.</strong> <code>make check</code>. Expected: every <code>ok</code>, no <code>FAIL</code>, no Quarto <code>WARN</code> (a reticulate or knitr warning counts).</label></p></li>
+<li><p><label><input type="checkbox" checked=""><strong>Step 7: Commit.</strong> Write the message to a file:</label></p></li>
 </ul>
 <pre class="text"><code>feat(book): 🤖 add DSCI 521's conventions page to the test book
 
@@ -1114,7 +1118,7 @@ Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 3
 Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <p><code>git add scripts/fetch-521.sh chapters/book-conventions.qmd chapters/img/cheers.png _quarto.yml tests/check-render.sh docs/_overview.qmd</code>, <code>git commit -F &lt;file&gt;</code>, <code>git log -1 --format='%(trailers)'</code>. Then <code>make leaks</code> and <code>git push origin main</code>.</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Step 8: Review, look forward, close.</strong> Tier 3: self-review under <em>Standards</em> and <em>Spec</em>, plus <code>make check</code>. Close with the boxes ticked, <strong>Now</strong> <code>Task 4: The callouts gallery, open.</code>, the spec’s S05, S06 and S11 rows <code>built</code>, and the close message as in Task 2 with <code>Task 3: The conventions page</code>, <code>Tier: 3</code> and <code>Rounds: self-review (Standards, Spec) and make check</code>.</label></li>
+<li><label><input type="checkbox" checked=""><strong>Step 8: Review, look forward, close.</strong> Tier 3: self-review under <em>Standards</em> and <em>Spec</em>, plus <code>make check</code>. Close with the boxes ticked, <strong>Now</strong> <code>Task 4: The callouts gallery, open.</code>, the spec’s S05, S06 and S11 rows <code>built</code>, and the close message as in Task 2 with <code>Task 3: The conventions page</code>, <code>Tier: 3</code> and <code>Rounds: self-review (Standards, Spec) and make check</code>.</label></li>
 </ul>
 <hr>
 </section>
@@ -1264,7 +1268,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> chapters/callouts.qmd</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> chapters/using.qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>In <code>docs/_overview.qmd</code>, add <code>gallery["Callouts, Using it in a book"] --&gt; book</code> and drop “Callouts (Task 4),” from the planned <code>pages</code> node.</p>
+<p>In <code>docs/_overview.qmd</code>, add <code>gallery["Callouts, Using it in a book"] --&gt; book</code> and drop “Callouts (Task 4),<br>” from the planned <code>pages</code> node.</p>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 5: Complete the callout styling in the extension’s layer (Q&amp;A 26).</strong> custom-callout colours a border and fill but never the icon, and DSCI 521’s <code>styles.scss</code> styles only activity and exercise. Quarto colours the built-ins from <code>$callout-color-*</code>, which default to <code>$blue</code>, <code>$green</code>, <code>$red</code>, <code>$yellow</code> and <code>$orange</code>; the brand maps the first four and has no orange. Dark values follow <code>brand.yml</code>’s own light/dark pairs. Every colour clears 4.5:1 on its page (white, or <code>ubc-blue-video</code> <code>#001328</code>).</label></p>
 <p>In <code>_extensions/ubc/ubc.scss</code>, after the Mermaid default:</p></li>
@@ -1574,7 +1578,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <p><strong>Ruling</strong> (Task 2’s forward review): <code>LICENSE.md</code> uses CC BY-NC-SA 4.0 for the docs, as Q&amp;A 27 records, although the reproducible book it names is split: its README says CC BY-NC-SA 4.0, its <code>LICENSE.md</code> CC BY 4.0. Dan is asked before he tags <code>v0.1.0</code>. If wrong: one licence paragraph.</p>
 <p><strong>Ruling</strong> (Task 2’s forward review): the MIT copyright holder is “UBC Master of Data Science”, the extension’s author in <code>_extension.yml</code>; DSCI 521 publishes no licence or holder. If wrong: one line, before the tag.</p>
 <p><strong>Files:</strong> - Create: <code>chapters/provenance.qmd</code>, <code>LICENSE.md</code>, <code>_extensions/ubc/_extensions/quizdown/LICENSE</code> - Modify: <code>_quarto.yml</code>, <code>tests/check-render.sh</code>, <code>README.md</code>, <code>docs/_overview.qmd</code></p>
-<p><strong>Interfaces:</strong> - Consumes: Task 2’s <code>scripts/fetch-521.sh</code>, <code>make fetch-521</code> and its layer <code>ubc.scss</code> and <code>ubc-dark.scss</code>; Task 3’s conventions page. - Produces: <code>_book/chapters/provenance.html</code>.</p>
+<p><strong>Interfaces:</strong> - Consumes: Task 2’s <code>scripts/fetch-521.sh</code>, <code>make fetch-521</code> and its layer <code>ubc.scss</code>, <code>ubc-dark.scss</code> and <code>ubc-quizdown.html</code>; Task 3’s conventions page. - Produces: <code>_book/chapters/provenance.html</code>.</p>
 <ul class="task-list">
 <li><p><label><input type="checkbox"><strong>Step 0: Record the base:</strong> <code>git rev-parse HEAD &gt; .git/TASK_BASE</code>.</label></p></li>
 <li><p><label><input type="checkbox"><strong>Step 1: Write the failing test.</strong> Insert before <code>exit $fail</code> in <code>tests/check-render.sh</code>:</label></p></li>
@@ -1586,7 +1590,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="ex">exists</span> <span class="st">"provenance page"</span>               <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"pinned to 521's commit"</span>        <span class="st">'991bae89cba904ae2dd0753338c306333eb5ea2e'</span>                    <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
 <span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> _brand.yml styles.scss styles-dark.scss code-labels.lua quizdown-theme.html MDSlogo.png <span class="dt">\</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>         _extensions/coatless-quarto/custom-callout _extensions/quizdown lectures/0-conventions.qmd img/cheers.png<span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>         _extensions/coatless-quarto/custom-callout _extensions/quizdown lectures/0-conventions.qmd lectures/img/cheers.png<span class="kw">;</span> <span class="cf">do</span></span>
 <span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">expect</span> <span class="st">"links 521's </span><span class="va">$f</span><span class="st">"</span>              <span class="st">"DSCI_521_platforms-dsci_book/(blob|tree)/991bae89cba904ae2dd0753338c306333eb5ea2e/</span><span class="va">$f</span><span class="st">"</span> <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
 <span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
 <span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="ex">expect</span> <span class="st">"names the extension's own layer"</span> <span class="st">'ubc-dark\.scss'</span>                                             <span class="st">"</span><span class="va">$PROV</span><span class="st">"</span></span>
@@ -1603,7 +1607,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Where it comes from</span></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>Every file in this extension but its own layer, <span class="in">`ubc.scss`</span> and <span class="in">`ubc-dark.scss`</span>, comes from the</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>Every file in this extension but its own layer, <span class="in">`ubc.scss`</span>, <span class="in">`ubc-dark.scss`</span> and <span class="in">`ubc-quizdown.html`</span>, comes from the</span>
 <span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">DSCI 521 book</span><span class="co">](https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/)</span>,</span>
 <span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>copied from one commit, <span class="in">`991bae89cba904ae2dd0753338c306333eb5ea2e`</span>,</span>
 <span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>by <span class="in">`scripts/fetch-521.sh`</span>.</span>
@@ -1619,11 +1623,11 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/MDSlogo.png`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`MDSlogo.png`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/MDSlogo.png)</span> <span class="pp">|</span> shown only when a book opts in <span class="pp">|</span></span>
 <span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/_extensions/coatless-quarto/custom-callout/`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`_extensions/coatless-quarto/custom-callout/`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/tree/991bae89cba904ae2dd0753338c306333eb5ea2e/_extensions/coatless-quarto/custom-callout)</span> <span class="pp">|</span> embedded in this extension <span class="pp">|</span></span>
 <span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/_extensions/quizdown/`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">`_extensions/quizdown/`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/tree/991bae89cba904ae2dd0753338c306333eb5ea2e/_extensions/quizdown)</span> <span class="pp">|</span> embedded in this extension <span class="pp">|</span></span>
-<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/ubc.scss`</span>, <span class="in">`_extensions/ubc/ubc-dark.scss`</span> <span class="pp">|</span> none: the extension's own layer, after DSCI 521's files <span class="pp">|</span> readable Mermaid subgraphs; spaced, coloured icons and dark variants for the two callout types DSCI 521 lacks; the built-in callouts in brand colours per mode (Q&amp;A 26) <span class="pp">|</span></span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/ubc.scss`</span>, <span class="in">`_extensions/ubc/ubc-dark.scss`</span>, <span class="in">`_extensions/ubc/ubc-quizdown.html`</span> <span class="pp">|</span> none: the extension's own layer, after DSCI 521's files <span class="pp">|</span> readable Mermaid subgraphs and quiz answer chips; spaced, coloured icons and dark variants for the two callout types DSCI 521 lacks; the built-in callouts in brand colours per mode (Q&amp;A 26) <span class="pp">|</span></span>
 <span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/_extensions/quizdown/LICENSE`</span> <span class="pp">|</span> quizdown's <span class="co">[</span><span class="ot">`LICENSE`</span><span class="co">](https://github.com/parmsam/quarto-quizdown/blob/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE)</span>, from its own repository <span class="pp">|</span> added: DSCI 521's copy has none (Q&amp;A 27) <span class="pp">|</span></span>
 <span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_extensions/ubc/_extension.yml`</span> <span class="pp">|</span> the <span class="in">`filters:`</span>, <span class="in">`custom-callout:`</span> and <span class="in">`format:`</span> keys of <span class="co">[</span><span class="ot">`_quarto.yml`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/_quarto.yml)</span> <span class="pp">|</span> becomes the <span class="in">`ubc-html`</span> format; adds the definition and relevance-project callouts <span class="pp">|</span></span>
 <span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`chapters/book-conventions.qmd`</span> (this book) <span class="pp">|</span> <span class="co">[</span><span class="ot">`lectures/0-conventions.qmd`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/lectures/0-conventions.qmd)</span> <span class="pp">|</span> its link to another 521 chapter points at this book's Home page <span class="pp">|</span></span>
-<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`chapters/img/cheers.png`</span> (this book) <span class="pp">|</span> <span class="co">[</span><span class="ot">`img/cheers.png`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/img/cheers.png)</span> <span class="pp">|</span> nothing <span class="pp">|</span></span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`chapters/img/cheers.png`</span> (this book) <span class="pp">|</span> <span class="co">[</span><span class="ot">`lectures/img/cheers.png`</span><span class="co">](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/lectures/img/cheers.png)</span> <span class="pp">|</span> nothing <span class="pp">|</span></span>
 <span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a>The copied files keep DSCI 521's comments, which point at its <span class="in">`_quarto.yml`</span>.</span>
 <span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a>Here the theme lists and the <span class="in">`custom-callout:`</span> colours live in <span class="in">`_extensions/ubc/_extension.yml`</span>,</span>

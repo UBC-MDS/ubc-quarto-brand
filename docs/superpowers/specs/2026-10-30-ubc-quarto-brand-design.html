@@ -86,20 +86,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-definition.callout {
-  border-left-color: #8A6D2B;
-}
-div.callout-definition.callout-style-default .callout-header {
-  background-color: rgba(138, 109, 43, 0.13);
-}
-div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f518' !important;
-  background-image: none;
-}
 div.callout-relevance-project.callout {
   border-left-color: #0077C8;
 }
@@ -112,6 +98,20 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
   font-weight: 900;
   font-style: normal;
   content: '\f542' !important;
+  background-image: none;
+}
+div.callout-definition.callout {
+  border-left-color: #8A6D2B;
+}
+div.callout-definition.callout-style-default .callout-header {
+  background-color: rgba(138, 109, 43, 0.13);
+}
+div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f518' !important;
   background-image: none;
 }
 div.callout-activity.callout {
@@ -708,7 +708,7 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 <td>labels “Terminal”, “Output” and the filename</td>
 <td>Tasks 2, 3</td>
 <td><code>tests/check-render.sh</code></td>
-<td>planned</td>
+<td>built</td>
 </tr>
 <tr class="even">
 <td>S06</td>
@@ -716,7 +716,7 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 <td>the quiz renders in the brand’s colours in both modes</td>
 <td>Tasks 2, 3</td>
 <td><code>tests/check-render.sh</code> (assets and theme); the preview, by eye</td>
-<td>planned</td>
+<td>built</td>
 </tr>
 <tr class="odd">
 <td>S07</td>
@@ -756,7 +756,7 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 <td>output renders under the brand</td>
 <td>Task 3</td>
 <td>the Conventions page renders in <code>make check</code></td>
-<td>planned</td>
+<td>built</td>
 </tr>
 <tr class="even">
 <td>S12</td>
