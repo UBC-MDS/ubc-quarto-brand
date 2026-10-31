@@ -162,3 +162,17 @@ we can create and use that as a test book/site in the extension too to quickly f
     for the quarto book/revealjs/site/document outputs. but that would be a stretch goal
     after this is all built". Books and websites are already in the plan (S01, S15);
     a single document and revealjs slides go to the spec's Later table as optional (S19, S20).
+
+## Review before approval
+
+The builder check (a fresh reviewer reading the spec as its builder) raised three questions;
+each claim was checked against the code before Dan saw it.
+
+26. **Callout styling.** custom-callout colours a callout's border and fill but never its icon,
+    and DSCI 521's `styles.scss` colours only the activity and exercise icons. Quarto maps the
+    built-ins to `$blue`, `$green`, `$red`, `$yellow` and `$orange`, and the brand defines no
+    `orange` and nothing per mode. The extension completes the styling in its own layer after
+    DSCI 521's files, which stay byte-identical: coloured, spaced icons with dark-mode variants
+    for all four custom types, and the five built-ins in brand colours per mode, caution in a
+    derived orange that clears AA (UBC publishes no orange). DSCI 521's built-in callouts change
+    colour when it adopts the extension. Dan chose "A. Complete it, separate layer (Recommended)".
