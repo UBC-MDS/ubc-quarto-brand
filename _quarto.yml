@@ -7,6 +7,7 @@ project:
     - chapters/book-conventions.qmd
     - chapters/callouts.qmd
     - chapters/using.qmd
+    - chapters/provenance.qmd
     - docs/architecture.qmd
     - docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md
     - docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.md
@@ -27,6 +28,7 @@ book:
         - chapters/book-conventions.qmd
         - chapters/callouts.qmd
         - chapters/using.qmd
+        - chapters/provenance.qmd
     - part: "The project"
       chapters:
         - docs/architecture.qmd

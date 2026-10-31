@@ -133,4 +133,18 @@ expect_last "website: recoloured, dark"     'body\.quarto-dark div\.callout-acti
 expect_last "website: own type's icon"      '\}div\.callout-lab \.callout-icon::before\{[^}]*color:#[0-9a-f]{6}'                   '#a6192e' "$SLIGHT"
 expect_last "website: own type, dark"       'body\.quarto-dark div\.callout-lab\.callout\{border-left-color:#[0-9a-f]{6}'         '#f08080' "$SDARK"
 
+# --- Task 6: where it comes from (S12)
+PROV="$BOOK/chapters/provenance.html"
+exists "provenance page"               "$PROV"
+expect "pinned to 521's commit"        '991bae89cba904ae2dd0753338c306333eb5ea2e'                    "$PROV"
+for f in _brand.yml styles.scss styles-dark.scss code-labels.lua quizdown-theme.html MDSlogo.png \
+         _extensions/coatless-quarto/custom-callout _extensions/quizdown lectures/0-conventions.qmd lectures/img/cheers.png; do
+  expect "links 521's $f"              "DSCI_521_platforms-dsci_book/(blob|tree)/991bae89cba904ae2dd0753338c306333eb5ea2e/$f" "$PROV"
+done
+expect "names the extension's own layer" 'ubc-dark\.scss'                                             "$PROV"
+expect "says where 521's settings went"  'keep DSCI 521.{1,3}s comments'                                   "$PROV"
+expect "links quizdown's licence"       'parmsam/quarto-quizdown/blob/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE' "$PROV"
+exists "the licence"                    LICENSE.md
+exists "quizdown's licence beside it"   _extensions/ubc/_extensions/quizdown/LICENSE
+
 exit $fail

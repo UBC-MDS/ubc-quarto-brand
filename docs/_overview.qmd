@@ -12,7 +12,7 @@ flowchart LR
   ext --> book["the test book at the root<br/>Home and the project docs"]
   conv["Conventions"] --> book
   gallery["Callouts, Using it in a book"] --> book
-  pages["Where it comes from (Task 6)"]:::planned -.-> book
+  prov["Where it comes from"] --> book
   ext -->|"make test copies it"| site["tests/website/<br/>installed at _extensions/UBC-MDS/ubc/"]
   book -->|"make check"| out["_book/"]
   out -->|"publish.yml"| demo["gh-pages: the demo"]
