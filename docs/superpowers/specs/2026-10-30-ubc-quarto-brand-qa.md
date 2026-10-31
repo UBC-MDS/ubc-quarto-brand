@@ -146,3 +146,12 @@ we can create and use that as a test book/site in the extension too to quickly f
     (provenance, pinned to 521 at `991bae89cba9`), and the project docs as chapters rendered
     from where they live. `tests/website/` is one page rendered as a website in CI.
     Dan chose "A. Approve section 2 (Recommended)".
+24. **Section 3, CI, delivery and adoption.** `pr.yml` runs `make check` and deploys a preview
+    with pr-preview-action, cancelling a PR's in-flight run when a newer event arrives;
+    `publish.yml` deploys `main` to `gh-pages` with github-pages-deploy-action
+    (`clean-exclude: pr-preview`, `force: false`). `make check` renders the test book and the
+    website check, runs lychee offline, actionlint and gitleaks. Rulings: Ubuntu runner,
+    Quarto 1.11.6 pinned with `quarto-required: ">=1.11.0"`, Python 3.14, third-party actions
+    pinned by SHA. Releases: a PR bumps the version and CHANGELOG, Dan tags after merging.
+    The reproducible-and-trustworthy-workflows book adopts `v0.1.0` in its own PR afterwards.
+    Dan chose "A. Approve section 3 (Recommended)".
