@@ -139,9 +139,9 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 | S09 | a book adds its own SCSS layer | its rules apply after the extension's, in both modes | Task 5 | the website check uses one; `tests/check-render.sh` | planned |
 | S10 | a book recolours a callout or adds a type | its keys merge over the extension's | Task 5 | the website check adds one; `tests/check-render.sh` | planned |
 | S11 | an author executes R and Python cells | output renders under the brand | Task 3 | the Conventions page renders in `make check` | planned |
-| S12 | someone asks where a file came from | the provenance page links its 521 original at `991bae89cba9` and says what changed | Task 5 | the Where it comes from page | planned |
-| S13 | a PR is opened, updated, merged mid-build or closed | a preview link is commented; it updates; the merge leaves no stray preview; closing removes it | Task 6 | the build PR's own preview | planned |
-| S14 | a push lands on `main` | the demo deploys to `gh-pages`, keeping `pr-preview/` and `.nojekyll` | Task 6 | the first publish run after Dan's merge | planned |
+| S12 | someone asks where a file came from | the provenance page links its 521 original at `991bae89cba9` and says what changed | Task 6 | the Where it comes from page | planned |
+| S13 | a PR is opened, updated, merged mid-build or closed | a preview link is commented; it updates; the merge leaves no stray preview; closing removes it | Task 1; Phase end, step 5 | the build PR's own preview | planned |
+| S14 | a push lands on `main` | the demo deploys to `gh-pages`, keeping `pr-preview/` and `.nojekyll` | Task 1; Phase end, step 6 | the first publish run after Dan's merge | planned |
 | S15 | a website project (521's shape) uses the extension | it renders with the same brand and components | Task 5 | `tests/website/` in `make check` | planned |
 
 ### Later
