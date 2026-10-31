@@ -1,1 +1,10 @@
+---
+# Quarto takes a chapter's sidebar title from its own source, before the
+# include below is expanded, so Home names itself here. Shifting the headings
+# up one level stops the README's own `#` heading repeating the title.
+title: "ubc-quarto-brand"
+shift-heading-level-by: -1
+number-sections: false
+---
+
 {{< include README.md >}}
