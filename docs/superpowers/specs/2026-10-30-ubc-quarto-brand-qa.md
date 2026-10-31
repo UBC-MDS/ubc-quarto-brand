@@ -72,3 +72,9 @@ we can create and use that as a test book/site in the extension too to quickly f
     Every consumer carries quizdown's JavaScript, used or not.
     Dan chose "A. Both in the extension" over the recommended
     "B. Console in, quizzes stay".
+
+13. **Executed cells in the test book.** The test book keeps the executed `{r}` and `{python}`
+    cells, so executed output is tested under the brand in every PR preview.
+    CI installs a minimal environment: R with knitr, rmarkdown and reticulate through renv,
+    and Python through uv.
+    Dan chose "A. Run R + Python (Recommended)".
