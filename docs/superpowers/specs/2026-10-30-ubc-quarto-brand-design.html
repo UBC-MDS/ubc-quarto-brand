@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; ubc-quarto-brand: design spec – UBC Quarto brand</title>
+<title>4&nbsp; ubc-quarto-brand: design spec – UBC Quarto brand</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -86,20 +86,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-exercise.callout {
-  border-left-color: #1C5F2E;
-}
-div.callout-exercise.callout-style-default .callout-header {
-  background-color: rgba(28, 95, 46, 0.13);
-}
-div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f44b' !important;
-  background-image: none;
-}
 div.callout-definition.callout {
   border-left-color: #8A6D2B;
 }
@@ -112,6 +98,20 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
   font-weight: 900;
   font-style: normal;
   content: '\f518' !important;
+  background-image: none;
+}
+div.callout-relevance-project.callout {
+  border-left-color: #0077C8;
+}
+div.callout-relevance-project.callout-style-default .callout-header {
+  background-color: rgba(0, 119, 200, 0.13);
+}
+div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f542' !important;
   background-image: none;
 }
 div.callout-activity.callout {
@@ -128,18 +128,18 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
   content: '\e53d' !important;
   background-image: none;
 }
-div.callout-relevance-project.callout {
-  border-left-color: #0077C8;
+div.callout-exercise.callout {
+  border-left-color: #1C5F2E;
 }
-div.callout-relevance-project.callout-style-default .callout-header {
-  background-color: rgba(0, 119, 200, 0.13);
+div.callout-exercise.callout-style-default .callout-header {
+  background-color: rgba(28, 95, 46, 0.13);
 }
-div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
+div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\f542' !important;
+  content: '\f44b' !important;
   background-image: none;
 }
 </style>
@@ -326,7 +326,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/architecture.html">The project</a></li><li class="breadcrumb-item"><a href="../../../docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: design spec</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/architecture.html">The project</a></li><li class="breadcrumb-item"><a href="../../../docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: design spec</span></a></li></ol></nav>
         <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -364,43 +364,57 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-1-label">The project</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+ <span class="menu-text" id="quarto-sidebar-section-1-label">The brand</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
       <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../chapters/book-conventions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conventions in the Book</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">The project</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../docs/architecture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Architecture</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Architecture</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: design spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: design spec</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: kickoff Q&amp;A</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: kickoff Q&amp;A</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/superpowers/plans/2026-10-30-ubc-quarto-brand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">ubc-quarto-brand Implementation Plan</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">ubc-quarto-brand Implementation Plan</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../CHANGELOG.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../AGENTS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: how we work</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: how we work</span></span></a>
   </div>
 </li>
       </ul>
@@ -415,21 +429,21 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#goal" id="toc-goal" class="nav-link active" data-scroll-target="#goal"><span class="header-section-number">3.1</span> Goal</a></li>
-  <li><a href="#outline" id="toc-outline" class="nav-link" data-scroll-target="#outline"><span class="header-section-number">3.2</span> Outline</a></li>
-  <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design"><span class="header-section-number">3.3</span> Design</a>
+  <li><a href="#goal" id="toc-goal" class="nav-link active" data-scroll-target="#goal"><span class="header-section-number">4.1</span> Goal</a></li>
+  <li><a href="#outline" id="toc-outline" class="nav-link" data-scroll-target="#outline"><span class="header-section-number">4.2</span> Outline</a></li>
+  <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design"><span class="header-section-number">4.3</span> Design</a>
   <ul class="collapse">
-  <li><a href="#the-extension" id="toc-the-extension" class="nav-link" data-scroll-target="#the-extension"><span class="header-section-number">3.3.1</span> The extension</a></li>
-  <li><a href="#what-a-book-can-change" id="toc-what-a-book-can-change" class="nav-link" data-scroll-target="#what-a-book-can-change"><span class="header-section-number">3.3.2</span> What a book can change</a></li>
-  <li><a href="#the-test-book" id="toc-the-test-book" class="nav-link" data-scroll-target="#the-test-book"><span class="header-section-number">3.3.3</span> The test book</a></li>
-  <li><a href="#ci-and-delivery" id="toc-ci-and-delivery" class="nav-link" data-scroll-target="#ci-and-delivery"><span class="header-section-number">3.3.4</span> CI and delivery</a></li>
+  <li><a href="#the-extension" id="toc-the-extension" class="nav-link" data-scroll-target="#the-extension"><span class="header-section-number">4.3.1</span> The extension</a></li>
+  <li><a href="#what-a-book-can-change" id="toc-what-a-book-can-change" class="nav-link" data-scroll-target="#what-a-book-can-change"><span class="header-section-number">4.3.2</span> What a book can change</a></li>
+  <li><a href="#the-test-book" id="toc-the-test-book" class="nav-link" data-scroll-target="#the-test-book"><span class="header-section-number">4.3.3</span> The test book</a></li>
+  <li><a href="#ci-and-delivery" id="toc-ci-and-delivery" class="nav-link" data-scroll-target="#ci-and-delivery"><span class="header-section-number">4.3.4</span> CI and delivery</a></li>
   </ul></li>
-  <li><a href="#scenarios" id="toc-scenarios" class="nav-link" data-scroll-target="#scenarios"><span class="header-section-number">3.4</span> Scenarios</a>
+  <li><a href="#scenarios" id="toc-scenarios" class="nav-link" data-scroll-target="#scenarios"><span class="header-section-number">4.4</span> Scenarios</a>
   <ul class="collapse">
-  <li><a href="#later" id="toc-later" class="nav-link" data-scroll-target="#later"><span class="header-section-number">3.4.1</span> Later</a></li>
+  <li><a href="#later" id="toc-later" class="nav-link" data-scroll-target="#later"><span class="header-section-number">4.4.1</span> Later</a></li>
   </ul></li>
-  <li><a href="#open-items-and-risks" id="toc-open-items-and-risks" class="nav-link" data-scroll-target="#open-items-and-risks"><span class="header-section-number">3.5</span> Open items and risks</a></li>
-  <li><a href="#revisions" id="toc-revisions" class="nav-link" data-scroll-target="#revisions"><span class="header-section-number">3.6</span> Revisions</a></li>
+  <li><a href="#open-items-and-risks" id="toc-open-items-and-risks" class="nav-link" data-scroll-target="#open-items-and-risks"><span class="header-section-number">4.5</span> Open items and risks</a></li>
+  <li><a href="#revisions" id="toc-revisions" class="nav-link" data-scroll-target="#revisions"><span class="header-section-number">4.6</span> Revisions</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UBC-MDS/ubc-quarto-brand/blob/main/docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-MDS/ubc-quarto-brand/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -437,9 +451,9 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/architecture.html">The project</a></li><li class="breadcrumb-item"><a href="../../../docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: design spec</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/architecture.html">The project</a></li><li class="breadcrumb-item"><a href="../../../docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: design spec</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: design spec</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: design spec</span></h1>
 </div>
 
 
@@ -458,13 +472,13 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 
 <p><strong>Status:</strong> spec approved 2026-10-30 · small project, building on <code>main</code> (Q&amp;A 29)</p>
 <p>Kickoff’s questions and Dan’s answers are in <a href="../../../docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.html"><code>2026-10-30-ubc-quarto-brand-qa.md</code></a>; each decision below cites its item there as (Q&amp;A N).</p>
-<section id="goal" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="goal"><span class="header-section-number">3.1</span> Goal</h2>
+<section id="goal" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="goal"><span class="header-section-number">4.1</span> Goal</h2>
 <p>A Quarto extension that gives any UBC course book the brand DSCI 521’s book was built with, so books stop copying styles from one another (Q&amp;A 1, 18). A book adopts it with <code>quarto add UBC-MDS/ubc-quarto-brand@vX.Y.Z</code> and one line, <code>format: ubc-html</code>. The repository also holds a test book that renders every part of the brand, deployed as the live demo with the project docs (Q&amp;A 3, 10).</p>
 <p>The first book to adopt it is reproducible-and-trustworthy-workflows-for-data-science, in its own PR after <code>v0.1.0</code> (Q&amp;A 1, 24). DSCI 521 follows later, tracked in <a href="https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/issues/35">UBC-MDS/DSCI_521_platforms-dsci_book#35</a>.</p>
 </section>
-<section id="outline" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="outline"><span class="header-section-number">3.2</span> Outline</h2>
+<section id="outline" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="outline"><span class="header-section-number">4.2</span> Outline</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -487,11 +501,11 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 </tbody>
 </table>
 </section>
-<section id="design" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="design"><span class="header-section-number">3.3</span> Design</h2>
+<section id="design" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="design"><span class="header-section-number">4.3</span> Design</h2>
 <p>The parts and how they connect are drawn on the <a href="../../../docs/architecture.html">Architecture</a> page.</p>
-<section id="the-extension" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="the-extension"><span class="header-section-number">3.3.1</span> The extension</h3>
+<section id="the-extension" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="the-extension"><span class="header-section-number">4.3.1</span> The extension</h3>
 <p>One extension, <code>ubc</code>, in <code>_extensions/ubc/</code> (Q&amp;A 18). It contributes two things:</p>
 <ul>
 <li><strong>The brand,</strong> through <code>metadata: project: brand: brand.yml</code>. Quarto merges it into any project with the extension installed, whatever its format, so colours, fonts and dark mode apply even to a plain <code>format: html</code> page.</li>
@@ -598,8 +612,8 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 </table>
 <p>Activity and exercise callouts number themselves per page, from 521’s <code>styles.scss</code> (Q&amp;A 6). Fonts load from Google Fonts, as in 521 (Q&amp;A 14).</p>
 </section>
-<section id="what-a-book-can-change" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="what-a-book-can-change"><span class="header-section-number">3.3.2</span> What a book can change</h3>
+<section id="what-a-book-can-change" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="what-a-book-can-change"><span class="header-section-number">4.3.2</span> What a book can change</h3>
 <p>From the prototype (Q&amp;A 18):</p>
 <ul>
 <li><strong>Add styles</strong> with an extra theme layer, light and dark as separate lists: <code>format: ubc-html: theme: light: [extra.scss] dark: [extra.scss]</code>. The layer comes after the extension’s, and <code>$brand-*</code> names work in it. A plain list (<code>theme: [extra.scss]</code>) crashes Quarto.</li>
@@ -608,8 +622,8 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <li><strong>Not</strong> replace the brand piecemeal: a book’s own <code>_brand.yml</code> is silently ignored, and a top-level <code>brand:</code> replaces the whole brand, so it must define every colour the styles use.</li>
 </ul>
 </section>
-<section id="the-test-book" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="the-test-book"><span class="header-section-number">3.3.3</span> The test book</h3>
+<section id="the-test-book" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="the-test-book"><span class="header-section-number">4.3.3</span> The test book</h3>
 <p>The repository root is a Quarto book that renders with <code>format: ubc-html</code>, next to <code>_extensions/ubc/</code> (Q&amp;A 22, 23):</p>
 <ul>
 <li><strong>Home:</strong> the README.</li>
@@ -622,8 +636,8 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <p><code>tests/website/</code> is a one-page website project: a callout, a <code>bash</code> listing and a quiz. <code>make</code> copies the extension into it, git-ignored, before rendering it in CI (Q&amp;A 10, 22).</p>
 <p>Executed cells run through knitr, with Python through reticulate from the uv venv, as in 521. R needs <code>knitr</code>, <code>rmarkdown</code> and <code>reticulate</code> (renv); Python needs <code>matplotlib</code> (uv).</p>
 </section>
-<section id="ci-and-delivery" class="level3" data-number="3.3.4">
-<h3 data-number="3.3.4" class="anchored" data-anchor-id="ci-and-delivery"><span class="header-section-number">3.3.4</span> CI and delivery</h3>
+<section id="ci-and-delivery" class="level3" data-number="4.3.4">
+<h3 data-number="4.3.4" class="anchored" data-anchor-id="ci-and-delivery"><span class="header-section-number">4.3.4</span> CI and delivery</h3>
 <ul>
 <li><strong><code>pr.yml</code>,</strong> on every pull request event: <code>make check</code>, then pr-preview-action deploys the rendered book to <code>gh-pages</code> under <code>pr-preview/pr-&lt;N&gt;/</code> and comments the link, or removes the preview when the PR closes. Runs are grouped per PR and a newer event cancels an older run, so a merge mid-build leaves no stray preview (Q&amp;A 11, 24).</li>
 <li><strong><code>publish.yml</code>,</strong> on a push to <code>main</code>: the same build, then github-pages-deploy-action deploys the book to <code>gh-pages</code> with <code>clean-exclude: pr-preview</code> and <code>force: false</code>, so previews and the branch’s <code>.nojekyll</code> survive (Q&amp;A 24).</li>
@@ -634,8 +648,8 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 </ul>
 </section>
 </section>
-<section id="scenarios" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="scenarios"><span class="header-section-number">3.4</span> Scenarios</h2>
+<section id="scenarios" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="scenarios"><span class="header-section-number">4.4</span> Scenarios</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
@@ -778,8 +792,8 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 </tr>
 </tbody>
 </table>
-<section id="later" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="later"><span class="header-section-number">3.4.1</span> Later</h3>
+<section id="later" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="later"><span class="header-section-number">4.4.1</span> Later</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -837,8 +851,8 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 </table>
 </section>
 </section>
-<section id="open-items-and-risks" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="open-items-and-risks"><span class="header-section-number">3.5</span> Open items and risks</h2>
+<section id="open-items-and-risks" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="open-items-and-risks"><span class="header-section-number">4.5</span> Open items and risks</h2>
 <ul>
 <li><strong>Vendored dependencies:</strong> custom-callout (0.0.1-dev.3) and quizdown are copies; updating them is a manual PR.</li>
 <li><strong>Quizdown loads on every page,</strong> quiz or not, as in DSCI 521 (Q&amp;A 12).</li>
@@ -848,8 +862,8 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <li><strong>plan-driven-development’s hooks and leak check aren’t built yet:</strong> every push of <code>build</code> follows <code>make leaks</code>.</li>
 </ul>
 </section>
-<section id="revisions" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="revisions"><span class="header-section-number">3.6</span> Revisions</h2>
+<section id="revisions" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="revisions"><span class="header-section-number">4.6</span> Revisions</h2>
 <ul>
 <li>2026-10-30: small, public, live test book with the docs, GitHub, fully vibed (<code>ac75784</code>).</li>
 <li>2026-10-30: merging waits for Dan; PRs get previews (<code>1027692</code>, <code>fd5ebe4</code>).</li>
@@ -1526,12 +1540,12 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <nav class="page-navigation" aria-label="Page">
   <div class="nav-page nav-page-previous">
       <a href="../../../docs/architecture.html" class="pagination-link" aria-label="Architecture">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Architecture</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Architecture</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../../docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.html" class="pagination-link" aria-label="ubc-quarto-brand: kickoff Q&amp;A">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: kickoff Q&amp;A</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: kickoff Q&amp;A</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
