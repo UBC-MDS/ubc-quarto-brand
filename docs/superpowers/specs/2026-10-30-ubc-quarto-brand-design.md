@@ -125,7 +125,7 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
   branch's `.nojekyll` survive (Q&A 24).
 - **`make check`:** renders the test book and the website check, failing on any Quarto warning
   or unresolved link; runs `tests/check-render.sh` over the rendered HTML (the brand's colours,
-  both stylesheets, the labels, the callouts' glyphs and colours, the counters, the quiz assets);
+  both stylesheets, the labels, the callouts' icon font and colours, the counters, the quiz assets);
   runs lychee offline, actionlint and gitleaks.
 - **Rulings:** Ubuntu runner, Quarto 1.11.6 pinned and `quarto-required: ">=1.11.0"`,
   Python 3.14, every third-party action pinned by commit SHA (Q&A 24).
@@ -150,7 +150,7 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 | S11 | an author executes R and Python cells | output renders under the brand | Task 3 | the Conventions page renders in `make check` | built |
 | S12 | someone asks where a file came from | the provenance page links its 521 original at `991bae89cba9` and says what changed | Task 6 | the Where it comes from page | built |
 | S13 | a PR is opened, updated, merged mid-build or closed | a preview link is commented; it updates; the merge leaves no stray preview; closing removes it | Task 1 | `pr.yml` is the book's proven workflow plus per-PR cancel; proven when a PR is first opened here (Q&A 29) | built |
-| S14 | a push lands on `main` | the demo deploys to `gh-pages`, keeping `pr-preview/` and `.nojekyll` | Task 1 | every publish run on `main` | verified |
+| S14 | a push lands on `main` | the demo deploys to `gh-pages`, keeping `pr-preview/` and `.nojekyll` | Task 1 | every publish run on `main`; keeping `pr-preview/` is proven once a preview exists | built |
 | S15 | a website project (521's shape) uses the extension | it renders with the same brand and components | Task 5 | `tests/website/` in `make check` | built |
 
 ### Later
@@ -170,7 +170,8 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 - **Quizdown loads on every page,** quiz or not, as in DSCI 521 (Q&A 12).
 - **A partial brand override isn't possible** (see *What a book can change*);
   the how-to page says so.
-- **Fork PRs get no preview:** their token can't write to the repository.
+- **Fork PRs get no preview:** their token can't write to the repository, so their run fails
+  at the deploy step rather than skipping it.
 - **[Dan] settings:** Pages from the `gh-pages` branch (after the first publish creates it),
   read and write workflow permissions, a ruleset on `main`.
 - **plan-driven-development's hooks and leak check aren't built yet:**

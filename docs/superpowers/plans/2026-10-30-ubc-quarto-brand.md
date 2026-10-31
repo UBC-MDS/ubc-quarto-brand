@@ -419,7 +419,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 **Ruling:** the Mermaid subgraph fix is in scope although no scenario names diagrams: any book with a subgraph hits it, and this project's own Architecture page did. If wrong: one Sass default Dan may want elsewhere.
 
-**Ruling:** S13 is `built` and S14 `verified` (two green publish runs, 41173425986 and 41173494613, and the live site); Task 1's close had left both `planned`. If wrong: two status words.
+**Ruling:** S13 is `built` and S14 `verified` (two green publish runs, 41173425986 and 41173494613, and the live site); Task 1's close had left both `planned`. If wrong: two status words. (The final review found S14's "keeping `pr-preview/`" unproven, since no preview has existed; S14 is back to `built`.)
 
 **Files:**
 - Create: `scripts/fetch-521.sh`; `_extensions/ubc/_extension.yml`; fetched by the script: `_extensions/ubc/brand.yml`, `styles.scss`, `styles-dark.scss`, `code-labels.lua`, `quizdown-theme.html`, `MDSlogo.png`, `_extensions/ubc/_extensions/coatless-quarto/custom-callout/{_extension.yml,customcallout.lua,fa.lua,assets/css/fontawesome.css,assets/webfonts/fa-solid-900.woff2}`, `_extensions/ubc/_extensions/quizdown/{_extension.yml,quizdown.lua,assets/quizdown-init.js,assets/quizdown.js,assets/quizdownHighlight.js,assets/quizdownKatex.js}`
