@@ -121,34 +121,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>
-div.callout-definition.callout {
-  border-left-color: #8A6D2B;
-}
-div.callout-definition.callout-style-default .callout-header {
-  background-color: rgba(138, 109, 43, 0.13);
-}
-div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f518' !important;
-  background-image: none;
-}
-div.callout-exercise.callout {
-  border-left-color: #1C5F2E;
-}
-div.callout-exercise.callout-style-default .callout-header {
-  background-color: rgba(28, 95, 46, 0.13);
-}
-div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f44b' !important;
-  background-image: none;
-}
 div.callout-activity.callout {
   border-left-color: #0055B7;
 }
@@ -175,6 +147,34 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
   font-weight: 900;
   font-style: normal;
   content: '\f542' !important;
+  background-image: none;
+}
+div.callout-exercise.callout {
+  border-left-color: #1C5F2E;
+}
+div.callout-exercise.callout-style-default .callout-header {
+  background-color: rgba(28, 95, 46, 0.13);
+}
+div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f44b' !important;
+  background-image: none;
+}
+div.callout-definition.callout {
+  border-left-color: #8A6D2B;
+}
+div.callout-definition.callout-style-default .callout-header {
+  background-color: rgba(138, 109, 43, 0.13);
+}
+div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f518' !important;
   background-image: none;
 }
 </style>
@@ -902,7 +902,7 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
 <p><strong>Ruling:</strong> the definition and relevance-project callouts’ icon spacing and dark-mode colours, which the Standards review found missing, are Task 4’s, with the rest of Q&amp;A 26; S02 stays <code>planned</code> and names Tasks 2 and 4. If wrong: two callout types keep unlightened dark borders until Task 4.</p>
 <p><strong>Ruling:</strong> the extension’s own layer is one pair, <code>ubc.scss</code> and <code>ubc-dark.scss</code>, made now for the Mermaid fix; Task 4’s callout styling goes into it rather than a separate <code>callouts.scss</code>. If wrong: a rename.</p>
 <p><strong>Ruling:</strong> the Mermaid subgraph fix is in scope although no scenario names diagrams: any book with a subgraph hits it, and this project’s own Architecture page did. If wrong: one Sass default Dan may want elsewhere.</p>
-<p><strong>Ruling:</strong> S13 is <code>built</code> and S14 <code>verified</code> (two green publish runs, 41173425986 and 41173494613, and the live site); Task 1’s close had left both <code>planned</code>. If wrong: two status words.</p>
+<p><strong>Ruling:</strong> S13 is <code>built</code> and S14 <code>verified</code> (two green publish runs, 41173425986 and 41173494613, and the live site); Task 1’s close had left both <code>planned</code>. If wrong: two status words. (The final review found S14’s “keeping <code>pr-preview/</code>” unproven, since no preview has existed; S14 is back to <code>built</code>.)</p>
 <p><strong>Files:</strong> - Create: <code>scripts/fetch-521.sh</code>; <code>_extensions/ubc/_extension.yml</code>; fetched by the script: <code>_extensions/ubc/brand.yml</code>, <code>styles.scss</code>, <code>styles-dark.scss</code>, <code>code-labels.lua</code>, <code>quizdown-theme.html</code>, <code>MDSlogo.png</code>, <code>_extensions/ubc/_extensions/coatless-quarto/custom-callout/{_extension.yml,customcallout.lua,fa.lua,assets/css/fontawesome.css,assets/webfonts/fa-solid-900.woff2}</code>, <code>_extensions/ubc/_extensions/quizdown/{_extension.yml,quizdown.lua,assets/quizdown-init.js,assets/quizdown.js,assets/quizdownHighlight.js,assets/quizdownKatex.js}</code> - Modify: <code>_quarto.yml</code> (<code>format: ubc-html</code>), <code>tests/check-render.sh</code>, <code>Makefile</code></p>
 <p><strong>Interfaces:</strong> - Consumes: Task 1’s <code>make test</code>, <code>expect</code>, <code>exists</code>, <code>BOOK</code>. - Produces: the <code>ubc-html</code> format; <code>scripts/fetch-521.sh [commit]</code> with <code>fetch &lt;path in 521&gt; &lt;path here&gt;</code>; <code>make fetch-521</code>; in <code>tests/check-render.sh</code>, <code>LIGHT</code> and <code>DARK</code> (the book’s light and dark Bootstrap bundles), which Tasks 3 to 5 reuse.</p>
 <ul class="task-list">

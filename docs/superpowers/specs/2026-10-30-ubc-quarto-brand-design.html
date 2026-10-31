@@ -86,20 +86,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-exercise.callout {
-  border-left-color: #1C5F2E;
-}
-div.callout-exercise.callout-style-default .callout-header {
-  background-color: rgba(28, 95, 46, 0.13);
-}
-div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f44b' !important;
-  background-image: none;
-}
 div.callout-definition.callout {
   border-left-color: #8A6D2B;
 }
@@ -114,20 +100,6 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
   content: '\f518' !important;
   background-image: none;
 }
-div.callout-relevance-project.callout {
-  border-left-color: #0077C8;
-}
-div.callout-relevance-project.callout-style-default .callout-header {
-  background-color: rgba(0, 119, 200, 0.13);
-}
-div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f542' !important;
-  background-image: none;
-}
 div.callout-activity.callout {
   border-left-color: #0055B7;
 }
@@ -140,6 +112,34 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
   font-weight: 900;
   font-style: normal;
   content: '\e53d' !important;
+  background-image: none;
+}
+div.callout-exercise.callout {
+  border-left-color: #1C5F2E;
+}
+div.callout-exercise.callout-style-default .callout-header {
+  background-color: rgba(28, 95, 46, 0.13);
+}
+div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f44b' !important;
+  background-image: none;
+}
+div.callout-relevance-project.callout {
+  border-left-color: #0077C8;
+}
+div.callout-relevance-project.callout-style-default .callout-header {
+  background-color: rgba(0, 119, 200, 0.13);
+}
+div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f542' !important;
   background-image: none;
 }
 </style>
@@ -526,7 +526,7 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
 <h3 data-number="7.3.1" class="anchored" data-anchor-id="the-extension"><span class="header-section-number">7.3.1</span> The extension</h3>
 <p>One extension, <code>ubc</code>, in <code>_extensions/ubc/</code> (Q&amp;A 18). It contributes two things:</p>
 <ul>
-<li><strong>The brand,</strong> through <code>metadata: project: brand: brand.yml</code>. Quarto merges it into any project with the extension installed, whatever its format, so colours, fonts and dark mode apply even to a plain <code>format: html</code> page.</li>
+<li><strong>The brand,</strong> through <code>metadata: project: brand: brand.yml</code>. Quarto merges it into any project with the extension installed, whatever its format, so colours, fonts and the dark-mode toggle reach even a plain <code>format: html</code> page; dark mode’s tab titles need <code>ubc-html</code>’s <code>styles-dark.scss</code> (the final review).</li>
 <li><strong>A <code>ubc-html</code> format</strong> with the theme layers (<code>light: [brand, styles.scss, ubc.scss]</code>, <code>dark: [brand, styles.scss, styles-dark.scss, ubc.scss, ubc-dark.scss]</code>), the filters (<code>code-labels.lua</code>, <code>custom-callout</code>, <code>quizdown</code>), <code>include-after-body: [quizdown-theme.html, ubc-quizdown.html]</code>, and the four custom callout types.</li>
 </ul>
 <p>A format cannot carry the brand on its own: its <code>brand</code> theme layer means the project’s brand, and 521’s <code>styles.scss</code> needs the <code>$brand-*</code> variables that only the brand defines. A prototype rendered this setup, before the extension had a layer of its own, on Quarto 1.11.6, for a book and for a website (Q&amp;A 18).</p>
@@ -634,7 +634,7 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
 <h3 data-number="7.3.2" class="anchored" data-anchor-id="what-a-book-can-change"><span class="header-section-number">7.3.2</span> What a book can change</h3>
 <p>From the prototype (Q&amp;A 18):</p>
 <ul>
-<li><strong>Add styles</strong> with an extra theme layer, light and dark as separate lists: <code>format: ubc-html: theme: light: [extra.scss] dark: [extra.scss]</code>. The layer comes after the extension’s, and <code>$brand-*</code> names work in it. A plain list (<code>theme: [extra.scss]</code>) crashes Quarto.</li>
+<li><strong>Add styles</strong> with an extra theme layer, light and dark as separate lists: <code>format: ubc-html: theme: light: [extra.scss] dark: [extra.scss]</code>. The layer comes after the extension’s, and <code>$brand-*</code> names work in its rules; its Sass defaults, in literal hex, win over the extension’s in both modes (the final review). A plain list (<code>theme: [extra.scss]</code>) crashes Quarto.</li>
 <li><strong>Add or recolour callout types</strong> with its own <code>custom-callout:</code> keys, which deep-merge over the extension’s (Q&amp;A 19). custom-callout uses the hex for the light-mode border and fill only, so the icon’s colour and the dark-mode colours come from rules in the book’s own layer, as the how-to shows (Task 5’s review).</li>
 <li><strong>Turn on the MDS logo</strong> by pointing its sidebar or navbar logo at the bundled file (Q&amp;A 16).</li>
 <li><strong>Not</strong> replace the brand piecemeal: a book’s own <code>_brand.yml</code> is silently ignored, and a top-level <code>brand:</code> replaces the whole brand: inline, it fails with an undefined <code>$brand-*</code> variable, and only a <code>brand:</code> file holding a complete copy renders (Task 5’s review).</li>
@@ -659,7 +659,7 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
 <ul>
 <li><strong><code>pr.yml</code>,</strong> on every pull request event: <code>make check</code>, then pr-preview-action deploys the rendered book to <code>gh-pages</code> under <code>pr-preview/pr-&lt;N&gt;/</code> and comments the link, or removes the preview when the PR closes. Runs are grouped per PR and a newer event cancels an older run, so a merge mid-build leaves no stray preview (Q&amp;A 11, 24).</li>
 <li><strong><code>publish.yml</code>,</strong> on a push to <code>main</code>: the same build, then github-pages-deploy-action deploys the book to <code>gh-pages</code> with <code>clean-exclude: pr-preview</code> and <code>force: false</code>, so previews and the branch’s <code>.nojekyll</code> survive (Q&amp;A 24).</li>
-<li><strong><code>make check</code>:</strong> renders the test book and the website check, failing on any Quarto warning or unresolved link; runs <code>tests/check-render.sh</code> over the rendered HTML (the brand’s colours, both stylesheets, the labels, the callouts’ glyphs and colours, the counters, the quiz assets); runs lychee offline, actionlint and gitleaks.</li>
+<li><strong><code>make check</code>:</strong> renders the test book and the website check, failing on any Quarto warning or unresolved link; runs <code>tests/check-render.sh</code> over the rendered HTML (the brand’s colours, both stylesheets, the labels, the callouts’ icon font and colours, the counters, the quiz assets); runs lychee offline, actionlint and gitleaks.</li>
 <li><strong>Rulings:</strong> Ubuntu runner, Quarto 1.11.6 pinned and <code>quarto-required: "&gt;=1.11.0"</code>, Python 3.14, every third-party action pinned by commit SHA (Q&amp;A 24).</li>
 <li><strong>Releases:</strong> a PR bumps <code>version:</code> in <code>_extension.yml</code> and adds a <code>CHANGELOG.md</code> entry; Dan tags <code>vX.Y.Z</code> after merging it (Q&amp;A 17).</li>
 <li><strong>Straight to <code>main</code>:</strong> the agent commits and pushes to <code>main</code>; Dan reviews the extension in the adopting book’s PR, with its preview (Q&amp;A 29). <code>pr.yml</code> serves anyone who opens a PR here later.</li>
@@ -797,8 +797,8 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
 <td>a push lands on <code>main</code></td>
 <td>the demo deploys to <code>gh-pages</code>, keeping <code>pr-preview/</code> and <code>.nojekyll</code></td>
 <td>Task 1</td>
-<td>every publish run on <code>main</code></td>
-<td>verified</td>
+<td>every publish run on <code>main</code>; keeping <code>pr-preview/</code> is proven once a preview exists</td>
+<td>built</td>
 </tr>
 <tr class="odd">
 <td>S15</td>
@@ -875,7 +875,7 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
 <li><strong>Vendored dependencies:</strong> custom-callout (0.0.1-dev.3) and quizdown are copies; updating them is a manual PR.</li>
 <li><strong>Quizdown loads on every page,</strong> quiz or not, as in DSCI 521 (Q&amp;A 12).</li>
 <li><strong>A partial brand override isn’t possible</strong> (see <em>What a book can change</em>); the how-to page says so.</li>
-<li><strong>Fork PRs get no preview:</strong> their token can’t write to the repository.</li>
+<li><strong>Fork PRs get no preview:</strong> their token can’t write to the repository, so their run fails at the deploy step rather than skipping it.</li>
 <li><strong>[Dan] settings:</strong> Pages from the <code>gh-pages</code> branch (after the first publish creates it), read and write workflow permissions, a ruleset on <code>main</code>.</li>
 <li><strong>plan-driven-development’s hooks and leak check aren’t built yet:</strong> every push to <code>main</code> follows <code>make leaks</code> (Q&amp;A 29).</li>
 <li><strong>Licence:</strong> MIT for code, CC BY-NC-SA 4.0 for docs, the MDS logo excluded (Q&amp;A 27). custom-callout publishes no licence: [Dan] asks its author for one. The reproducible book Q&amp;A 27 follows is itself split, CC BY-NC-SA 4.0 in its README and CC BY 4.0 in its <code>LICENSE.md</code>: [Dan] confirms the docs licence here before tagging <code>v0.1.0</code>.</li>

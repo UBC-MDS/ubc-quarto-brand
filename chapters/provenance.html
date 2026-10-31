@@ -121,18 +121,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>
-div.callout-exercise.callout {
-  border-left-color: #1C5F2E;
+div.callout-relevance-project.callout {
+  border-left-color: #0077C8;
 }
-div.callout-exercise.callout-style-default .callout-header {
-  background-color: rgba(28, 95, 46, 0.13);
+div.callout-relevance-project.callout-style-default .callout-header {
+  background-color: rgba(0, 119, 200, 0.13);
 }
-div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\f44b' !important;
+  content: '\f542' !important;
   background-image: none;
 }
 div.callout-definition.callout {
@@ -163,18 +163,18 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
   content: '\e53d' !important;
   background-image: none;
 }
-div.callout-relevance-project.callout {
-  border-left-color: #0077C8;
+div.callout-exercise.callout {
+  border-left-color: #1C5F2E;
 }
-div.callout-relevance-project.callout-style-default .callout-header {
-  background-color: rgba(0, 119, 200, 0.13);
+div.callout-exercise.callout-style-default .callout-header {
+  background-color: rgba(28, 95, 46, 0.13);
 }
-div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
+div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\f542' !important;
+  content: '\f44b' !important;
   background-image: none;
 }
 </style>
@@ -509,7 +509,7 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 </header>
 
 
-<p>Every file in this extension but its own layer, <code>ubc.scss</code>, <code>ubc-dark.scss</code> and <code>ubc-quizdown.html</code>, and quizdown’s <code>LICENSE</code> comes from the <a href="https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/">DSCI 521 book</a>, copied from one commit, <code>991bae89cba904ae2dd0753338c306333eb5ea2e</code>, by <code>scripts/fetch-521.sh</code>. The links below point at each original as it was at that commit.</p>
+<p>Most files in this extension are copied from the <a href="https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/">DSCI 521 book</a> at one commit, <code>991bae89cba904ae2dd0753338c306333eb5ea2e</code>, by <code>scripts/fetch-521.sh</code>. Three kinds are not: <code>_extension.yml</code>, written here from keys in DSCI 521’s <code>_quarto.yml</code>; the extension’s own layer, <code>ubc.scss</code>, <code>ubc-dark.scss</code> and <code>ubc-quizdown.html</code>; and the licences of quizdown and Font Awesome, from their own repositories. The links below point at each original as it was at that commit.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -570,16 +570,21 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <td>added: DSCI 521’s copy has none (Q&amp;A 27)</td>
 </tr>
 <tr class="odd">
+<td><code>_extensions/ubc/_extensions/coatless-quarto/custom-callout/assets/webfonts/LICENSE.txt</code></td>
+<td>Font Awesome’s <a href="https://github.com/FortAwesome/Font-Awesome/blob/14c65a3747d0f3b751f15831fc719236aea8729d/LICENSE.txt"><code>LICENSE.txt</code></a>, from its own repository</td>
+<td>added: the font’s SIL Open Font License travels with it, and DSCI 521’s copy has none</td>
+</tr>
+<tr class="even">
 <td><code>_extensions/ubc/_extension.yml</code></td>
 <td>the <code>filters:</code>, <code>custom-callout:</code> and <code>format:</code> keys of <a href="https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/_quarto.yml"><code>_quarto.yml</code></a></td>
 <td>becomes the <code>ubc-html</code> format; adds the definition and relevance-project callouts</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>chapters/book-conventions.qmd</code> (this book)</td>
 <td><a href="https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/lectures/0-conventions.qmd"><code>lectures/0-conventions.qmd</code></a></td>
 <td>its link to another 521 chapter points at this book’s Home page</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>chapters/img/cheers.png</code> (this book)</td>
 <td><a href="https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/lectures/img/cheers.png"><code>lectures/img/cheers.png</code></a></td>
 <td>nothing</td>
@@ -594,7 +599,8 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> fetch-521 SHA=<span class="op">&lt;</span>a DSCI 521 commit<span class="op">&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>The script re-fetches every DSCI 521 file above from that commit. Review the diff, update the commit on this page and in <code>scripts/fetch-521.sh</code>, and release the change like any other.</p>
+<p>The script re-fetches every file it copies from that commit, and makes the two changes again: <code>brand.yml</code> loses its <code>meta:</code> block, and the conventions page’s link points at Home. It does not read DSCI 521’s <code>_quarto.yml</code>: compare its <code>format:</code>, <code>filters:</code> and <code>custom-callout:</code> keys with <code>_extensions/ubc/_extension.yml</code> by hand.</p>
+<p>Review the diff, then move the pin everywhere it appears: the default in <code>scripts/fetch-521.sh</code>, this page, its checks in <code>tests/check-render.sh</code>, the overview diagram in <code>docs/_overview.qmd</code>, and the spec. <code>grep -rn 991bae89</code> finds each one. Release the change like any other.</p>
 <p>Once DSCI 521 uses this extension itself (<a href="https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/issues/35">DSCI 521 issue #35</a>), changes flow the other way: they are made here, and DSCI 521 updates to the new release.</p>
 
 
