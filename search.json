@@ -34,7 +34,7 @@
     "href": "index.html#overview",
     "title": "UBC Quarto brand",
     "section": "Overview",
-    "text": "Overview\nThe parts and how they connect; the Architecture page says more.\n\n\n\n\n\nflowchart LR\n  src[\"DSCI 521 book&lt;br/&gt;at 991bae89cba9\"] --&gt;|\"scripts/fetch-521.sh\"| brand\n  src --&gt;|\"scripts/fetch-521.sh\"| fmt\n  src --&gt;|\"scripts/fetch-521.sh\"| emb\n  subgraph ext[\"_extensions/ubc/\"]\n    brand[\"brand.yml&lt;br/&gt;(the project's brand)\"]\n    fmt[\"ubc-html format&lt;br/&gt;styles.scss, styles-dark.scss,&lt;br/&gt;code-labels.lua, quizdown-theme.html\"]\n    emb[\"embedded extensions&lt;br/&gt;custom-callout, quizdown\"]\n    layer[\"ubc.scss, ubc-dark.scss, ubc-quizdown.html&lt;br/&gt;the extension's own layer\"]\n  end\n  ext --&gt; book[\"the test book at the root&lt;br/&gt;Home and the project docs\"]\n  conv[\"Conventions\"] --&gt; book\n  gallery[\"Callouts, Using it in a book\"] --&gt; book\n  pages[\"Where it comes from (Task 6)\"]:::planned -.-&gt; book\n  ext -.-&gt;|\"Task 5\"| site[\"tests/website/&lt;br/&gt;installed at _extensions/UBC-MDS/ubc/\"]:::planned\n  book --&gt;|\"make check\"| out[\"_book/\"]\n  out --&gt;|\"publish.yml\"| demo[\"gh-pages: the demo\"]\n  out --&gt;|\"pr.yml\"| prev[\"gh-pages: pr-preview/pr-N\"]\n  ext -.-&gt;|\"after v0.1.0\"| rtw[\"the reproducible-and-trustworthy&lt;br/&gt;workflows book\"]:::planned\n  classDef planned stroke-dasharray: 5 5",
+    "text": "Overview\nThe parts and how they connect; the Architecture page says more.\n\n\n\n\n\nflowchart LR\n  src[\"DSCI 521 book&lt;br/&gt;at 991bae89cba9\"] --&gt;|\"scripts/fetch-521.sh\"| brand\n  src --&gt;|\"scripts/fetch-521.sh\"| fmt\n  src --&gt;|\"scripts/fetch-521.sh\"| emb\n  subgraph ext[\"_extensions/ubc/\"]\n    brand[\"brand.yml&lt;br/&gt;(the project's brand)\"]\n    fmt[\"ubc-html format&lt;br/&gt;styles.scss, styles-dark.scss,&lt;br/&gt;code-labels.lua, quizdown-theme.html\"]\n    emb[\"embedded extensions&lt;br/&gt;custom-callout, quizdown\"]\n    layer[\"ubc.scss, ubc-dark.scss, ubc-quizdown.html&lt;br/&gt;the extension's own layer\"]\n  end\n  ext --&gt; book[\"the test book at the root&lt;br/&gt;Home and the project docs\"]\n  conv[\"Conventions\"] --&gt; book\n  gallery[\"Callouts, Using it in a book\"] --&gt; book\n  pages[\"Where it comes from (Task 6)\"]:::planned -.-&gt; book\n  ext --&gt;|\"make test copies it\"| site[\"tests/website/&lt;br/&gt;installed at _extensions/UBC-MDS/ubc/\"]\n  book --&gt;|\"make check\"| out[\"_book/\"]\n  out --&gt;|\"publish.yml\"| demo[\"gh-pages: the demo\"]\n  out --&gt;|\"pr.yml\"| prev[\"gh-pages: pr-preview/pr-N\"]\n  ext -.-&gt;|\"after v0.1.0\"| rtw[\"the reproducible-and-trustworthy&lt;br/&gt;workflows book\"]:::planned\n  classDef planned stroke-dasharray: 5 5",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>ubc-quarto-brand</span>"
     ]
@@ -183,11 +183,110 @@
     ]
   },
   {
+    "objectID": "chapters/using.html",
+    "href": "chapters/using.html",
+    "title": "4  Using it in a book",
+    "section": "",
+    "text": "4.1 Install it\nIn your Quarto book or website project, install a tagged release:\nQuarto copies the extension into _extensions/UBC-MDS/ubc/. Commit that folder: your book keeps exactly this version until you update it.",
+    "crumbs": [
+      "The brand",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/using.html#install-it",
+    "href": "chapters/using.html#install-it",
+    "title": "4  Using it in a book",
+    "section": "",
+    "text": "Terminal\nquarto add UBC-MDS/ubc-quarto-brand@v0.1.0",
+    "crumbs": [
+      "The brand",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/using.html#use-the-format",
+    "href": "chapters/using.html#use-the-format",
+    "title": "4  Using it in a book",
+    "section": "4.2 Use the format",
+    "text": "4.2 Use the format\nIn your _quarto.yml:\nformat: ubc-html\nThat one line brings the theme, the listing labels, the callouts and the quizzes. The brand’s colours, fonts and dark mode apply to every page as soon as the extension is installed, whatever format a page uses.",
+    "crumbs": [
+      "The brand",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/using.html#update-it",
+    "href": "chapters/using.html#update-it",
+    "title": "4  Using it in a book",
+    "section": "4.3 Update it",
+    "text": "4.3 Update it\n\nTerminal\nquarto update UBC-MDS/ubc-quarto-brand@v0.2.0\n\nDo it in a pull request of its own, so the preview shows what changed before you merge. The changelog lists what each release changed.",
+    "crumbs": [
+      "The brand",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/using.html#turn-on-the-mds-logo",
+    "href": "chapters/using.html#turn-on-the-mds-logo",
+    "title": "4  Using it in a book",
+    "section": "4.4 Turn on the MDS logo",
+    "text": "4.4 Turn on the MDS logo\nThe MDS logo ships with the extension but is not shown unless you ask for it. In a book:\nbook:\n  sidebar:\n    logo: _extensions/UBC-MDS/ubc/MDSlogo.png\n    logo-alt: \"MDS logo\"\nIn a website, the same two keys go under website: sidebar:.",
+    "crumbs": [
+      "The brand",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/using.html#add-your-own-styles",
+    "href": "chapters/using.html#add-your-own-styles",
+    "title": "4  Using it in a book",
+    "section": "4.5 Add your own styles",
+    "text": "4.5 Add your own styles\nAdd a theme layer of your own. Give it to both modes, as two lists:\nformat:\n  ubc-html:\n    theme:\n      light: [extra.scss]\n      dark: [extra.scss]\nYour layer comes after the extension’s, so its rules win, and the brand’s colours are available in it as $brand-&lt;name&gt;, for example $brand-ubc-blue. A single list, theme: [extra.scss], makes Quarto stop with an error.",
+    "crumbs": [
+      "The brand",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/using.html#add-or-recolour-a-callout-type",
+    "href": "chapters/using.html#add-or-recolour-a-callout-type",
+    "title": "4  Using it in a book",
+    "section": "4.6 Add or recolour a callout type",
+    "text": "4.6 Add or recolour a callout type\nAdd custom-callout: keys to your _quarto.yml. They merge with the extension’s: a new type is added, and a type the extension already has takes your values.\ncustom-callout:\n  lab:\n    title: \"Lab\"\n    icon: true\n    icon-symbol: \"fa-flask\"\n    color: \"#A6192E\"\nThe colour must be a literal hex, because this YAML cannot read the brand’s Sass. Take it from the palette:\n\n\n\nName\nHex\n\n\n\n\nubc-blue\n#002145\n\n\nubc-blue-deep\n#0055B7\n\n\nubc-blue-mid\n#0077C8\n\n\nubc-blue-bright\n#00A7E1\n\n\nubc-gold-dark\n#8A6D2B\n\n\nmds-green\n#1C5F2E\n\n\nalert-red\n#A6192E\n\n\n\nThe Callouts page shows every type the extension defines.",
+    "crumbs": [
+      "The brand",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/using.html#what-you-cannot-change",
+    "href": "chapters/using.html#what-you-cannot-change",
+    "title": "4  Using it in a book",
+    "section": "4.7 What you cannot change",
+    "text": "4.7 What you cannot change\nYou cannot replace part of the brand. A _brand.yml of your own is ignored, because the extension’s brand takes its place. A top-level brand: key replaces the whole brand, so it would have to define every colour the extension’s styles use, or the render fails. To change how things look, add a theme layer instead.",
+    "crumbs": [
+      "The brand",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/using.html#executed-code-and-quizzes",
+    "href": "chapters/using.html#executed-code-and-quizzes",
+    "title": "4  Using it in a book",
+    "section": "4.8 Executed code and quizzes",
+    "text": "4.8 Executed code and quizzes\nExecuted R and Python cells need nothing from the extension. Quizzes are written in a quizdown code block; the conventions page shows each kind.",
+    "crumbs": [
+      "The brand",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Using it in a book</span>"
+    ]
+  },
+  {
     "objectID": "docs/architecture.html",
     "href": "docs/architecture.html",
     "title": "5  Architecture",
     "section": "",
-    "text": "How the parts of this project connect, from DSCI 521’s files to the pages they style. Built parts are solid; planned parts are dashed, labelled with the plan task that brings them. The spec says why each part exists.\n\n\n\n\n\nflowchart LR\n  src[\"DSCI 521 book&lt;br/&gt;at 991bae89cba9\"] --&gt;|\"scripts/fetch-521.sh\"| brand\n  src --&gt;|\"scripts/fetch-521.sh\"| fmt\n  src --&gt;|\"scripts/fetch-521.sh\"| emb\n  subgraph ext[\"_extensions/ubc/\"]\n    brand[\"brand.yml&lt;br/&gt;(the project's brand)\"]\n    fmt[\"ubc-html format&lt;br/&gt;styles.scss, styles-dark.scss,&lt;br/&gt;code-labels.lua, quizdown-theme.html\"]\n    emb[\"embedded extensions&lt;br/&gt;custom-callout, quizdown\"]\n    layer[\"ubc.scss, ubc-dark.scss, ubc-quizdown.html&lt;br/&gt;the extension's own layer\"]\n  end\n  ext --&gt; book[\"the test book at the root&lt;br/&gt;Home and the project docs\"]\n  conv[\"Conventions\"] --&gt; book\n  gallery[\"Callouts, Using it in a book\"] --&gt; book\n  pages[\"Where it comes from (Task 6)\"]:::planned -.-&gt; book\n  ext -.-&gt;|\"Task 5\"| site[\"tests/website/&lt;br/&gt;installed at _extensions/UBC-MDS/ubc/\"]:::planned\n  book --&gt;|\"make check\"| out[\"_book/\"]\n  out --&gt;|\"publish.yml\"| demo[\"gh-pages: the demo\"]\n  out --&gt;|\"pr.yml\"| prev[\"gh-pages: pr-preview/pr-N\"]\n  ext -.-&gt;|\"after v0.1.0\"| rtw[\"the reproducible-and-trustworthy&lt;br/&gt;workflows book\"]:::planned\n  classDef planned stroke-dasharray: 5 5",
+    "text": "How the parts of this project connect, from DSCI 521’s files to the pages they style. Built parts are solid; planned parts are dashed, labelled with the plan task that brings them. The spec says why each part exists.\n\n\n\n\n\nflowchart LR\n  src[\"DSCI 521 book&lt;br/&gt;at 991bae89cba9\"] --&gt;|\"scripts/fetch-521.sh\"| brand\n  src --&gt;|\"scripts/fetch-521.sh\"| fmt\n  src --&gt;|\"scripts/fetch-521.sh\"| emb\n  subgraph ext[\"_extensions/ubc/\"]\n    brand[\"brand.yml&lt;br/&gt;(the project's brand)\"]\n    fmt[\"ubc-html format&lt;br/&gt;styles.scss, styles-dark.scss,&lt;br/&gt;code-labels.lua, quizdown-theme.html\"]\n    emb[\"embedded extensions&lt;br/&gt;custom-callout, quizdown\"]\n    layer[\"ubc.scss, ubc-dark.scss, ubc-quizdown.html&lt;br/&gt;the extension's own layer\"]\n  end\n  ext --&gt; book[\"the test book at the root&lt;br/&gt;Home and the project docs\"]\n  conv[\"Conventions\"] --&gt; book\n  gallery[\"Callouts, Using it in a book\"] --&gt; book\n  pages[\"Where it comes from (Task 6)\"]:::planned -.-&gt; book\n  ext --&gt;|\"make test copies it\"| site[\"tests/website/&lt;br/&gt;installed at _extensions/UBC-MDS/ubc/\"]\n  book --&gt;|\"make check\"| out[\"_book/\"]\n  out --&gt;|\"publish.yml\"| demo[\"gh-pages: the demo\"]\n  out --&gt;|\"pr.yml\"| prev[\"gh-pages: pr-preview/pr-N\"]\n  ext -.-&gt;|\"after v0.1.0\"| rtw[\"the reproducible-and-trustworthy&lt;br/&gt;workflows book\"]:::planned\n  classDef planned stroke-dasharray: 5 5",
     "crumbs": [
       "The project",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Architecture</span>"
