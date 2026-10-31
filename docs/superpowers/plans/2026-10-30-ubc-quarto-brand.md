@@ -10,7 +10,7 @@
 
 **Spec:** `docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md`
 
-**Now:** Phase end, step 3: The docs check.
+**Now:** Phase end, step 4: A dated `CHANGELOG.md` entry.
 
 ## Global Constraints
 
@@ -1404,7 +1404,7 @@ the final fix pass, 226 ok. No leaks at any of them.
 
 - [x] **1. The final whole-branch review:** Matt Pocock's `code-review`, two axes, from `git merge-base main HEAD`; one fix round and one scoped re-review; a ruling on whatever is left. Each fix is its own commit.
 - [x] **2. The rest of the ledger copied into the plan:** whatever `.superpowers/sdd/2026-10-30-ubc-quarto-brand/progress.md` holds that no closing commit carries, under its task.
-- [ ] **3. The docs check:** every doc the branch touched is true (the README, the spec's design and scenario rows, the Architecture page with every built part solid, the how-to, the provenance page, `LICENSE.md`, `AGENTS.md`).
+- [x] **3. The docs check:** every doc the branch touched is true (the README, the spec's design and scenario rows, the Architecture page with every built part solid, the how-to, the provenance page, `LICENSE.md`, `AGENTS.md`).
 - [ ] **4. A dated `CHANGELOG.md` entry** for `v0.1.0` (the extension, the test book, CI and previews, from DSCI 521 at `991bae89cba9`), and the spec's status line set to `PR open (#N)`, its number filled in once step 5 opens the PR.
 - [ ] **5. The push and the publish run** (Q&A 29: no PR here): `main` pushed, `publish.yml` green, S14 checked on the live site.
 - [ ] **6. The live site and the release:** <https://ubc-mds.github.io/ubc-quarto-brand/> serves the book with `.nojekyll` intact (S14); then [Dan] tags `v0.1.0`, and the reproducible book adopts it in its own previewed PR (S16).

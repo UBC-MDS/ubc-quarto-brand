@@ -96,7 +96,7 @@ From the prototype (Q&A 18):
 The repository root is a Quarto book that renders with `format: ubc-html`,
 next to `_extensions/ubc/` (Q&A 22, 23):
 
-- **Home:** the README.
+- **Home:** the README, then the overview diagram.
 - **Conventions:** DSCI 521's `lectures/0-conventions.qmd` almost as-is (Q&A 15):
   text, every listing kind, executed R and Python cells (Q&A 13), callouts, quizzes, tables,
   math, figures and tabsets. Only its links into other 521 chapters change.
@@ -106,14 +106,16 @@ next to `_extensions/ubc/` (Q&A 22, 23):
   and the limits above.
 - **Where it comes from:** every file's DSCI 521 original, linked at `991bae89cba9`,
   and what changed (Q&A 21).
-- **The project:** the spec, the plan, the Q&A pages, the changelog and `AGENTS.md`,
-  rendered from where they live.
+- **The project:** the Architecture page, the spec, the plan, the Q&A page, the changelog and
+  `AGENTS.md`, rendered from where they live.
 
-`tests/website/` is a one-page website project: a callout, a `bash` listing and a quiz.
-`make` copies the extension into it, git-ignored, before rendering it in CI (Q&A 10, 22).
+`tests/website/` is a one-page website project, installed the way a GitHub install leaves it:
+the MDS logo, its own theme layer (a Sass default and callout rules), its own `lab` callout and a
+recoloured `activity`, a `bash` listing and a quiz. `make test` copies the extension into it,
+git-ignored, and renders it after the book, locally and in CI (Q&A 10, 22).
 
 Executed cells run through knitr, with Python through reticulate from the uv venv, as in 521.
-R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` (uv).
+R needs `knitr`, `rmarkdown`, `reticulate` and `here` (renv); Python needs `matplotlib` (uv).
 
 ### CI and delivery
 
@@ -130,8 +132,8 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
   runs lychee offline, actionlint and gitleaks.
 - **Rulings:** Ubuntu runner, Quarto 1.11.6 pinned and `quarto-required: ">=1.11.0"`,
   Python 3.14, every third-party action pinned by commit SHA (Q&A 24).
-- **Releases:** a PR bumps `version:` in `_extension.yml` and adds a `CHANGELOG.md` entry;
-  Dan tags `vX.Y.Z` after merging it (Q&A 17).
+- **Releases:** a commit on `main` bumps `version:` in `_extension.yml` and adds a dated
+  `CHANGELOG.md` entry; Dan tags `vX.Y.Z` on it (Q&A 17, 29).
 - **Straight to `main`:** the agent commits and pushes to `main`; Dan reviews the extension in the adopting book's PR, with its preview (Q&A 29). `pr.yml` serves anyone who opens a PR here later.
 
 ## Scenarios
