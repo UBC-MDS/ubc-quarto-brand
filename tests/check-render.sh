@@ -148,5 +148,7 @@ expect "says where 521's settings went"  'keep DSCI 521.{1,3}s comments'        
 expect "links quizdown's licence"       'parmsam/quarto-quizdown/blob/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE' "$PROV"
 exists "the licence"                    LICENSE.md
 exists "quizdown's licence beside it"   _extensions/ubc/_extensions/quizdown/LICENSE
+exists "Font Awesome's licence beside its font" _extensions/ubc/_extensions/coatless-quarto/custom-callout/assets/webfonts/LICENSE.txt
+expect "links Font Awesome's licence"   'FortAwesome/Font-Awesome/blob/14c65a3747d0f3b751f15831fc719236aea8729d/LICENSE\.txt' "$PROV"
 
 exit $fail

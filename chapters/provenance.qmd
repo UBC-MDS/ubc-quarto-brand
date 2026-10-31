@@ -8,7 +8,7 @@ at one commit, `991bae89cba904ae2dd0753338c306333eb5ea2e`, by `scripts/fetch-521
 Three kinds are not:
 `_extension.yml`, written here from keys in DSCI 521's `_quarto.yml`;
 the extension's own layer, `ubc.scss`, `ubc-dark.scss` and `ubc-quizdown.html`;
-and quizdown's `LICENSE`, from quizdown's own repository.
+and the licences of quizdown and Font Awesome, from their own repositories.
 The links below point at each original as it was at that commit.
 
 | In this extension | From DSCI 521 | Changed |
@@ -23,6 +23,7 @@ The links below point at each original as it was at that commit.
 | `_extensions/ubc/_extensions/quizdown/` | [`_extensions/quizdown/`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/tree/991bae89cba904ae2dd0753338c306333eb5ea2e/_extensions/quizdown) | embedded in this extension |
 | `_extensions/ubc/ubc.scss`, `_extensions/ubc/ubc-dark.scss`, `_extensions/ubc/ubc-quizdown.html` | none: the extension's own layer, after DSCI 521's files | readable Mermaid subgraphs and quiz answer chips; spaced, coloured icons and dark variants for the two callout types DSCI 521 lacks; the built-in callouts in brand colours per mode (Q&A 26) |
 | `_extensions/ubc/_extensions/quizdown/LICENSE` | quizdown's [`LICENSE`](https://github.com/parmsam/quarto-quizdown/blob/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE), from its own repository | added: DSCI 521's copy has none (Q&A 27) |
+| `_extensions/ubc/_extensions/coatless-quarto/custom-callout/assets/webfonts/LICENSE.txt` | Font Awesome's [`LICENSE.txt`](https://github.com/FortAwesome/Font-Awesome/blob/14c65a3747d0f3b751f15831fc719236aea8729d/LICENSE.txt), from its own repository | added: the font's SIL Open Font License travels with it, and DSCI 521's copy has none |
 | `_extensions/ubc/_extension.yml` | the `filters:`, `custom-callout:` and `format:` keys of [`_quarto.yml`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/_quarto.yml) | becomes the `ubc-html` format; adds the definition and relevance-project callouts |
 | `chapters/book-conventions.qmd` (this book) | [`lectures/0-conventions.qmd`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/lectures/0-conventions.qmd) | its link to another 521 chapter points at this book's Home page |
 | `chapters/img/cheers.png` (this book) | [`lectures/img/cheers.png`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/lectures/img/cheers.png) | nothing |

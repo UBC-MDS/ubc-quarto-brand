@@ -2,8 +2,8 @@
 
 ## Code
 
-The code in this repository (Lua, SCSS, shell scripts, the Makefile and the GitHub Actions
-workflows) is under the MIT License.
+The code in this repository (Lua, SCSS, the HTML and JavaScript includes, the extension's YAML,
+the shell and Python scripts, the Makefile and the GitHub Actions workflows) is under the MIT License.
 
 MIT License
 
@@ -36,6 +36,10 @@ Attribution-NonCommercial-ShareAlike 4.0 International licence
 ## Not covered
 
 - The MDS logo, `_extensions/ubc/MDSlogo.png`, is UBC's mark and is not licensed here.
-- Vendored code keeps its own terms: quizdown under MIT, its `LICENSE` beside its copy in
-  `_extensions/ubc/_extensions/quizdown/`; Font Awesome Free under the terms in its CSS;
-  custom-callout, which publishes no licence yet.
+- Vendored code keeps its own terms:
+  - quizdown, under MIT: its `LICENSE` is beside its copy in `_extensions/ubc/_extensions/quizdown/`.
+  - Font Awesome Free's solid font, `fa-solid-900.woff2`, by Fonticons, Inc.
+    (<https://fontawesome.com>), under the SIL Open Font License 1.1:
+    Font Awesome's `LICENSE.txt` is beside the font, in
+    `_extensions/ubc/_extensions/coatless-quarto/custom-callout/assets/webfonts/`.
+  - custom-callout, which publishes no licence yet.
