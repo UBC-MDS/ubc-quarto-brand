@@ -71,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../docs/architecture.html" rel="next">
+<link href="../chapters/provenance.html" rel="next">
 <link href="../chapters/callouts.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -149,20 +149,6 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
   content: '\f518' !important;
   background-image: none;
 }
-div.callout-relevance-project.callout {
-  border-left-color: #0077C8;
-}
-div.callout-relevance-project.callout-style-default .callout-header {
-  background-color: rgba(0, 119, 200, 0.13);
-}
-div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f542' !important;
-  background-image: none;
-}
 div.callout-exercise.callout {
   border-left-color: #1C5F2E;
 }
@@ -175,6 +161,20 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
   font-weight: 900;
   font-style: normal;
   content: '\f44b' !important;
+  background-image: none;
+}
+div.callout-relevance-project.callout {
+  border-left-color: #0077C8;
+}
+div.callout-relevance-project.callout-style-default .callout-header {
+  background-color: rgba(0, 119, 200, 0.13);
+}
+div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f542' !important;
   background-image: none;
 }
 </style>
@@ -420,6 +420,12 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using it in a book</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/provenance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Where it comes from</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -431,37 +437,37 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../docs/architecture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Architecture</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Architecture</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: design spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: design spec</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: kickoff Q&amp;A</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: kickoff Q&amp;A</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../docs/superpowers/plans/2026-10-30-ubc-quarto-brand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">ubc-quarto-brand Implementation Plan</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">ubc-quarto-brand Implementation Plan</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../CHANGELOG.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../AGENTS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: how we work</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">ubc-quarto-brand: how we work</span></span></a>
   </div>
 </li>
       </ul>
@@ -1376,8 +1382,8 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../docs/architecture.html" class="pagination-link" aria-label="Architecture">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Architecture</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/provenance.html" class="pagination-link" aria-label="Where it comes from">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Where it comes from</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
