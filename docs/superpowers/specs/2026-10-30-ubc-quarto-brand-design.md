@@ -45,7 +45,7 @@ One extension, `ubc`, in `_extensions/ubc/` (Q&A 18). It contributes two things:
 
 A format cannot carry the brand on its own: its `brand` theme layer means the project's brand,
 and 521's `styles.scss` needs the `$brand-*` variables that only the brand defines.
-A prototype rendered exactly this setup on Quarto 1.11.6, for a book and for a website (Q&A 18).
+A prototype rendered this setup, before the extension had a layer of its own, on Quarto 1.11.6, for a book and for a website (Q&A 18).
 
 | Extension file | From DSCI 521 at `991bae89cba9` | Changed |
 |---|---|---|
@@ -132,8 +132,8 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 
 | ID | Situation | Expected | Phase and task | Proof | Status |
 |---|---|---|---|---|---|
-| S01 | a book installs the extension and sets `format: ubc-html` | UBC colours, Atkinson Hyperlegible fonts and a light/dark toggle | Task 2 | `tests/check-render.sh` on the book and the website check | planned |
-| S02 | a reader switches to dark mode | navy page, readable code, lightened callout borders, readable tab titles | Task 2 | `tests/check-render.sh`; the PR preview, checked by eye | planned |
+| S01 | a book installs the extension and sets `format: ubc-html` | UBC colours, Atkinson Hyperlegible fonts and a light/dark toggle | Task 2 | `tests/check-render.sh` on the book and the website check | built |
+| S02 | a reader switches to dark mode | navy page, readable code, lightened callout borders, readable tab titles | Tasks 2, 4 | `tests/check-render.sh`; the PR preview, checked by eye | planned |
 | S03 | an author writes `:::{.exercise}` twice on a page | "Exercise 1" and "Exercise 2", each with the dumbbell in MDS green | Tasks 2, 4 | `tests/check-render.sh`; the Callouts page in the preview | planned |
 | S04 | an author writes any of Quarto's five built-in callouts | each renders in the brand's colours | Task 4 | the Callouts page in the preview | planned |
 | S05 | an author writes a `bash`, an `out` and a `filename=` listing | labels "Terminal", "Output" and the filename | Tasks 2, 3 | `tests/check-render.sh` | planned |
@@ -144,8 +144,8 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 | S10 | a book recolours a callout or adds a type | its keys merge over the extension's | Task 5 | the website check adds one; `tests/check-render.sh` | planned |
 | S11 | an author executes R and Python cells | output renders under the brand | Task 3 | the Conventions page renders in `make check` | planned |
 | S12 | someone asks where a file came from | the provenance page links its 521 original at `991bae89cba9` and says what changed | Task 6 | the Where it comes from page | planned |
-| S13 | a PR is opened, updated, merged mid-build or closed | a preview link is commented; it updates; the merge leaves no stray preview; closing removes it | Task 1 | `pr.yml` is the book's proven workflow plus per-PR cancel; proven when a PR is first opened here (Q&A 29) | planned |
-| S14 | a push lands on `main` | the demo deploys to `gh-pages`, keeping `pr-preview/` and `.nojekyll` | Task 1 | every publish run on `main` | planned |
+| S13 | a PR is opened, updated, merged mid-build or closed | a preview link is commented; it updates; the merge leaves no stray preview; closing removes it | Task 1 | `pr.yml` is the book's proven workflow plus per-PR cancel; proven when a PR is first opened here (Q&A 29) | built |
+| S14 | a push lands on `main` | the demo deploys to `gh-pages`, keeping `pr-preview/` and `.nojekyll` | Task 1 | every publish run on `main` | verified |
 | S15 | a website project (521's shape) uses the extension | it renders with the same brand and components | Task 5 | `tests/website/` in `make check` | planned |
 
 ### Later
@@ -153,7 +153,7 @@ R needs `knitr`, `rmarkdown` and `reticulate` (renv); Python needs `matplotlib` 
 | ID | Situation | Expected | Kind | Why it waits |
 |---|---|---|---|---|
 | S16 | the reproducible-and-trustworthy-workflows book adopts `v0.1.0` | its pages use the brand; its titles follow Q&A 6 and 7 | end | it needs Dan's `v0.1.0` tag, and happens in that repo's own PR |
-| S17 | DSCI 521 adopts the extension | it deletes its local copies | end | tracked in DSCI_521#35 |
+| S17 | DSCI 521 adopts the extension | it deletes its local copies | end | tracked in DSCI_521#35; it keeps its own `toc`, `toc-depth` and `toc-expand`, which `ubc-html` leaves out |
 | S18 | Dependabot bumps the pinned action SHAs | a monthly PR | optional | plan-driven-development's `dependabot.yml` template isn't built yet |
 | S19 | a single Quarto document, with no project, uses the extension | the brand, labels, callouts and quizzes as in a book | optional | a stretch goal after the build (Q&A 25); the prototype saw the brand reach a standalone `.qmd`, the format is untested |
 | S20 | a revealjs deck in a branded project | slides in the brand's colours and fonts | optional | a stretch goal after the build (Q&A 25); likely needs a `ubc-revealjs` format, since `ubc-html`'s styles target Bootstrap pages |

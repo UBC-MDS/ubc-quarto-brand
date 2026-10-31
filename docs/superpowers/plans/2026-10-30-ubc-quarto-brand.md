@@ -10,7 +10,7 @@
 
 **Spec:** `docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md`
 
-**Now:** Task 2: The ubc extension, open.
+**Now:** Task 3: The conventions page, open.
 
 ## Global Constraints
 
@@ -20,6 +20,7 @@
 - Callouts (literal hex): activity `fa-person-chalkboard` `#0055B7`; exercise `fa-dumbbell` `#1C5F2E`; definition `fa-book-open` `#8A6D2B`; relevance-project, titled "Relevance to course project", `fa-diagram-project` `#0077C8`.
 - Third-party actions pinned by SHA: `astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2` (v10.3.3), `rossjrw/pr-preview-action@873417d2df72380da1f3978378fb58560bcde976` (v1.8.2), `JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445` (v4.9.0), `lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8` (v2.9.0). GitHub's, Quarto's and r-lib's own actions stay on major tags.
 - The agent commits and pushes straight to `main` (Q&A 29) after a passing `make leaks`; it never tags (Q&A 17).
+- Diagrams: a task that builds a part drawn dashed in `docs/_overview.qmd` turns it solid in the same commit: the node loses `:::planned`, its edge becomes `-->` (AGENTS.md, *Docs and security*).
 - Commits: message in a file, `git commit -F`, stage by path, the `Plan:` trailer checked with `git log -1 --format='%(trailers)'`, and `uv run --quiet --script scripts/commitmsg.py <file>` before committing.
 
 ## Review Focus
@@ -410,6 +411,16 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 **Tier:** 2 · **Scenarios:** S01, S02, S03, S06
 
+> **Built differently** (closed 2026-10-30; commits 86db99c, 3d9327c, 1b397c2, 153c286, 33c99e4, e01b19c): the review's fixes. The `fetch-521` help says `SHA=<commit>` fetches another commit and that the pin is in `scripts/fetch-521.sh`; the listing's "to change the pin" was untrue. The Architecture page (`docs/architecture.qmd`, its diagram in `docs/_overview.qmd`, also on Home) was added, since diagrams never wait. Home got a title in the sidebar, its title block hidden so the README's heading shows once (escaped from Task 1). The extension got its own layer, `ubc.scss` and `ubc-dark.scss`, after DSCI 521's files, for readable Mermaid subgraphs; Task 4 adds Q&A 26's callout styling to it.
+
+**Ruling:** the definition and relevance-project callouts' icon spacing and dark-mode colours, which the Standards review found missing, are Task 4's, with the rest of Q&A 26; S02 stays `planned` and names Tasks 2 and 4. If wrong: two callout types keep unlightened dark borders until Task 4.
+
+**Ruling:** the extension's own layer is one pair, `ubc.scss` and `ubc-dark.scss`, made now for the Mermaid fix; Task 4's callout styling goes into it rather than a separate `callouts.scss`. If wrong: a rename.
+
+**Ruling:** the Mermaid subgraph fix is in scope although no scenario names diagrams: any book with a subgraph hits it, and this project's own Architecture page did. If wrong: one Sass default Dan may want elsewhere.
+
+**Ruling:** S13 is `built` and S14 `verified` (two green publish runs, 41173425986 and 41173494613, and the live site); Task 1's close had left both `planned`. If wrong: two status words.
+
 **Files:**
 - Create: `scripts/fetch-521.sh`; `_extensions/ubc/_extension.yml`; fetched by the script: `_extensions/ubc/brand.yml`, `styles.scss`, `styles-dark.scss`, `code-labels.lua`, `quizdown-theme.html`, `MDSlogo.png`, `_extensions/ubc/_extensions/coatless-quarto/custom-callout/{_extension.yml,customcallout.lua,fa.lua,assets/css/fontawesome.css,assets/webfonts/fa-solid-900.woff2}`, `_extensions/ubc/_extensions/quizdown/{_extension.yml,quizdown.lua,assets/quizdown-init.js,assets/quizdown.js,assets/quizdownHighlight.js,assets/quizdownKatex.js}`
 - Modify: `_quarto.yml` (`format: ubc-html`), `tests/check-render.sh`, `Makefile`
@@ -418,9 +429,9 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 - Consumes: Task 1's `make test`, `expect`, `exists`, `BOOK`.
 - Produces: the `ubc-html` format; `scripts/fetch-521.sh [commit]` with `fetch <path in 521> <path here>`; `make fetch-521`; in `tests/check-render.sh`, `LIGHT` and `DARK` (the book's light and dark Bootstrap bundles), which Tasks 3 to 5 reuse.
 
-- [ ] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
+- [x] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
 
-- [ ] **Step 1: Write the failing test.** Insert before `exit $fail` in `tests/check-render.sh`:
+- [x] **Step 1: Write the failing test.** Insert before `exit $fail` in `tests/check-render.sh`:
 
 ```bash
 # --- Task 2: the brand on every page, the Home page included (S01, S02, S03, S06)
@@ -449,9 +460,9 @@ expect "quizdown scripts on Home"      'quarto-contrib/quizdown-[0-9.]+/quizdown
 expect "quiz theme include on Home"    'data-mds-quiz-theme'                                         "$BOOK/index.html"
 ```
 
-- [ ] **Step 2: Run it; watch it fail.** `make test`. Expected: `FAIL dark stylesheet` (plain `html` has no dark bundle) and `FAIL UBC blue in the palette` (no brand yet), and exit 1.
+- [x] **Step 2: Run it; watch it fail.** `make test`. Expected: `FAIL dark stylesheet` (plain `html` has no dark bundle) and `FAIL UBC blue in the palette` (no brand yet), and exit 1.
 
-- [ ] **Step 3: Write `scripts/fetch-521.sh`** and `chmod 755` it:
+- [x] **Step 3: Write `scripts/fetch-521.sh`** and `chmod 755` it:
 
 ```bash
 #!/usr/bin/env bash
@@ -491,7 +502,7 @@ echo "removed meta: from $EXT/brand.yml"
 
 Run it: `scripts/fetch-521.sh`. Expected: one `fetched` line per file and `removed meta:`; `grep -c '^meta:' _extensions/ubc/brand.yml` prints `0`.
 
-- [ ] **Step 4: Write `_extensions/ubc/_extension.yml`:**
+- [x] **Step 4: Write `_extensions/ubc/_extension.yml`:**
 
 ```yaml
 title: UBC brand
@@ -541,16 +552,16 @@ contributes:
           color: "#0077C8"
 ```
 
-- [ ] **Step 5: Use the format.** In `_quarto.yml`, replace `format: html` with `format: ubc-html`. In the `Makefile`, add `fetch-521` to `.PHONY` and this target after `clean`:
+- [x] **Step 5: Use the format.** In `_quarto.yml`, replace `format: html` with `format: ubc-html`. In the `Makefile`, add `fetch-521` to `.PHONY` and this target after `clean`:
 
 ```make
 fetch-521: ## Re-fetch the brand files from DSCI 521 (SHA=<commit> to change the pin)
 	scripts/fetch-521.sh $(SHA)
 ```
 
-- [ ] **Step 6: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN`.
+- [x] **Step 6: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN`.
 
-- [ ] **Step 7: Commit.** Write the message to a file:
+- [x] **Step 7: Commit.** Write the message to a file:
 
 ```text
 feat(ext): 🤖 add the ubc extension: DSCI 521's brand as a format
@@ -569,7 +580,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
   `git add scripts/fetch-521.sh _extensions/ubc _quarto.yml tests/check-render.sh Makefile`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
-- [ ] **Step 8: Review, look forward, close.** Tier 2: Matt Pocock's `code-review` from `.git/TASK_BASE`, two axes in two subagents; fix Critical and Important. Close with the boxes ticked, **Now** `Task 3: The conventions page, open.`, the spec's S01 and S02 rows `built`, and:
+- [x] **Step 8: Review, look forward, close.** Tier 2: Matt Pocock's `code-review` from `.git/TASK_BASE`, two axes in two subagents; fix Critical and Important. Close with the boxes ticked, **Now** `Task 3: The conventions page, open.`, the spec's S01 and S02 rows `built`, and:
 
 ```text
 docs(plan): 🤖 close Task 2: The ubc extension
@@ -594,7 +605,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 **Files:**
 - Create (fetched): `chapters/book-conventions.qmd`, `chapters/img/cheers.png`
-- Modify: `scripts/fetch-521.sh`, `chapters/book-conventions.qmd` (one link), `_quarto.yml`, `tests/check-render.sh`
+- Modify: `scripts/fetch-521.sh`, `chapters/book-conventions.qmd` (one link), `_quarto.yml`, `tests/check-render.sh`, `docs/_overview.qmd`
 
 **Interfaces:**
 - Consumes: Task 2's `fetch`, `LIGHT`, the `ubc-html` format; Task 1's uv and renv environments.
@@ -655,6 +666,8 @@ a [link to another page](../index.qmd)
         - chapters/book-conventions.qmd
 ```
 
+  In `docs/_overview.qmd`, add `conv["Conventions"] --> book` and drop "Conventions (Task 3), " from the planned `pages` node.
+
 - [ ] **Step 6: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN` (a reticulate or knitr warning counts).
 
 - [ ] **Step 7: Commit.** Write the message to a file:
@@ -673,7 +686,7 @@ Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 3
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 ```
 
-  `git add scripts/fetch-521.sh chapters/book-conventions.qmd chapters/img/cheers.png _quarto.yml tests/check-render.sh`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
+  `git add scripts/fetch-521.sh chapters/book-conventions.qmd chapters/img/cheers.png _quarto.yml tests/check-render.sh docs/_overview.qmd`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
 - [ ] **Step 8: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`. Close with the boxes ticked, **Now** `Task 4: The callouts gallery, open.`, the spec's S05, S06 and S11 rows `built`, and the close message as in Task 2 with `Task 3: The conventions page`, `Tier: 3` and `Rounds: self-review (Standards, Spec) and make check`.
 
@@ -681,14 +694,14 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 ### Task 4: The callouts gallery
 
-**Tier:** 3 · **Scenarios:** S03, S04, S07
+**Tier:** 3 · **Scenarios:** S02, S03, S04, S07
 
 **Files:**
 - Create: `chapters/callouts.qmd`
-- Modify: `_quarto.yml`, `tests/check-render.sh`
+- Modify: `_quarto.yml`, `tests/check-render.sh`, `_extensions/ubc/ubc.scss`, `_extensions/ubc/ubc-dark.scss`, `docs/_overview.qmd`
 
 **Interfaces:**
-- Consumes: Task 2's callout types and `.term` rules.
+- Consumes: Task 2's callout types and `.term` rules; its layer `ubc.scss` and `ubc-dark.scss`; `LIGHT` and `DARK` in `tests/check-render.sh`.
 - Produces: `_book/chapters/callouts.html`.
 
 - [ ] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
@@ -713,6 +726,18 @@ expect "Font Awesome stylesheet"       'fontawesome\.css'                       
 expect "a console window"              '<div class="term">'                                          "$CALL"
 n=$(grep -o 'class="callout callout-style-default callout-exercise' "$CALL" 2>/dev/null | wc -l | tr -d ' ')
 if [ "${n:-0}" -ge 2 ]; then echo "ok   two exercises for the numbering"; else echo "FAIL two exercises for the numbering ($n)"; fail=1; fi
+# Q&A 26: the extension's layer colours every icon, and the built-ins, in each mode
+expect "definition icon"               'div\.callout-definition \.callout-icon::before\{color:#8A6D2B'                          "$LIGHT"
+expect "relevance icon"                'div\.callout-relevance-project \.callout-icon::before\{color:#0077C8'                   "$LIGHT"
+expect "definition border, dark"       'body\.quarto-dark div\.callout-definition\.callout\{border-left-color:#A89565'        "$LIGHT"
+expect "relevance border, dark"        'body\.quarto-dark div\.callout-relevance-project\.callout\{border-left-color:#00A7E1' "$LIGHT"
+expect "warning in dark gold"          'div\.callout-warning\.callout\{border-left-color:#8A6D2B'                              "$LIGHT"
+expect "caution in derived orange"     'div\.callout-caution\.callout\{border-left-color:#B85B0A'                              "$LIGHT"
+expect "note, dark"                    'div\.callout-note\.callout\{border-left-color:#40B4E5'                                 "$DARK"
+expect "tip, dark"                     'div\.callout-tip\.callout\{border-left-color:#88D4AB'                                  "$DARK"
+expect "important, dark"               'div\.callout-important\.callout\{border-left-color:#F08080'                            "$DARK"
+expect "warning, dark"                 'div\.callout-warning\.callout\{border-left-color:#A89565'                              "$DARK"
+expect "caution, dark"                 'div\.callout-caution\.callout\{border-left-color:#F48525'                              "$DARK"
 ```
 
 - [ ] **Step 2: Run it; watch it fail.** `make test`. Expected: `FAIL callouts page (_book/chapters/callouts.html missing)`.
@@ -829,25 +854,96 @@ title: Using it in a book
         - chapters/using.qmd
 ```
 
-- [ ] **Step 5: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN`.
+  In `docs/_overview.qmd`, add `gallery["Callouts, Using it in a book"] --> book` and drop "Callouts (Task 4), " from the planned `pages` node.
 
-- [ ] **Step 6: Commit.** Write the message to a file:
+- [ ] **Step 5: Complete the callout styling in the extension's layer (Q&A 26).** custom-callout colours a border and fill but never the icon, and DSCI 521's `styles.scss` styles only activity and exercise. Quarto colours the built-ins from `$callout-color-*`, which default to `$blue`, `$green`, `$red`, `$yellow` and `$orange`; the brand maps the first four and has no orange. Dark values follow `brand.yml`'s own light/dark pairs. Every colour clears 4.5:1 on its page (white, or `ubc-blue-video` `#001328`).
+
+  In `_extensions/ubc/ubc.scss`, after the Mermaid default:
+
+```scss
+// Built-in callouts (Q&A 26). The brand's yellow, ubc-gold (#A89565), is
+// 2.94:1 on white, so warning takes ubc-gold-dark (4.88:1). UBC publishes no
+// orange; caution takes one derived at hue 28 degrees, 4.63:1 on white.
+$callout-color-warning: #8A6D2B !default;
+$callout-color-caution: #B85B0A !default;
+```
+
+  and under its `/*-- scss:rules --*/`:
+
+```scss
+// The two callout types DSCI 521 does not have (Q&A 8, 26), styled as its
+// styles.scss styles activity and exercise: a spaced, coloured icon, and a
+// lighter border and icon on the dark page. `body.quarto-dark` outranks the
+// colour custom-callout writes into the page.
+div.callout-definition .callout-icon::before,
+div.callout-relevance-project .callout-icon::before {
+  margin-right: 0.4em;
+}
+
+div.callout-definition .callout-icon::before {
+  color: $brand-ubc-gold-dark;
+}
+
+div.callout-relevance-project .callout-icon::before {
+  color: $brand-ubc-blue-mid;
+}
+
+body.quarto-dark {
+  div.callout-definition.callout {
+    border-left-color: $brand-ubc-gold;
+  }
+
+  div.callout-definition .callout-icon::before {
+    color: $brand-ubc-gold;
+  }
+
+  div.callout-relevance-project.callout {
+    border-left-color: $brand-ubc-blue-bright;
+  }
+
+  div.callout-relevance-project .callout-icon::before {
+    color: $brand-ubc-blue-bright;
+  }
+}
+```
+
+  In `_extensions/ubc/ubc-dark.scss`, after the Mermaid default:
+
+```scss
+// Built-in callouts on the dark page, from brand.yml's dark pairs:
+// ubc-blue-light, mds-green-light, alert-red-light and ubc-gold, and the
+// derived orange lightened to 7.32:1 on ubc-blue-video.
+$callout-color-note: #40B4E5;
+$callout-color-tip: #88D4AB;
+$callout-color-important: #F08080;
+$callout-color-warning: #A89565;
+$callout-color-caution: #F48525;
+```
+
+  In the spec's extension table, the `ubc.scss` row's "in Task 4" goes: the styling is built.
+
+- [ ] **Step 6: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN`.
+
+- [ ] **Step 7: Commit.** Write the message to a file:
 
 ```text
 feat(book): 🤖 add the callouts gallery and a console window
 
 Quarto's five built-in callouts, plain and titled, the brand's four
 types, two exercises in a row for the numbering, and a .term console
-window. The new checks first failed with: FAIL callouts page
-(_book/chapters/callouts.html missing).
+window. The extension's layer completes the styling DSCI 521 leaves
+out (Q&A 26): spaced, coloured icons and dark variants for definition
+and relevance-project, and the built-ins in brand colours per mode,
+caution in a derived orange. The new checks first failed with: FAIL
+callouts page (_book/chapters/callouts.html missing).
 
 Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 4
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 ```
 
-  `git add chapters/callouts.qmd chapters/using.qmd _quarto.yml tests/check-render.sh`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
+  `git add chapters/callouts.qmd chapters/using.qmd _quarto.yml tests/check-render.sh _extensions/ubc/ubc.scss _extensions/ubc/ubc-dark.scss docs/_overview.qmd docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
-- [ ] **Step 7: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`; check both modes by eye in `uv run quarto preview`. Close with the boxes ticked, **Now** `Task 5: The website check and the how-to, open.`, the spec's S03, S04 and S07 rows `built`, and the close message as in Task 3 with `Task 4: The callouts gallery`.
+- [ ] **Step 8: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`; check both modes by eye in `uv run quarto preview`. Close with the boxes ticked, **Now** `Task 5: The website check and the how-to, open.`, the spec's S02, S03, S04 and S07 rows `built`, and the close message as in Task 3 with `Task 4: The callouts gallery`.
 
 ***
 
@@ -857,7 +953,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 **Files:**
 - Create: `tests/website/_quarto.yml`, `tests/website/index.qmd`, `tests/website/extra.scss`
-- Modify: `chapters/using.qmd` (the placeholder becomes the how-to), `Makefile` (`test`), `tests/check-render.sh`
+- Modify: `chapters/using.qmd` (the placeholder becomes the how-to), `Makefile` (`test`), `tests/check-render.sh`, `docs/_overview.qmd` (the `site` node turns solid)
 
 **Interfaces:**
 - Consumes: Task 2's extension; Task 1's `make test`.
@@ -1097,7 +1193,7 @@ Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 5
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 ```
 
-  `git add tests/website/_quarto.yml tests/website/index.qmd tests/website/extra.scss chapters/using.qmd Makefile tests/check-render.sh`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
+  `git add tests/website/_quarto.yml tests/website/index.qmd tests/website/extra.scss chapters/using.qmd Makefile tests/check-render.sh docs/_overview.qmd`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
 - [ ] **Step 8: Review, look forward, close.** Tier 2: Matt Pocock's `code-review` from `.git/TASK_BASE`, two axes in two subagents. Close with the boxes ticked, **Now** `Task 6: Where it comes from, open.`, the spec's S08, S09, S10 and S15 rows `built`, and the close message as in Task 2 with `Task 5: The website check and the how-to`.
 
@@ -1107,12 +1203,16 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 **Tier:** 3 · **Scenarios:** S12
 
+**Ruling** (Task 2's forward review): `LICENSE.md` uses CC BY-NC-SA 4.0 for the docs, as Q&A 27 records, although the reproducible book it names is split: its README says CC BY-NC-SA 4.0, its `LICENSE.md` CC BY 4.0. Dan is asked before he tags `v0.1.0`. If wrong: one licence paragraph.
+
+**Ruling** (Task 2's forward review): the MIT copyright holder is "UBC Master of Data Science", the extension's author in `_extension.yml`; DSCI 521 publishes no licence or holder. If wrong: one line, before the tag.
+
 **Files:**
-- Create: `chapters/provenance.qmd`
-- Modify: `_quarto.yml`, `tests/check-render.sh`, `README.md`
+- Create: `chapters/provenance.qmd`, `LICENSE.md`, `_extensions/ubc/_extensions/quizdown/LICENSE`
+- Modify: `_quarto.yml`, `tests/check-render.sh`, `README.md`, `docs/_overview.qmd`
 
 **Interfaces:**
-- Consumes: Task 2's `scripts/fetch-521.sh` and `make fetch-521`; Task 3's conventions page.
+- Consumes: Task 2's `scripts/fetch-521.sh`, `make fetch-521` and its layer `ubc.scss` and `ubc-dark.scss`; Task 3's conventions page.
 - Produces: `_book/chapters/provenance.html`.
 
 - [ ] **Step 0: Record the base:** `git rev-parse HEAD > .git/TASK_BASE`.
@@ -1128,6 +1228,11 @@ for f in _brand.yml styles.scss styles-dark.scss code-labels.lua quizdown-theme.
          _extensions/coatless-quarto/custom-callout _extensions/quizdown lectures/0-conventions.qmd img/cheers.png; do
   expect "links 521's $f"              "DSCI_521_platforms-dsci_book/(blob|tree)/991bae89cba904ae2dd0753338c306333eb5ea2e/$f" "$PROV"
 done
+expect "names the extension's own layer" 'ubc-dark\.scss'                                             "$PROV"
+expect "says where 521's settings went"  'keep DSCI 521.s comments'                                   "$PROV"
+expect "links quizdown's licence"       'parmsam/quarto-quizdown/blob/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE' "$PROV"
+exists "the licence"                    LICENSE.md
+exists "quizdown's licence beside it"   _extensions/ubc/_extensions/quizdown/LICENSE
 ```
 
 - [ ] **Step 2: Run it; watch it fail.** `make test`. Expected: `FAIL provenance page (_book/chapters/provenance.html missing)`.
@@ -1139,7 +1244,7 @@ done
 title: Where it comes from
 ---
 
-Every file in this extension comes from the
+Every file in this extension but its own layer, `ubc.scss` and `ubc-dark.scss`, comes from the
 [DSCI 521 book](https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/),
 copied from one commit, `991bae89cba904ae2dd0753338c306333eb5ea2e`,
 by `scripts/fetch-521.sh`.
@@ -1155,9 +1260,15 @@ The links below point at each original as it was at that commit.
 | `_extensions/ubc/MDSlogo.png` | [`MDSlogo.png`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/MDSlogo.png) | shown only when a book opts in |
 | `_extensions/ubc/_extensions/coatless-quarto/custom-callout/` | [`_extensions/coatless-quarto/custom-callout/`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/tree/991bae89cba904ae2dd0753338c306333eb5ea2e/_extensions/coatless-quarto/custom-callout) | embedded in this extension |
 | `_extensions/ubc/_extensions/quizdown/` | [`_extensions/quizdown/`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/tree/991bae89cba904ae2dd0753338c306333eb5ea2e/_extensions/quizdown) | embedded in this extension |
+| `_extensions/ubc/ubc.scss`, `_extensions/ubc/ubc-dark.scss` | none: the extension's own layer, after DSCI 521's files | readable Mermaid subgraphs; spaced, coloured icons and dark variants for the two callout types DSCI 521 lacks; the built-in callouts in brand colours per mode (Q&A 26) |
+| `_extensions/ubc/_extensions/quizdown/LICENSE` | quizdown's [`LICENSE`](https://github.com/parmsam/quarto-quizdown/blob/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE), from its own repository | added: DSCI 521's copy has none (Q&A 27) |
 | `_extensions/ubc/_extension.yml` | the `filters:`, `custom-callout:` and `format:` keys of [`_quarto.yml`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/_quarto.yml) | becomes the `ubc-html` format; adds the definition and relevance-project callouts |
 | `chapters/book-conventions.qmd` (this book) | [`lectures/0-conventions.qmd`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/lectures/0-conventions.qmd) | its link to another 521 chapter points at this book's Home page |
 | `chapters/img/cheers.png` (this book) | [`img/cheers.png`](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/img/cheers.png) | nothing |
+
+The copied files keep DSCI 521's comments, which point at its `_quarto.yml`.
+Here the theme lists and the `custom-callout:` colours live in `_extensions/ubc/_extension.yml`,
+so recolouring a callout means changing it there and in `brand.yml` together.
 
 ## Taking a later version from DSCI 521
 
@@ -1175,23 +1286,78 @@ Once DSCI 521 uses this extension itself
 changes flow the other way: they are made here, and DSCI 521 updates to the new release.
 ````
 
-- [ ] **Step 4: Add the chapter and point the README at it.** In `_quarto.yml`, add `chapters/provenance.qmd` to `project: render:` and, under the part "The brand", after `chapters/using.qmd`, `- chapters/provenance.qmd`. In `README.md`, after its first paragraph, add:
+- [ ] **Step 4: Write the licence (Q&A 27).** `LICENSE.md`:
+
+````markdown
+# Licence
+
+## Code
+
+The code in this repository (Lua, SCSS, shell scripts, the Makefile and the GitHub Actions
+workflows) is under the MIT License.
+
+MIT License
+
+Copyright (c) 2026 UBC Master of Data Science
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## Docs and the test book's text
+
+The docs and the test book's text are under the Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International licence
+([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)).
+
+## Not covered
+
+- The MDS logo, `_extensions/ubc/MDSlogo.png`, is UBC's mark and is not licensed here.
+- Vendored code keeps its own terms: quizdown under MIT, its `LICENSE` beside its copy in
+  `_extensions/ubc/_extensions/quizdown/`; Font Awesome Free under the terms in its CSS;
+  custom-callout, which publishes no licence yet.
+````
+
+  quizdown's licence, from its own repository at the commit its `LICENSE` was read: `curl -sSfL https://raw.githubusercontent.com/parmsam/quarto-quizdown/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE -o _extensions/ubc/_extensions/quizdown/LICENSE`. Expected: its first lines are `MIT License` and `Copyright (c) 2025 Sam Parmar`.
+
+- [ ] **Step 5: Add the chapter and point the README at it.** In `_quarto.yml`, add `chapters/provenance.qmd` to `project: render:` and, under the part "The brand", after `chapters/using.qmd`, `- chapters/provenance.qmd`. In `README.md`, after its first paragraph, add:
 
 ```markdown
-Every file comes from the DSCI 521 book at one pinned commit;
+Every file but the extension's own layer comes from the DSCI 521 book at one pinned commit;
 the demo book's "Where it comes from" page lists each original and what changed.
+
+Code is under MIT and the docs under CC BY-NC-SA 4.0; the MDS logo is excluded
+([LICENSE.md](https://github.com/UBC-MDS/ubc-quarto-brand/blob/main/LICENSE.md)).
 ```
 
-- [ ] **Step 5: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN`.
+  In `docs/_overview.qmd`, add `prov["Where it comes from"] --> book` and remove the planned `pages` node and its edge.
 
-- [ ] **Step 6: Commit.** Write the message to a file:
+- [ ] **Step 6: Run the checks; they pass.** `make check`. Expected: every `ok`, no `FAIL`, no Quarto `WARN`.
+
+- [ ] **Step 7: Commit.** Write the message to a file:
 
 ```text
 docs(book): 🤖 add where each file comes from in DSCI 521
 
 chapters/provenance.qmd links every file's DSCI 521 original at
 991bae89cba9, says what changed, and explains re-fetching with make
-fetch-521; the README points at it (Q&A 21). The new checks first
+fetch-521; the README points at it (Q&A 21). LICENSE.md splits the
+licence, MIT for code and CC BY-NC-SA 4.0 for docs, excludes the MDS
+logo, and quizdown's MIT licence now sits beside its copy (Q&A 27). The new checks first
 failed with: FAIL provenance page (_book/chapters/provenance.html
 missing).
 
@@ -1199,9 +1365,9 @@ Plan: docs/superpowers/plans/2026-10-30-ubc-quarto-brand.md Task 6
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 ```
 
-  `git add chapters/provenance.qmd _quarto.yml tests/check-render.sh README.md`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
+  `git add chapters/provenance.qmd LICENSE.md _extensions/ubc/_extensions/quizdown/LICENSE _quarto.yml tests/check-render.sh README.md docs/_overview.qmd`, `git commit -F <file>`, `git log -1 --format='%(trailers)'`. Then `make leaks` and `git push origin main`.
 
-- [ ] **Step 7: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`. Close with the boxes ticked, **Now** `Phase end, step 1: The final whole-branch review.`, the spec's S12 row `built`, and the close message as in Task 3 with `Task 6: Where it comes from`.
+- [ ] **Step 8: Review, look forward, close.** Tier 3: self-review under *Standards* and *Spec*, plus `make check`. Close with the boxes ticked, **Now** `Phase end, step 1: The final whole-branch review.`, the spec's S12 row `built`, and the close message as in Task 3 with `Task 6: Where it comes from`.
 
 ***
 
@@ -1214,7 +1380,23 @@ sets **Now** to the next step.
 
 - [ ] **1. The final whole-branch review:** Matt Pocock's `code-review`, two axes, from `git merge-base main HEAD`; one fix round and one scoped re-review; a ruling on whatever is left. Each fix is its own commit.
 - [ ] **2. The rest of the ledger copied into the plan:** whatever `.superpowers/sdd/2026-10-30-ubc-quarto-brand/progress.md` holds that no closing commit carries, under its task.
-- [ ] **3. The docs check:** every doc the branch touched is true (the README, the spec's design and scenario rows, the how-to, the provenance page, `AGENTS.md`).
+- [ ] **3. The docs check:** every doc the branch touched is true (the README, the spec's design and scenario rows, the Architecture page with every built part solid, the how-to, the provenance page, `LICENSE.md`, `AGENTS.md`).
 - [ ] **4. A dated `CHANGELOG.md` entry** for `v0.1.0` (the extension, the test book, CI and previews, from DSCI 521 at `991bae89cba9`), and the spec's status line set to `PR open (#N)`, its number filled in once step 5 opens the PR.
 - [ ] **5. The push and the publish run** (Q&A 29: no PR here): `main` pushed, `publish.yml` green, S14 checked on the live site.
 - [ ] **6. The live site and the release:** <https://ubc-mds.github.io/ubc-quarto-brand/> serves the book with `.nojekyll` intact (S14); then [Dan] tags `v0.1.0`, and the reproducible book adopts it in its own previewed PR (S16).
+
+## Phase-end list
+
+Deferred findings, a row each.
+
+| From | Severity | File | Finding | Status |
+|---|---|---|---|---|
+| Task 2 | Minor | `scripts/fetch-521.sh` | writes relative to the current folder: run outside the repo root, it creates `_extensions/ubc` there; `cd "$(dirname "$0")/.."` fixes it | open |
+| Task 2 | Minor | `scripts/fetch-521.sh` | a curl failure part-way leaves files from two commits; files dropped upstream are never deleted | open |
+| Task 2 | Minor | `scripts/fetch-521.sh` | the `meta:` strip drops a column-0 comment inside the block, says "removed" when there was none, and leaves `brand.yml.tmp` on failure | open |
+| Task 2 | Minor | `Makefile` | `SHA` is read from the environment and not checked as a full hex SHA (`SHA=main` defeats the pin); a name like `FETCH_521_SHA` is safer | open |
+| Task 2 | Minor | `tests/check-render.sh` | the bundle lookup takes an arbitrary bundle if several exist; `make test-utc` does not clear `_book`; an empty `LIGHT` gives a bare `FAIL … ()`; the `-missing` placeholder paths are only there for the message | open |
+| Task 2 | Minor | `_extensions/ubc/_extension.yml` | the callout hex values copy `brand.yml`, and nothing checks they still match after a re-fetch | open |
+| Task 2 | Minor | several | the pin `991bae89cba9` is repeated in the script, the spec, commit bodies and the provenance page | open |
+| Task 2 | Minor | `index.qmd` | the sidebar numbers Home "1" while the page itself is unnumbered | open |
+| Task 2 | Minor | `tests/check-render.sh` | "home titled in the sidebar" also matches the breadcrumb; the two diagram checks show only that some Mermaid block exists | open |
