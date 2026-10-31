@@ -90,3 +90,10 @@ we can create and use that as a test book/site in the extension too to quickly f
     `lectures/0-conventions.qmd` almost as-is, Quizzes section and executed cells included.
     Dan: "we should try to mimic that convensions file almost as-is
     it shows almost eveything that we use in a book."
+
+16. **Identity and logo.** The extension ships no book name or links:
+    each book keeps its title and links in its own `_quarto.yml`.
+    It bundles DSCI 521's `MDSlogo.png` as an available asset, not applied by default;
+    an MDS book turns it on with one line in its `_quarto.yml`.
+    The UBC logo is not bundled.
+    Dan chose "C. MDS logo, opt-in" over the recommended "A. Brand only, books add theirs".
