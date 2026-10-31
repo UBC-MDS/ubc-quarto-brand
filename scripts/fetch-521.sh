@@ -33,3 +33,14 @@ fetch lectures/img/cheers.png    chapters/img/cheers.png
 awk '/^meta:/ {skip = 1; next} skip && /^[^ #]/ {skip = 0} !skip' "$EXT/brand.yml" > "$EXT/brand.yml.tmp"
 mv "$EXT/brand.yml.tmp" "$EXT/brand.yml"
 echo "removed meta: from $EXT/brand.yml"
+
+# The conventions page's one link into another DSCI 521 chapter points at this
+# book's Home page instead (Q&A 15). Stop if DSCI 521 has changed that line.
+sed 's|\[link to another page\](1-MDStools-bash-filesystem\.qmd)|[link to another page](../index.qmd)|' \
+  chapters/book-conventions.qmd > chapters/book-conventions.qmd.tmp
+mv chapters/book-conventions.qmd.tmp chapters/book-conventions.qmd
+grep -q '\[link to another page\](\.\./index\.qmd)' chapters/book-conventions.qmd || {
+  echo "the conventions page's link was not found: edit chapters/book-conventions.qmd by hand" >&2
+  exit 1
+}
+echo "pointed the conventions page's link at ../index.qmd"

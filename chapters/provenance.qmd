@@ -35,9 +35,17 @@ make fetch-521 SHA=<a DSCI 521 commit>
 git diff
 ```
 
-The script re-fetches every DSCI 521 file above from that commit.
-Review the diff, update the commit on this page and in `scripts/fetch-521.sh`,
-and release the change like any other.
+The script re-fetches every file it copies from that commit,
+and makes the two changes again: `brand.yml` loses its `meta:` block,
+and the conventions page's link points at Home.
+It does not read DSCI 521's `_quarto.yml`:
+compare its `format:`, `filters:` and `custom-callout:` keys with `_extensions/ubc/_extension.yml` by hand.
+
+Review the diff, then move the pin everywhere it appears:
+the default in `scripts/fetch-521.sh`, this page, its checks in `tests/check-render.sh`,
+the overview diagram in `docs/_overview.qmd`, and the spec.
+`grep -rn 991bae89` finds each one.
+Release the change like any other.
 
 Once DSCI 521 uses this extension itself
 ([DSCI 521 issue #35](https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/issues/35)),
