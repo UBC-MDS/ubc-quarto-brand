@@ -85,9 +85,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2ea1a707718cc9f3905c58b26d130924.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-2c1e4affe1b679dc6a28c4016b06751d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-36d7776b9e772b9894d17a497550ccff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-2c1e4affe1b679dc6a28c4016b06751d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-2d5a2056c38dfca85c6b845a71c1492f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-b8356ec6dc5a46b8531ca7d4d7d90741.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-2d5a2056c38dfca85c6b845a71c1492f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdown.js"></script>
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdownKatex.js"></script>
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdownHighlight.js"></script>
@@ -121,6 +121,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>
+div.callout-definition.callout {
+  border-left-color: #8A6D2B;
+}
+div.callout-definition.callout-style-default .callout-header {
+  background-color: rgba(138, 109, 43, 0.13);
+}
+div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f518' !important;
+  background-image: none;
+}
+div.callout-exercise.callout {
+  border-left-color: #1C5F2E;
+}
+div.callout-exercise.callout-style-default .callout-header {
+  background-color: rgba(28, 95, 46, 0.13);
+}
+div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f44b' !important;
+  background-image: none;
+}
 div.callout-activity.callout {
   border-left-color: #0055B7;
 }
@@ -147,34 +175,6 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
   font-weight: 900;
   font-style: normal;
   content: '\f542' !important;
-  background-image: none;
-}
-div.callout-exercise.callout {
-  border-left-color: #1C5F2E;
-}
-div.callout-exercise.callout-style-default .callout-header {
-  background-color: rgba(28, 95, 46, 0.13);
-}
-div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f44b' !important;
-  background-image: none;
-}
-div.callout-definition.callout {
-  border-left-color: #8A6D2B;
-}
-div.callout-definition.callout-style-default .callout-header {
-  background-color: rgba(138, 109, 43, 0.13);
-}
-div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f518' !important;
   background-image: none;
 }
 </style>
@@ -2026,6 +2026,60 @@ Co-Authored-By: Claude Opus 5.5 &lt;noreply@anthropic.com&gt;</code></pre>
       const started = performance.now();
       const tick = () => {
         if (paint() > 0 && performance.now() - started < GIVE_UP_AFTER_MS) {
+          requestAnimationFrame(tick);
+        }
+      };
+      setTimeout(tick, 0);
+    });
+  })();
+</script>
+<!--
+  The extension's own addition to `quizdown-theme.html`, which stays as
+  fetched from DSCI 521 (Q&A 22, 26).
+
+  quizdown paints a matching question's answer chips a fixed light green
+  (`#e8f5e9`) and lets them inherit the page's text colour: in dark mode,
+  near-white text on near-white. `quizdown-theme.html` themes every other part
+  of a matching question but not the chip itself, so this injects one more
+  rule into each quiz's shadow root, the same way, written against
+  `--mds-quiz-chip-*` from `ubc.scss`. Used and placed chips keep the looks
+  quizdown and `quizdown-theme.html` give them.
+-->
+<script>
+  (() => {
+    const CSS = `
+      .chip:not(.chip-used):not(.chip-placed) {
+        background-color: var(--mds-quiz-chip-bg) !important;
+        border-color: var(--mds-quiz-chip-border) !important;
+        color: var(--mds-quiz-fg) !important;
+      }
+    `;
+
+    // Returns the number of quizzes that do not have a shadow root yet.
+    const paint = () => {
+      let waiting = 0;
+      for (const host of document.querySelectorAll(".quizdown")) {
+        const root = host.shadowRoot;
+        if (!root) {
+          waiting += 1;
+          continue;
+        }
+        if (root.querySelector("style[data-ubc-quiz-chips]")) continue;
+        const style = document.createElement("style");
+        style.setAttribute("data-ubc-quiz-chips", "");
+        style.textContent = CSS;
+        root.appendChild(style);
+      }
+      return waiting;
+    };
+
+    // As in `quizdown-theme.html`: quizdown makes the shadow roots after
+    // `load`, so the first try waits a task, then retries for a few frames,
+    // and gives up after five seconds.
+    addEventListener("load", () => {
+      const started = performance.now();
+      const tick = () => {
+        if (paint() > 0 && performance.now() - started < 5000) {
           requestAnimationFrame(tick);
         }
       };

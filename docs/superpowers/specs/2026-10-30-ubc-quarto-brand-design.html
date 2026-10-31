@@ -50,9 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2ea1a707718cc9f3905c58b26d130924.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-2c1e4affe1b679dc6a28c4016b06751d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-36d7776b9e772b9894d17a497550ccff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-2c1e4affe1b679dc6a28c4016b06751d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-2d5a2056c38dfca85c6b845a71c1492f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-b8356ec6dc5a46b8531ca7d4d7d90741.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-2d5a2056c38dfca85c6b845a71c1492f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdown.js"></script>
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdownKatex.js"></script>
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdownHighlight.js"></script>
@@ -509,7 +509,7 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 <p>One extension, <code>ubc</code>, in <code>_extensions/ubc/</code> (Q&amp;A 18). It contributes two things:</p>
 <ul>
 <li><strong>The brand,</strong> through <code>metadata: project: brand: brand.yml</code>. Quarto merges it into any project with the extension installed, whatever its format, so colours, fonts and dark mode apply even to a plain <code>format: html</code> page.</li>
-<li><strong>A <code>ubc-html</code> format</strong> with the theme layers (<code>light: [brand, styles.scss, ubc.scss]</code>, <code>dark: [brand, styles.scss, styles-dark.scss, ubc.scss, ubc-dark.scss]</code>), the filters (<code>code-labels.lua</code>, <code>custom-callout</code>, <code>quizdown</code>), <code>include-after-body: quizdown-theme.html</code>, and the four custom callout types.</li>
+<li><strong>A <code>ubc-html</code> format</strong> with the theme layers (<code>light: [brand, styles.scss, ubc.scss]</code>, <code>dark: [brand, styles.scss, styles-dark.scss, ubc.scss, ubc-dark.scss]</code>), the filters (<code>code-labels.lua</code>, <code>custom-callout</code>, <code>quizdown</code>), <code>include-after-body: [quizdown-theme.html, ubc-quizdown.html]</code>, and the four custom callout types.</li>
 </ul>
 <p>A format cannot carry the brand on its own: its <code>brand</code> theme layer means the project’s brand, and 521’s <code>styles.scss</code> needs the <code>$brand-*</code> variables that only the brand defines. A prototype rendered this setup, before the extension had a layer of its own, on Quarto 1.11.6, for a book and for a website (Q&amp;A 18).</p>
 <table class="caption-top table">
@@ -537,9 +537,9 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 <td>nothing</td>
 </tr>
 <tr class="odd">
-<td><code>ubc.scss</code>, <code>ubc-dark.scss</code></td>
+<td><code>ubc.scss</code>, <code>ubc-dark.scss</code>, <code>ubc-quizdown.html</code></td>
 <td>none: the extension’s own layer, after 521’s files</td>
-<td>readable Mermaid subgraphs; the callout styling 521 leaves out, in Task 4 (Q&amp;A 26)</td>
+<td>readable Mermaid subgraphs and quiz answer chips; the callout styling 521 leaves out, in Task 4 (Q&amp;A 26)</td>
 </tr>
 <tr class="even">
 <td><code>code-labels.lua</code></td>
@@ -1079,6 +1079,60 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
       const started = performance.now();
       const tick = () => {
         if (paint() > 0 && performance.now() - started < GIVE_UP_AFTER_MS) {
+          requestAnimationFrame(tick);
+        }
+      };
+      setTimeout(tick, 0);
+    });
+  })();
+</script>
+<!--
+  The extension's own addition to `quizdown-theme.html`, which stays as
+  fetched from DSCI 521 (Q&A 22, 26).
+
+  quizdown paints a matching question's answer chips a fixed light green
+  (`#e8f5e9`) and lets them inherit the page's text colour: in dark mode,
+  near-white text on near-white. `quizdown-theme.html` themes every other part
+  of a matching question but not the chip itself, so this injects one more
+  rule into each quiz's shadow root, the same way, written against
+  `--mds-quiz-chip-*` from `ubc.scss`. Used and placed chips keep the looks
+  quizdown and `quizdown-theme.html` give them.
+-->
+<script>
+  (() => {
+    const CSS = `
+      .chip:not(.chip-used):not(.chip-placed) {
+        background-color: var(--mds-quiz-chip-bg) !important;
+        border-color: var(--mds-quiz-chip-border) !important;
+        color: var(--mds-quiz-fg) !important;
+      }
+    `;
+
+    // Returns the number of quizzes that do not have a shadow root yet.
+    const paint = () => {
+      let waiting = 0;
+      for (const host of document.querySelectorAll(".quizdown")) {
+        const root = host.shadowRoot;
+        if (!root) {
+          waiting += 1;
+          continue;
+        }
+        if (root.querySelector("style[data-ubc-quiz-chips]")) continue;
+        const style = document.createElement("style");
+        style.setAttribute("data-ubc-quiz-chips", "");
+        style.textContent = CSS;
+        root.appendChild(style);
+      }
+      return waiting;
+    };
+
+    // As in `quizdown-theme.html`: quizdown makes the shadow roots after
+    // `load`, so the first try waits a task, then retries for a few frames,
+    // and gives up after five seconds.
+    addEventListener("load", () => {
+      const started = performance.now();
+      const tick = () => {
+        if (paint() > 0 && performance.now() - started < 5000) {
           requestAnimationFrame(tick);
         }
       };
