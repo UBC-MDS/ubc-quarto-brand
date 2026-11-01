@@ -244,3 +244,10 @@ each claim was checked against the code before Dan saw it.
     ignores, because `quarto add` installs every extension a repository commits under
     `_extensions/` (a copy of this one with both beside it: "Found 3 extensions"); and the change
     goes into v0.1.0, which is not tagged yet.
+34. **The outside extensions' versions.** `quarto add` takes a repository's `main`, a tag or a
+    branch, never a commit, and neither extension has a tag at the version tested: custom-callout's
+    only tag, `0.0.1`, holds 0.0.0-dev.1 (`main` is 0.0.1-dev.3), and quizdown-mds's `v1.2.0`
+    is older than `main`'s 1.3.2. Asked as a scenario, Dan chose "A. Main now, tags later
+    (Recommended)": the instructions install from `main` and name the versions tested; once tags
+    exist ([Dan] tags `UBC-MDS/quarto-quizdown-mds-ext` `v1.3.2`, and the note to custom-callout's
+    author asks for a tag beside the licence), they install by tag.
