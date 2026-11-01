@@ -3,6 +3,7 @@
 ## v0.1.0 (2026-10-31)
 
 The first release: the DSCI 521 book's UBC brand as a Quarto extension, `ubc`.
+It needs Quarto 1.10 or later.
 
 - **The brand,** for any project with the extension installed: the UBC palette, Atkinson
   Hyperlegible fonts from Google Fonts, and light and dark modes, from DSCI 521's `_brand.yml`.

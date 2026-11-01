@@ -130,7 +130,7 @@ R needs `knitr`, `rmarkdown`, `reticulate` and `here` (renv); Python needs `matp
   or unresolved link; runs `tests/check-render.sh` over the rendered HTML (the brand's colours,
   both stylesheets, the labels, the callouts' icon font and colours, the counters, the quiz assets);
   runs lychee offline, actionlint and gitleaks.
-- **Rulings:** Ubuntu runner, Quarto 1.11.6 pinned and `quarto-required: ">=1.11.0"`,
+- **Rulings:** Ubuntu runner, Quarto 1.10.20 pinned and `quarto-required: ">=1.10.0"` (Q&A 32),
   Python 3.14, every third-party action pinned by commit SHA (Q&A 24).
 - **Releases:** a commit on `main` bumps `version:` in `_extension.yml` and adds a dated
   `CHANGELOG.md` entry; Dan tags `vX.Y.Z` on it (Q&A 17, 29).
@@ -191,6 +191,7 @@ R needs `knitr`, `rmarkdown`, `reticulate` and `here` (renv); Python needs `matp
 - 2026-10-30: the extension completes the callout styling in its own layer (Q&A 26, `779c67f`);
   a split licence, as in the reproducible book (Q&A 27, `4e23584`).
 - 2026-10-31: the docs under CC BY 4.0, matching the reproducible book's `LICENSE.md` (Q&A 30, `6a43a11`).
+- 2026-10-31: the Quarto floor lowered to the stable 1.10.0, CI pinned to 1.10.20 (Q&A 32, `00b98ea`).
 - 2026-10-30: approved for a one-shot build (Q&A 28); work goes straight to `main`, review happens in the adopting book (Q&A 29).
 - 2026-10-30: the conventions page as-is, provenance docs, design sections 1 to 3
   (`00a0f5b`, `0489284`, `fd8ff72`, `70fa211`, `6447ee8`).
