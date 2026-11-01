@@ -165,5 +165,11 @@ for e in coatless-quarto/custom-callout UBC-MDS/quizdown; do
 done
 expect "provenance: custom-callout's repository" 'github\.com/coatless-quarto/custom-callout'           "$PROV"
 expect "provenance: quizdown's repository"       'github\.com/UBC-MDS/quarto-quizdown-mds-ext'          "$PROV"
+# Q&A 35: CI runs their Lua filters with write access, so `make deps` fetches each at a pinned commit.
+for v in CALLOUT_SHA QUIZDOWN_SHA; do
+  expect "make deps pins $v"            "^$v := [0-9a-f]{40}$"                                        Makefile
+done
+if grep -q -E 'quarto add (coatless-quarto|UBC-MDS)/' Makefile; then echo "FAIL make deps installs from an unpinned main"; fail=1
+else echo "ok   make deps installs nothing unpinned"; fi
 
 exit $fail

@@ -8,20 +8,31 @@ setup: ## Install the Python (uv) and R (renv) packages for the executed cells
 	uv sync
 	Rscript -e 'renv::restore(prompt = FALSE)'
 
-# custom-callout and quizdown, which the brand styles but does not ship (Q&A 33, 34):
-# installed from main into folders git ignores, as a book installs them.
+# custom-callout and quizdown, which the brand styles but does not ship (Q&A 33), in the
+# folders `quarto add <owner>/<repo>` uses, which git ignores. CI runs their Lua filters
+# with write access, so each is fetched at a pinned commit, like the actions' SHAs (Q&A 35):
+# `quarto add` cannot take a commit. Moving a pin is a reviewed commit; a changed pin
+# re-fetches, because these targets depend on the Makefile.
+CALLOUT_SHA := 810a6472b16f7826812a912a70f6e4a0bf373887
+QUIZDOWN_SHA := aff12fa75f33dc4cabaf4c998412209ce4fd6026
 CALLOUT := _extensions/coatless-quarto/custom-callout/_extension.yml
 QUIZDOWN := _extensions/UBC-MDS/quizdown/_extension.yml
 
-deps: ## Re-install custom-callout and quizdown from main (the brand styles them but does not ship them)
+deps: ## Re-install custom-callout and quizdown at their pinned commits (the brand styles them but does not ship them)
 	rm -rf _extensions/coatless-quarto _extensions/UBC-MDS/quizdown
 	$(MAKE) $(CALLOUT) $(QUIZDOWN)
 
-$(CALLOUT):
-	quarto add coatless-quarto/custom-callout --no-prompt
+$(CALLOUT): Makefile
+	rm -rf $(@D) && mkdir -p $(@D)
+	curl -sSfL https://github.com/coatless-quarto/custom-callout/archive/$(CALLOUT_SHA).tar.gz \
+	  | tar -xzf - -C $(@D) --strip-components=3 custom-callout-$(CALLOUT_SHA)/_extensions/custom-callout
+	touch $@
 
-$(QUIZDOWN):
-	quarto add UBC-MDS/quarto-quizdown-mds-ext --no-prompt
+$(QUIZDOWN): Makefile
+	rm -rf $(@D) && mkdir -p $(@D)
+	curl -sSfL https://github.com/UBC-MDS/quarto-quizdown-mds-ext/archive/$(QUIZDOWN_SHA).tar.gz \
+	  | tar -xzf - -C $(@D) --strip-components=3 quarto-quizdown-mds-ext-$(QUIZDOWN_SHA)/_extensions/quizdown
+	touch $@
 
 hooks: ## Install the git hooks (none exist yet)
 	@echo "No git hooks are installed yet: plan-driven-development's hooks are not built."

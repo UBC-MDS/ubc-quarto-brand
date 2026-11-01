@@ -251,3 +251,12 @@ each claim was checked against the code before Dan saw it.
     (Recommended)": the instructions install from `main` and name the versions tested; once tags
     exist ([Dan] tags `UBC-MDS/quarto-quizdown-mds-ext` `v1.3.2`, and the note to custom-callout's
     author asks for a tag beside the licence), they install by tag.
+35. **Pinning the outside extensions in CI.** Decided without Dan, after an automated security
+    review of `ae0dba3`: `make deps` installed both from `main`, and CI runs their Lua filters,
+    which can run any command, in jobs that can write to the repository. Item 24 pins every
+    third-party action with write access by SHA for that reason, so `make deps` fetches each at a
+    pinned commit: custom-callout `810a6472b16f`, quizdown-mds `aff12fa75f33`, the commits whose
+    files match the copies this extension shipped before, and still `main` of each. `quarto add`
+    cannot take a commit (an archive URL fails with "Failed to unzip extension"), so curl and tar
+    fetch it into the folders `quarto add <owner>/<repo>` uses; the files are identical. Moving a
+    pin is a reviewed commit, like an action's SHA. Books still install from `main` (item 34).

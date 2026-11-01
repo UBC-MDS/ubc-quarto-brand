@@ -174,6 +174,8 @@ R needs `knitr`, `rmarkdown`, `reticulate` and `here` (renv); Python needs `matp
 
 - **custom-callout and quizdown come from `main`:** neither has a tag at the version tested,
   so a change there can break a book; the instructions move to tags once they exist (Q&A 34).
+  This repository's CI runs their Lua filters with write access, so `make deps` fetches each at
+  a pinned commit instead, and moving a pin is a reviewed commit (Q&A 35).
 - **A missing `filters:` line fails silently:** custom callouts render as plain text, quizzes as
   code blocks, with no warning; the how-to says so (Q&A 33).
 - **Quizdown loads on every page** of a book that lists it, quiz or not, as in DSCI 521 (Q&A 12);
@@ -201,7 +203,7 @@ R needs `knitr`, `rmarkdown`, `reticulate` and `here` (renv); Python needs `matp
 - 2026-10-31: the docs under CC BY 4.0, matching the reproducible book's `LICENSE.md` (Q&A 30, `6a43a11`).
 - 2026-10-31: the Quarto floor lowered to the stable 1.10.0, CI pinned to 1.10.20 (Q&A 32, `00b98ea`).
 - 2026-11-01: custom-callout and quizdown installed by the book, not shipped; from `main` until
-  tagged (Q&A 33, 34, `1257aa1`, `8f77d87`).
+  tagged (Q&A 33, 34, `1257aa1`, `8f77d87`); this repository's CI pins both by commit (Q&A 35).
 - 2026-10-30: approved for a one-shot build (Q&A 28); work goes straight to `main`, review happens in the adopting book (Q&A 29).
 - 2026-10-30: the conventions page as-is, provenance docs, design sections 1 to 3
   (`00a0f5b`, `0489284`, `fd8ff72`, `70fa211`, `6447ee8`).
