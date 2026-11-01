@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-f889043e3c54bf7efdfb7d1d9535202f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-90eb7e7b219787e124a388c93db5073b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-feac72844ee100f099b19e233421bdd2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-90eb7e7b219787e124a388c93db5073b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-81bf03a3967731642e7eb284a8c09976.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-c42c1422013b57fbf50f92504afcb421.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-81bf03a3967731642e7eb284a8c09976.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdown.js"></script>
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdownKatex.js"></script>
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdownHighlight.js"></script>
@@ -120,20 +120,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>
-div.callout-definition.callout {
-  border-left-color: #8A6D2B;
-}
-div.callout-definition.callout-style-default .callout-header {
-  background-color: rgba(138, 109, 43, 0.13);
-}
-div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f518' !important;
-  background-image: none;
-}
 div.callout-activity.callout {
   border-left-color: #0055B7;
 }
@@ -148,18 +134,18 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
   content: '\e53d' !important;
   background-image: none;
 }
-div.callout-relevance-project.callout {
-  border-left-color: #0077C8;
+div.callout-definition.callout {
+  border-left-color: #8A6D2B;
 }
-div.callout-relevance-project.callout-style-default .callout-header {
-  background-color: rgba(0, 119, 200, 0.13);
+div.callout-definition.callout-style-default .callout-header {
+  background-color: rgba(138, 109, 43, 0.13);
 }
-div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
+div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\f542' !important;
+  content: '\f518' !important;
   background-image: none;
 }
 div.callout-exercise.callout {
@@ -174,6 +160,20 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
   font-weight: 900;
   font-style: normal;
   content: '\f44b' !important;
+  background-image: none;
+}
+div.callout-relevance-project.callout {
+  border-left-color: #0077C8;
+}
+div.callout-relevance-project.callout-style-default .callout-header {
+  background-color: rgba(0, 119, 200, 0.13);
+}
+div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f542' !important;
   background-image: none;
 }
 </style>
@@ -522,7 +522,7 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 </blockquote>
 <p><strong>Goal:</strong> A Quarto extension, <code>ubc</code>, that packages the DSCI 521 book’s UBC brand as a <code>ubc-html</code> format, with a test book at the repository root that renders every part of it and deploys as the demo.</p>
 <p><strong>Architecture:</strong> <code>_extensions/ubc/</code> contributes the brand through <code>metadata: project: brand:</code> and a <code>ubc-html</code> format (theme layers, the code-labels filter, and the settings and styling for custom-callout and quizdown, which a book installs itself: Q&amp;A 33). Its files are fetched from DSCI 521 at one pinned commit by <code>scripts/fetch-521.sh</code>. The repository root is a Quarto book using that format; <code>tests/website/</code> is a one-page website using it from a GitHub-style install folder. <code>tests/check-render.sh</code> asserts on the rendered HTML and CSS.</p>
-<p><strong>Tech Stack:</strong> Quarto 1.10.20 (Q&amp;A 32), brand.yml, SCSS, Lua filters, custom-callout 0.0.1-dev.3 and quizdown 1.3.2, installed from <code>main</code> by <code>make deps</code> (Q&amp;A 33, 34); R 4.6.2 with renv (knitr, rmarkdown, reticulate, here); Python 3.14 with uv (matplotlib); GitHub Actions with pr-preview-action, github-pages-deploy-action and lychee-action; gitleaks 8.30.1; actionlint.</p>
+<p><strong>Tech Stack:</strong> Quarto 1.10.20 (Q&amp;A 32), brand.yml, SCSS, Lua filters, custom-callout 0.0.1-dev.3 and quizdown 1.3.2, fetched at pinned commits by <code>make deps</code> (Q&amp;A 33, 35); R 4.6.2 with renv (knitr, rmarkdown, reticulate, here); Python 3.14 with uv (matplotlib); GitHub Actions with pr-preview-action, github-pages-deploy-action and lychee-action; gitleaks 8.30.1; actionlint.</p>
 <p><strong>Spec:</strong> <code>docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md</code></p>
 <p><strong>Now:</strong> Phase end, step 6: the live site is checked; [Dan] tags <code>v0.1.0</code>, then the reproducible book adopts it.</p>
 <section id="global-constraints" class="level2" data-number="9.1">
@@ -531,7 +531,7 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 <li>DSCI 521 source: <code>UBC-MDS/DSCI_521_platforms-dsci_book</code> at <code>991bae89cba904ae2dd0753338c306333eb5ea2e</code> (<code>991bae89cba9</code>).</li>
 <li>Extension folder <code>_extensions/ubc/</code>; format <code>ubc-html</code>; <code>version: 0.1.0</code>; <code>quarto-required: "&gt;=1.10.0"</code> (Q&amp;A 32).</li>
 <li>CI: <code>ubuntu-latest</code>, Quarto <code>1.10.20</code> (Q&amp;A 32), R <code>4.6.2</code>, Python <code>3.14</code> (<code>.python-version</code>).</li>
-<li>custom-callout and quizdown are never committed: <code>make deps</code> installs them from <code>main</code> into folders git ignores, because <code>quarto add</code> ships every extension a repository commits (Q&amp;A 33, 34).</li>
+<li>custom-callout and quizdown are never committed: <code>make deps</code> fetches them at pinned commits (custom-callout <code>810a6472b16f7826812a912a70f6e4a0bf373887</code>, quizdown <code>aff12fa75f33dc4cabaf4c998412209ce4fd6026</code>) into folders git ignores, because <code>quarto add</code> ships every extension a repository commits (Q&amp;A 33, 35).</li>
 <li>Callouts (literal hex): activity <code>fa-person-chalkboard</code> <code>#0055B7</code>; exercise <code>fa-dumbbell</code> <code>#1C5F2E</code>; definition <code>fa-book-open</code> <code>#8A6D2B</code>; relevance-project, titled “Relevance to course project”, <code>fa-diagram-project</code> <code>#0077C8</code>.</li>
 <li>Third-party actions pinned by SHA: <code>astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2</code> (v10.3.3), <code>rossjrw/pr-preview-action@873417d2df72380da1f3978378fb58560bcde976</code> (v1.8.2), <code>JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445</code> (v4.9.0), <code>lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8</code> (v2.9.0). GitHub’s, Quarto’s and r-lib’s own actions stay on major tags.</li>
 <li>The agent commits and pushes straight to <code>main</code> (Q&amp;A 29) after a passing <code>make leaks</code>; it never tags (Q&amp;A 17).</li>
