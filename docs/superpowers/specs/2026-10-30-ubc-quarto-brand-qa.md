@@ -223,3 +223,24 @@ each claim was checked against the code before Dan saw it.
     on 1.10.20 passed all 113 checks without a warning. Asked before the tag, Dan chose
     "A. Lower to >=1.10.0 (Recommended)": `quarto-required: ">=1.10.0"`, and CI pins 1.10.20
     so it tests the floor.
+33. **The outside extensions, installed by the user.** Asked why he should ask custom-callout's
+    author for a licence, Dan asked why the extension could not install custom-callout as a
+    dependency. Quarto has no dependencies: `_extension.yml` takes only `title`, `author`,
+    `version`, `quarto-required` and `contributes`, and a filter named in an extension's format
+    resolves only inside that extension's own folder (`Failed to resolve referenced filter
+    custom-callout - path does not exist`, even with custom-callout installed in the project).
+    Dan: "let's set up in the instructions on if we want to install the ubc-quarto-brand
+    extension that we tell the user that thye need to install the other extensions first. i
+    just want the ubc-quarto-brand provide mostly the css/scss that fixes and modfiies the
+    existing extension pieces. let's not ship the other extensions if we can help it. unless
+    this is the only way". It is not the only way, so the extension embeds neither
+    custom-callout nor quizdown (from `UBC-MDS/quarto-quizdown-mds-ext`, the copy DSCI 521
+    uses); it keeps their configuration and styling (the callout types, `quizdown-theme.html`,
+    `ubc-quizdown.html`, the quiz colours). This replaces item 12's embedded quizdown, and moves
+    item 27's licence gap out of this repository. How a project switches them on, asked as a
+    scenario: Dan chose "A. filters: line (Recommended)": the project installs them first and
+    lists them under `filters:` in its `_quarto.yml`, so each project takes only what it uses.
+    Decided without Dan: the test book installs both at build time (`make deps`) into folders git
+    ignores, because `quarto add` installs every extension a repository commits under
+    `_extensions/` (a copy of this one with both beside it: "Found 3 extensions"); and the change
+    goes into v0.1.0, which is not tagged yet.
