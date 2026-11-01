@@ -39,3 +39,9 @@ book:
         - AGENTS.md
 
 format: ubc-html
+
+# The brand styles these two but does not ship them (Q&A 33): `make deps`
+# installs them, as the "Using it in a book" page tells a book to.
+filters:
+  - custom-callout
+  - quizdown

@@ -36,10 +36,5 @@ Attribution 4.0 International licence
 ## Not covered
 
 - The MDS logo, `_extensions/ubc/MDSlogo.png`, is UBC's mark and is not licensed here.
-- Vendored code keeps its own terms:
-  - quizdown, under MIT: its `LICENSE` is beside its copy in `_extensions/ubc/_extensions/quizdown/`.
-  - Font Awesome Free's solid font, `fa-solid-900.woff2`, by Fonticons, Inc.
-    (<https://fontawesome.com>), under the SIL Open Font License 1.1:
-    Font Awesome's `LICENSE.txt` is beside the font, in
-    `_extensions/ubc/_extensions/coatless-quarto/custom-callout/assets/webfonts/`.
-  - custom-callout, which publishes no licence yet.
+- custom-callout and quizdown are not part of this repository (Q&A 33): a book installs
+  them from their own repositories, under their own terms.

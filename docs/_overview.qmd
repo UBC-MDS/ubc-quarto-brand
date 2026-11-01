@@ -2,14 +2,14 @@
 flowchart LR
   src["DSCI 521 book<br/>at 991bae89cba9"] -->|"scripts/fetch-521.sh"| brand
   src -->|"scripts/fetch-521.sh"| fmt
-  src -->|"scripts/fetch-521.sh"| emb
   subgraph ext["_extensions/ubc/"]
     brand["brand.yml<br/>(the project's brand)"]
     fmt["ubc-html format<br/>styles.scss, styles-dark.scss,<br/>code-labels.lua, quizdown-theme.html"]
-    emb["embedded extensions<br/>custom-callout, quizdown"]
     layer["ubc.scss, ubc-dark.scss, ubc-quizdown.html<br/>the extension's own layer"]
   end
   ext --> book["the test book at the root<br/>Home and the project docs"]
+  deps["custom-callout, quizdown<br/>from their own repositories<br/>(installed, never shipped)"] -->|"make deps, filters:"| book
+  deps -->|"make test copies them"| site
   conv["Conventions"] --> book
   gallery["Callouts, Using it in a book"] --> book
   prov["Where it comes from"] --> book

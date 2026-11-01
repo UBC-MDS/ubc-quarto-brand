@@ -16,9 +16,13 @@ renders every part of the brand.
 
 ## Use it in a book
 
+The extension styles two other extensions but does not ship them, so install those first:
+custom-callout, for the callout types, and quizdown, for quizzes (only if your book has them).
 In your Quarto book or website project:
 
 ```bash
+quarto add coatless-quarto/custom-callout
+quarto add UBC-MDS/quarto-quizdown-mds-ext
 quarto add UBC-MDS/ubc-quarto-brand@v0.1.0
 ```
 
@@ -26,10 +30,14 @@ then, in its `_quarto.yml`:
 
 ```yaml
 format: ubc-html
+
+filters:
+  - custom-callout
+  - quizdown
 ```
 
-The demo book's "Using it in a book" page covers the MDS logo, adding your own styles,
-and adding callout types.
+The demo book's "Using it in a book" page covers the versions tested, the MDS logo,
+adding your own styles, and adding callout types.
 
 ## Work on it
 

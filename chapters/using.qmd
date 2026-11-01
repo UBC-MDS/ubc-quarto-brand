@@ -4,14 +4,23 @@ title: Using it in a book
 
 ## Install it
 
-In your Quarto book or website project, install a tagged release:
+The extension styles two other extensions but does not ship them:
+[custom-callout](https://github.com/coatless-quarto/custom-callout), which makes the callout types,
+and [quizdown](https://github.com/UBC-MDS/quarto-quizdown-mds-ext), UBC-MDS's version, which makes the quizzes.
+In your Quarto book or website project, install them first
+(quizdown only if your book has quizzes), then a tagged release of the extension:
 
 ```bash
+quarto add coatless-quarto/custom-callout
+quarto add UBC-MDS/quarto-quizdown-mds-ext
 quarto add UBC-MDS/ubc-quarto-brand@v0.1.0
 ```
 
-Quarto copies the extension into `_extensions/UBC-MDS/ubc/`.
-Commit that folder: your book keeps exactly this version until you update it.
+Quarto copies each into `_extensions/`, the extension into `_extensions/UBC-MDS/ubc/`.
+Commit that folder: your book keeps exactly these versions until you update them.
+The extension is tested with custom-callout 0.0.1-dev.3 and quizdown 1.3.2.
+Neither has a release tag at that version yet, so the first two commands install
+the newest version on each one's `main`.
 The extension needs Quarto 1.10 or later.
 
 ## Use the format
@@ -20,9 +29,16 @@ In your `_quarto.yml`:
 
 ```yaml
 format: ubc-html
+
+filters:
+  - custom-callout
+  - quizdown
 ```
 
-That one line brings the theme, the listing labels, the callouts and the quizzes.
+`format: ubc-html` brings the theme, the listing labels, and the brand's callout types and quiz colours.
+The two filters switch on the extensions you installed; leave out `quizdown` if you did not install it.
+Without `custom-callout` there, the render still succeeds, with no warning,
+but each `.exercise`, `.activity` or other custom callout comes out as plain text.
 The brand's colours, fonts and dark-mode toggle reach every HTML page as soon as the extension
 is installed, even one with a plain `format: html`.
 The rest needs `ubc-html`, readable tab titles in dark mode included:
@@ -36,6 +52,8 @@ quarto update UBC-MDS/ubc-quarto-brand@v0.2.0
 
 Do it in a pull request of its own, so the preview shows what changed before you merge.
 The [changelog](../CHANGELOG.md) lists what each release changed.
+`quarto update coatless-quarto/custom-callout` and `quarto update UBC-MDS/quarto-quizdown-mds-ext`
+take the newest version of the other two.
 
 ## Turn on the MDS logo
 
@@ -156,3 +174,5 @@ To change how things look, add a theme layer instead.
 Executed R and Python cells need nothing from the extension.
 Quizzes are written in a `quizdown` code block;
 the [conventions page](book-conventions.qmd) shows each kind.
+They need quizdown installed and under `filters:` (see *Install it*);
+without it, a quiz renders as a plain code block.

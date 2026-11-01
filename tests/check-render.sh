@@ -140,15 +140,30 @@ PROV="$BOOK/chapters/provenance.html"
 exists "provenance page"               "$PROV"
 expect "pinned to 521's commit"        '991bae89cba904ae2dd0753338c306333eb5ea2e'                    "$PROV"
 for f in _brand.yml styles.scss styles-dark.scss code-labels.lua quizdown-theme.html MDSlogo.png \
-         _extensions/coatless-quarto/custom-callout _extensions/quizdown lectures/0-conventions.qmd lectures/img/cheers.png; do
+         lectures/0-conventions.qmd lectures/img/cheers.png; do
   expect "links 521's $f"              "DSCI_521_platforms-dsci_book/(blob|tree)/991bae89cba904ae2dd0753338c306333eb5ea2e/$f" "$PROV"
 done
 expect "names the extension's own layer" 'ubc-dark\.scss'                                             "$PROV"
 expect "says where 521's settings went"  'keep DSCI 521.{1,3}s comments'                                   "$PROV"
-expect "links quizdown's licence"       'parmsam/quarto-quizdown/blob/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE' "$PROV"
 exists "the licence"                    LICENSE.md
-exists "quizdown's licence beside it"   _extensions/ubc/_extensions/quizdown/LICENSE
-exists "Font Awesome's licence beside its font" _extensions/ubc/_extensions/coatless-quarto/custom-callout/assets/webfonts/LICENSE.txt
-expect "links Font Awesome's licence"   'FortAwesome/Font-Awesome/blob/14c65a3747d0f3b751f15831fc719236aea8729d/LICENSE\.txt' "$PROV"
+
+# --- Q&A 33, 34: custom-callout and quizdown are installed by the project, never shipped (S21)
+# `quarto add` installs every extension a repository commits, so only the brand's may be committed.
+shipped=$(git ls-files '*_extension.yml' | tr '\n' ' ')
+if [ "$shipped" = "_extensions/ubc/_extension.yml " ]; then echo "ok   ships only its own extension"
+else echo "FAIL ships only its own extension (committed: $shipped)"; fail=1; fi
+USING="$BOOK/chapters/using.html"
+for page in "$USING" "$BOOK/index.html"; do
+  expect "installs custom-callout first: $page" 'quarto(</span>)? add coatless-quarto/custom-callout'   "$page"
+  expect "installs quizdown first: $page"       'quarto(</span>)? add UBC-MDS/quarto-quizdown-mds-ext' "$page"
+  expect_flat "lists both under filters: $page" 'filters<.{0,250}custom-callout.{0,250}quizdown'      "$page"
+done
+# The how-to names the versions `make deps` installed, so it says what the brand was tested with.
+for e in coatless-quarto/custom-callout UBC-MDS/quizdown; do
+  v=$(sed -n 's/^version: *//p' "_extensions/$e/_extension.yml" 2>/dev/null || true)
+  expect "names the tested $e, ${v:-not installed}" "${v:-not installed}" "$USING"
+done
+expect "provenance: custom-callout's repository" 'github\.com/coatless-quarto/custom-callout'           "$PROV"
+expect "provenance: quizdown's repository"       'github\.com/UBC-MDS/quarto-quizdown-mds-ext'          "$PROV"
 
 exit $fail

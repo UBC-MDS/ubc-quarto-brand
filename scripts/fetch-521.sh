@@ -19,12 +19,8 @@ fetch styles-dark.scss    "$EXT/styles-dark.scss"
 fetch code-labels.lua     "$EXT/code-labels.lua"
 fetch quizdown-theme.html "$EXT/quizdown-theme.html"
 fetch MDSlogo.png         "$EXT/MDSlogo.png"
-for f in _extension.yml customcallout.lua fa.lua assets/css/fontawesome.css assets/webfonts/fa-solid-900.woff2; do
-  fetch "_extensions/coatless-quarto/custom-callout/$f" "$EXT/_extensions/coatless-quarto/custom-callout/$f"
-done
-for f in _extension.yml quizdown.lua assets/quizdown-init.js assets/quizdown.js assets/quizdownHighlight.js assets/quizdownKatex.js; do
-  fetch "_extensions/quizdown/$f" "$EXT/_extensions/quizdown/$f"
-done
+# DSCI 521's copies of custom-callout and quizdown are not fetched: a book
+# installs both from their own repositories (Q&A 33).
 fetch lectures/0-conventions.qmd chapters/book-conventions.qmd
 fetch lectures/img/cheers.png    chapters/img/cheers.png
 

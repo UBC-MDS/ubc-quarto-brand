@@ -11,7 +11,8 @@ each decision below cites its item there as (Q&A N).
 A Quarto extension that gives any UBC course book the brand DSCI 521's book was built with,
 so books stop copying styles from one another (Q&A 1, 18).
 A book adopts it with `quarto add UBC-MDS/ubc-quarto-brand@vX.Y.Z` and one line,
-`format: ubc-html`.
+`format: ubc-html`, after installing the two extensions it styles, custom-callout and quizdown,
+and listing them under `filters:` (Q&A 33).
 The repository also holds a test book that renders every part of the brand,
 deployed as the live demo with the project docs (Q&A 3, 10).
 
@@ -41,8 +42,10 @@ One extension, `ubc`, in `_extensions/ubc/` (Q&A 18). It contributes two things:
 - **A `ubc-html` format** with the theme layers
   (`light: [brand, styles.scss, ubc.scss]`,
   `dark: [brand, styles.scss, styles-dark.scss, ubc.scss, ubc-dark.scss]`),
-  the filters (`code-labels.lua`, `custom-callout`, `quizdown`),
+  the filter `code-labels.lua`,
   `include-after-body: [quizdown-theme.html, ubc-quizdown.html]`, and the four custom callout types.
+  It ships neither custom-callout nor quizdown: a filter an extension names resolves only inside
+  its own folder, so a book installs both and lists them under its own `filters:` (Q&A 33).
 
 A format cannot carry the brand on its own: its `brand` theme layer means the project's brand,
 and 521's `styles.scss` needs the `$brand-*` variables that only the brand defines.
@@ -56,8 +59,7 @@ A prototype rendered this setup, before the extension had a layer of its own, on
 | `code-labels.lua` | the same name | nothing (Q&A 9) |
 | `quizdown-theme.html` | the same name | nothing (Q&A 12) |
 | `MDSlogo.png` | the same name | applied only when a book opts in (Q&A 16) |
-| `_extensions/coatless-quarto/custom-callout/` | its vendored 0.0.1-dev.3 | embedded |
-| `_extensions/quizdown/` | its vendored copy | embedded (Q&A 12) |
+| none | its copies of custom-callout (0.0.1-dev.3) and quizdown (1.3.2) | not shipped: a book installs both from their own repositories (Q&A 33, 34) |
 | `_extension.yml`'s `custom-callout:` | `_quarto.yml`'s two types | plus definition and relevance-project (Q&A 8, 19) |
 
 The callout types, with literal hex because the extension's YAML cannot read Sass (Q&A 8):
@@ -112,7 +114,8 @@ next to `_extensions/ubc/` (Q&A 22, 23):
 `tests/website/` is a one-page website project, installed the way a GitHub install leaves it:
 the MDS logo, its own theme layer (a Sass default and callout rules), its own `lab` callout and a
 recoloured `activity`, a `bash` listing and a quiz. `make test` copies the extension into it,
-git-ignored, and renders it after the book, locally and in CI (Q&A 10, 22).
+with the custom-callout and quizdown `make deps` installed, all git-ignored, and renders it after
+the book, locally and in CI (Q&A 10, 22, 33).
 
 Executed cells run through knitr, with Python through reticulate from the uv venv, as in 521.
 R needs `knitr`, `rmarkdown`, `reticulate` and `here` (renv); Python needs `matplotlib` (uv).
@@ -155,6 +158,7 @@ R needs `knitr`, `rmarkdown`, `reticulate` and `here` (renv); Python needs `matp
 | S13 | a PR is opened, updated, merged mid-build or closed | a preview link is commented; it updates; the merge leaves no stray preview; closing removes it | Task 1 | `pr.yml` is the book's proven workflow plus per-PR cancel; proven when a PR is first opened here (Q&A 29) | built |
 | S14 | a push lands on `main` | the demo deploys to `gh-pages`, keeping `pr-preview/` and `.nojekyll` | Task 1 | every publish run on `main`; keeping `pr-preview/` is proven once a preview exists | built |
 | S15 | a website project (521's shape) uses the extension | it renders with the same brand and components | Task 5 | `tests/website/` in `make check` | built |
+| S21 | a book installs the extension | it gets only `_extensions/ubc/`; the how-to and the README say to install custom-callout and quizdown first, list them under `filters:`, and name the versions tested | Phase end (Q&A 33, 34) | `tests/check-render.sh` | built |
 
 ### Later
 
@@ -168,9 +172,12 @@ R needs `knitr`, `rmarkdown`, `reticulate` and `here` (renv); Python needs `matp
 
 ## Open items and risks
 
-- **Vendored dependencies:** custom-callout (0.0.1-dev.3) and quizdown are copies;
-  updating them is a manual PR.
-- **Quizdown loads on every page,** quiz or not, as in DSCI 521 (Q&A 12).
+- **custom-callout and quizdown come from `main`:** neither has a tag at the version tested,
+  so a change there can break a book; the instructions move to tags once they exist (Q&A 34).
+- **A missing `filters:` line fails silently:** custom callouts render as plain text, quizzes as
+  code blocks, with no warning; the how-to says so (Q&A 33).
+- **Quizdown loads on every page** of a book that lists it, quiz or not, as in DSCI 521 (Q&A 12);
+  a book without quizzes leaves it out (Q&A 33).
 - **A partial brand override isn't possible** (see *What a book can change*);
   the how-to page says so.
 - **Fork PRs get no preview:** their token can't write to the repository, so their run fails
@@ -180,7 +187,8 @@ R needs `knitr`, `rmarkdown`, `reticulate` and `here` (renv); Python needs `matp
 - **plan-driven-development's hooks and leak check aren't built yet:**
   every push to `main` follows `make leaks` (Q&A 29).
 - **Licence:** MIT for code, CC BY 4.0 for docs, the MDS logo excluded (Q&A 27, 30).
-  custom-callout publishes no licence: [Dan] asks its author for one.
+  The extension ships no outside code (Q&A 33); custom-callout publishes no licence, which
+  every book committing a copy inherits: [Dan] asks its author for one, and a tag (Q&A 34).
 
 ## Revisions
 
@@ -192,6 +200,8 @@ R needs `knitr`, `rmarkdown`, `reticulate` and `here` (renv); Python needs `matp
   a split licence, as in the reproducible book (Q&A 27, `4e23584`).
 - 2026-10-31: the docs under CC BY 4.0, matching the reproducible book's `LICENSE.md` (Q&A 30, `6a43a11`).
 - 2026-10-31: the Quarto floor lowered to the stable 1.10.0, CI pinned to 1.10.20 (Q&A 32, `00b98ea`).
+- 2026-11-01: custom-callout and quizdown installed by the book, not shipped; from `main` until
+  tagged (Q&A 33, 34, `1257aa1`, `8f77d87`).
 - 2026-10-30: approved for a one-shot build (Q&A 28); work goes straight to `main`, review happens in the adopting book (Q&A 29).
 - 2026-10-30: the conventions page as-is, provenance docs, design sections 1 to 3
   (`00a0f5b`, `0489284`, `fd8ff72`, `70fa211`, `6447ee8`).

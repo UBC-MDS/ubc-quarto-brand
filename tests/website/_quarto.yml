@@ -1,6 +1,7 @@
 # A one-page website (DSCI 521's project type) using the extension the way a
 # GitHub install leaves it, with everything a book may add: the MDS logo, its
-# own theme layer and its own callout type. `make test` copies the extension in.
+# own theme layer and its own callout type. `make test` copies the extension in,
+# with the two it styles, which a book installs itself (Q&A 33).
 project:
   type: website
 
@@ -11,6 +12,10 @@ website:
     logo-alt: "MDS logo"
     contents:
       - index.qmd
+
+filters:
+  - custom-callout
+  - quizdown
 
 format:
   ubc-html:

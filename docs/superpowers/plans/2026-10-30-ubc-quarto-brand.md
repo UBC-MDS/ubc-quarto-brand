@@ -4,9 +4,9 @@
 
 **Goal:** A Quarto extension, `ubc`, that packages the DSCI 521 book's UBC brand as a `ubc-html` format, with a test book at the repository root that renders every part of it and deploys as the demo.
 
-**Architecture:** `_extensions/ubc/` contributes the brand through `metadata: project: brand:` and a `ubc-html` format (theme layers, the code-labels filter, embedded custom-callout and quizdown). Its files are fetched from DSCI 521 at one pinned commit by `scripts/fetch-521.sh`. The repository root is a Quarto book using that format; `tests/website/` is a one-page website using it from a GitHub-style install folder. `tests/check-render.sh` asserts on the rendered HTML and CSS.
+**Architecture:** `_extensions/ubc/` contributes the brand through `metadata: project: brand:` and a `ubc-html` format (theme layers, the code-labels filter, and the settings and styling for custom-callout and quizdown, which a book installs itself: Q&A 33). Its files are fetched from DSCI 521 at one pinned commit by `scripts/fetch-521.sh`. The repository root is a Quarto book using that format; `tests/website/` is a one-page website using it from a GitHub-style install folder. `tests/check-render.sh` asserts on the rendered HTML and CSS.
 
-**Tech Stack:** Quarto 1.10.20 (Q&A 32), brand.yml, SCSS, Lua filters, custom-callout 0.0.1-dev.3, quizdown 1.3.2; R 4.6.2 with renv (knitr, rmarkdown, reticulate, here); Python 3.14 with uv (matplotlib); GitHub Actions with pr-preview-action, github-pages-deploy-action and lychee-action; gitleaks 8.30.1; actionlint.
+**Tech Stack:** Quarto 1.10.20 (Q&A 32), brand.yml, SCSS, Lua filters, custom-callout 0.0.1-dev.3 and quizdown 1.3.2, installed from `main` by `make deps` (Q&A 33, 34); R 4.6.2 with renv (knitr, rmarkdown, reticulate, here); Python 3.14 with uv (matplotlib); GitHub Actions with pr-preview-action, github-pages-deploy-action and lychee-action; gitleaks 8.30.1; actionlint.
 
 **Spec:** `docs/superpowers/specs/2026-10-30-ubc-quarto-brand-design.md`
 
@@ -17,6 +17,7 @@
 - DSCI 521 source: `UBC-MDS/DSCI_521_platforms-dsci_book` at `991bae89cba904ae2dd0753338c306333eb5ea2e` (`991bae89cba9`).
 - Extension folder `_extensions/ubc/`; format `ubc-html`; `version: 0.1.0`; `quarto-required: ">=1.10.0"` (Q&A 32).
 - CI: `ubuntu-latest`, Quarto `1.10.20` (Q&A 32), R `4.6.2`, Python `3.14` (`.python-version`).
+- custom-callout and quizdown are never committed: `make deps` installs them from `main` into folders git ignores, because `quarto add` ships every extension a repository commits (Q&A 33, 34).
 - Callouts (literal hex): activity `fa-person-chalkboard` `#0055B7`; exercise `fa-dumbbell` `#1C5F2E`; definition `fa-book-open` `#8A6D2B`; relevance-project, titled "Relevance to course project", `fa-diagram-project` `#0077C8`.
 - Third-party actions pinned by SHA: `astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2` (v10.3.3), `rossjrw/pr-preview-action@873417d2df72380da1f3978378fb58560bcde976` (v1.8.2), `JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445` (v4.9.0), `lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8` (v2.9.0). GitHub's, Quarto's and r-lib's own actions stay on major tags.
 - The agent commits and pushes straight to `main` (Q&A 29) after a passing `make leaks`; it never tags (Q&A 17).

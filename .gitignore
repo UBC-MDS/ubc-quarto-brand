@@ -12,3 +12,6 @@
 .superpowers/
 
 **/*.quarto_ipynb
+# Installed by `make deps`: the brand styles them but never ships them (Q&A 33).
+/_extensions/coatless-quarto/
+/_extensions/UBC-MDS/
