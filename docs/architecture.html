@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.11.6">
+<meta name="generator" content="quarto-1.10.20">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -40,19 +40,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="../chapters/provenance.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2ea1a707718cc9f3905c58b26d130924.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-afc06898b8261c65da9068aaeb0c694d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2ea1a707718cc9f3905c58b26d130924.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-f889043e3c54bf7efdfb7d1d9535202f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-23639e6fe4e7578a8cfaaf12ed2607d8.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-f889043e3c54bf7efdfb7d1d9535202f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d52c8108a4a6e6ccce717efb9d809212.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-03a57c0fa258053677a0fe62ed1c4802.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d52c8108a4a6e6ccce717efb9d809212.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-81bf03a3967731642e7eb284a8c09976.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-c42c1422013b57fbf50f92504afcb421.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-81bf03a3967731642e7eb284a8c09976.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/quizdown-1.3.2/quizdown.js"></script>
 <script src="../site_libs/quarto-contrib/quizdown-1.3.2/quizdownKatex.js"></script>
 <script src="../site_libs/quarto-contrib/quizdown-1.3.2/quizdownHighlight.js"></script>
@@ -89,20 +88,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <style>
-div.callout-relevance-project.callout {
-  border-left-color: #0077C8;
-}
-div.callout-relevance-project.callout-style-default .callout-header {
-  background-color: rgba(0, 119, 200, 0.13);
-}
-div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f542' !important;
-  background-image: none;
-}
 div.callout-exercise.callout {
   border-left-color: #1C5F2E;
 }
@@ -117,18 +102,18 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
   content: '\f44b' !important;
   background-image: none;
 }
-div.callout-activity.callout {
-  border-left-color: #0055B7;
+div.callout-relevance-project.callout {
+  border-left-color: #0077C8;
 }
-div.callout-activity.callout-style-default .callout-header {
-  background-color: rgba(0, 85, 183, 0.13);
+div.callout-relevance-project.callout-style-default .callout-header {
+  background-color: rgba(0, 119, 200, 0.13);
 }
-div.callout-activity .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-activity.callout-style-default .callout-icon::before, div.callout-activity.callout-titled .callout-icon::before {
+div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\e53d' !important;
+  content: '\f542' !important;
   background-image: none;
 }
 div.callout-definition.callout {
@@ -145,12 +130,26 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
   content: '\f518' !important;
   background-image: none;
 }
+div.callout-activity.callout {
+  border-left-color: #0055B7;
+}
+div.callout-activity.callout-style-default .callout-header {
+  background-color: rgba(0, 85, 183, 0.13);
+}
+div.callout-activity .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-activity.callout-style-default .callout-icon::before, div.callout-activity.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\e53d' !important;
+  background-image: none;
+}
 </style>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -173,7 +172,6 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
-          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -203,19 +201,13 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455).
-    // Not run on load: stylesheets are set before first paint there, and
-    // scrolling would undo the scroll to a URL fragment (#14973).
-    // The one pixel nudge keeps the reader where they were.
-    const refreshSafariScrollbar = () => {
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        const scrollY = window.scrollY;
-        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
+        window.scrollTo(0, 1);
         setTimeout(() => {
-          window.scrollTo(0, scrollY);
+          window.scrollTo(0, 0);
           manageTransitions("body", true);
         }, 40);
       }
@@ -309,7 +301,6 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
-      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -324,13 +315,13 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+  <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../docs/architecture.html">The project</a></li><li class="breadcrumb-item"><a href="../docs/architecture.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Architecture</span></a></li></ol></nav>
-        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../docs/architecture.html">The project</a></li><li class="breadcrumb-item"><a href="../docs/architecture.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Architecture</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -341,13 +332,13 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">UBC Quarto brand</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/UBC-MDS/ubc-quarto-brand" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -366,10 +357,13 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-1-label">The brand</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">The brand</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/book-conventions.html" class="sidebar-item-text sidebar-link">
@@ -398,10 +392,13 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-2-label">The project</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">The project</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../docs/architecture.html" class="sidebar-item-text sidebar-link active">
@@ -449,10 +446,10 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1">
+<main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../docs/architecture.html">The project</a></li><li class="breadcrumb-item"><a href="../docs/architecture.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Architecture</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../docs/architecture.html">The project</a></li><li class="breadcrumb-item"><a href="../docs/architecture.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Architecture</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Architecture</span></h1>
 </div>
@@ -775,50 +772,15 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const toggle = window.document.createElement('button');
-      toggle.type = "button";
-      toggle.setAttribute("role", "switch");
-      toggle.setAttribute("aria-checked", "false");
-      toggle.classList.add('top-right');
-      toggle.classList.add('quarto-color-scheme-toggle');
-      toggle.setAttribute("aria-label", "Toggle dark mode");
-      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      toggle.appendChild(i);
-      // Put the toggle in a landmark of its own, so that landmark navigation
-      // can reach it.
-      //
-      // The container is always a fresh direct child of body, and the toggle is
-      // never moved into page furniture that the theme or the author controls.
-      // The toggle is positioned against the page, so any ancestor that
-      // establishes a containing block captures it: a positioned element or a
-      // grid for position: absolute, and transform, filter, will-change or
-      // contain for position: fixed. A direct child of body has none of these
-      // to inherit, and the shift when one appears is silent and visual.
-      //
-      // ARIA says a document should have at most one banner, and axe reports a
-      // duplicate whether or not the banners carry distinct labels. So use a
-      // header when the page has no banner yet, and a named region otherwise.
-      //
-      // A header is a banner wherever it sits, unless it is inside sectioning
-      // content, so this cannot just look at the children of body: a custom
-      // page layout wraps the title block header in a plain div. An explicit
-      // role="banner" always counts.
-      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
-      const hasBanner = Array.from(
-        window.document.querySelectorAll('header:not([role]), [role="banner"]')
-      ).some(function(el) {
-        return el.hasAttribute("role") || el.closest(sectioning) === null;
-      });
-      const container = window.document.createElement(hasBanner ? "div" : "header");
-      if (hasBanner) {
-        container.setAttribute("role", "region");
-        container.setAttribute("aria-label", "Toggle dark mode");
-      }
-      container.classList.add('quarto-color-scheme-toggle-container');
-      container.appendChild(toggle);
-      window.document.body.appendChild(container);
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -1219,10 +1181,7 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
     }
   });
   </script>
-  <script type="application/javascript">
-  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
-  </script>
-<nav class="page-navigation" aria-label="Page">
+<nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/provenance.html" class="pagination-link" aria-label="Where it comes from">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Where it comes from</span></span>
