@@ -215,3 +215,11 @@ each claim was checked against the code before Dan saw it.
     in `_extension.yml`; DSCI 521, where most of the code was written, publishes no licence or
     holder. Asked before the tag, Dan chose "A. UBC Master of Data Science (Recommended)":
     the licence and the extension's author field agree, and nothing changes.
+
+32. **The Quarto floor.** Item 24 pinned Quarto 1.11.6 with `quarto-required: ">=1.11.0"`,
+    the version the prototype happened to run on. Adopting the extension in the reproducible
+    book (its PR #38) showed that 1.11 is still a pre-release: that book's CI installs the
+    stable 1.10.20, and the extension refused to render. With the floor lowered, `make test`
+    on 1.10.20 passed all 113 checks without a warning. Asked before the tag, Dan chose
+    "A. Lower to >=1.10.0 (Recommended)": `quarto-required: ">=1.10.0"`, and CI pins 1.10.20
+    so it tests the floor.
