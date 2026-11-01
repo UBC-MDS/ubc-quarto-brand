@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-f889043e3c54bf7efdfb7d1d9535202f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-81bf03a3967731642e7eb284a8c09976.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c42c1422013b57fbf50f92504afcb421.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-81bf03a3967731642e7eb284a8c09976.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-90eb7e7b219787e124a388c93db5073b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-feac72844ee100f099b19e233421bdd2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-90eb7e7b219787e124a388c93db5073b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/quizdown-1.3.2/quizdown.js"></script>
 <script src="../site_libs/quarto-contrib/quizdown-1.3.2/quizdownKatex.js"></script>
 <script src="../site_libs/quarto-contrib/quizdown-1.3.2/quizdownHighlight.js"></script>
@@ -479,7 +479,8 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#taking-a-later-version-from-dsci-521" id="toc-taking-a-later-version-from-dsci-521" class="nav-link active" data-scroll-target="#taking-a-later-version-from-dsci-521"><span class="header-section-number">5.1</span> Taking a later version from DSCI 521</a></li>
+  <li><a href="#what-it-does-not-ship" id="toc-what-it-does-not-ship" class="nav-link active" data-scroll-target="#what-it-does-not-ship"><span class="header-section-number">5.1</span> What it does not ship</a></li>
+  <li><a href="#taking-a-later-version-from-dsci-521" id="toc-taking-a-later-version-from-dsci-521" class="nav-link" data-scroll-target="#taking-a-later-version-from-dsci-521"><span class="header-section-number">5.2</span> Taking a later version from DSCI 521</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UBC-MDS/ubc-quarto-brand/blob/main/chapters/provenance.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UBC-MDS/ubc-quarto-brand/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -506,7 +507,7 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 </header>
 
 
-<p>Most files in this extension are copied from the <a href="https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/">DSCI 521 book</a> at one commit, <code>991bae89cba904ae2dd0753338c306333eb5ea2e</code>, by <code>scripts/fetch-521.sh</code>. Three kinds are not: <code>_extension.yml</code>, written here from keys in DSCI 521’s <code>_quarto.yml</code>; the extension’s own layer, <code>ubc.scss</code>, <code>ubc-dark.scss</code> and <code>ubc-quizdown.html</code>; and the licences of quizdown and Font Awesome, from their own repositories. The links below point at each original as it was at that commit.</p>
+<p>Most files in this extension are copied from the <a href="https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/">DSCI 521 book</a> at one commit, <code>991bae89cba904ae2dd0753338c306333eb5ea2e</code>, by <code>scripts/fetch-521.sh</code>. Two kinds are not: <code>_extension.yml</code>, written here from keys in DSCI 521’s <code>_quarto.yml</code>, and the extension’s own layer, <code>ubc.scss</code>, <code>ubc-dark.scss</code> and <code>ubc-quizdown.html</code>. The links below point at each original as it was at that commit.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -547,34 +548,14 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 <td>shown only when a book opts in</td>
 </tr>
 <tr class="odd">
-<td><code>_extensions/ubc/_extensions/coatless-quarto/custom-callout/</code></td>
-<td><a href="https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/tree/991bae89cba904ae2dd0753338c306333eb5ea2e/_extensions/coatless-quarto/custom-callout"><code>_extensions/coatless-quarto/custom-callout/</code></a></td>
-<td>embedded in this extension</td>
-</tr>
-<tr class="even">
-<td><code>_extensions/ubc/_extensions/quizdown/</code></td>
-<td><a href="https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/tree/991bae89cba904ae2dd0753338c306333eb5ea2e/_extensions/quizdown"><code>_extensions/quizdown/</code></a></td>
-<td>embedded in this extension</td>
-</tr>
-<tr class="odd">
 <td><code>_extensions/ubc/ubc.scss</code>, <code>_extensions/ubc/ubc-dark.scss</code>, <code>_extensions/ubc/ubc-quizdown.html</code></td>
 <td>none: the extension’s own layer, after DSCI 521’s files</td>
 <td>readable Mermaid subgraphs and quiz answer chips; spaced, coloured icons and dark variants for the two callout types DSCI 521 lacks; the built-in callouts in brand colours per mode (Q&amp;A 26)</td>
 </tr>
 <tr class="even">
-<td><code>_extensions/ubc/_extensions/quizdown/LICENSE</code></td>
-<td>quizdown’s <a href="https://github.com/parmsam/quarto-quizdown/blob/98fd96d0c396cb631708ec76ffcb6446534a7aa5/LICENSE"><code>LICENSE</code></a>, from its own repository</td>
-<td>added: DSCI 521’s copy has none (Q&amp;A 27)</td>
-</tr>
-<tr class="odd">
-<td><code>_extensions/ubc/_extensions/coatless-quarto/custom-callout/assets/webfonts/LICENSE.txt</code></td>
-<td>Font Awesome’s <a href="https://github.com/FortAwesome/Font-Awesome/blob/14c65a3747d0f3b751f15831fc719236aea8729d/LICENSE.txt"><code>LICENSE.txt</code></a>, from its own repository</td>
-<td>added: the font’s SIL Open Font License travels with it, and DSCI 521’s copy has none</td>
-</tr>
-<tr class="even">
 <td><code>_extensions/ubc/_extension.yml</code></td>
 <td>the <code>filters:</code>, <code>custom-callout:</code> and <code>format:</code> keys of <a href="https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/blob/991bae89cba904ae2dd0753338c306333eb5ea2e/_quarto.yml"><code>_quarto.yml</code></a></td>
-<td>becomes the <code>ubc-html</code> format; adds the definition and relevance-project callouts</td>
+<td>becomes the <code>ubc-html</code> format, without DSCI 521’s <code>custom-callout</code> and <code>quizdown</code> filters (see below); adds the definition and relevance-project callouts</td>
 </tr>
 <tr class="odd">
 <td><code>chapters/book-conventions.qmd</code> (this book)</td>
@@ -589,8 +570,33 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
 </tbody>
 </table>
 <p>The copied files keep DSCI 521’s comments, which point at its <code>_quarto.yml</code>. Here the theme lists and the <code>custom-callout:</code> colours live in <code>_extensions/ubc/_extension.yml</code>, so recolouring a callout means changing it there and in <code>brand.yml</code> together.</p>
-<section id="taking-a-later-version-from-dsci-521" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="taking-a-later-version-from-dsci-521"><span class="header-section-number">5.1</span> Taking a later version from DSCI 521</h2>
+<section id="what-it-does-not-ship" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="what-it-does-not-ship"><span class="header-section-number">5.1</span> What it does not ship</h2>
+<p>DSCI 521 carries copies of two other extensions, and this one styles both but ships neither (Q&amp;A 33): a book installs them from their own repositories and lists them under <code>filters:</code>, as <a href="../chapters/using.html">Using it in a book</a> shows.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Extension</th>
+<th>Its repository</th>
+<th>DSCI 521’s copy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>custom-callout, the callout types</td>
+<td><a href="https://github.com/coatless-quarto/custom-callout">coatless-quarto/custom-callout</a></td>
+<td>0.0.1-dev.3, the same as that repository’s <code>main</code></td>
+</tr>
+<tr class="even">
+<td>quizdown, the quizzes</td>
+<td><a href="https://github.com/UBC-MDS/quarto-quizdown-mds-ext">UBC-MDS/quarto-quizdown-mds-ext</a></td>
+<td>1.3.2, the same as that repository’s <code>main</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="taking-a-later-version-from-dsci-521" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="taking-a-later-version-from-dsci-521"><span class="header-section-number">5.2</span> Taking a later version from DSCI 521</h2>
 <div class="code-with-filename">
 <div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> fetch-521 SHA=<span class="op">&lt;</span>a DSCI 521 commit<span class="op">&gt;</span></span>

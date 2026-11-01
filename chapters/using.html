@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-f889043e3c54bf7efdfb7d1d9535202f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-81bf03a3967731642e7eb284a8c09976.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c42c1422013b57fbf50f92504afcb421.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-81bf03a3967731642e7eb284a8c09976.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-90eb7e7b219787e124a388c93db5073b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-feac72844ee100f099b19e233421bdd2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-90eb7e7b219787e124a388c93db5073b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/quizdown-1.3.2/quizdown.js"></script>
 <script src="../site_libs/quarto-contrib/quizdown-1.3.2/quizdownKatex.js"></script>
 <script src="../site_libs/quarto-contrib/quizdown-1.3.2/quizdownHighlight.js"></script>
@@ -120,18 +120,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>
-div.callout-exercise.callout {
-  border-left-color: #1C5F2E;
+div.callout-definition.callout {
+  border-left-color: #8A6D2B;
 }
-div.callout-exercise.callout-style-default .callout-header {
-  background-color: rgba(28, 95, 46, 0.13);
+div.callout-definition.callout-style-default .callout-header {
+  background-color: rgba(138, 109, 43, 0.13);
 }
-div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 7 Free';
   font-weight: 900;
   font-style: normal;
-  content: '\f44b' !important;
+  content: '\f518' !important;
   background-image: none;
 }
 div.callout-activity.callout {
@@ -148,6 +148,20 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
   content: '\e53d' !important;
   background-image: none;
 }
+div.callout-exercise.callout {
+  border-left-color: #1C5F2E;
+}
+div.callout-exercise.callout-style-default .callout-header {
+  background-color: rgba(28, 95, 46, 0.13);
+}
+div.callout-exercise .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-exercise.callout-style-default .callout-icon::before, div.callout-exercise.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f44b' !important;
+  background-image: none;
+}
 div.callout-relevance-project.callout {
   border-left-color: #0077C8;
 }
@@ -160,20 +174,6 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
   font-weight: 900;
   font-style: normal;
   content: '\f542' !important;
-  background-image: none;
-}
-div.callout-definition.callout {
-  border-left-color: #8A6D2B;
-}
-div.callout-definition.callout-style-default .callout-header {
-  background-color: rgba(138, 109, 43, 0.13);
-}
-div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f518' !important;
   background-image: none;
 }
 </style>
@@ -515,18 +515,24 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 
 <section id="install-it" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="install-it"><span class="header-section-number">4.1</span> Install it</h2>
-<p>In your Quarto book or website project, install a tagged release:</p>
+<p>The extension styles two other extensions but does not ship them: <a href="https://github.com/coatless-quarto/custom-callout">custom-callout</a>, which makes the callout types, and <a href="https://github.com/UBC-MDS/quarto-quizdown-mds-ext">quizdown</a>, UBC-MDS’s version, which makes the quizzes. In your Quarto book or website project, install them first (quizdown only if your book has quizzes), then a tagged release of the extension:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add UBC-MDS/ubc-quarto-brand@v0.1.0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add coatless-quarto/custom-callout</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add UBC-MDS/quarto-quizdown-mds-ext</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add UBC-MDS/ubc-quarto-brand@v0.1.0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Quarto copies the extension into <code>_extensions/UBC-MDS/ubc/</code>. Commit that folder: your book keeps exactly this version until you update it. The extension needs Quarto 1.10 or later.</p>
+<p>Quarto copies each into <code>_extensions/</code>, the extension into <code>_extensions/UBC-MDS/ubc/</code>. Commit that folder: your book keeps exactly these versions until you update them. The extension is tested with custom-callout 0.0.1-dev.3 and quizdown 1.3.2. Neither has a release tag at that version yet, so the first two commands install the newest version on each one’s <code>main</code>. The extension needs Quarto 1.10 or later.</p>
 </section>
 <section id="use-the-format" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="use-the-format"><span class="header-section-number">4.2</span> Use the format</h2>
 <p>In your <code>_quarto.yml</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> ubc-html</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>That one line brings the theme, the listing labels, the callouts and the quizzes. The brand’s colours, fonts and dark-mode toggle reach every HTML page as soon as the extension is installed, even one with a plain <code>format: html</code>. The rest needs <code>ubc-html</code>, readable tab titles in dark mode included: a plain <code>format: html</code> page paints the active tab’s title in the page’s own navy.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> ubc-html</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">filters</span><span class="kw">:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> custom-callout</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> quizdown</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>format: ubc-html</code> brings the theme, the listing labels, and the brand’s callout types and quiz colours. The two filters switch on the extensions you installed; leave out <code>quizdown</code> if you did not install it. Without <code>custom-callout</code> there, the render still succeeds, with no warning, but each <code>.exercise</code>, <code>.activity</code> or other custom callout comes out as plain text. The brand’s colours, fonts and dark-mode toggle reach every HTML page as soon as the extension is installed, even one with a plain <code>format: html</code>. The rest needs <code>ubc-html</code>, readable tab titles in dark mode included: a plain <code>format: html</code> page paints the active tab’s title in the page’s own navy.</p>
 </section>
 <section id="update-it" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="update-it"><span class="header-section-number">4.3</span> Update it</h2>
@@ -534,7 +540,7 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <div class="code-with-filename-file"><pre><strong>Terminal</strong></pre></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> update UBC-MDS/ubc-quarto-brand@v0.2.0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Do it in a pull request of its own, so the preview shows what changed before you merge. The <a href="../CHANGELOG.html">changelog</a> lists what each release changed.</p>
+<p>Do it in a pull request of its own, so the preview shows what changed before you merge. The <a href="../CHANGELOG.html">changelog</a> lists what each release changed. <code>quarto update coatless-quarto/custom-callout</code> and <code>quarto update UBC-MDS/quarto-quizdown-mds-ext</code> take the newest version of the other two.</p>
 </section>
 <section id="turn-on-the-mds-logo" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="turn-on-the-mds-logo"><span class="header-section-number">4.4</span> Turn on the MDS logo</h2>
@@ -651,7 +657,7 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 </section>
 <section id="executed-code-and-quizzes" class="level2" data-number="4.8">
 <h2 data-number="4.8" class="anchored" data-anchor-id="executed-code-and-quizzes"><span class="header-section-number">4.8</span> Executed code and quizzes</h2>
-<p>Executed R and Python cells need nothing from the extension. Quizzes are written in a <code>quizdown</code> code block; the <a href="../chapters/book-conventions.html">conventions page</a> shows each kind.</p>
+<p>Executed R and Python cells need nothing from the extension. Quizzes are written in a <code>quizdown</code> code block; the <a href="../chapters/book-conventions.html">conventions page</a> shows each kind. They need quizdown installed and under <code>filters:</code> (see <em>Install it</em>); without it, a quiz renders as a plain code block.</p>
 
 
 </section>

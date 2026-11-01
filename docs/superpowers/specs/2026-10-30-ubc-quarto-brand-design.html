@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-f889043e3c54bf7efdfb7d1d9535202f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-81bf03a3967731642e7eb284a8c09976.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-c42c1422013b57fbf50f92504afcb421.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-81bf03a3967731642e7eb284a8c09976.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-90eb7e7b219787e124a388c93db5073b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-feac72844ee100f099b19e233421bdd2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-90eb7e7b219787e124a388c93db5073b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdown.js"></script>
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdownKatex.js"></script>
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdownHighlight.js"></script>
@@ -85,6 +85,20 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-definition.callout {
+  border-left-color: #8A6D2B;
+}
+div.callout-definition.callout-style-default .callout-header {
+  background-color: rgba(138, 109, 43, 0.13);
+}
+div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f518' !important;
+  background-image: none;
+}
 div.callout-relevance-project.callout {
   border-left-color: #0077C8;
 }
@@ -125,20 +139,6 @@ div.callout-exercise.callout-style-default .callout-icon::before, div.callout-ex
   font-weight: 900;
   font-style: normal;
   content: '\f44b' !important;
-  background-image: none;
-}
-div.callout-definition.callout {
-  border-left-color: #8A6D2B;
-}
-div.callout-definition.callout-style-default .callout-header {
-  background-color: rgba(138, 109, 43, 0.13);
-}
-div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f518' !important;
   background-image: none;
 }
 </style>
@@ -489,7 +489,7 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <p>Kickoff’s questions and Dan’s answers are in <a href="../../../docs/superpowers/specs/2026-10-30-ubc-quarto-brand-qa.html"><code>2026-10-30-ubc-quarto-brand-qa.md</code></a>; each decision below cites its item there as (Q&amp;A N).</p>
 <section id="goal" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="goal"><span class="header-section-number">7.1</span> Goal</h2>
-<p>A Quarto extension that gives any UBC course book the brand DSCI 521’s book was built with, so books stop copying styles from one another (Q&amp;A 1, 18). A book adopts it with <code>quarto add UBC-MDS/ubc-quarto-brand@vX.Y.Z</code> and one line, <code>format: ubc-html</code>. The repository also holds a test book that renders every part of the brand, deployed as the live demo with the project docs (Q&amp;A 3, 10).</p>
+<p>A Quarto extension that gives any UBC course book the brand DSCI 521’s book was built with, so books stop copying styles from one another (Q&amp;A 1, 18). A book adopts it with <code>quarto add UBC-MDS/ubc-quarto-brand@vX.Y.Z</code> and one line, <code>format: ubc-html</code>, after installing the two extensions it styles, custom-callout and quizdown, and listing them under <code>filters:</code> (Q&amp;A 33). The repository also holds a test book that renders every part of the brand, deployed as the live demo with the project docs (Q&amp;A 3, 10).</p>
 <p>The first book to adopt it is reproducible-and-trustworthy-workflows-for-data-science, in its own PR after <code>v0.1.0</code> (Q&amp;A 1, 24). DSCI 521 follows later, tracked in <a href="https://github.com/UBC-MDS/DSCI_521_platforms-dsci_book/issues/35">UBC-MDS/DSCI_521_platforms-dsci_book#35</a>.</p>
 </section>
 <section id="outline" class="level2" data-number="7.2">
@@ -524,7 +524,7 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <p>One extension, <code>ubc</code>, in <code>_extensions/ubc/</code> (Q&amp;A 18). It contributes two things:</p>
 <ul>
 <li><strong>The brand,</strong> through <code>metadata: project: brand: brand.yml</code>. Quarto merges it into any project with the extension installed, whatever its format, so colours, fonts and the dark-mode toggle reach even a plain <code>format: html</code> page; dark mode’s tab titles need <code>ubc-html</code>’s <code>styles-dark.scss</code> (the final review).</li>
-<li><strong>A <code>ubc-html</code> format</strong> with the theme layers (<code>light: [brand, styles.scss, ubc.scss]</code>, <code>dark: [brand, styles.scss, styles-dark.scss, ubc.scss, ubc-dark.scss]</code>), the filters (<code>code-labels.lua</code>, <code>custom-callout</code>, <code>quizdown</code>), <code>include-after-body: [quizdown-theme.html, ubc-quizdown.html]</code>, and the four custom callout types.</li>
+<li><strong>A <code>ubc-html</code> format</strong> with the theme layers (<code>light: [brand, styles.scss, ubc.scss]</code>, <code>dark: [brand, styles.scss, styles-dark.scss, ubc.scss, ubc-dark.scss]</code>), the filter <code>code-labels.lua</code>, <code>include-after-body: [quizdown-theme.html, ubc-quizdown.html]</code>, and the four custom callout types. It ships neither custom-callout nor quizdown: a filter an extension names resolves only inside its own folder, so a book installs both and lists them under its own <code>filters:</code> (Q&amp;A 33).</li>
 </ul>
 <p>A format cannot carry the brand on its own: its <code>brand</code> theme layer means the project’s brand, and 521’s <code>styles.scss</code> needs the <code>$brand-*</code> variables that only the brand defines. A prototype rendered this setup, before the extension had a layer of its own, on Quarto 1.11.6, for a book and for a website (Q&amp;A 18).</p>
 <table class="caption-top table">
@@ -572,16 +572,11 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <td>applied only when a book opts in (Q&amp;A 16)</td>
 </tr>
 <tr class="odd">
-<td><code>_extensions/coatless-quarto/custom-callout/</code></td>
-<td>its vendored 0.0.1-dev.3</td>
-<td>embedded</td>
+<td>none</td>
+<td>its copies of custom-callout (0.0.1-dev.3) and quizdown (1.3.2)</td>
+<td>not shipped: a book installs both from their own repositories (Q&amp;A 33, 34)</td>
 </tr>
 <tr class="even">
-<td><code>_extensions/quizdown/</code></td>
-<td>its vendored copy</td>
-<td>embedded (Q&amp;A 12)</td>
-</tr>
-<tr class="odd">
 <td><code>_extension.yml</code>’s <code>custom-callout:</code></td>
 <td><code>_quarto.yml</code>’s two types</td>
 <td>plus definition and relevance-project (Q&amp;A 8, 19)</td>
@@ -648,7 +643,7 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <li><strong>Where it comes from:</strong> every file’s DSCI 521 original, linked at <code>991bae89cba9</code>, and what changed (Q&amp;A 21).</li>
 <li><strong>The project:</strong> the Architecture page, the spec, the plan, the Q&amp;A page, the changelog and <code>AGENTS.md</code>, rendered from where they live.</li>
 </ul>
-<p><code>tests/website/</code> is a one-page website project, installed the way a GitHub install leaves it: the MDS logo, its own theme layer (a Sass default and callout rules), its own <code>lab</code> callout and a recoloured <code>activity</code>, a <code>bash</code> listing and a quiz. <code>make test</code> copies the extension into it, git-ignored, and renders it after the book, locally and in CI (Q&amp;A 10, 22).</p>
+<p><code>tests/website/</code> is a one-page website project, installed the way a GitHub install leaves it: the MDS logo, its own theme layer (a Sass default and callout rules), its own <code>lab</code> callout and a recoloured <code>activity</code>, a <code>bash</code> listing and a quiz. <code>make test</code> copies the extension into it, with the custom-callout and quizdown <code>make deps</code> installed, all git-ignored, and renders it after the book, locally and in CI (Q&amp;A 10, 22, 33).</p>
 <p>Executed cells run through knitr, with Python through reticulate from the uv venv, as in 521. R needs <code>knitr</code>, <code>rmarkdown</code>, <code>reticulate</code> and <code>here</code> (renv); Python needs <code>matplotlib</code> (uv).</p>
 </section>
 <section id="ci-and-delivery" class="level3" data-number="7.3.4">
@@ -805,6 +800,14 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <td><code>tests/website/</code> in <code>make check</code></td>
 <td>built</td>
 </tr>
+<tr class="even">
+<td>S21</td>
+<td>a book installs the extension</td>
+<td>it gets only <code>_extensions/ubc/</code>; the how-to and the README say to install custom-callout and quizdown first, list them under <code>filters:</code>, and name the versions tested</td>
+<td>Phase end (Q&amp;A 33, 34)</td>
+<td><code>tests/check-render.sh</code></td>
+<td>built</td>
+</tr>
 </tbody>
 </table>
 <section id="later" class="level3" data-number="7.4.1">
@@ -869,13 +872,14 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <section id="open-items-and-risks" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="open-items-and-risks"><span class="header-section-number">7.5</span> Open items and risks</h2>
 <ul>
-<li><strong>Vendored dependencies:</strong> custom-callout (0.0.1-dev.3) and quizdown are copies; updating them is a manual PR.</li>
-<li><strong>Quizdown loads on every page,</strong> quiz or not, as in DSCI 521 (Q&amp;A 12).</li>
+<li><strong>custom-callout and quizdown come from <code>main</code>:</strong> neither has a tag at the version tested, so a change there can break a book; the instructions move to tags once they exist (Q&amp;A 34).</li>
+<li><strong>A missing <code>filters:</code> line fails silently:</strong> custom callouts render as plain text, quizzes as code blocks, with no warning; the how-to says so (Q&amp;A 33).</li>
+<li><strong>Quizdown loads on every page</strong> of a book that lists it, quiz or not, as in DSCI 521 (Q&amp;A 12); a book without quizzes leaves it out (Q&amp;A 33).</li>
 <li><strong>A partial brand override isn’t possible</strong> (see <em>What a book can change</em>); the how-to page says so.</li>
 <li><strong>Fork PRs get no preview:</strong> their token can’t write to the repository, so their run fails at the deploy step rather than skipping it.</li>
 <li><strong>[Dan] settings:</strong> Pages from the <code>gh-pages</code> branch (after the first publish creates it), read and write workflow permissions, a ruleset on <code>main</code>.</li>
 <li><strong>plan-driven-development’s hooks and leak check aren’t built yet:</strong> every push to <code>main</code> follows <code>make leaks</code> (Q&amp;A 29).</li>
-<li><strong>Licence:</strong> MIT for code, CC BY 4.0 for docs, the MDS logo excluded (Q&amp;A 27, 30). custom-callout publishes no licence: [Dan] asks its author for one.</li>
+<li><strong>Licence:</strong> MIT for code, CC BY 4.0 for docs, the MDS logo excluded (Q&amp;A 27, 30). The extension ships no outside code (Q&amp;A 33); custom-callout publishes no licence, which every book committing a copy inherits: [Dan] asks its author for one, and a tag (Q&amp;A 34).</li>
 </ul>
 </section>
 <section id="revisions" class="level2" data-number="7.6">
@@ -887,6 +891,7 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <li>2026-10-30: the extension completes the callout styling in its own layer (Q&amp;A 26, <code>779c67f</code>); a split licence, as in the reproducible book (Q&amp;A 27, <code>4e23584</code>).</li>
 <li>2026-10-31: the docs under CC BY 4.0, matching the reproducible book’s <code>LICENSE.md</code> (Q&amp;A 30, <code>6a43a11</code>).</li>
 <li>2026-10-31: the Quarto floor lowered to the stable 1.10.0, CI pinned to 1.10.20 (Q&amp;A 32, <code>00b98ea</code>).</li>
+<li>2026-11-01: custom-callout and quizdown installed by the book, not shipped; from <code>main</code> until tagged (Q&amp;A 33, 34, <code>1257aa1</code>, <code>8f77d87</code>).</li>
 <li>2026-10-30: approved for a one-shot build (Q&amp;A 28); work goes straight to <code>main</code>, review happens in the adopting book (Q&amp;A 29).</li>
 <li>2026-10-30: the conventions page as-is, provenance docs, design sections 1 to 3 (<code>00a0f5b</code>, <code>0489284</code>, <code>fd8ff72</code>, <code>70fa211</code>, <code>6447ee8</code>).</li>
 </ul>

@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-f889043e3c54bf7efdfb7d1d9535202f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-81bf03a3967731642e7eb284a8c09976.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-c42c1422013b57fbf50f92504afcb421.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-81bf03a3967731642e7eb284a8c09976.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-90eb7e7b219787e124a388c93db5073b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-feac72844ee100f099b19e233421bdd2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-90eb7e7b219787e124a388c93db5073b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdown.js"></script>
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdownKatex.js"></script>
 <script src="../../../site_libs/quarto-contrib/quizdown-1.3.2/quizdownHighlight.js"></script>
@@ -85,6 +85,20 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-relevance-project.callout {
+  border-left-color: #0077C8;
+}
+div.callout-relevance-project.callout-style-default .callout-header {
+  background-color: rgba(0, 119, 200, 0.13);
+}
+div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f542' !important;
+  background-image: none;
+}
 div.callout-definition.callout {
   border-left-color: #8A6D2B;
 }
@@ -125,20 +139,6 @@ div.callout-activity.callout-style-default .callout-icon::before, div.callout-ac
   font-weight: 900;
   font-style: normal;
   content: '\e53d' !important;
-  background-image: none;
-}
-div.callout-relevance-project.callout {
-  border-left-color: #0077C8;
-}
-div.callout-relevance-project.callout-style-default .callout-header {
-  background-color: rgba(0, 119, 200, 0.13);
-}
-div.callout-relevance-project .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-relevance-project.callout-style-default .callout-icon::before, div.callout-relevance-project.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 7 Free';
-  font-weight: 900;
-  font-style: normal;
-  content: '\f542' !important;
   background-image: none;
 }
 </style>
@@ -545,6 +545,8 @@ div.callout-relevance-project.callout-style-default .callout-icon::before, div.c
 <li><p><strong>The docs licence.</strong> Item 27 chose a split licence “like the book”, with CC BY-NC-SA 4.0 for the docs. At the phase end the agent found the reproducible book split with itself: its README says CC BY-NC-SA 4.0 and its <code>LICENSE.md</code> CC BY 4.0. Asked which covers this project’s docs and the test book’s text, Dan chose “B. CC BY 4.0”, matching the book’s <code>LICENSE.md</code>: anyone may reuse them, commercially too, with attribution. Code stays MIT.</p></li>
 <li><p><strong>The MIT copyright holder.</strong> <code>LICENSE.md</code> names “UBC Master of Data Science”, the author in <code>_extension.yml</code>; DSCI 521, where most of the code was written, publishes no licence or holder. Asked before the tag, Dan chose “A. UBC Master of Data Science (Recommended)”: the licence and the extension’s author field agree, and nothing changes.</p></li>
 <li><p><strong>The Quarto floor.</strong> Item 24 pinned Quarto 1.11.6 with <code>quarto-required: "&gt;=1.11.0"</code>, the version the prototype happened to run on. Adopting the extension in the reproducible book (its PR #38) showed that 1.11 is still a pre-release: that book’s CI installs the stable 1.10.20, and the extension refused to render. With the floor lowered, <code>make test</code> on 1.10.20 passed all 113 checks without a warning. Asked before the tag, Dan chose “A. Lower to &gt;=1.10.0 (Recommended)”: <code>quarto-required: "&gt;=1.10.0"</code>, and CI pins 1.10.20 so it tests the floor.</p></li>
+<li><p><strong>The outside extensions, installed by the user.</strong> Asked why he should ask custom-callout’s author for a licence, Dan asked why the extension could not install custom-callout as a dependency. Quarto has no dependencies: <code>_extension.yml</code> takes only <code>title</code>, <code>author</code>, <code>version</code>, <code>quarto-required</code> and <code>contributes</code>, and a filter named in an extension’s format resolves only inside that extension’s own folder (<code>Failed to resolve referenced filter custom-callout - path does not exist</code>, even with custom-callout installed in the project). Dan: “let’s set up in the instructions on if we want to install the ubc-quarto-brand extension that we tell the user that thye need to install the other extensions first. i just want the ubc-quarto-brand provide mostly the css/scss that fixes and modfiies the existing extension pieces. let’s not ship the other extensions if we can help it. unless this is the only way”. It is not the only way, so the extension embeds neither custom-callout nor quizdown (from <code>UBC-MDS/quarto-quizdown-mds-ext</code>, the copy DSCI 521 uses); it keeps their configuration and styling (the callout types, <code>quizdown-theme.html</code>, <code>ubc-quizdown.html</code>, the quiz colours). This replaces item 12’s embedded quizdown, and moves item 27’s licence gap out of this repository. How a project switches them on, asked as a scenario: Dan chose “A. filters: line (Recommended)”: the project installs them first and lists them under <code>filters:</code> in its <code>_quarto.yml</code>, so each project takes only what it uses. Decided without Dan: the test book installs both at build time (<code>make deps</code>) into folders git ignores, because <code>quarto add</code> installs every extension a repository commits under <code>_extensions/</code> (a copy of this one with both beside it: “Found 3 extensions”); and the change goes into v0.1.0, which is not tagged yet.</p></li>
+<li><p><strong>The outside extensions’ versions.</strong> <code>quarto add</code> takes a repository’s <code>main</code>, a tag or a branch, never a commit, and neither extension has a tag at the version tested: custom-callout’s only tag, <code>0.0.1</code>, holds 0.0.0-dev.1 (<code>main</code> is 0.0.1-dev.3), and quizdown-mds’s <code>v1.2.0</code> is older than <code>main</code>’s 1.3.2. Asked as a scenario, Dan chose “A. Main now, tags later (Recommended)”: the instructions install from <code>main</code> and name the versions tested; once tags exist ([Dan] tags <code>UBC-MDS/quarto-quizdown-mds-ext</code> <code>v1.3.2</code>, and the note to custom-callout’s author asks for a tag beside the licence), they install by tag.</p></li>
 </ol>
 
 
